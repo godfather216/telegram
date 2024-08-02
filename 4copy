@@ -1,0 +1,260 @@
+port: 7890
+socks-port: 7891
+redir-port: 7892
+allow-lan: true
+mode: rule
+log-level: warning
+external-controller: 127.0.0.1:9090
+
+dns:
+  enable: true
+  ipv6: false
+  listen: 0.0.0.0:53
+  enhanced-mode: fake-ip
+  nameserver:
+    - 114.114.115.115
+    - 119.28.28.28
+    - 223.6.6.6
+    - https://dns.alidns.com/dns-query
+    - https://doh.pub/dns-query
+  fallback:
+    - tcp://1.1.1.1
+    - tcp://1.0.0.1
+
+proxy-providers:
+  服务提供商:
+    type: http
+    url: https://raw.githubusercontent.com/zhangkaiitugithub/passcro/main/speednodes.yaml
+    interval: 3600
+    path: ./proxies/服务提供商.yaml
+    health-check:
+      enable: true
+      interval: 600
+      url: http://www.gstatic.com/generate_204
+
+proxy-groups:
+  - name: 🚀 选择代理
+    type: select
+    proxies:
+      - ♻️ 自动选择
+      - 🇺🇸 美国
+      - 🇯🇵 日本
+      - 🇰🇷 韩国
+      - 🇭🇰 香港
+      - 🇸🇬 新加坡
+      - 🇷🇺 俄罗斯
+      - 🇪🇺 欧洲
+      - DIRECT
+
+  - name: ♻️ 自动选择
+    type: url-test
+    url: 'http://www.gstatic.com/generate_204'
+    interval: 300
+    tolerance: 50
+    use:
+      - 服务提供商
+
+  - name: 🤖 GPT
+    type: select
+    proxies:
+      - 🇺🇸 美国
+      - 🇯🇵 日本
+      - 🇰🇷 韩国
+      - 🇸🇬 新加坡
+      - 🇷🇺 俄罗斯
+      - 🇪🇺 欧洲
+      - ♻️ 自动选择
+
+  - name: 🤖 Claude
+    type: select
+    proxies:
+      - 🇺🇸 美国
+      - 🇯🇵 日本
+      - 🇰🇷 韩国
+      - 🇸🇬 新加坡
+      - 🇷🇺 俄罗斯
+      - 🇪🇺 欧洲
+      - ♻️ 自动选择
+
+  - name: 🎭 Tiktok
+    type: select
+    proxies:
+      - 🇺🇸 美国
+      - 🇯🇵 日本
+      - 🇰🇷 韩国
+      - 🇸🇬 新加坡
+      - 🇷🇺 俄罗斯
+      - 🇪🇺 欧洲
+
+  - name: 🎬 Netflix
+    type: select
+    proxies:
+      - 🚀 选择代理
+      - 🇺🇸 美国
+      - 🇯🇵 日本
+      - 🇰🇷 韩国
+      - 🇭🇰 香港
+      - 🇸🇬 新加坡
+      - 🇷🇺 俄罗斯
+      - 🇪🇺 欧洲
+      - DIRECT
+
+  - name: 🎬 Disney+
+    type: select
+    proxies:
+      - 🚀 选择代理
+      - 🇺🇸 美国
+      - 🇯🇵 日本
+      - 🇰🇷 韩国
+      - 🇭🇰 香港
+      - 🇸🇬 新加坡
+      - 🇷🇺 俄罗斯
+      - 🇪🇺 欧洲
+      - DIRECT
+
+  - name: 🎵 Spotify
+    type: select
+    proxies:
+      - 🚀 选择代理
+      - 🇺🇸 美国
+      - 🇯🇵 日本
+      - 🇰🇷 韩国
+      - 🇭🇰 香港
+      - 🇸🇬 新加坡
+      - 🇷🇺 俄罗斯
+      - 🇪🇺 欧洲
+      - DIRECT
+
+  - name: 📹 YouTube
+    type: select
+    proxies:
+      - 🚀 选择代理
+      - 🇺🇸 美国
+      - 🇯🇵 日本
+      - 🇰🇷 韩国
+      - 🇭🇰 香港
+      - 🇸🇬 新加坡
+      - 🇷🇺 俄罗斯
+      - 🇪🇺 欧洲
+      - DIRECT
+
+  - name: 🚀 Speedtest
+    type: select
+    proxies:
+      - 🚀 选择代理
+      - DIRECT
+  - name: 🌍 默认
+    type: select
+    proxies:
+      - 🚀 选择代理
+      - DIRECT
+
+  - name: 🇺🇸 美国
+    type: url-test
+    url: 'http://www.gstatic.com/generate_204'
+    interval: 300
+    tolerance: 50
+    use:
+      - 服务提供商
+    filter: "(?i)美|US|CA|United States|America"
+
+  - name: 🇯🇵 日本
+    type: url-test
+    url: 'http://www.gstatic.com/generate_204'
+    interval: 300
+    tolerance: 50
+    use:
+      - 服务提供商
+    filter: "(?i)日|JP|Japan"
+
+  - name: 🇰🇷 韩国
+    type: url-test
+    url: 'http://www.gstatic.com/generate_204'
+    interval: 300
+    tolerance: 50
+    use:
+      - 服务提供商
+    filter: "(?i)韩|KR|Korea"
+
+  - name: 🇭🇰 香港
+    type: url-test
+    url: 'http://www.gstatic.com/generate_204'
+    interval: 300
+    tolerance: 50
+    use:
+      - 服务提供商
+    filter: "(?i)港|HK|Hong"
+
+  - name: 🇸🇬 新加坡
+    type: url-test
+    url: 'http://www.gstatic.com/generate_204'
+    interval: 300
+    tolerance: 50
+    use:
+      - 服务提供商
+    filter: "(?i)新|狮|SG|Singapore"
+
+  - name: 🇷🇺 俄罗斯
+    type: url-test
+    url: 'http://www.gstatic.com/generate_204'
+    interval: 300
+    tolerance: 50
+    use:
+      - 服务提供商
+    filter: "(?i)俄|RU|Russia"
+
+  - name: 🇪🇺 欧洲
+    type: url-test
+    url: 'http://www.gstatic.com/generate_204'
+    interval: 300
+    tolerance: 50
+    use:
+      - 服务提供商
+    filter: "AE|GB|FR|DE|IN|AU|NL"
+
+rules:
+  - DOMAIN-SUFFIX,openai.com,🤖 GPT
+  - DOMAIN-SUFFIX,ai.com,🤖 GPT
+  - DOMAIN-KEYWORD,openai,🤖 GPT
+  - DOMAIN-SUFFIX,anthropic.com,🤖 Claude
+  - DOMAIN-KEYWORD,anthropic,🤖 Claude
+  - DOMAIN-SUFFIX,tiktokv.com,🎭 Tiktok
+  - DOMAIN-SUFFIX,tiktok.com,🎭 Tiktok
+  - DOMAIN-KEYWORD,tiktok,🎭 Tiktok
+  - DOMAIN-KEYWORD,netflix,🎬 Netflix
+  - DOMAIN-KEYWORD,disney,🎬 Disney+
+  - DOMAIN-KEYWORD,spotify,🎵 Spotify
+  - DOMAIN-KEYWORD,speedtest,🚀 Speedtest
+  - DOMAIN-SUFFIX,github.com,🚀 选择代理
+  - DOMAIN-SUFFIX,github.io,🚀 选择代理
+  - DOMAIN-KEYWORD,github,🚀 选择代理
+  - DOMAIN-SUFFIX,t.me,🚀 选择代理
+  - DOMAIN-SUFFIX,telegram.org,🚀 选择代理
+  - DOMAIN-KEYWORD,telegram,🚀 选择代理
+  - DOMAIN-SUFFIX,youtube.com,📹 YouTube
+  - DOMAIN-KEYWORD,youtube,📹 YouTube
+  - DOMAIN-SUFFIX,googlevideo.com,📹 YouTube
+  - DOMAIN-SUFFIX,google.com,🚀 选择代理
+  - DOMAIN-KEYWORD,google,🚀 选择代理
+  - DOMAIN-SUFFIX,twitter.com,🚀 选择代理
+  - DOMAIN-KEYWORD,twitter,🚀 选择代理
+  - DOMAIN-SUFFIX,tapbots.com,🚀 选择代理
+  - DOMAIN-SUFFIX,instagram.com,🚀 选择代理
+  - DOMAIN-KEYWORD,instagram,🚀 选择代理
+  - DOMAIN-SUFFIX,facebook.com,🚀 选择代理
+  - DOMAIN-KEYWORD,facebook,🚀 选择代理
+  - DOMAIN-SUFFIX,steamcommunity.com,🚀 选择代理
+  - DOMAIN-SUFFIX,steampowered.com,🚀 选择代理
+  - DOMAIN-KEYWORD,steam,🚀 选择代理
+  - DOMAIN-SUFFIX,iphone-ld.apple.com,DIRECT
+  - DOMAIN-SUFFIX,lcdn-locator.apple.com,DIRECT
+  - DOMAIN-SUFFIX,lcdn-registration.apple.com,DIRECT
+  - DOMAIN-SUFFIX,push.apple.com,DIRECT
+  - DOMAIN-SUFFIX,microsoft.com,🚀 选择代理
+  - DOMAIN-SUFFIX,xbox.com,🚀 选择代理
+  - DOMAIN-KEYWORD,microsoft,🚀 选择代理
+  - DOMAIN-KEYWORD,xbox,🚀 选择代理
+  - IP-CIDR,162.159.193.0/24,DIRECT
+  - GEOIP,LAN,DIRECT
+  - GEOIP,CN,DIRECT
+  - MATCH,🌍 默认
