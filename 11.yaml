@@ -54,7 +54,6 @@ proxy-groups:
       - 🇺🇸 美国节点
       - 🇯🇵 日本节点
       - 🇸🇬 狮城节点
-      - 🇪🇺 欧洲节点
 
   - name: 🎭 TikTok
     type: select
@@ -63,7 +62,6 @@ proxy-groups:
       - 🇺🇸 美国节点
       - 🇯🇵 日本节点
       - 🇰🇷 韩国节点
-      - 🇪🇺 欧洲节点
 
   - name: 🎬 流媒体
     type: select
@@ -154,6 +152,68 @@ proxy-groups:
       - provider
     filter: "(?i)德|法|英|DE|FR|GB"
 
-# 规则 (保持不变)
+# 规则
 rules:
-  # ... (规则部分保持不变)
+  # OpenAI
+  - DOMAIN-SUFFIX,openai.com,🤖 OpenAI
+  - DOMAIN-SUFFIX,ai.com,🤖 OpenAI
+  - DOMAIN-KEYWORD,openai,🤖 OpenAI
+  - DOMAIN-SUFFIX,anthropic.com,🤖 OpenAI
+  - DOMAIN-KEYWORD,anthropic,🤖 OpenAI
+
+  # TikTok
+  - DOMAIN-SUFFIX,tiktokv.com,🎭 TikTok
+  - DOMAIN-SUFFIX,tiktokcdn.com,🎭 TikTok
+  - DOMAIN-KEYWORD,tiktok,🎭 TikTok
+
+  # 流媒体
+  - DOMAIN-KEYWORD,netflix,🎬 流媒体
+  - DOMAIN-KEYWORD,amazon,🎬 流媒体
+  - DOMAIN-KEYWORD,disney,🎬 流媒体
+  - DOMAIN-KEYWORD,hulu,🎬 流媒体
+  - DOMAIN-KEYWORD,hbo,🎬 流媒体
+  - DOMAIN-KEYWORD,spotify,🎬 流媒体
+
+  # 社交媒体
+  - DOMAIN-SUFFIX,t.me,📲 电报信息
+  - DOMAIN-SUFFIX,tdesktop.com,📲 电报信息
+  - DOMAIN-SUFFIX,telegra.ph,📲 电报信息
+  - DOMAIN-SUFFIX,telegram.me,📲 电报信息
+  - DOMAIN-SUFFIX,telegram.org,📲 电报信息
+  - DOMAIN-KEYWORD,telegram,📲 电报信息
+  - DOMAIN-KEYWORD,facebook,🌍 国外媒体
+  - DOMAIN-KEYWORD,instagram,🌍 国外媒体
+  - DOMAIN-KEYWORD,twitter,🌍 国外媒体
+  - DOMAIN-KEYWORD,youtube,🌍 国外媒体
+  - DOMAIN-SUFFIX,twimg.com,🌍 国外媒体
+  - DOMAIN-KEYWORD,gmail,🌍 国外媒体
+
+  # Google
+  - DOMAIN-KEYWORD,google,🚀 节点选择
+
+  # GitHub
+  - DOMAIN-SUFFIX,github.com,🚀 节点选择
+  - DOMAIN-SUFFIX,github.io,🚀 节点选择
+  - DOMAIN-KEYWORD,github,🚀 节点选择
+
+  # Microsoft
+  - DOMAIN-SUFFIX,microsoft.com,🚀 节点选择
+  - DOMAIN-SUFFIX,microsoftonline.com,🚀 节点选择
+  - DOMAIN-SUFFIX,office.com,🚀 节点选择
+  - DOMAIN-SUFFIX,office365.com,🚀 节点选择
+  - DOMAIN-SUFFIX,outlook.com,🚀 节点选择
+
+  # Apple
+  - DOMAIN-SUFFIX,apple.com,DIRECT
+  - DOMAIN-SUFFIX,icloud.com,DIRECT
+  - DOMAIN-SUFFIX,mzstatic.com,DIRECT
+
+  # 国内网站
+  - DOMAIN-SUFFIX,cn,DIRECT
+  - DOMAIN-KEYWORD,baidu,DIRECT
+  - DOMAIN-KEYWORD,alibaba,DIRECT
+  - DOMAIN-KEYWORD,taobao,DIRECT
+
+  # Final
+  - GEOIP,CN,DIRECT
+  - MATCH,🚀 节点选择
