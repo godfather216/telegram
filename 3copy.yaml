@@ -5,15 +5,14 @@ mode: Rule
 log-level: info
 external-controller: :9090
 proxies:
-  - {name: 加入我的频道t.me/CMLiussss解锁更多优选节点, server: cf.090227.xyz, port: 80, type: vless, uuid: d342d11e-d424-4583-b36e-524ab1f0bbbb, tls: false, tfo: false, skip-cert-verify: true, network: ws, ws-opts: {path: "/?ed=2560", headers: {Host: 20240504.652649797.workers.dev}}}
-  - {name: 反代优选域名-天城大佬提供维护, server: aliyu.gitgoogle.com, port: 2095, type: vless, uuid: d342d11e-d424-4583-b36e-524ab1f0bbbb, tls: false, tfo: false, skip-cert-verify: true, network: ws, ws-opts: {path: "/?ed=2560", headers: {Host: 20240504.652649797.workers.dev}}}
-  - {name: 反代优选域名-Mingyu大佬提供维护, server: bestproxy.onecf.eu.org, port: 80, type: vless, uuid: d342d11e-d424-4583-b36e-524ab1f0bbbb, tls: false, tfo: false, skip-cert-verify: true, network: ws, ws-opts: {path: "/?ed=2560", headers: {Host: 20240504.652649797.workers.dev}}}
-  - {name: 反代优选域名-OTC大佬提供维护, server: proxy.xxxxxxxx.tk, port: 80, type: vless, uuid: d342d11e-d424-4583-b36e-524ab1f0bbbb, tls: false, tfo: false, skip-cert-verify: true, network: ws, ws-opts: {path: "/?ed=2560", headers: {Host: 20240504.652649797.workers.dev}}}
-  - {name: 反代优选域名-KJKKK大佬提供维护, server: acjp.cloudflarest.link, port: 2052, type: vless, uuid: d342d11e-d424-4583-b36e-524ab1f0bbbb, tls: false, tfo: false, skip-cert-verify: true, network: ws, ws-opts: {path: "/?ed=2560", headers: {Host: 20240504.652649797.workers.dev}}}
-  - {name: cdn-b100.↗↘↗.eu.org反代优选域名, server: cdn-b100.xn--b6gac.eu.org, port: 80, type: vless, uuid: d342d11e-d424-4583-b36e-524ab1f0bbbb, tls: false, tfo: false, skip-cert-verify: true, network: ws, ws-opts: {path: "/?ed=2560", headers: {Host: 20240504.652649797.workers.dev}}}
-  - {name: www.wto.org, server: www.wto.org, port: 80, type: vless, uuid: d342d11e-d424-4583-b36e-524ab1f0bbbb, tls: false, tfo: false, skip-cert-verify: true, network: ws, ws-opts: {path: "/?ed=2560", headers: {Host: 20240504.652649797.workers.dev}}}
-  - {name: 🇸🇬 www.visa.com.sg, server: www.visa.com.sg, port: 80, type: vless, uuid: d342d11e-d424-4583-b36e-524ab1f0bbbb, tls: false, tfo: false, skip-cert-verify: true, network: ws, ws-opts: {path: "/?ed=2560", headers: {Host: 20240504.652649797.workers.dev}}}
-  - {name: 🇨🇳 icook.tw, server: icook.tw, port: 80, type: vless, uuid: d342d11e-d424-4583-b36e-524ab1f0bbbb, tls: false, tfo: false, skip-cert-verify: true, network: ws, ws-opts: {path: "/?ed=2560", headers: {Host: 20240504.652649797.workers.dev}}}
+  - {name: 反代优选1, server: aliyu.gitgoogle.com, port: 2095, type: vless, uuid: d342d11e-d424-4583-b36e-524ab1f0bbbb, tls: false, tfo: false, skip-cert-verify: true, network: ws, ws-opts: {path: "/?ed=2560", headers: {Host: 20240504.652649797.workers.dev}}}
+  - {name: 反代优选2, server: bestproxy.onecf.eu.org, port: 80, type: vless, uuid: d342d11e-d424-4583-b36e-524ab1f0bbbb, tls: false, tfo: false, skip-cert-verify: true, network: ws, ws-opts: {path: "/?ed=2560", headers: {Host: 20240504.652649797.workers.dev}}}
+  - {name: 反代优选3, server: proxy.xxxxxxxx.tk, port: 80, type: vless, uuid: d342d11e-d424-4583-b36e-524ab1f0bbbb, tls: false, tfo: false, skip-cert-verify: true, network: ws, ws-opts: {path: "/?ed=2560", headers: {Host: 20240504.652649797.workers.dev}}}
+  - {name: 反代优选4, server: acjp.cloudflarest.link, port: 2052, type: vless, uuid: d342d11e-d424-4583-b36e-524ab1f0bbbb, tls: false, tfo: false, skip-cert-verify: true, network: ws, ws-opts: {path: "/?ed=2560", headers: {Host: 20240504.652649797.workers.dev}}}
+  - {name: 反代优选5, server: cdn-b100.xn--b6gac.eu.org, port: 80, type: vless, uuid: d342d11e-d424-4583-b36e-524ab1f0bbbb, tls: false, tfo: false, skip-cert-verify: true, network: ws, ws-opts: {path: "/?ed=2560", headers: {Host: 20240504.652649797.workers.dev}}}
+  - {name: 反代优选6, server: www.wto.org, port: 80, type: vless, uuid: d342d11e-d424-4583-b36e-524ab1f0bbbb, tls: false, tfo: false, skip-cert-verify: true, network: ws, ws-opts: {path: "/?ed=2560", headers: {Host: 20240504.652649797.workers.dev}}}
+  - {name: 🇸🇬 sg 4, server: www.visa.com.sg, port: 80, type: vless, uuid: d342d11e-d424-4583-b36e-524ab1f0bbbb, tls: false, tfo: false, skip-cert-verify: true, network: ws, ws-opts: {path: "/?ed=2560", headers: {Host: 20240504.652649797.workers.dev}}}
+  - {name: 🇨🇳 tw , server: icook.tw, port: 80, type: vless, uuid: d342d11e-d424-4583-b36e-524ab1f0bbbb, tls: false, tfo: false, skip-cert-verify: true, network: ws, ws-opts: {path: "/?ed=2560", headers: {Host: 20240504.652649797.workers.dev}}}
   - {name: 🇭🇰 HK, server: 8.217.145.40, port: 2086, type: vless, uuid: d342d11e-d424-4583-b36e-524ab1f0bbbb, tls: false, tfo: false, skip-cert-verify: true, network: ws, ws-opts: {path: "/?ed=2560", headers: {Host: 20240504.652649797.workers.dev}}}
   - {name: 🇭🇰 HK 2, server: 8.218.65.171, port: 2082, type: vless, uuid: d342d11e-d424-4583-b36e-524ab1f0bbbb, tls: false, tfo: false, skip-cert-verify: true, network: ws, ws-opts: {path: "/?ed=2560", headers: {Host: 20240504.652649797.workers.dev}}}
   - {name: 🇭🇰 HK 3, server: 8.218.3.198, port: 2095, type: vless, uuid: d342d11e-d424-4583-b36e-524ab1f0bbbb, tls: false, tfo: false, skip-cert-verify: true, network: ws, ws-opts: {path: "/?ed=2560", headers: {Host: 20240504.652649797.workers.dev}}}
@@ -58,15 +57,14 @@ proxy-groups:
   - name: ☑️ 手动切换
     type: select
     proxies:
-      - 加入我的频道t.me/CMLiussss解锁更多优选节点
-      - 反代优选域名-天城大佬提供维护
-      - 反代优选域名-Mingyu大佬提供维护
-      - 反代优选域名-OTC大佬提供维护
-      - 反代优选域名-KJKKK大佬提供维护
-      - cdn-b100.↗↘↗.eu.org反代优选域名
-      - www.wto.org
-      - 🇸🇬 www.visa.com.sg
-      - 🇨🇳 icook.tw
+      - 反代优选1
+      - 反代优选2
+      - 反代优选3
+      - 反代优选4
+      - 反代优选5
+      - 反代优选6
+      - 🇸🇬 sg 4
+      - 🇨🇳 tw
       - 🇭🇰 HK
       - 🇭🇰 HK 2
       - 🇭🇰 HK 3
@@ -105,15 +103,14 @@ proxy-groups:
     interval: 300
     tolerance: 50
     proxies:
-      - 加入我的频道t.me/CMLiussss解锁更多优选节点
-      - 反代优选域名-天城大佬提供维护
-      - 反代优选域名-Mingyu大佬提供维护
-      - 反代优选域名-OTC大佬提供维护
-      - 反代优选域名-KJKKK大佬提供维护
-      - cdn-b100.↗↘↗.eu.org反代优选域名
-      - www.wto.org
-      - 🇸🇬 www.visa.com.sg
-      - 🇨🇳 icook.tw
+      - 反代优选1
+      - 反代优选2
+      - 反代优选3
+      - 反代优选4
+      - 反代优选5
+      - 反代优选6
+      - 🇸🇬 sg 4
+      - 🇨🇳 tw
       - 🇭🇰 HK
       - 🇭🇰 HK 2
       - 🇭🇰 HK 3
@@ -160,22 +157,20 @@ proxy-groups:
       - ♻️ 自动选择
       - ☑️ 手动切换
       - DIRECT
-      - 加入我的频道t.me/CMLiussss解锁更多优选节点
   - name: 🌍 国外媒体
     type: select
     proxies:
       - 🚀 节点选择
       - ♻️ 自动选择
       - 🎯 全球直连
-      - 加入我的频道t.me/CMLiussss解锁更多优选节点
-      - 反代优选域名-天城大佬提供维护
-      - 反代优选域名-Mingyu大佬提供维护
-      - 反代优选域名-OTC大佬提供维护
-      - 反代优选域名-KJKKK大佬提供维护
-      - cdn-b100.↗↘↗.eu.org反代优选域名
-      - www.wto.org
-      - 🇸🇬 www.visa.com.sg
-      - 🇨🇳 icook.tw
+      - 反代优选1
+      - 反代优选2
+      - 反代优选3
+      - 反代优选4
+      - 反代优选5
+      - 反代优选6
+      - 🇸🇬 sg 4
+      - 🇨🇳 tw
       - 🇭🇰 HK
       - 🇭🇰 HK 2
       - 🇭🇰 HK 3
@@ -213,15 +208,14 @@ proxy-groups:
     proxies:
       - 🚀 节点选择
       - 🎯 全球直连
-      - 加入我的频道t.me/CMLiussss解锁更多优选节点
-      - 反代优选域名-天城大佬提供维护
-      - 反代优选域名-Mingyu大佬提供维护
-      - 反代优选域名-OTC大佬提供维护
-      - 反代优选域名-KJKKK大佬提供维护
-      - cdn-b100.↗↘↗.eu.org反代优选域名
-      - www.wto.org
-      - 🇸🇬 www.visa.com.sg
-      - 🇨🇳 icook.tw
+      - 反代优选1
+      - 反代优选2
+      - 反代优选3
+      - 反代优选4
+      - 反代优选5
+      - 反代优选6
+      - 🇸🇬 sg 4
+      - 🇨🇳 tw
       - 🇭🇰 HK
       - 🇭🇰 HK 2
       - 🇭🇰 HK 3
@@ -267,15 +261,14 @@ proxy-groups:
     proxies:
       - 🎯 全球直连
       - 🚀 节点选择
-      - 加入我的频道t.me/CMLiussss解锁更多优选节点
-      - 反代优选域名-天城大佬提供维护
-      - 反代优选域名-Mingyu大佬提供维护
-      - 反代优选域名-OTC大佬提供维护
-      - 反代优选域名-KJKKK大佬提供维护
-      - cdn-b100.↗↘↗.eu.org反代优选域名
-      - www.wto.org
-      - 🇸🇬 www.visa.com.sg
-      - 🇨🇳 icook.tw
+      - 反代优选1
+      - 反代优选2
+      - 反代优选3
+      - 反代优选4
+      - 反代优选5
+      - 反代优选6
+      - 🇸🇬 sg 4
+      - 🇨🇳 tw
       - 🇭🇰 HK
       - 🇭🇰 HK 2
       - 🇭🇰 HK 3
@@ -313,15 +306,14 @@ proxy-groups:
     proxies:
       - 🚀 节点选择
       - 🎯 全球直连
-      - 加入我的频道t.me/CMLiussss解锁更多优选节点
-      - 反代优选域名-天城大佬提供维护
-      - 反代优选域名-Mingyu大佬提供维护
-      - 反代优选域名-OTC大佬提供维护
-      - 反代优选域名-KJKKK大佬提供维护
-      - cdn-b100.↗↘↗.eu.org反代优选域名
-      - www.wto.org
-      - 🇸🇬 www.visa.com.sg
-      - 🇨🇳 icook.tw
+      - 反代优选1
+      - 反代优选2
+      - 反代优选3
+      - 反代优选4
+      - 反代优选5
+      - 反代优选6
+      - 🇸🇬 sg 4
+      - 🇨🇳 tw
       - 🇭🇰 HK
       - 🇭🇰 HK 2
       - 🇭🇰 HK 3
@@ -360,15 +352,14 @@ proxy-groups:
       - 🚀 节点选择
       - 🎯 全球直连
       - ♻️ 自动选择
-      - 加入我的频道t.me/CMLiussss解锁更多优选节点
-      - 反代优选域名-天城大佬提供维护
-      - 反代优选域名-Mingyu大佬提供维护
-      - 反代优选域名-OTC大佬提供维护
-      - 反代优选域名-KJKKK大佬提供维护
-      - cdn-b100.↗↘↗.eu.org反代优选域名
-      - www.wto.org
-      - 🇸🇬 www.visa.com.sg
-      - 🇨🇳 icook.tw
+      - 反代优选1
+      - 反代优选2
+      - 反代优选3
+      - 反代优选4
+      - 反代优选5
+      - 反代优选6
+      - 🇸🇬 sg 4
+      - 🇨🇳 tw
       - 🇭🇰 HK
       - 🇭🇰 HK 2
       - 🇭🇰 HK 3
@@ -423,15 +414,14 @@ proxy-groups:
       - 🚀 节点选择
       - 🎯 全球直连
       - ♻️ 自动选择
-      - 加入我的频道t.me/CMLiussss解锁更多优选节点
-      - 反代优选域名-天城大佬提供维护
-      - 反代优选域名-Mingyu大佬提供维护
-      - 反代优选域名-OTC大佬提供维护
-      - 反代优选域名-KJKKK大佬提供维护
-      - cdn-b100.↗↘↗.eu.org反代优选域名
-      - www.wto.org
-      - 🇸🇬 www.visa.com.sg
-      - 🇨🇳 icook.tw
+      - 反代优选1
+      - 反代优选2
+      - 反代优选3
+      - 反代优选4
+      - 反代优选5
+      - 反代优选6
+      - 🇸🇬 sg 4
+      - 🇨🇳 tw
       - 🇭🇰 HK
       - 🇭🇰 HK 2
       - 🇭🇰 HK 3
