@@ -52,7 +52,7 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204
   provider2:
     type: http
-    url: ""
+    url: "url"
     interval: 3600
     path: ./provider2.yaml
     health-check:
