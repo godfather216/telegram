@@ -339,8 +339,8 @@ proxy-groups:
     interval: 300
     tolerance: 50
     use:
-      - provider1-1:
-      - provider1-2:
+     - provider1-1:
+     - provider1-2:
   - name: 🔄 负载均衡 (散列)
     type: load-balance
     strategy: consistent-hashing
