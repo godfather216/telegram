@@ -1,197 +1,112 @@
-#SUBSCRIBED https://alvless.filegear-sg.me/TCorg
 port: 7890
 socks-port: 7891
 allow-lan: true
 mode: Rule
 log-level: info
 external-controller: :9090
-proxies:
-  - {name: 电信快速, server: aliyun.2096.us.kg, port: 2096, type: vless, uuid: 95a7daa2-a76c-4ecb-9c84-1948c4e92666, tls: true, tfo: false, skip-cert-verify: true, servername: pages.dnsorg.filegear-sg.me, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: pages.dnsorg.filegear-sg.me}}, alterId: 0, cipher: "", flow: "", sni: pages.dnsorg.filegear-sg.me}
-  - {name: 移动快速, server: aliyun.2096.us.kg, port: 2096, type: vless, uuid: 95a7daa2-a76c-4ecb-9c84-1948c4e92666, tls: true, tfo: false, skip-cert-verify: true, servername: pages.dnsorg.filegear-sg.me, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: pages.dnsorg.filegear-sg.me}}, alterId: 0, cipher: "", flow: "", sni: pages.dnsorg.filegear-sg.me}
-  - {name: 联通快速, server: aliyun.2096.us.kg, port: 2096, type: vless, uuid: 95a7daa2-a76c-4ecb-9c84-1948c4e92666, tls: true, tfo: false, skip-cert-verify: true, servername: pages.dnsorg.filegear-sg.me, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: pages.dnsorg.filegear-sg.me}}, alterId: 0, cipher: "", flow: "", sni: pages.dnsorg.filegear-sg.me}
-  - {name: 优选1, server: aliyun.2096.us.kg, port: 2096, type: vless, uuid: 95a7daa2-a76c-4ecb-9c84-1948c4e92666, tls: true, tfo: false, skip-cert-verify: true, servername: pages.dnsorg.filegear-sg.me, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: pages.dnsorg.filegear-sg.me}}, alterId: 0, cipher: "", flow: "", sni: pages.dnsorg.filegear-sg.me}
-  - {name: 优选2, server: aliyun.2096.us.kg, port: 2096, type: vless, uuid: 95a7daa2-a76c-4ecb-9c84-1948c4e92666, tls: true, tfo: false, skip-cert-verify: true, servername: pages.dnsorg.filegear-sg.me, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: pages.dnsorg.filegear-sg.me}}, alterId: 0, cipher: "", flow: "", sni: pages.dnsorg.filegear-sg.me}
-  - {name: 🇭🇰 HK1, server: 46.3.104.169, port: 53547, type: vless, uuid: 95a7daa2-a76c-4ecb-9c84-1948c4e92666, tls: true, tfo: false, skip-cert-verify: true, servername: pages.dnsorg.filegear-sg.me, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: pages.dnsorg.filegear-sg.me}}, alterId: 0, cipher: "", flow: "", sni: pages.dnsorg.filegear-sg.me}
-  - {name: 🇭🇰 HK2, server: 103.30.77.65, port: 16443, type: vless, uuid: 95a7daa2-a76c-4ecb-9c84-1948c4e92666, tls: true, tfo: false, skip-cert-verify: true, servername: pages.dnsorg.filegear-sg.me, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: pages.dnsorg.filegear-sg.me}}, alterId: 0, cipher: "", flow: "", sni: pages.dnsorg.filegear-sg.me}
-  - {name: 🇭🇰 HK3, server: 47.57.12.238, port: 34237, type: vless, uuid: 95a7daa2-a76c-4ecb-9c84-1948c4e92666, tls: true, tfo: false, skip-cert-verify: true, servername: pages.dnsorg.filegear-sg.me, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: pages.dnsorg.filegear-sg.me}}, alterId: 0, cipher: "", flow: "", sni: pages.dnsorg.filegear-sg.me}
-  - {name: 🇭🇰 HK4, server: 116.204.210.11, port: 443, type: vless, uuid: 95a7daa2-a76c-4ecb-9c84-1948c4e92666, tls: true, tfo: false, skip-cert-verify: true, servername: pages.dnsorg.filegear-sg.me, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: pages.dnsorg.filegear-sg.me}}, alterId: 0, cipher: "", flow: "", sni: pages.dnsorg.filegear-sg.me}
-  - {name: 🇭🇰 HK5, server: 47.243.90.180, port: 2053, type: vless, uuid: 95a7daa2-a76c-4ecb-9c84-1948c4e92666, tls: true, tfo: false, skip-cert-verify: true, servername: pages.dnsorg.filegear-sg.me, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: pages.dnsorg.filegear-sg.me}}, alterId: 0, cipher: "", flow: "", sni: pages.dnsorg.filegear-sg.me}
-  - {name: 🇭🇰 HK6, server: 46.3.105.223, port: 25623, type: vless, uuid: 95a7daa2-a76c-4ecb-9c84-1948c4e92666, tls: true, tfo: false, skip-cert-verify: true, servername: pages.dnsorg.filegear-sg.me, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: pages.dnsorg.filegear-sg.me}}, alterId: 0, cipher: "", flow: "", sni: pages.dnsorg.filegear-sg.me}
-  - {name: 🇭🇰 HK7, server: 103.30.76.159, port: 8081, type: vless, uuid: 95a7daa2-a76c-4ecb-9c84-1948c4e92666, tls: true, tfo: false, skip-cert-verify: true, servername: pages.dnsorg.filegear-sg.me, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: pages.dnsorg.filegear-sg.me}}, alterId: 0, cipher: "", flow: "", sni: pages.dnsorg.filegear-sg.me}
-  - {name: 🇭🇰 HK8, server: 203.198.16.128, port: 81, type: vless, uuid: 95a7daa2-a76c-4ecb-9c84-1948c4e92666, tls: true, tfo: false, skip-cert-verify: true, servername: pages.dnsorg.filegear-sg.me, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: pages.dnsorg.filegear-sg.me}}, alterId: 0, cipher: "", flow: "", sni: pages.dnsorg.filegear-sg.me}
-  - {name: 🇭🇰 HK9, server: 46.3.104.128, port: 8858, type: vless, uuid: 95a7daa2-a76c-4ecb-9c84-1948c4e92666, tls: true, tfo: false, skip-cert-verify: true, servername: pages.dnsorg.filegear-sg.me, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: pages.dnsorg.filegear-sg.me}}, alterId: 0, cipher: "", flow: "", sni: pages.dnsorg.filegear-sg.me}
-  - {name: 🇭🇰 HK10, server: 103.30.78.25, port: 30277, type: vless, uuid: 95a7daa2-a76c-4ecb-9c84-1948c4e92666, tls: true, tfo: false, skip-cert-verify: true, servername: pages.dnsorg.filegear-sg.me, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: pages.dnsorg.filegear-sg.me}}, alterId: 0, cipher: "", flow: "", sni: pages.dnsorg.filegear-sg.me}
-  - {name: 🇸🇬 SG1, server: 13.229.75.206, port: 2086, type: vless, uuid: 95a7daa2-a76c-4ecb-9c84-1948c4e92666, tls: true, tfo: false, skip-cert-verify: true, servername: pages.dnsorg.filegear-sg.me, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: pages.dnsorg.filegear-sg.me}}}
-  - {name: 🇸🇬 SG2, server: 45.14.107.197, port: 24290, type: vless, uuid: 95a7daa2-a76c-4ecb-9c84-1948c4e92666, tls: true, tfo: false, skip-cert-verify: true, servername: pages.dnsorg.filegear-sg.me, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: pages.dnsorg.filegear-sg.me}}}
-  - {name: 🇸🇬 SG3, server: 34.126.119.120, port: 8443, type: vless, uuid: 95a7daa2-a76c-4ecb-9c84-1948c4e92666, tls: true, tfo: false, skip-cert-verify: true, servername: pages.dnsorg.filegear-sg.me, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: pages.dnsorg.filegear-sg.me}}}
-  - {name: 🇸🇬 SG4, server: 47.128.255.240, port: 443, type: vless, uuid: 95a7daa2-a76c-4ecb-9c84-1948c4e92666, tls: true, tfo: false, skip-cert-verify: true, servername: pages.dnsorg.filegear-sg.me, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: pages.dnsorg.filegear-sg.me}}}
-  - {name: 🇸🇬 SG5, server: 89.28.239.189, port: 51066, type: vless, uuid: 95a7daa2-a76c-4ecb-9c84-1948c4e92666, tls: true, tfo: false, skip-cert-verify: true, servername: pages.dnsorg.filegear-sg.me, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: pages.dnsorg.filegear-sg.me}}}
-  - {name: 🇸🇬 SG6, server: 47.236.10.182, port: 2096, type: vless, uuid: 95a7daa2-a76c-4ecb-9c84-1948c4e92666, tls: true, tfo: false, skip-cert-verify: true, servername: pages.dnsorg.filegear-sg.me, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: pages.dnsorg.filegear-sg.me}}}
-  - {name: 🇸🇬 SG7, server: 47.236.189.92, port: 2083, type: vless, uuid: 95a7daa2-a76c-4ecb-9c84-1948c4e92666, tls: true, tfo: false, skip-cert-verify: true, servername: pages.dnsorg.filegear-sg.me, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: pages.dnsorg.filegear-sg.me}}}
-  - {name: 🇸🇬 SG8, server: 47.236.117.48, port: 2083, type: vless, uuid: 95a7daa2-a76c-4ecb-9c84-1948c4e92666, tls: true, tfo: false, skip-cert-verify: true, servername: pages.dnsorg.filegear-sg.me, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: pages.dnsorg.filegear-sg.me}}}
-  - {name: 🇸🇬 SG9, server: 47.237.86.185, port: 2087, type: vless, uuid: 95a7daa2-a76c-4ecb-9c84-1948c4e92666, tls: true, tfo: false, skip-cert-verify: true, servername: pages.dnsorg.filegear-sg.me, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: pages.dnsorg.filegear-sg.me}}}
-  - {name: 🇸🇬 SG10, server: 47.236.237.90, port: 2053, type: vless, uuid: 95a7daa2-a76c-4ecb-9c84-1948c4e92666, tls: true, tfo: false, skip-cert-verify: true, servername: pages.dnsorg.filegear-sg.me, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: pages.dnsorg.filegear-sg.me}}}
-  - {name: 🇯🇵 JP1, server: 3.113.64.82, port: 443, type: vless, uuid: 95a7daa2-a76c-4ecb-9c84-1948c4e92666, tls: true, tfo: false, skip-cert-verify: true, servername: pages.dnsorg.filegear-sg.me, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: pages.dnsorg.filegear-sg.me}}}
-  - {name: 🇯🇵 JP2, server: 123.108.70.96, port: 29646, type: vless, uuid: 95a7daa2-a76c-4ecb-9c84-1948c4e92666, tls: true, tfo: false, skip-cert-verify: true, servername: pages.dnsorg.filegear-sg.me, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: pages.dnsorg.filegear-sg.me}}}
-  - {name: 🇯🇵 JP3, server: 167.88.185.204, port: 443, type: vless, uuid: 95a7daa2-a76c-4ecb-9c84-1948c4e92666, tls: true, tfo: false, skip-cert-verify: true, servername: pages.dnsorg.filegear-sg.me, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: pages.dnsorg.filegear-sg.me}}}
-  - {name: 🇯🇵 JP4, server: 103.232.214.11, port: 8443, type: vless, uuid: 95a7daa2-a76c-4ecb-9c84-1948c4e92666, tls: true, tfo: false, skip-cert-verify: true, servername: pages.dnsorg.filegear-sg.me, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: pages.dnsorg.filegear-sg.me}}}
-  - {name: 🇯🇵 JP5, server: 167.88.186.233, port: 30829, type: vless, uuid: 95a7daa2-a76c-4ecb-9c84-1948c4e92666, tls: true, tfo: false, skip-cert-verify: true, servername: pages.dnsorg.filegear-sg.me, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: pages.dnsorg.filegear-sg.me}}}
-  - {name: 🇯🇵 JP6, server: 20.78.32.117, port: 38323, type: vless, uuid: 95a7daa2-a76c-4ecb-9c84-1948c4e92666, tls: true, tfo: false, skip-cert-verify: true, servername: pages.dnsorg.filegear-sg.me, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: pages.dnsorg.filegear-sg.me}}}
-  - {name: 🇯🇵 JP7, server: 103.20.199.101, port: 33004, type: vless, uuid: 95a7daa2-a76c-4ecb-9c84-1948c4e92666, tls: true, tfo: false, skip-cert-verify: true, servername: pages.dnsorg.filegear-sg.me, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: pages.dnsorg.filegear-sg.me}}}
-  - {name: 🇯🇵 JP8, server: 35.200.25.49, port: 2087, type: vless, uuid: 95a7daa2-a76c-4ecb-9c84-1948c4e92666, tls: true, tfo: false, skip-cert-verify: true, servername: pages.dnsorg.filegear-sg.me, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: pages.dnsorg.filegear-sg.me}}}
-  - {name: 🇯🇵 JP9, server: 38.47.96.138, port: 23005, type: vless, uuid: 95a7daa2-a76c-4ecb-9c84-1948c4e92666, tls: true, tfo: false, skip-cert-verify: true, servername: pages.dnsorg.filegear-sg.me, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: pages.dnsorg.filegear-sg.me}}}
-  - {name: 🇯🇵 JP10, server: 193.32.151.18, port: 47682, type: vless, uuid: 95a7daa2-a76c-4ecb-9c84-1948c4e92666, tls: true, tfo: false, skip-cert-verify: true, servername: pages.dnsorg.filegear-sg.me, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: pages.dnsorg.filegear-sg.me}}}
-  - {name: 🇨🇳 TW1, server: 211.75.243.91, port: 16764, type: vless, uuid: 95a7daa2-a76c-4ecb-9c84-1948c4e92666, tls: true, tfo: false, skip-cert-verify: true, servername: pages.dnsorg.filegear-sg.me, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: pages.dnsorg.filegear-sg.me}}}
-  - {name: 🇨🇳 TW2, server: 203.69.248.40, port: 27381, type: vless, uuid: 95a7daa2-a76c-4ecb-9c84-1948c4e92666, tls: true, tfo: false, skip-cert-verify: true, servername: pages.dnsorg.filegear-sg.me, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: pages.dnsorg.filegear-sg.me}}}
-  - {name: 🇨🇳 TW3, server: 166.0.199.138, port: 8268, type: vless, uuid: 95a7daa2-a76c-4ecb-9c84-1948c4e92666, tls: true, tfo: false, skip-cert-verify: true, servername: pages.dnsorg.filegear-sg.me, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: pages.dnsorg.filegear-sg.me}}}
-  - {name: 🇨🇳 TW4, server: 61.220.128.226, port: 23555, type: vless, uuid: 95a7daa2-a76c-4ecb-9c84-1948c4e92666, tls: true, tfo: false, skip-cert-verify: true, servername: pages.dnsorg.filegear-sg.me, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: pages.dnsorg.filegear-sg.me}}}
-  - {name: 🇨🇳 TW5, server: 141.11.86.228, port: 34237, type: vless, uuid: 95a7daa2-a76c-4ecb-9c84-1948c4e92666, tls: true, tfo: false, skip-cert-verify: true, servername: pages.dnsorg.filegear-sg.me, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: pages.dnsorg.filegear-sg.me}}}
-  - {name: 🇨🇳 TW6, server: 141.11.87.105, port: 34237, type: vless, uuid: 95a7daa2-a76c-4ecb-9c84-1948c4e92666, tls: true, tfo: false, skip-cert-verify: true, servername: pages.dnsorg.filegear-sg.me, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: pages.dnsorg.filegear-sg.me}}}
-  - {name: 🇨🇳 TW7, server: 141.11.87.136, port: 34237, type: vless, uuid: 95a7daa2-a76c-4ecb-9c84-1948c4e92666, tls: true, tfo: false, skip-cert-verify: true, servername: pages.dnsorg.filegear-sg.me, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: pages.dnsorg.filegear-sg.me}}}
-  - {name: 🇨🇳 TW8, server: 103.137.63.37, port: 46832, type: vless, uuid: 95a7daa2-a76c-4ecb-9c84-1948c4e92666, tls: true, tfo: false, skip-cert-verify: true, servername: pages.dnsorg.filegear-sg.me, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: pages.dnsorg.filegear-sg.me}}}
-  - {name: 🇨🇳 TW9, server: 141.11.86.86, port: 34237, type: vless, uuid: 95a7daa2-a76c-4ecb-9c84-1948c4e92666, tls: true, tfo: false, skip-cert-verify: true, servername: pages.dnsorg.filegear-sg.me, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: pages.dnsorg.filegear-sg.me}}}
-  - {name: 🇨🇳 TW10, server: 61.220.65.189, port: 26832, type: vless, uuid: 95a7daa2-a76c-4ecb-9c84-1948c4e92666, tls: true, tfo: false, skip-cert-verify: true, servername: pages.dnsorg.filegear-sg.me, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: pages.dnsorg.filegear-sg.me}}}
-  - {name: 🇰🇷 KR1, server: 146.56.41.180, port: 34237, type: vless, uuid: 95a7daa2-a76c-4ecb-9c84-1948c4e92666, tls: true, tfo: false, skip-cert-verify: true, servername: pages.dnsorg.filegear-sg.me, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: pages.dnsorg.filegear-sg.me}}}
-  - {name: 🇰🇷 KR2, server: 146.56.190.51, port: 34237, type: vless, uuid: 95a7daa2-a76c-4ecb-9c84-1948c4e92666, tls: true, tfo: false, skip-cert-verify: true, servername: pages.dnsorg.filegear-sg.me, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: pages.dnsorg.filegear-sg.me}}}
-  - {name: 🇰🇷 KR3, server: 43.201.60.107, port: 10002, type: vless, uuid: 95a7daa2-a76c-4ecb-9c84-1948c4e92666, tls: true, tfo: false, skip-cert-verify: true, servername: pages.dnsorg.filegear-sg.me, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: pages.dnsorg.filegear-sg.me}}}
-  - {name: 🇰🇷 KR4, server: 129.154.223.89, port: 15800, type: vless, uuid: 95a7daa2-a76c-4ecb-9c84-1948c4e92666, tls: true, tfo: false, skip-cert-verify: true, servername: pages.dnsorg.filegear-sg.me, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: pages.dnsorg.filegear-sg.me}}}
-  - {name: 🇰🇷 KR5, server: 221.150.147.216, port: 13720, type: vless, uuid: 95a7daa2-a76c-4ecb-9c84-1948c4e92666, tls: true, tfo: false, skip-cert-verify: true, servername: pages.dnsorg.filegear-sg.me, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: pages.dnsorg.filegear-sg.me}}}
-  - {name: 🇰🇷 KR6, server: 161.129.34.56, port: 1092, type: vless, uuid: 95a7daa2-a76c-4ecb-9c84-1948c4e92666, tls: true, tfo: false, skip-cert-verify: true, servername: pages.dnsorg.filegear-sg.me, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: pages.dnsorg.filegear-sg.me}}}
-  - {name: 🇰🇷 KR7, server: 14.56.80.32, port: 28080, type: vless, uuid: 95a7daa2-a76c-4ecb-9c84-1948c4e92666, tls: true, tfo: false, skip-cert-verify: true, servername: pages.dnsorg.filegear-sg.me, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: pages.dnsorg.filegear-sg.me}}}
-  - {name: 🇰🇷 KR8, server: 220.83.142.133, port: 27015, type: vless, uuid: 95a7daa2-a76c-4ecb-9c84-1948c4e92666, tls: true, tfo: false, skip-cert-verify: true, servername: pages.dnsorg.filegear-sg.me, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: pages.dnsorg.filegear-sg.me}}}
-  - {name: 🇰🇷 KR9, server: 118.41.119.123, port: 12000, type: vless, uuid: 95a7daa2-a76c-4ecb-9c84-1948c4e92666, tls: true, tfo: false, skip-cert-verify: true, servername: pages.dnsorg.filegear-sg.me, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: pages.dnsorg.filegear-sg.me}}}
-  - {name: 🇰🇷 KR10, server: 211.221.212.37, port: 33848, type: vless, uuid: 95a7daa2-a76c-4ecb-9c84-1948c4e92666, tls: true, tfo: false, skip-cert-verify: true, servername: pages.dnsorg.filegear-sg.me, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: pages.dnsorg.filegear-sg.me}}}
-  - {name: 🇺🇸 US1, server: 38.47.111.79, port: 44729, type: vless, uuid: 95a7daa2-a76c-4ecb-9c84-1948c4e92666, tls: true, tfo: false, skip-cert-verify: true, servername: pages.dnsorg.filegear-sg.me, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: pages.dnsorg.filegear-sg.me}}}
-  - {name: 🇺🇸 US2, server: 154.17.5.18, port: 49887, type: vless, uuid: 95a7daa2-a76c-4ecb-9c84-1948c4e92666, tls: true, tfo: false, skip-cert-verify: true, servername: pages.dnsorg.filegear-sg.me, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: pages.dnsorg.filegear-sg.me}}}
-  - {name: 🇺🇸 US3, server: 65.75.194.18, port: 13888, type: vless, uuid: 95a7daa2-a76c-4ecb-9c84-1948c4e92666, tls: true, tfo: false, skip-cert-verify: true, servername: pages.dnsorg.filegear-sg.me, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: pages.dnsorg.filegear-sg.me}}}
-  - {name: 🇺🇸 US4, server: 43.153.103.203, port: 443, type: vless, uuid: 95a7daa2-a76c-4ecb-9c84-1948c4e92666, tls: true, tfo: false, skip-cert-verify: true, servername: pages.dnsorg.filegear-sg.me, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: pages.dnsorg.filegear-sg.me}}}
-  - {name: 🇺🇸 US5, server: 172.84.92.154, port: 20897, type: vless, uuid: 95a7daa2-a76c-4ecb-9c84-1948c4e92666, tls: true, tfo: false, skip-cert-verify: true, servername: pages.dnsorg.filegear-sg.me, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: pages.dnsorg.filegear-sg.me}}}
-  - {name: 🇺🇸 US6, server: 38.59.245.253, port: 5433, type: vless, uuid: 95a7daa2-a76c-4ecb-9c84-1948c4e92666, tls: true, tfo: false, skip-cert-verify: true, servername: pages.dnsorg.filegear-sg.me, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: pages.dnsorg.filegear-sg.me}}}
-  - {name: 🇺🇸 US7, server: 154.17.29.48, port: 57372, type: vless, uuid: 95a7daa2-a76c-4ecb-9c84-1948c4e92666, tls: true, tfo: false, skip-cert-verify: true, servername: pages.dnsorg.filegear-sg.me, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: pages.dnsorg.filegear-sg.me}}}
-  - {name: 🇺🇸 US8, server: 154.21.81.59, port: 59265, type: vless, uuid: 95a7daa2-a76c-4ecb-9c84-1948c4e92666, tls: true, tfo: false, skip-cert-verify: true, servername: pages.dnsorg.filegear-sg.me, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: pages.dnsorg.filegear-sg.me}}}
-  - {name: 🇺🇸 US9, server: 154.17.230.156, port: 44999, type: vless, uuid: 95a7daa2-a76c-4ecb-9c84-1948c4e92666, tls: true, tfo: false, skip-cert-verify: true, servername: pages.dnsorg.filegear-sg.me, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: pages.dnsorg.filegear-sg.me}}}
-  - {name: 🇺🇸 US10, server: 154.17.228.15, port: 18478, type: vless, uuid: 95a7daa2-a76c-4ecb-9c84-1948c4e92666, tls: true, tfo: false, skip-cert-verify: true, servername: pages.dnsorg.filegear-sg.me, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: pages.dnsorg.filegear-sg.me}}}
+dns:
+  enable: true
+  ipv6: false
+  listen: 0.0.0.0:53
+  default-nameserver: [223.5.5.5, 119.29.29.29]
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  fake-ip-filter:
+    - '*.lan'
+    - localhost.ptlogin2.qq.com
+  nameserver:
+    - https://doh.pub/dns-query
+    - https://dns.alidns.com/dns-query
+  fallback:
+    - https://doh.dns.sb/dns-query
+    - https://dns.cloudflare.com/dns-query
+    - https://dns.twnic.tw/dns-query
+    - tls://8.8.4.4:853
+  fallback-filter:
+    geoip: true
+    geoip-code: CN
+    ipcidr:
+      - 240.0.0.0/4
+      - 0.0.0.0/32
+tun:
+  enable: true
+  stack: system
+  dns-hijack:
+    - any:53
+  auto-route: true
+  auto-detect-interface: true
+profile:
+  store-selected: true
+  store-fake-ip: true
+
+tcp-concurrent: true
+proxy-providers:
+  provider1:
+    type: http
+    url: "https://alvless.filegear-sg.me/TCorg"
+    interval: 3600
+    path: ./provider1.yaml
+    health-check:
+      enable: true
+      interval: 600
+      url: http://www.gstatic.com/generate_204
+  provider2:
+    type: http
+    url: ""
+    interval: 3600
+    path: ./provider2.yaml
+    health-check:
+      enable: true
+      interval: 600
+      url: http://www.gstatic.com/generate_204
 proxy-groups:
   - name: 🚀 节点选择
     type: select
     proxies:
       - ♻️ 自动选择
+      - 🔮 负载均衡 (轮询)
+      - 🔄 负载均衡 (散列)
+      - 🔯 故障转移
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
       - 🇸🇬 狮城节点
       - 🇯🇵 日本节点
       - 🇺🇲 美国节点
       - 🇰🇷 韩国节点
-      - 📶 官方优选
+      - 🇪🇺 欧洲节点
       - ☑️ 手动切换
       - DIRECT
-  - name: ☑️ 手动切换
+  - name: 🎙️ Tiktok
     type: select
     proxies:
-      - 电信快速
-      - 移动快速
-      - 联通快速
-      - 优选1
-      - 优选2
-      - 🇭🇰 HK1
-      - 🇭🇰 HK2
-      - 🇭🇰 HK3
-      - 🇭🇰 HK4
-      - 🇭🇰 HK5
-      - 🇭🇰 HK6
-      - 🇭🇰 HK7
-      - 🇭🇰 HK8
-      - 🇭🇰 HK9
-      - 🇭🇰 HK10
-      - 🇨🇳 TW1
-      - 🇨🇳 TW2
-      - 🇨🇳 TW3
-      - 🇨🇳 TW4
-      - 🇨🇳 TW5
-      - 🇨🇳 TW6
-      - 🇨🇳 TW7
-      - 🇨🇳 TW8
-      - 🇨🇳 TW9
-      - 🇨🇳 TW10
-      - 🇰🇷 KR1
-      - 🇰🇷 KR2
-      - 🇰🇷 KR3
-      - 🇰🇷 KR4
-      - 🇰🇷 KR5
-      - 🇰🇷 KR6
-      - 🇰🇷 KR7
-      - 🇰🇷 KR8
-      - 🇰🇷 KR9
-      - 🇰🇷 KR10
-      - 🇺🇸 US1
-      - 🇺🇸 US2
-      - 🇺🇸 US3
-      - 🇺🇸 US4
-      - 🇺🇸 US5
-      - 🇺🇸 US6
-      - 🇺🇸 US7
-      - 🇺🇸 US8
-      - 🇺🇸 US9
-      - 🇺🇸 US10
-      - 🇸🇬 SG1
-      - 🇸🇬 SG2
-      - 🇸🇬 SG3
-      - 🇸🇬 SG4
-      - 🇸🇬 SG5
-      - 🇸🇬 SG6
-      - 🇸🇬 SG7
-      - 🇸🇬 SG8
-      - 🇸🇬 SG9
-      - 🇸🇬 SG10
-      - 🇯🇵 JP1
-      - 🇯🇵 JP2
-      - 🇯🇵 JP3
-      - 🇯🇵 JP4
-      - 🇯🇵 JP5
-      - 🇯🇵 JP6
-      - 🇯🇵 JP7
-      - 🇯🇵 JP8
-      - 🇯🇵 JP9
-      - 🇯🇵 JP10
-  - name: ♻️ 自动选择
-    type: url-test
-    url: http://www.gstatic.com/generate_204
-    interval: 300
-    tolerance: 50
-    proxies:
-      - 🇭🇰 香港节点
+      - 🚀 节点选择
+      - ♻️ 自动选择
+      - 🔮 负载均衡 (轮询)
+      - 🔄 负载均衡 (散列)
+      - 🔯 故障转移
       - 🇸🇬 狮城节点
+      - 🇹🇼 台湾节点
       - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
       - 🇰🇷 韩国节点
-      - 电信快速
-      - 移动快速
-      - 联通快速
-      - 优选1
-      - 优选2
-  - name: 📶 官方优选
-    type: load-balance
-    strategy: consistent-hashing
-    url: http://www.gstatic.com/generate_204
-    interval: 300
-    tolerance: 50
-    proxies:
-      - 电信快速
-      - 移动快速
-      - 联通快速
-      - 优选1
-      - 优选2
+      - 🇪🇺 欧洲节点
+      - ☑️ 手动切换
+      - DIRECT
   - name: 📲 电报消息
     type: select
     proxies:
       - 🚀 节点选择
       - ♻️ 自动选择
+      - 🔮 负载均衡 (轮询)
+      - 🔄 负载均衡 (散列)
+      - 🔯 故障转移
       - 🇸🇬 狮城节点
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
       - 🇯🇵 日本节点
       - 🇺🇲 美国节点
       - 🇰🇷 韩国节点
-      - 📶 官方优选
+      - 🇪🇺 欧洲节点
       - ☑️ 手动切换
       - DIRECT
   - name: 🤖 OpenAi
@@ -199,13 +114,16 @@ proxy-groups:
     proxies:
       - 🚀 节点选择
       - ♻️ 自动选择
+      - 🔮 负载均衡 (轮询)
+      - 🔄 负载均衡 (散列)
+      - 🔯 故障转移
       - 🇸🇬 狮城节点
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
       - 🇯🇵 日本节点
       - 🇺🇲 美国节点
       - 🇰🇷 韩国节点
-      - 📶 官方优选
+      - 🇪🇺 欧洲节点
       - ☑️ 手动切换
       - DIRECT
   - name: 📹 油管视频
@@ -213,13 +131,16 @@ proxy-groups:
     proxies:
       - 🚀 节点选择
       - ♻️ 自动选择
+      - 🔮 负载均衡 (轮询)
+      - 🔄 负载均衡 (散列)
+      - 🔯 故障转移
       - 🇸🇬 狮城节点
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
       - 🇯🇵 日本节点
       - 🇺🇲 美国节点
       - 🇰🇷 韩国节点
-      - 📶 官方优选
+      - 🇪🇺 欧洲节点
       - ☑️ 手动切换
       - DIRECT
   - name: 🎥 奈飞视频
@@ -227,13 +148,16 @@ proxy-groups:
     proxies:
       - 🚀 节点选择
       - ♻️ 自动选择
+      - 🔮 负载均衡 (轮询)
+      - 🔄 负载均衡 (散列)
+      - 🔯 故障转移
       - 🇸🇬 狮城节点
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
       - 🇯🇵 日本节点
       - 🇺🇲 美国节点
       - 🇰🇷 韩国节点
-      - 📶 官方优选
+      - 🇪🇺 欧洲节点
       - ☑️ 手动切换
       - DIRECT
   - name: 📺 巴哈姆特
@@ -254,13 +178,16 @@ proxy-groups:
     proxies:
       - 🚀 节点选择
       - ♻️ 自动选择
+      - 🔮 负载均衡 (轮询)
+      - 🔄 负载均衡 (散列)
+      - 🔯 故障转移
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
       - 🇸🇬 狮城节点
       - 🇯🇵 日本节点
       - 🇺🇲 美国节点
       - 🇰🇷 韩国节点
-      - 📶 官方优选
+      - 🇪🇺 欧洲节点
       - ☑️ 手动切换
       - DIRECT
   - name: 🌏 国内媒体
@@ -277,13 +204,16 @@ proxy-groups:
     proxies:
       - DIRECT
       - 🚀 节点选择
+      - 🔮 负载均衡 (轮询)
+      - 🔄 负载均衡 (散列)
+      - 🔯 故障转移
       - 🇺🇲 美国节点
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
       - 🇸🇬 狮城节点
       - 🇯🇵 日本节点
       - 🇰🇷 韩国节点
-      - 📶 官方优选
+      - 🇪🇺 欧洲节点
       - ☑️ 手动切换
   - name: Ⓜ️ 微软Bing
     type: select
@@ -296,59 +226,71 @@ proxy-groups:
       - 🇸🇬 狮城节点
       - 🇯🇵 日本节点
       - 🇰🇷 韩国节点
-      - 📶 官方优选
+      - 🇪🇺 欧洲节点
       - ☑️ 手动切换
   - name: Ⓜ️ 微软云盘
     type: select
     proxies:
       - DIRECT
       - 🚀 节点选择
+      - 🔮 负载均衡 (轮询)
+      - 🔄 负载均衡 (散列)
+      - 🔯 故障转移
       - 🇺🇲 美国节点
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
       - 🇸🇬 狮城节点
       - 🇯🇵 日本节点
       - 🇰🇷 韩国节点
-      - 📶 官方优选
+      - 🇪🇺 欧洲节点
       - ☑️ 手动切换
   - name: Ⓜ️ 微软服务
     type: select
     proxies:
       - DIRECT
       - 🚀 节点选择
+      - 🔮 负载均衡 (轮询)
+      - 🔄 负载均衡 (散列)
+      - 🔯 故障转移
       - 🇺🇲 美国节点
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
       - 🇸🇬 狮城节点
       - 🇯🇵 日本节点
       - 🇰🇷 韩国节点
-      - 📶 官方优选
+      - 🇪🇺 欧洲节点
       - ☑️ 手动切换
   - name: 🍎 苹果服务
     type: select
     proxies:
       - DIRECT
       - 🚀 节点选择
+      - 🔮 负载均衡 (轮询)
+      - 🔄 负载均衡 (散列)
+      - 🔯 故障转移
       - 🇺🇲 美国节点
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
       - 🇸🇬 狮城节点
       - 🇯🇵 日本节点
       - 🇰🇷 韩国节点
-      - 📶 官方优选
+      - 🇪🇺 欧洲节点
       - ☑️ 手动切换
   - name: 🎮 游戏平台
     type: select
     proxies:
       - DIRECT
       - 🚀 节点选择
+      - 🔮 负载均衡 (轮询)
+      - 🔄 负载均衡 (散列)
+      - 🔯 故障转移
       - 🇺🇲 美国节点
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
       - 🇸🇬 狮城节点
       - 🇯🇵 日本节点
       - 🇰🇷 韩国节点
-      - 📶 官方优选
+      - 🇪🇺 欧洲节点
       - ☑️ 手动切换
   - name: 🎶 网易音乐
     type: select
@@ -367,6 +309,7 @@ proxy-groups:
     proxies:
       - REJECT
       - DIRECT
+      - 🚀 节点选择
   - name: 🍃 应用净化
     type: select
     proxies:
@@ -377,118 +320,150 @@ proxy-groups:
     proxies:
       - 🚀 节点选择
       - ♻️ 自动选择
-      - DIRECT
+      - 🔮 负载均衡 (轮询)
+      - 🔄 负载均衡 (散列)
+      - 🔯 故障转移
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
       - 🇸🇬 狮城节点
       - 🇯🇵 日本节点
       - 🇺🇲 美国节点
       - 🇰🇷 韩国节点
-      - 📶 官方优选
+      - 🇪🇺 欧洲节点
       - ☑️ 手动切换
+      - DIRECT
+  - name: 🔮 负载均衡 (轮询)
+    type: load-balance
+    strategy: round-robin
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    use:
+      - provider1
+      - provider2
+  - name: 🔄 负载均衡 (散列)
+    type: load-balance
+    strategy: consistent-hashing
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    use:
+      - provider1
+      - provider2     
+  - name: 🔯 故障转移
+    type: fallback
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    use:
+      - provider1
+      - provider2
+  - name: ☑️ 手动切换
+    type: select
+    use:
+      - provider1
+      - provider2
+  - name: ♻️ 自动选择
+    type: url-test
+    use:
+      - provider1
+      - provider2
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
   - name: 🇭🇰 香港节点
-    type: load-balance
-    strategy: consistent-hashing
+    type: url-test
+    use:
+      - provider1
+      - provider2
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
-    proxies:
-      - 🇭🇰 HK1
-      - 🇭🇰 HK2
-      - 🇭🇰 HK3
-      - 🇭🇰 HK4
-      - 🇭🇰 HK5
-      - 🇭🇰 HK6
-      - 🇭🇰 HK7
-      - 🇭🇰 HK8
-      - 🇭🇰 HK9
-      - 🇭🇰 HK10
+    filter: "(?i)港|HK|Hong"
+
   - name: 🇯🇵 日本节点
-    type: load-balance
-    strategy: consistent-hashing
+    type: url-test
+    use:
+      - provider1
+      - provider2
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
-    proxies:
-      - 🇯🇵 JP1
-      - 🇯🇵 JP2
-      - 🇯🇵 JP3
-      - 🇯🇵 JP4
-      - 🇯🇵 JP5
-      - 🇯🇵 JP6
-      - 🇯🇵 JP7
-      - 🇯🇵 JP8
-      - 🇯🇵 JP9
-      - 🇯🇵 JP10
+    filter: "(?i)日本|川日|东京|大阪|泉日|埼玉|沪日|深日|JP|Japan"
+
   - name: 🇺🇲 美国节点
-    type: load-balance
-    strategy: consistent-hashing
+    type: url-test
+    use:
+      - provider1
+      - provider2
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 150
-    proxies:
-      - 🇺🇸 US1
-      - 🇺🇸 US2
-      - 🇺🇸 US3
-      - 🇺🇸 US4
-      - 🇺🇸 US5
-      - 🇺🇸 US6
-      - 🇺🇸 US7
-      - 🇺🇸 US8
-      - 🇺🇸 US9
-      - 🇺🇸 US10
+    filter: "(?i)美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|CA|United States"
+
   - name: 🇹🇼 台湾节点
-    type: load-balance
-    strategy: consistent-hashing
+    type: url-test
+    use:
+      - provider1
+      - provider2
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
-    proxies:
-      - 🇨🇳 TW1
-      - 🇨🇳 TW2
-      - 🇨🇳 TW3
-      - 🇨🇳 TW4
-      - 🇨🇳 TW5
-      - 🇨🇳 TW6
-      - 🇨🇳 TW7
-      - 🇨🇳 TW8
-      - 🇨🇳 TW9
-      - 🇨🇳 TW10
+    filter: "(?i)台|新北|彰化|TW|Taiwan"
+
   - name: 🇸🇬 狮城节点
-    type: load-balance
-    strategy: consistent-hashing
+    type: url-test
+    use:
+      - provider1
+      - provider2
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
-    proxies:
-      - 🇸🇬 SG1
-      - 🇸🇬 SG2
-      - 🇸🇬 SG3
-      - 🇸🇬 SG4
-      - 🇸🇬 SG5
-      - 🇸🇬 SG6
-      - 🇸🇬 SG7
-      - 🇸🇬 SG8
-      - 🇸🇬 SG9
-      - 🇸🇬 SG10
+    filter: "(?i)新加坡|坡|狮城|SG|Singapore"
+
   - name: 🇰🇷 韩国节点
-    type: load-balance
-    strategy: consistent-hashing
+    type: url-test
+    use:
+      - provider1
+      - provider2
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
-    proxies:
-      - 🇰🇷 KR1
-      - 🇰🇷 KR2
-      - 🇰🇷 KR3
-      - 🇰🇷 KR4
-      - 🇰🇷 KR5
-      - 🇰🇷 KR6
-      - 🇰🇷 KR7
-      - 🇰🇷 KR8
-      - 🇰🇷 KR9
-      - 🇰🇷 KR10
+    filter: "(?i)KR|Korea|KOR|首尔|韩|韓"
+
+  - name: 🇪🇺 欧洲节点
+    type: url-test
+    use:
+      - provider1
+      - provider2
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    filter: "(?i)德国|法国|英国|欧洲|荷兰|芬兰|EU|DE|FR|UK|NL|Germany|France|England"
 rules:
+  # WebRTC 相关规则
+  - DOMAIN-SUFFIX,stun.l.google.com,REJECT
+  - DOMAIN-SUFFIX,stun1.l.google.com,REJECT
+  - DOMAIN-SUFFIX,stun2.l.google.com,REJECT
+  - DOMAIN-SUFFIX,stun3.l.google.com,REJECT
+  - DOMAIN-SUFFIX,stun4.l.google.com,REJECT
+  - DOMAIN-KEYWORD,stun,REJECT
+  - DOMAIN-KEYWORD,turn,REJECT
+
+  # DNS 相关规则
+  - DOMAIN-SUFFIX,dns.alidns.com,DIRECT
+  - DOMAIN-SUFFIX,doh.pub,DIRECT
+  - DOMAIN-SUFFIX,cloudflare-dns.com,🚀 节点选择
+  - DOMAIN-SUFFIX,dns.google,🚀 节点选择
+  - DOMAIN-SUFFIX,dns.sb,🚀 节点选择
+  - DOMAIN-SUFFIX,twnic.tw,🚀 节点选择
+
+  # 隐私保护规则
+  - DOMAIN-SUFFIX,ipleak.net,🚀 节点选择
+  - DOMAIN-SUFFIX,browserleaks.com,🚀 节点选择
+  - DOMAIN-SUFFIX,dnsleak.com,🚀 节点选择
+
+  # 保留您原有的其他规则
   - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
   - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
   - DOMAIN-SUFFIX,ip6-loopback,🎯 全球直连
@@ -10782,6 +10757,40 @@ rules:
   - DOMAIN,ci5yrifbog.adobestats.io,🍃 应用净化
   - DOMAIN,vn4waib0dk.adobestats.io,🍃 应用净化
   - DOMAIN,drdqxhlcop.adobe.io,🍃 应用净化
+  - DOMAIN,1i09xck9hj.adobestats.io,🍃 应用净化
+  - DOMAIN,3reg39xtkp.adobestats.io,🍃 应用净化
+  - DOMAIN,quij2u03a1.adobestats.io,🍃 应用净化
+  - DOMAIN,xo9j8bcw4a.adobe.io,🍃 应用净化
+  - DOMAIN,37c3yfb1t4.adobestats.io,🍃 应用净化
+  - DOMAIN,72xoz2f3v6.adobestats.io,🍃 应用净化
+  - DOMAIN,be26lkdm4q.adobestats.io,🍃 应用净化
+  - DOMAIN,y9n9ngtvna.adobestats.io,🍃 应用净化
+  - DOMAIN,4psx0dt6zg.adobestats.io,🍃 应用净化
+  - DOMAIN,6pv0uu0vny.adobestats.io,🍃 应用净化
+  - DOMAIN,9b2hch4xc9.adobestats.io,🍃 应用净化
+  - DOMAIN,9wbdpkyfsz.adobestats.io,🍃 应用净化
+  - DOMAIN,ekt43qq0wo.adobestats.io,🍃 应用净化
+  - DOMAIN,h1xtbu1sca.adobestats.io,🍃 应用净化
+  - DOMAIN,hdym10nr7u.adobestats.io,🍃 应用净化
+  - DOMAIN,hmnzwq6owm.adobestats.io,🍃 应用净化
+  - DOMAIN,hvww1kah7v.adobestats.io,🍃 应用净化
+  - DOMAIN,jkt1n3vsxr.adobestats.io,🍃 应用净化
+  - DOMAIN,nth06aynso.adobestats.io,🍃 应用净化
+  - DOMAIN,q4ajvptsj7.adobestats.io,🍃 应用净化
+  - DOMAIN,t8ckmbunss.adobestats.io,🍃 应用净化
+  - DOMAIN,x1mmbszh12.adobestats.io,🍃 应用净化
+  - DOMAIN,y8x0fb0tdr.adobestats.io,🍃 应用净化
+  - DOMAIN,hy1ykx5mvp.adobestats.io,🍃 应用净化
+  - DOMAIN,yl2744311i.adobestats.io,🍃 应用净化
+  - DOMAIN,fuindpvfok.adobestats.io,🍃 应用净化
+  - DOMAIN,699yxd2304.adobestats.io,🍃 应用净化
+  - DOMAIN,6t47fd4rda.adobestats.io,🍃 应用净化
+  - DOMAIN,lpm2ewb43r.adobestats.io,🍃 应用净化
+  - DOMAIN,mktnq8n4qv.adobestats.io,🍃 应用净化
+  - DOMAIN,xuk3z0wfkn.adobestats.io,🍃 应用净化
+  - DOMAIN,1s97z9hn4o.adobestats.io,🍃 应用净化
+  - DOMAIN,fmbxa3a0yh.adobestats.io,🍃 应用净化
+  - DOMAIN,ywwlnskz2q.adobestats.io,🍃 应用净化
+  - DOMAIN,a2104gz1mh.adobe.io,🍃 应用净化
+  - DOMAIN,0ojupfm51u.adobe.io,🍃 应用净化
   - MATCH,🐟 漏网之鱼
-dns: {}
-subscribe-url: https://alvless.filegear-sg.me/TCorg
