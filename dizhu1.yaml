@@ -50,15 +50,6 @@ proxy-providers:
       enable: true
       interval: 600
       url: http://www.gstatic.com/generate_204
-  provider2:
-    type: http
-    url: ""
-    interval: 3600
-    path: ./provider2.yaml
-    health-check:
-      enable: true
-      interval: 600
-      url: http://www.gstatic.com/generate_204
 proxy-groups:
   - name: 🚀 节点选择
     type: select
@@ -76,6 +67,14 @@ proxy-groups:
       - 🇪🇺 欧洲节点
       - ☑️ 手动切换
       - DIRECT
+  - name: ♻️ 自动选择
+    type: url-test
+    use:
+      - provider1
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+
   - name: 🎙️ Tiktok
     type: select
     proxies:
@@ -340,7 +339,6 @@ proxy-groups:
     tolerance: 50
     use:
       - provider1
-      - provider2
   - name: 🔄 负载均衡 (散列)
     type: load-balance
     strategy: consistent-hashing
@@ -349,7 +347,6 @@ proxy-groups:
     tolerance: 50
     use:
       - provider1
-      - provider2     
   - name: 🔯 故障转移
     type: fallback
     url: http://www.gstatic.com/generate_204
@@ -357,25 +354,14 @@ proxy-groups:
     tolerance: 50
     use:
       - provider1
-      - provider2
   - name: ☑️ 手动切换
     type: select
     use:
       - provider1
-      - provider2
-  - name: ♻️ 自动选择
-    type: url-test
-    use:
-      - provider1
-      - provider2
-    url: http://www.gstatic.com/generate_204
-    interval: 300
-    tolerance: 50
   - name: 🇭🇰 香港节点
     type: url-test
     use:
       - provider1
-      - provider2
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
@@ -385,7 +371,6 @@ proxy-groups:
     type: url-test
     use:
       - provider1
-      - provider2
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
@@ -395,7 +380,6 @@ proxy-groups:
     type: url-test
     use:
       - provider1
-      - provider2
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 150
@@ -405,7 +389,6 @@ proxy-groups:
     type: url-test
     use:
       - provider1
-      - provider2
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
@@ -415,7 +398,6 @@ proxy-groups:
     type: url-test
     use:
       - provider1
-      - provider2
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
@@ -425,7 +407,6 @@ proxy-groups:
     type: url-test
     use:
       - provider1
-      - provider2
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
@@ -435,7 +416,6 @@ proxy-groups:
     type: url-test
     use:
       - provider1
-      - provider2
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
