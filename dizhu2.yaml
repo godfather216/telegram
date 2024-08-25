@@ -67,6 +67,15 @@ proxy-providers:
       enable: true
       interval: 600
       url: http://www.gstatic.com/generate_204
+  provider2-4:
+    type: http
+    url: "https://dns68.putata.eu.org/d7dd3a35-b68b-4992-b319-a85b8a1fc8e5"
+    interval: 3600
+    path: ./provider2-4.yaml
+    health-check:
+      enable: true
+      interval: 600
+      url: http://www.gstatic.com/generate_204
 proxy-groups:
   - name: 节点选择
     type: select
@@ -392,6 +401,7 @@ proxy-groups:
       - provider2-1
       - provider2-2
       - provider2-3
+      - provider2-4
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/SSID.png
   - name: 负载均衡 (散列)
     type: load-balance
@@ -403,6 +413,7 @@ proxy-groups:
       - provider2-1
       - provider2-2
       - provider2-3
+      - provider2-4
     icon:  https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Available.png
   - name:  👨🏻‍💻 AI专线 
     type: load-balance
@@ -414,6 +425,7 @@ proxy-groups:
       - provider2-1
       - provider2-2
       - provider2-3
+      - provider2-4
     filter: “(?i)美国|🇺🇸|US|阿什本|新加坡|🇸🇬|SG|日本|东京|🇯🇵|JP|韩国|首尔|春川|🇰🇷|KR|德国|法兰克福|纽伦堡|🇩🇪|DE|法国|马德里|巴黎|🇫🇷|FR|法国|GB|英国|伦敦|🇬🇧|UK|巴西|圣保罗|🇧🇷|迪拜|芬兰|🇫🇮|FI|海得拉巴|孟买|吉达|PL|波兰|🇵🇱|AU|澳大利亚|🇦🇺|IN|印度|🇮🇳|MY|马来西亚|🇲🇾|CA|加拿大|🇨🇦|AE|阿联酋|🇦🇪|NL|荷兰|🇳🇱"
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Drill.png
   - name: 故障转移
@@ -425,6 +437,7 @@ proxy-groups:
       - provider2-1
       - provider2-2
       - provider2-3
+      - provider2-4
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hijacking.png
   - name: 自动选择
     type: url-test
@@ -432,6 +445,7 @@ proxy-groups:
       - provider2-1
       - provider2-2
       - provider2-3
+      - provider2-4
     url: http://www.gstatic.com/generate_204
     interval: 120
     tolerance: 30
@@ -442,6 +456,7 @@ proxy-groups:
       - provider2-1
       - provider2-2
       - provider2-3
+      - provider2-4
     interval: 120
     tolerance: 30
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Clubhouse.png
@@ -451,6 +466,7 @@ proxy-groups:
       - provider2-1
       - provider2-2
       - provider2-3
+      - provider2-4
     url: http://www.gstatic.com/generate_204
     interval: 120
     tolerance: 30
@@ -462,6 +478,7 @@ proxy-groups:
       - provider2-1
       - provider2-2
       - provider2-3
+      - provider2-4
     url: http://www.gstatic.com/generate_204
     interval: 120
     tolerance: 30
@@ -473,6 +490,7 @@ proxy-groups:
       - provider2-1
       - provider2-2
       - provider2-3
+      - provider2-4
     url: http://www.gstatic.com/generate_204
     interval: 120
     tolerance: 30
@@ -484,6 +502,7 @@ proxy-groups:
       - provider2-1
       - provider2-2
       - provider2-3
+      - provider2-4
     url: http://www.gstatic.com/generate_204
     interval: 120
     tolerance: 30
@@ -495,6 +514,7 @@ proxy-groups:
       - provider2-1
       - provider2-2
       - provider2-3
+      - provider2-4
     url: http://www.gstatic.com/generate_204
     interval: 120
     tolerance: 30
@@ -506,6 +526,7 @@ proxy-groups:
       - provider2-1
       - provider2-2
       - provider2-3
+      - provider2-4
     url: http://www.gstatic.com/generate_204
     interval: 120
     tolerance: 30
@@ -517,6 +538,7 @@ proxy-groups:
       - provider2-1
       - provider2-2
       - provider2-3
+      - provider2-4
     url: http://www.gstatic.com/generate_204
     interval: 120
     tolerance: 30
@@ -528,6 +550,7 @@ proxy-groups:
       - provider2-1
       - provider2-2
       - provider2-3
+      - provider2-4
     url: http://www.gstatic.com/generate_204
     interval: 120
     tolerance: 30
