@@ -69,7 +69,7 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204
   provider2-4:
     type: http
-    url: "https://dns68.putata.eu.org/d7dd3a35-b68b-4992-b319-a85b8a1fc8e5"
+    url: "https://VLESS.fxxk.dedyn.io/auto"
     interval: 3600
     path: ./provider2-4.yaml
     health-check:
