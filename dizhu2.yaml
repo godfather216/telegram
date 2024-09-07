@@ -69,21 +69,47 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204
   provider2-4:
     type: http
-    url: "https://VLESS.fxxk.dedyn.io/auto"
+    url: "https://dns68.putata.eu.org/d7dd3a35-b68b-4992-b319-a85b8a1fc8e5"
     interval: 3600
     path: ./provider2-4.yaml
     health-check:
       enable: true
       interval: 600
       url: http://www.gstatic.com/generate_204
+  provider2-5:
+    type: http
+    url: "https://3k.fxxk.dedyn.io/auto$0"
+    interval: 3600
+    path: ./provider2-5.yaml
+    health-check:
+      enable: true
+      interval: 600
+      url: http://www.gstatic.com/generate_204
+  provider2-6:
+    type: http
+    url: "https://moistr.freenods.sbs/mianfeicf$0"
+    interval: 3600
+    path: ./provider2-6.yaml
+    health-check:
+      enable: true
+      interval: 600
+      url: http://www.gstatic.com/generate_204
+  provider2-7:
+    type: http
+    url: "https://v1.mk/CANEykW"
+    interval: 3600
+    path: ./provider2-7.yaml
+    health-check:
+      enable: true
+      interval: 600
+      url: http://www.gstatic.com/generate_204
+
 proxy-groups:
   - name: 节点选择
     type: select
     proxies:
       - 自动选择
-      - 负载均衡 (轮询)
-      - 负载均衡 (散列)
-      - 👨🏻‍💻 AI专线 
+      - 负载均衡 
       - 故障转移
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
@@ -100,9 +126,8 @@ proxy-groups:
     type: select
     proxies:
       - 自动选择
-      - 负载均衡 (轮询)
-      - 负载均衡 (散列)
-      - 👨🏻‍💻 AI专线 
+      - 负载均衡 
+      - 👨🏻‍💻 AI专线
       - 故障转移
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
@@ -114,8 +139,8 @@ proxy-groups:
       - 🇪🇺 欧洲节点
       - DIRECT
     url: "http://www.gstatic.com/generate_204"
-    interval: 120
-    tolerance: 30
+    interval: 300
+    tolerance: 50
     lazy: true
     icon: https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Speedtest.png
   - name: Tiktok
@@ -123,8 +148,7 @@ proxy-groups:
     proxies:
       - 节点选择
       - 自动选择
-      - 负载均衡 (轮询)
-      - 负载均衡 (散列)
+      - 负载均衡 
       - 🇸🇬 狮城节点
       - 🇹🇼 台湾节点
       - 🇯🇵 日本节点
@@ -140,8 +164,7 @@ proxy-groups:
     proxies:
       - 节点选择
       - 自动选择
-      - 负载均衡 (轮询)
-      - 负载均衡 (散列)
+      - 负载均衡 
       - 🇸🇬 狮城节点
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
@@ -156,8 +179,8 @@ proxy-groups:
   - name: OpenAi
     type: select
     proxies:
-      - 👨🏻‍💻 AI专线 
-      - 负载均衡 (散列)
+      - 👨🏻‍💻 AI专线
+      - 负载均衡 
       - 🇸🇬 狮城节点
       - 🇹🇼 台湾节点
       - 🇯🇵 日本节点
@@ -173,8 +196,7 @@ proxy-groups:
     proxies:
       - 节点选择
       - 自动选择
-      - 负载均衡 (轮询)
-      - 负载均衡 (散列)
+      - 负载均衡 
       - 🇸🇬 狮城节点
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
@@ -191,8 +213,7 @@ proxy-groups:
     proxies:
       - 节点选择
       - 自动选择
-      - 负载均衡 (轮询)
-      - 负载均衡 (散列)
+      - 负载均衡 
       - 🇸🇬 狮城节点
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
@@ -224,8 +245,7 @@ proxy-groups:
     proxies:
       - 节点选择
       - 自动选择
-      - 负载均衡 (轮询)
-      - 负载均衡 (散列)
+      - 负载均衡 
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
       - 🇸🇬 狮城节点
@@ -252,8 +272,7 @@ proxy-groups:
     proxies:
       - DIRECT
       - 节点选择
-      - 负载均衡 (轮询)
-      - 负载均衡 (散列)
+      - 负载均衡 
       - 🇺🇲 美国节点
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
@@ -268,8 +287,8 @@ proxy-groups:
     type: select
     proxies:
       - 节点选择
-      - 👨🏻‍💻 AI专线 
-      - 负载均衡 (散列)
+      - 👨🏻‍💻 AI专线
+      - 负载均衡 
       - 🇺🇲 美国节点
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
@@ -280,12 +299,12 @@ proxy-groups:
       - 🇪🇺 欧洲节点
       - 手动切换
       - DIRECT
-    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Copilot.png
+    icon: https://github.com/shindgewongxj/WHATSINStash/raw/main/icon/bing.png
   - name: 微软云盘
     type: select
     proxies:
       - 节点选择
-      - 负载均衡 (轮询)
+      - 负载均衡 
       - 🇺🇲 美国节点
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
@@ -301,7 +320,7 @@ proxy-groups:
     type: select
     proxies:
       - 节点选择
-      - 负载均衡 (轮询)
+      - 负载均衡 
       - 🇺🇲 美国节点
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
@@ -317,8 +336,7 @@ proxy-groups:
     type: select
     proxies:
       - 节点选择
-      - 负载均衡 (轮询)
-      - 负载均衡 (散列)
+      - 负载均衡 
       - 🇺🇲 美国节点
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
@@ -329,13 +347,12 @@ proxy-groups:
       - 🇪🇺 欧洲节点
       - 手动切换
       - DIRECT
-    icon:  https://github.com/shindgewongxj/WHATSINStash/raw/main/icon/apple.png
+    icon: https://github.com/shindgewongxj/WHATSINStash/raw/main/icon/apple.png
   - name: 游戏平台
     type: select
     proxies:
       - 节点选择
-      - 负载均衡 (轮询)
-      - 负载均衡 (散列)
+      - 负载均衡 
       - 🇺🇲 美国节点
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
@@ -379,8 +396,7 @@ proxy-groups:
     proxies:
       - 节点选择
       - 自动选择
-      - 负载均衡 (轮询)
-      - 负载均衡 (散列)
+      - 负载均衡 
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
       - 🇸🇬 狮城节点
@@ -392,19 +408,22 @@ proxy-groups:
       - 手动切换
       - DIRECT
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Unlock.png
-  - name: 负载均衡 (轮询)
+  - name: 负载均衡 
     type: load-balance
-    strategy: round-robin
+    strategy: consistent-hashing
     url: http://www.gstatic.com/generate_204
-    interval: 120
-    tolerance: 30
+    interval: 300
+    tolerance: 50
     use:
       - provider2-1
       - provider2-2
       - provider2-3
       - provider2-4
-    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/SSID.png
-  - name: 负载均衡 (散列)
+      - provider2-5
+      - provider2-6
+      - provider2-7
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Available.png
+  - name: 👨🏻‍💻 AI专线
     type: load-balance
     strategy: consistent-hashing
     url: http://www.gstatic.com/generate_204
@@ -415,30 +434,24 @@ proxy-groups:
       - provider2-2
       - provider2-3
       - provider2-4
-    icon:  https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Available.png
-  - name:  👨🏻‍💻 AI专线 
-    type: load-balance
-    strategy: consistent-hashing
-    url: http://www.gstatic.com/generate_204
-    interval: 120
-    tolerance: 30
-    use:
-      - provider2-1
-      - provider2-2
-      - provider2-3
-      - provider2-4
+      - provider2-5
+      - provider2-6
+      - provider2-7
     filter: “(?i)美国|🇺🇸|US|阿什本|新加坡|🇸🇬|SG|日本|东京|🇯🇵|JP|韩国|首尔|春川|🇰🇷|KR|德国|法兰克福|纽伦堡|🇩🇪|DE|法国|马德里|巴黎|🇫🇷|FR|法国|GB|英国|伦敦|🇬🇧|UK|巴西|圣保罗|🇧🇷|迪拜|芬兰|🇫🇮|FI|海得拉巴|孟买|吉达|PL|波兰|🇵🇱|AU|澳大利亚|🇦🇺|IN|印度|🇮🇳|MY|马来西亚|🇲🇾|CA|加拿大|🇨🇦|AE|阿联酋|🇦🇪|NL|荷兰|🇳🇱"
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Drill.png
   - name: 故障转移
     type: fallback
     url: http://www.gstatic.com/generate_204
-    interval: 120
-    tolerance: 30
+    interval: 300
+    tolerance: 50
     use:
       - provider2-1
       - provider2-2
       - provider2-3
       - provider2-4
+      - provider2-5
+      - provider2-6
+      - provider2-7
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hijacking.png
   - name: 自动选择
     type: url-test
@@ -447,9 +460,12 @@ proxy-groups:
       - provider2-2
       - provider2-3
       - provider2-4
+      - provider2-5
+      - provider2-6
+      - provider2-7
     url: http://www.gstatic.com/generate_204
-    interval: 120
-    tolerance: 30
+    interval: 300
+    tolerance: 50
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Cellular.png
   - name: 手动切换
     type: select
@@ -458,8 +474,11 @@ proxy-groups:
       - provider2-2
       - provider2-3
       - provider2-4
-    interval: 120
-    tolerance: 30
+      - provider2-5
+      - provider2-6
+      - provider2-7
+    interval: 300
+    tolerance: 50
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Clubhouse.png
   - name: 🇭🇰 香港节点
     type: url-test
@@ -468,6 +487,9 @@ proxy-groups:
       - provider2-2
       - provider2-3
       - provider2-4
+      - provider2-5
+      - provider2-6
+      - provider2-7
     url: http://www.gstatic.com/generate_204
     interval: 120
     tolerance: 30
@@ -480,6 +502,9 @@ proxy-groups:
       - provider2-2
       - provider2-3
       - provider2-4
+      - provider2-5
+      - provider2-6
+      - provider2-7
     url: http://www.gstatic.com/generate_204
     interval: 120
     tolerance: 30
@@ -492,6 +517,9 @@ proxy-groups:
       - provider2-2
       - provider2-3
       - provider2-4
+      - provider2-5
+      - provider2-6
+      - provider2-7
     url: http://www.gstatic.com/generate_204
     interval: 120
     tolerance: 30
@@ -504,6 +532,9 @@ proxy-groups:
       - provider2-2
       - provider2-3
       - provider2-4
+      - provider2-5
+      - provider2-6
+      - provider2-7
     url: http://www.gstatic.com/generate_204
     interval: 120
     tolerance: 30
@@ -516,6 +547,9 @@ proxy-groups:
       - provider2-2
       - provider2-3
       - provider2-4
+      - provider2-5
+      - provider2-6
+      - provider2-7
     url: http://www.gstatic.com/generate_204
     interval: 120
     tolerance: 30
@@ -528,23 +562,29 @@ proxy-groups:
       - provider2-2
       - provider2-3
       - provider2-4
+      - provider2-5
+      - provider2-6
+      - provider2-7
     url: http://www.gstatic.com/generate_204
     interval: 120
     tolerance: 30
     filter: "(?i)KR|Korea|KOR|首尔|韩|韓"
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Korea.png
-  - name:  🇵🇱 波兰节点
+  - name: 🇵🇱 波兰节点
     type: url-test
     use:
       - provider2-1
       - provider2-2
       - provider2-3
       - provider2-4
+      - provider2-5
+      - provider2-6
+      - provider2-7
     url: http://www.gstatic.com/generate_204
     interval: 120
     tolerance: 30
-    filter:  “(?i)PL|🇵🇱|波兰|波兰节点|华沙|Warsaw|克拉科夫|Krakow|弗罗茨瓦夫|Wroclaw|格但斯克|Gdansk|波兹南|Poznan|卢布林|Lublin”
-    icon:  https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Asia_Map.png
+    filter: “(?i)PL|🇵🇱|波兰|波兰节点|华沙|Warsaw|克拉科夫|Krakow|弗罗茨瓦夫|Wroclaw|格但斯克|Gdansk|波兹南|Poznan|卢布林|Lublin”
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Asia_Map.png
   - name: 🇪🇺 欧洲节点
     type: url-test
     use:
@@ -552,6 +592,9 @@ proxy-groups:
       - provider2-2
       - provider2-3
       - provider2-4
+      - provider2-5
+      - provider2-6
+      - provider2-7
     url: http://www.gstatic.com/generate_204
     interval: 120
     tolerance: 30
