@@ -42,7 +42,7 @@ tcp-concurrent: true
 proxy-providers:
   provider3-1:
     type: http
-    url: "https://api.2c.lol/sub?target=clash&url=https%3A%2F%2Fgist.github.com%2Fgo4sharing%2F496b17222ac16e941a01e7ace625e761%2Fraw%2Ff2c1200e633360ad138de0798a1929a8f4eaf8b0%2Fgistfile1.txt&insert=false&emoji=true&list=false&tfo=false&scv=true&fdn=false&sort=false&new_name=true"
+    url: "https://tg.cmliussss.us.kg/auto"
     interval: 3600
     path: ./provider3-1.yaml
     health-check:
@@ -51,7 +51,7 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204
   provider3-2:
     type: http
-    url: "https://api.2c.lol/sub?target=clash&url=https%3A%2F%2Fraw.githubusercontent.com%2Fgo4sharing%2Fsub%2Fmain%2Fsub.yaml&insert=false"
+    url: "https://altrojan.comorg.us.kg/TCorg"
     interval: 3600
     path: ./provider3-2.yaml
     health-check:
@@ -60,21 +60,29 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204
   provider3-3:
     type: http
-    url: "https://dns68.putata.eu.org/d7dd3a35-b68b-4992-b319-a85b8a1fc8e5"
+    url: "https://moist.freenods.sbs/Trojan"
     interval: 3600
     path: ./provider3-3.yaml
     health-check:
       enable: true
       interval: 600
-      url: http://www.gstatic.com/generate_204    
+      url: http://www.gstatic.com/generate_204
+  provider3-4:
+    type: http
+    url: "https://sub.kaiche.tk/?token=auto"
+    interval: 3600
+    path: ./provider3-4.yaml
+    health-check:
+      enable: true
+      interval: 600
+      url: http://www.gstatic.com/generate_204
+
 proxy-groups:
   - name: 节点选择
     type: select
     proxies:
       - 自动选择
-      - 负载均衡 (轮询)
-      - 负载均衡 (散列)
-      - 👨🏻‍💻 AI专线 
+      - 负载均衡 
       - 故障转移
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
@@ -82,6 +90,7 @@ proxy-groups:
       - 🇯🇵 日本节点
       - 🇺🇲 美国节点
       - 🇰🇷 韩国节点
+      - 🇵🇱 波兰节点
       - 🇪🇺 欧洲节点
       - 手动切换
       - DIRECT
@@ -90,9 +99,8 @@ proxy-groups:
     type: select
     proxies:
       - 自动选择
-      - 负载均衡 (轮询)
-      - 负载均衡 (散列)
-      - 👨🏻‍💻 AI专线 
+      - 负载均衡 
+      - 👨🏻‍💻 AI专线
       - 故障转移
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
@@ -100,11 +108,12 @@ proxy-groups:
       - 🇯🇵 日本节点
       - 🇺🇲 美国节点
       - 🇰🇷 韩国节点
+      - 🇵🇱 波兰节点
       - 🇪🇺 欧洲节点
       - DIRECT
     url: "http://www.gstatic.com/generate_204"
-    interval: 120
-    tolerance: 30
+    interval: 300
+    tolerance: 50
     lazy: true
     icon: https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Speedtest.png
   - name: Tiktok
@@ -112,13 +121,13 @@ proxy-groups:
     proxies:
       - 节点选择
       - 自动选择
-      - 负载均衡 (轮询)
-      - 负载均衡 (散列)
+      - 负载均衡 
       - 🇸🇬 狮城节点
       - 🇹🇼 台湾节点
       - 🇯🇵 日本节点
       - 🇺🇲 美国节点
       - 🇰🇷 韩国节点
+      - 🇵🇱 波兰节点
       - 🇪🇺 欧洲节点
       - 手动切换
       - DIRECT
@@ -128,14 +137,14 @@ proxy-groups:
     proxies:
       - 节点选择
       - 自动选择
-      - 负载均衡 (轮询)
-      - 负载均衡 (散列)
+      - 负载均衡 
       - 🇸🇬 狮城节点
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
       - 🇯🇵 日本节点
       - 🇺🇲 美国节点
       - 🇰🇷 韩国节点
+      - 🇵🇱 波兰节点
       - 🇪🇺 欧洲节点
       - 手动切换
       - DIRECT
@@ -143,13 +152,14 @@ proxy-groups:
   - name: OpenAi
     type: select
     proxies:
-      - 👨🏻‍💻 AI专线 
-      - 负载均衡 (散列)
+      - 👨🏻‍💻 AI专线
+      - 负载均衡 
       - 🇸🇬 狮城节点
       - 🇹🇼 台湾节点
       - 🇯🇵 日本节点
       - 🇺🇲 美国节点
       - 🇰🇷 韩国节点
+      - 🇵🇱 波兰节点
       - 🇪🇺 欧洲节点
       - 手动切换
       - DIRECT
@@ -159,14 +169,14 @@ proxy-groups:
     proxies:
       - 节点选择
       - 自动选择
-      - 负载均衡 (轮询)
-      - 负载均衡 (散列)
+      - 负载均衡 
       - 🇸🇬 狮城节点
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
       - 🇯🇵 日本节点
       - 🇺🇲 美国节点
       - 🇰🇷 韩国节点
+      - 🇵🇱 波兰节点
       - 🇪🇺 欧洲节点
       - 手动切换
       - DIRECT
@@ -176,14 +186,14 @@ proxy-groups:
     proxies:
       - 节点选择
       - 自动选择
-      - 负载均衡 (轮询)
-      - 负载均衡 (散列)
+      - 负载均衡 
       - 🇸🇬 狮城节点
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
       - 🇯🇵 日本节点
       - 🇺🇲 美国节点
       - 🇰🇷 韩国节点
+      - 🇵🇱 波兰节点
       - 🇪🇺 欧洲节点
       - 手动切换
       - DIRECT
@@ -208,14 +218,14 @@ proxy-groups:
     proxies:
       - 节点选择
       - 自动选择
-      - 负载均衡 (轮询)
-      - 负载均衡 (散列)
+      - 负载均衡 
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
       - 🇸🇬 狮城节点
       - 🇯🇵 日本节点
       - 🇺🇲 美国节点
       - 🇰🇷 韩国节点
+      - 🇵🇱 波兰节点
       - 🇪🇺 欧洲节点
       - 手动切换
       - DIRECT
@@ -235,14 +245,14 @@ proxy-groups:
     proxies:
       - DIRECT
       - 节点选择
-      - 负载均衡 (轮询)
-      - 负载均衡 (散列)
+      - 负载均衡 
       - 🇺🇲 美国节点
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
       - 🇸🇬 狮城节点
       - 🇯🇵 日本节点
       - 🇰🇷 韩国节点
+      - 🇵🇱 波兰节点
       - 🇪🇺 欧洲节点
       - 手动切换
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/StreamingCN.png
@@ -250,29 +260,31 @@ proxy-groups:
     type: select
     proxies:
       - 节点选择
-      - 👨🏻‍💻 AI专线 
-      - 负载均衡 (散列)
+      - 👨🏻‍💻 AI专线
+      - 负载均衡 
       - 🇺🇲 美国节点
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
       - 🇸🇬 狮城节点
       - 🇯🇵 日本节点
       - 🇰🇷 韩国节点
+      - 🇵🇱 波兰节点
       - 🇪🇺 欧洲节点
       - 手动切换
       - DIRECT
-    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Copilot.png
+    icon: https://github.com/shindgewongxj/WHATSINStash/raw/main/icon/bing.png
   - name: 微软云盘
     type: select
     proxies:
       - 节点选择
-      - 负载均衡 (轮询)
+      - 负载均衡 
       - 🇺🇲 美国节点
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
       - 🇸🇬 狮城节点
       - 🇯🇵 日本节点
       - 🇰🇷 韩国节点
+      - 🇵🇱 波兰节点
       - 🇪🇺 欧洲节点
       - 手动切换
       - DIRECT
@@ -281,13 +293,14 @@ proxy-groups:
     type: select
     proxies:
       - 节点选择
-      - 负载均衡 (轮询)
+      - 负载均衡 
       - 🇺🇲 美国节点
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
       - 🇸🇬 狮城节点
       - 🇯🇵 日本节点
       - 🇰🇷 韩国节点
+      - 🇵🇱 波兰节点
       - 🇪🇺 欧洲节点
       - 手动切换
       - DIRECT
@@ -296,30 +309,30 @@ proxy-groups:
     type: select
     proxies:
       - 节点选择
-      - 负载均衡 (轮询)
-      - 负载均衡 (散列)
+      - 负载均衡 
       - 🇺🇲 美国节点
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
       - 🇸🇬 狮城节点
       - 🇯🇵 日本节点
       - 🇰🇷 韩国节点
+      - 🇵🇱 波兰节点
       - 🇪🇺 欧洲节点
       - 手动切换
       - DIRECT
-    icon:  https://github.com/shindgewongxj/WHATSINStash/raw/main/icon/apple.png
+    icon: https://github.com/shindgewongxj/WHATSINStash/raw/main/icon/apple.png
   - name: 游戏平台
     type: select
     proxies:
       - 节点选择
-      - 负载均衡 (轮询)
-      - 负载均衡 (散列)
+      - 负载均衡 
       - 🇺🇲 美国节点
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
       - 🇸🇬 狮城节点
       - 🇯🇵 日本节点
       - 🇰🇷 韩国节点
+      - 🇵🇱 波兰节点
       - 🇪🇺 欧洲节点
       - 手动切换
       - DIRECT
@@ -356,30 +369,31 @@ proxy-groups:
     proxies:
       - 节点选择
       - 自动选择
-      - 负载均衡 (轮询)
-      - 负载均衡 (散列)
+      - 负载均衡 
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
       - 🇸🇬 狮城节点
       - 🇯🇵 日本节点
       - 🇺🇲 美国节点
       - 🇰🇷 韩国节点
+      - 🇵🇱 波兰节点
       - 🇪🇺 欧洲节点
       - 手动切换
       - DIRECT
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Unlock.png
-  - name: 负载均衡 (轮询)
+  - name: 负载均衡 
     type: load-balance
-    strategy: round-robin
+    strategy: consistent-hashing
     url: http://www.gstatic.com/generate_204
-    interval: 120
-    tolerance: 30
+    interval: 300
+    tolerance: 50
     use:
       - provider3-1
       - provider3-2
       - provider3-3
-    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/SSID.png
-  - name: 负载均衡 (散列)
+      - provider3-4
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Available.png
+  - name: 👨🏻‍💻 AI专线
     type: load-balance
     strategy: consistent-hashing
     url: http://www.gstatic.com/generate_204
@@ -389,38 +403,30 @@ proxy-groups:
       - provider3-1
       - provider3-2
       - provider3-3
-    icon:  https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Available.png
-  - name:  👨🏻‍💻 AI专线 
-    type: load-balance
-    strategy: consistent-hashing
-    url: http://www.gstatic.com/generate_204
-    interval: 120
-    tolerance: 30
-    use:
-      - provider3-1
-      - provider3-2
-      - provider3-3
+      - provider3-4
     filter: “(?i)美国|🇺🇸|US|阿什本|新加坡|🇸🇬|SG|日本|东京|🇯🇵|JP|韩国|首尔|春川|🇰🇷|KR|德国|法兰克福|纽伦堡|🇩🇪|DE|法国|马德里|巴黎|🇫🇷|FR|法国|GB|英国|伦敦|🇬🇧|UK|巴西|圣保罗|🇧🇷|迪拜|芬兰|🇫🇮|FI|海得拉巴|孟买|吉达|PL|波兰|🇵🇱|AU|澳大利亚|🇦🇺|IN|印度|🇮🇳|MY|马来西亚|🇲🇾|CA|加拿大|🇨🇦|AE|阿联酋|🇦🇪|NL|荷兰|🇳🇱"
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Drill.png
   - name: 故障转移
     type: fallback
     url: http://www.gstatic.com/generate_204
-    interval: 120
-    tolerance: 30
+    interval: 300
+    tolerance: 50
     use:
       - provider3-1
       - provider3-2
       - provider3-3
+      - provider3-4
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hijacking.png
   - name: 自动选择
     type: url-test
+    interval: 300
+    tolerance: 50
     use:
       - provider3-1
       - provider3-2
       - provider3-3
+      - provider3-4
     url: http://www.gstatic.com/generate_204
-    interval: 120
-    tolerance: 30
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Cellular.png
   - name: 手动切换
     type: select
@@ -428,8 +434,9 @@ proxy-groups:
       - provider3-1
       - provider3-2
       - provider3-3
-    interval: 120
-    tolerance: 30
+      - provider3-4
+    interval: 300
+    tolerance: 50
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Clubhouse.png
   - name: 🇭🇰 香港节点
     type: url-test
@@ -437,6 +444,7 @@ proxy-groups:
       - provider3-1
       - provider3-2
       - provider3-3
+      - provider3-4
     url: http://www.gstatic.com/generate_204
     interval: 120
     tolerance: 30
@@ -448,6 +456,7 @@ proxy-groups:
       - provider3-1
       - provider3-2
       - provider3-3
+      - provider3-4
     url: http://www.gstatic.com/generate_204
     interval: 120
     tolerance: 30
@@ -459,6 +468,7 @@ proxy-groups:
       - provider3-1
       - provider3-2
       - provider3-3
+      - provider3-4
     url: http://www.gstatic.com/generate_204
     interval: 120
     tolerance: 30
@@ -470,6 +480,7 @@ proxy-groups:
       - provider3-1
       - provider3-2
       - provider3-3
+      - provider3-4
     url: http://www.gstatic.com/generate_204
     interval: 120
     tolerance: 30
@@ -481,6 +492,7 @@ proxy-groups:
       - provider3-1
       - provider3-2
       - provider3-3
+      - provider3-4
     url: http://www.gstatic.com/generate_204
     interval: 120
     tolerance: 30
@@ -492,17 +504,31 @@ proxy-groups:
       - provider3-1
       - provider3-2
       - provider3-3
+      - provider3-4
     url: http://www.gstatic.com/generate_204
     interval: 120
     tolerance: 30
     filter: "(?i)KR|Korea|KOR|首尔|韩|韓"
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Korea.png
+  - name: 🇵🇱 波兰节点
+    type: url-test
+    use:
+      - provider3-1
+      - provider3-2
+      - provider3-3
+      - provider3-4
+    url: http://www.gstatic.com/generate_204
+    interval: 120
+    tolerance: 30
+    filter: “(?i)PL|🇵🇱|波兰|波兰节点|华沙|Warsaw|克拉科夫|Krakow|弗罗茨瓦夫|Wroclaw|格但斯克|Gdansk|波兹南|Poznan|卢布林|Lublin”
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Asia_Map.png
   - name: 🇪🇺 欧洲节点
     type: url-test
     use:
       - provider3-1
       - provider3-2
       - provider3-3
+      - provider3-4
     url: http://www.gstatic.com/generate_204
     interval: 120
     tolerance: 30
