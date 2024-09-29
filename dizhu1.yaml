@@ -44,7 +44,7 @@ proxy-providers:
     type: http
     url: "https://sub.mxlweb.xyz/free"
     interval: 3600
-    path: ./provider2-1.yaml
+    path: ./provider2-8.yaml
     health-check:
       enable: true
       interval: 600
@@ -361,13 +361,7 @@ proxy-groups:
     interval: 300
     tolerance: 50
     use:
-      - provider2-1
-      - provider2-2
-      - provider2-3
-      - provider2-4
-      - provider2-5
-      - provider2-6
-      - provider2-7
+      - provider2-8
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Available.png
   - name: 👨🏻‍💻 AI专线
     type: load-balance
@@ -376,13 +370,7 @@ proxy-groups:
     interval: 120
     tolerance: 30
     use:
-      - provider2-1
-      - provider2-2
-      - provider2-3
-      - provider2-4
-      - provider2-5
-      - provider2-6
-      - provider2-7
+      - provider2-8
     filter: “(?i)美国|🇺🇸|US|阿什本|新加坡|🇸🇬|SG|日本|东京|🇯🇵|JP|韩国|首尔|春川|🇰🇷|KR|德国|法兰克福|纽伦堡|🇩🇪|DE|法国|马德里|巴黎|🇫🇷|FR|法国|GB|英国|伦敦|🇬🇧|UK|巴西|圣保罗|🇧🇷|迪拜|芬兰|🇫🇮|FI|海得拉巴|孟买|吉达|PL|波兰|🇵🇱|AU|澳大利亚|🇦🇺|IN|印度|🇮🇳|MY|马来西亚|🇲🇾|CA|加拿大|🇨🇦|AE|阿联酋|🇦🇪|NL|荷兰|🇳🇱"
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Drill.png
   - name: 故障转移
@@ -391,24 +379,12 @@ proxy-groups:
     interval: 300
     tolerance: 50
     use:
-      - provider2-1
-      - provider2-2
-      - provider2-3
-      - provider2-4
-      - provider2-5
-      - provider2-6
-      - provider2-7
+      - provider2-8
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hijacking.png
   - name: 自动选择
     type: url-test
     use:
-      - provider2-1
-      - provider2-2
-      - provider2-3
-      - provider2-4
-      - provider2-5
-      - provider2-6
-      - provider2-7
+      - provider2-8
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
@@ -416,26 +392,14 @@ proxy-groups:
   - name: 手动切换
     type: select
     use:
-      - provider2-1
-      - provider2-2
-      - provider2-3
-      - provider2-4
-      - provider2-5
-      - provider2-6
-      - provider2-7
+      - provider2-8
     interval: 300
     tolerance: 50
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Clubhouse.png
   - name: 🇭🇰 香港节点
     type: url-test
     use:
-      - provider2-1
-      - provider2-2
-      - provider2-3
-      - provider2-4
-      - provider2-5
-      - provider2-6
-      - provider2-7
+      - provider2-8
     url: http://www.gstatic.com/generate_204
     interval: 120
     tolerance: 30
@@ -444,13 +408,7 @@ proxy-groups:
   - name: 🇯🇵 日本节点
     type: url-test
     use:
-      - provider2-1
-      - provider2-2
-      - provider2-3
-      - provider2-4
-      - provider2-5
-      - provider2-6
-      - provider2-7
+      - provider2-8
     url: http://www.gstatic.com/generate_204
     interval: 120
     tolerance: 30
@@ -459,13 +417,7 @@ proxy-groups:
   - name: 🇺🇲 美国节点
     type: url-test
     use:
-      - provider2-1
-      - provider2-2
-      - provider2-3
-      - provider2-4
-      - provider2-5
-      - provider2-6
-      - provider2-7
+      - provider2-8
     url: http://www.gstatic.com/generate_204
     interval: 120
     tolerance: 30
@@ -474,13 +426,7 @@ proxy-groups:
   - name: 🇹🇼 台湾节点
     type: url-test
     use:
-      - provider2-1
-      - provider2-2
-      - provider2-3
-      - provider2-4
-      - provider2-5
-      - provider2-6
-      - provider2-7
+      - provider2-8
     url: http://www.gstatic.com/generate_204
     interval: 120
     tolerance: 30
@@ -489,13 +435,7 @@ proxy-groups:
   - name: 🇸🇬 狮城节点
     type: url-test
     use:
-      - provider2-1
-      - provider2-2
-      - provider2-3
-      - provider2-4
-      - provider2-5
-      - provider2-6
-      - provider2-7
+      - provider2-8
     url: http://www.gstatic.com/generate_204
     interval: 120
     tolerance: 30
@@ -504,13 +444,7 @@ proxy-groups:
   - name: 🇰🇷 韩国节点
     type: url-test
     use:
-      - provider2-1
-      - provider2-2
-      - provider2-3
-      - provider2-4
-      - provider2-5
-      - provider2-6
-      - provider2-7
+      - provider2-8
     url: http://www.gstatic.com/generate_204
     interval: 120
     tolerance: 30
@@ -519,13 +453,7 @@ proxy-groups:
   - name: 🇵🇱 波兰节点
     type: url-test
     use:
-      - provider2-1
-      - provider2-2
-      - provider2-3
-      - provider2-4
-      - provider2-5
-      - provider2-6
-      - provider2-7
+      - provider2-8
     url: http://www.gstatic.com/generate_204
     interval: 120
     tolerance: 30
@@ -534,13 +462,7 @@ proxy-groups:
   - name: 🇪🇺 欧洲节点
     type: url-test
     use:
-      - provider2-1
-      - provider2-2
-      - provider2-3
-      - provider2-4
-      - provider2-5
-      - provider2-6
-      - provider2-7
+      - provider2-8
     url: http://www.gstatic.com/generate_204
     interval: 120
     tolerance: 30
