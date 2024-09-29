@@ -40,22 +40,22 @@ profile:
   store-fake-ip: true
 tcp-concurrent: true
 proxy-providers:
-  provider1:
+  provider2-8:
     type: http
-    url: "http://allsub.king361.cf/"
+    url: "https://sub.mxlweb.xyz/free"
     interval: 3600
-    path: ./provider1.yaml
+    path: ./provider2-1.yaml
     health-check:
       enable: true
       interval: 600
       url: http://www.gstatic.com/generate_204
+
 proxy-groups:
   - name: 节点选择
     type: select
     proxies:
       - 自动选择
-      - 负载均衡 (轮询)
-      - 负载均衡 (散列)
+      - 负载均衡 
       - 故障转移
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
@@ -63,31 +63,44 @@ proxy-groups:
       - 🇯🇵 日本节点
       - 🇺🇲 美国节点
       - 🇰🇷 韩国节点
+      - 🇵🇱 波兰节点
       - 🇪🇺 欧洲节点
       - 手动切换
       - DIRECT
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Apple_Fitness+.png
-  - name: 自动选择
-    type: url-test
-    use:
-      - provider1
-    url: http://www.gstatic.com/generate_204
+  - name: "SpeedTest"
+    type: select
+    proxies:
+      - 自动选择
+      - 负载均衡 
+      - 👨🏻‍💻 AI专线
+      - 故障转移
+      - 🇭🇰 香港节点
+      - 🇹🇼 台湾节点
+      - 🇸🇬 狮城节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇰🇷 韩国节点
+      - 🇵🇱 波兰节点
+      - 🇪🇺 欧洲节点
+      - DIRECT
+    url: "http://www.gstatic.com/generate_204"
     interval: 300
     tolerance: 50
-    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Cellular.png
+    lazy: true
+    icon: https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Speedtest.png
   - name: Tiktok
     type: select
     proxies:
       - 节点选择
       - 自动选择
-      - 负载均衡 (轮询)
-      - 负载均衡 (散列)
-      - 故障转移
+      - 负载均衡 
       - 🇸🇬 狮城节点
       - 🇹🇼 台湾节点
       - 🇯🇵 日本节点
       - 🇺🇲 美国节点
       - 🇰🇷 韩国节点
+      - 🇵🇱 波兰节点
       - 🇪🇺 欧洲节点
       - 手动切换
       - DIRECT
@@ -97,15 +110,14 @@ proxy-groups:
     proxies:
       - 节点选择
       - 自动选择
-      - 负载均衡 (轮询)
-      - 负载均衡 (散列)
-      - 故障转移
+      - 负载均衡 
       - 🇸🇬 狮城节点
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
       - 🇯🇵 日本节点
       - 🇺🇲 美国节点
       - 🇰🇷 韩国节点
+      - 🇵🇱 波兰节点
       - 🇪🇺 欧洲节点
       - 手动切换
       - DIRECT
@@ -113,35 +125,31 @@ proxy-groups:
   - name: OpenAi
     type: select
     proxies:
-      - 节点选择
-      - 自动选择
-      - 负载均衡 (轮询)
-      - 负载均衡 (散列)
-      - 故障转移
+      - 👨🏻‍💻 AI专线
+      - 负载均衡 
       - 🇸🇬 狮城节点
-      - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
       - 🇯🇵 日本节点
       - 🇺🇲 美国节点
       - 🇰🇷 韩国节点
+      - 🇵🇱 波兰节点
       - 🇪🇺 欧洲节点
       - 手动切换
       - DIRECT
-    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/ChatGPT.png
+    icon: https://github.com/shindgewongxj/WHATSINStash/raw/main/icon/openai.png
   - name: 油管视频
     type: select
     proxies:
       - 节点选择
       - 自动选择
-      - 负载均衡 (轮询)
-      - 负载均衡 (散列)
-      - 故障转移
+      - 负载均衡 
       - 🇸🇬 狮城节点
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
       - 🇯🇵 日本节点
       - 🇺🇲 美国节点
       - 🇰🇷 韩国节点
+      - 🇵🇱 波兰节点
       - 🇪🇺 欧洲节点
       - 手动切换
       - DIRECT
@@ -151,15 +159,14 @@ proxy-groups:
     proxies:
       - 节点选择
       - 自动选择
-      - 负载均衡 (轮询)
-      - 负载均衡 (散列)
-      - 故障转移
+      - 负载均衡 
       - 🇸🇬 狮城节点
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
       - 🇯🇵 日本节点
       - 🇺🇲 美国节点
       - 🇰🇷 韩国节点
+      - 🇵🇱 波兰节点
       - 🇪🇺 欧洲节点
       - 手动切换
       - DIRECT
@@ -184,19 +191,18 @@ proxy-groups:
     proxies:
       - 节点选择
       - 自动选择
-      - 负载均衡 (轮询)
-      - 负载均衡 (散列)
-      - 故障转移
+      - 负载均衡 
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
       - 🇸🇬 狮城节点
       - 🇯🇵 日本节点
       - 🇺🇲 美国节点
       - 🇰🇷 韩国节点
+      - 🇵🇱 波兰节点
       - 🇪🇺 欧洲节点
       - 手动切换
       - DIRECT
-    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Google.png
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Google_Search.png
   - name: 国内媒体
     type: select
     proxies:
@@ -212,99 +218,97 @@ proxy-groups:
     proxies:
       - DIRECT
       - 节点选择
-      - 负载均衡 (轮询)
-      - 负载均衡 (散列)
-      - 故障转移
+      - 负载均衡 
       - 🇺🇲 美国节点
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
       - 🇸🇬 狮城节点
       - 🇯🇵 日本节点
       - 🇰🇷 韩国节点
+      - 🇵🇱 波兰节点
       - 🇪🇺 欧洲节点
       - 手动切换
-    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Google_Search.png
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/StreamingCN.png
   - name: 微软Bing
     type: select
     proxies:
-      - DIRECT
       - 节点选择
+      - 👨🏻‍💻 AI专线
+      - 负载均衡 
       - 🇺🇲 美国节点
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
       - 🇸🇬 狮城节点
       - 🇯🇵 日本节点
       - 🇰🇷 韩国节点
+      - 🇵🇱 波兰节点
       - 🇪🇺 欧洲节点
       - 手动切换
-    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Copilot.png
+      - DIRECT
+    icon: https://github.com/shindgewongxj/WHATSINStash/raw/main/icon/bing.png
   - name: 微软云盘
     type: select
     proxies:
-      - DIRECT
       - 节点选择
-      - 负载均衡 (轮询)
-      - 负载均衡 (散列)
-      - 故障转移
+      - 负载均衡 
       - 🇺🇲 美国节点
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
       - 🇸🇬 狮城节点
       - 🇯🇵 日本节点
       - 🇰🇷 韩国节点
+      - 🇵🇱 波兰节点
       - 🇪🇺 欧洲节点
       - 手动切换
-    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Microsoft.png
+      - DIRECT
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/OneDrive.png
   - name: 微软服务
     type: select
     proxies:
-      - DIRECT
       - 节点选择
-      - 负载均衡 (轮询)
-      - 负载均衡 (散列)
-      - 故障转移
+      - 负载均衡 
       - 🇺🇲 美国节点
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
       - 🇸🇬 狮城节点
       - 🇯🇵 日本节点
       - 🇰🇷 韩国节点
+      - 🇵🇱 波兰节点
       - 🇪🇺 欧洲节点
       - 手动切换
-    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Windows.png
+      - DIRECT
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Microsoft.png
   - name: 苹果服务
     type: select
     proxies:
-      - DIRECT
       - 节点选择
-      - 负载均衡 (轮询)
-      - 负载均衡 (散列)
-      - 故障转移
+      - 负载均衡 
       - 🇺🇲 美国节点
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
       - 🇸🇬 狮城节点
       - 🇯🇵 日本节点
       - 🇰🇷 韩国节点
+      - 🇵🇱 波兰节点
       - 🇪🇺 欧洲节点
       - 手动切换
-    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Apple.png
+      - DIRECT
+    icon: https://github.com/shindgewongxj/WHATSINStash/raw/main/icon/apple.png
   - name: 游戏平台
     type: select
     proxies:
-      - DIRECT
       - 节点选择
-      - 负载均衡 (轮询)
-      - 负载均衡 (散列)
-      - 故障转移
+      - 负载均衡 
       - 🇺🇲 美国节点
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
       - 🇸🇬 狮城节点
       - 🇯🇵 日本节点
       - 🇰🇷 韩国节点
+      - 🇵🇱 波兰节点
       - 🇪🇺 欧洲节点
       - 手动切换
+      - DIRECT
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Game.png
   - name: 网易音乐
     type: select
@@ -338,111 +342,208 @@ proxy-groups:
     proxies:
       - 节点选择
       - 自动选择
-      - 负载均衡 (轮询)
-      - 负载均衡 (散列)
-      - 故障转移
+      - 负载均衡 
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
       - 🇸🇬 狮城节点
       - 🇯🇵 日本节点
       - 🇺🇲 美国节点
       - 🇰🇷 韩国节点
+      - 🇵🇱 波兰节点
       - 🇪🇺 欧洲节点
       - 手动切换
       - DIRECT
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Unlock.png
-  - name: 负载均衡 (轮询)
-    type: load-balance
-    strategy: round-robin
-    url: http://www.gstatic.com/generate_204
-    interval: 300
-    tolerance: 50
-    use:
-      - provider1
-    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/SSID.png
-  - name: 负载均衡 (散列)
+  - name: 负载均衡 
     type: load-balance
     strategy: consistent-hashing
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
     use:
-      - provider1
+      - provider2-1
+      - provider2-2
+      - provider2-3
+      - provider2-4
+      - provider2-5
+      - provider2-6
+      - provider2-7
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Available.png
+  - name: 👨🏻‍💻 AI专线
+    type: load-balance
+    strategy: consistent-hashing
+    url: http://www.gstatic.com/generate_204
+    interval: 120
+    tolerance: 30
+    use:
+      - provider2-1
+      - provider2-2
+      - provider2-3
+      - provider2-4
+      - provider2-5
+      - provider2-6
+      - provider2-7
+    filter: “(?i)美国|🇺🇸|US|阿什本|新加坡|🇸🇬|SG|日本|东京|🇯🇵|JP|韩国|首尔|春川|🇰🇷|KR|德国|法兰克福|纽伦堡|🇩🇪|DE|法国|马德里|巴黎|🇫🇷|FR|法国|GB|英国|伦敦|🇬🇧|UK|巴西|圣保罗|🇧🇷|迪拜|芬兰|🇫🇮|FI|海得拉巴|孟买|吉达|PL|波兰|🇵🇱|AU|澳大利亚|🇦🇺|IN|印度|🇮🇳|MY|马来西亚|🇲🇾|CA|加拿大|🇨🇦|AE|阿联酋|🇦🇪|NL|荷兰|🇳🇱"
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Drill.png
   - name: 故障转移
     type: fallback
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
     use:
-      - provider1
+      - provider2-1
+      - provider2-2
+      - provider2-3
+      - provider2-4
+      - provider2-5
+      - provider2-6
+      - provider2-7
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hijacking.png
+  - name: 自动选择
+    type: url-test
+    use:
+      - provider2-1
+      - provider2-2
+      - provider2-3
+      - provider2-4
+      - provider2-5
+      - provider2-6
+      - provider2-7
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Cellular.png
   - name: 手动切换
     type: select
     use:
-      - provider1
+      - provider2-1
+      - provider2-2
+      - provider2-3
+      - provider2-4
+      - provider2-5
+      - provider2-6
+      - provider2-7
+    interval: 300
+    tolerance: 50
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Clubhouse.png
   - name: 🇭🇰 香港节点
     type: url-test
     use:
-      - provider1
+      - provider2-1
+      - provider2-2
+      - provider2-3
+      - provider2-4
+      - provider2-5
+      - provider2-6
+      - provider2-7
     url: http://www.gstatic.com/generate_204
-    interval: 300
-    tolerance: 50
+    interval: 120
+    tolerance: 30
     filter: "(?i)港|HK|Hong"
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png
   - name: 🇯🇵 日本节点
     type: url-test
     use:
-      - provider1
+      - provider2-1
+      - provider2-2
+      - provider2-3
+      - provider2-4
+      - provider2-5
+      - provider2-6
+      - provider2-7
     url: http://www.gstatic.com/generate_204
-    interval: 300
-    tolerance: 50
+    interval: 120
+    tolerance: 30
     filter: "(?i)日本|川日|东京|大阪|泉日|埼玉|沪日|深日|JP|Japan"
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Japan.png
   - name: 🇺🇲 美国节点
     type: url-test
     use:
-      - provider1
+      - provider2-1
+      - provider2-2
+      - provider2-3
+      - provider2-4
+      - provider2-5
+      - provider2-6
+      - provider2-7
     url: http://www.gstatic.com/generate_204
-    interval: 300
-    tolerance: 150
+    interval: 120
+    tolerance: 30
     filter: "(?i)美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|CA|United States"
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_States.png
   - name: 🇹🇼 台湾节点
     type: url-test
     use:
-      - provider1
+      - provider2-1
+      - provider2-2
+      - provider2-3
+      - provider2-4
+      - provider2-5
+      - provider2-6
+      - provider2-7
     url: http://www.gstatic.com/generate_204
-    interval: 300
-    tolerance: 50
+    interval: 120
+    tolerance: 30
     filter: "(?i)台|新北|彰化|TW|Taiwan"
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Taiwan.png
   - name: 🇸🇬 狮城节点
     type: url-test
     use:
-      - provider1
+      - provider2-1
+      - provider2-2
+      - provider2-3
+      - provider2-4
+      - provider2-5
+      - provider2-6
+      - provider2-7
     url: http://www.gstatic.com/generate_204
-    interval: 300
-    tolerance: 50
+    interval: 120
+    tolerance: 30
     filter: "(?i)新加坡|坡|狮城|SG|Singapore"
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Singapore.png
   - name: 🇰🇷 韩国节点
     type: url-test
     use:
-      - provider1
+      - provider2-1
+      - provider2-2
+      - provider2-3
+      - provider2-4
+      - provider2-5
+      - provider2-6
+      - provider2-7
     url: http://www.gstatic.com/generate_204
-    interval: 300
-    tolerance: 50
+    interval: 120
+    tolerance: 30
     filter: "(?i)KR|Korea|KOR|首尔|韩|韓"
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Korea.png
+  - name: 🇵🇱 波兰节点
+    type: url-test
+    use:
+      - provider2-1
+      - provider2-2
+      - provider2-3
+      - provider2-4
+      - provider2-5
+      - provider2-6
+      - provider2-7
+    url: http://www.gstatic.com/generate_204
+    interval: 120
+    tolerance: 30
+    filter: “(?i)PL|🇵🇱|波兰|波兰节点|华沙|Warsaw|克拉科夫|Krakow|弗罗茨瓦夫|Wroclaw|格但斯克|Gdansk|波兹南|Poznan|卢布林|Lublin”
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Asia_Map.png
   - name: 🇪🇺 欧洲节点
     type: url-test
     use:
-      - provider1
+      - provider2-1
+      - provider2-2
+      - provider2-3
+      - provider2-4
+      - provider2-5
+      - provider2-6
+      - provider2-7
     url: http://www.gstatic.com/generate_204
-    interval: 300
-    tolerance: 50
+    interval: 120
+    tolerance: 30
     filter: "(?i)德国|法国|英国|欧洲|荷兰|芬兰|EU|DE|FR|UK|NL|Germany|France|England"
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/European_Union.png
 rules:
@@ -464,6 +565,8 @@ rules:
   - DOMAIN-SUFFIX,ipleak.net,节点选择
   - DOMAIN-SUFFIX,browserleaks.com,节点选择
   - DOMAIN-SUFFIX,dnsleak.com,节点选择
+  # SpeedTest
+  - GEOSITE,speedtest,SpeedTest
   - DOMAIN-SUFFIX,acl4.ssr,全球直连
   - DOMAIN-SUFFIX,ip6-localhost,全球直连
   - DOMAIN-SUFFIX,ip6-loopback,全球直连
@@ -1997,7 +2100,7 @@ rules:
   - IP-CIDR,117.177.248.41/32,应用净化,no-resolve
   - IP-CIDR,223.87.176.139/32,应用净化,no-resolve
   - IP-CIDR,223.87.176.176/32,应用净化,no-resolve
-  - IP-CIDR,223.87.177.180/32,应用净化,no-resolve
+  - IP-CIDR,223.87.177.120/32,应用净化,no-resolve
   - IP-CIDR,223.87.177.182/32,应用净化,no-resolve
   - IP-CIDR,223.87.177.184/32,应用净化,no-resolve
   - IP-CIDR,223.87.177.43/32,应用净化,no-resolve
@@ -2337,7 +2440,7 @@ rules:
   - IP-CIDR,144.178.48.0/20,苹果服务,no-resolve
   - IP-CIDR,192.35.50.0/24,苹果服务,no-resolve
   - IP-CIDR,198.183.17.0/24,苹果服务,no-resolve
-  - IP-CIDR,205.180.175.0/24,苹果服务,no-resolve
+  - IP-CIDR,205.120.175.0/24,苹果服务,no-resolve
   - DOMAIN-SUFFIX,t.me,电报消息
   - DOMAIN-SUFFIX,tdesktop.com,电报消息
   - DOMAIN-SUFFIX,telegra.ph,电报消息
@@ -9067,10 +9170,10 @@ rules:
   - IP-CIDR,120.253.255.162/32,节点选择,no-resolve
   - IP-CIDR,120.253.255.34/32,节点选择,no-resolve
   - IP-CIDR,120.253.255.98/32,节点选择,no-resolve
-  - IP-CIDR,180.163.150.162/32,节点选择,no-resolve
-  - IP-CIDR,180.163.150.34/32,节点选择,no-resolve
-  - IP-CIDR,180.163.151.162/32,节点选择,no-resolve
-  - IP-CIDR,180.163.151.34/32,节点选择,no-resolve
+  - IP-CIDR,120.163.150.162/32,节点选择,no-resolve
+  - IP-CIDR,120.163.150.34/32,节点选择,no-resolve
+  - IP-CIDR,120.163.151.162/32,节点选择,no-resolve
+  - IP-CIDR,120.163.151.34/32,节点选择,no-resolve
   - IP-CIDR,203.208.39.0/24,节点选择,no-resolve
   - IP-CIDR,203.208.40.0/24,节点选择,no-resolve
   - IP-CIDR,203.208.41.0/24,节点选择,no-resolve
@@ -9935,8 +10038,8 @@ rules:
   - IP-CIDR,106.12.0.0/15,全球直连,no-resolve
   - IP-CIDR,114.28.224.0/20,全球直连,no-resolve
   - IP-CIDR,119.63.192.0/21,全球直连,no-resolve
-  - IP-CIDR,180.76.0.0/24,全球直连,no-resolve
-  - IP-CIDR,180.76.0.0/16,全球直连,no-resolve
+  - IP-CIDR,120.76.0.0/24,全球直连,no-resolve
+  - IP-CIDR,120.76.0.0/16,全球直连,no-resolve
   - IP-CIDR,182.61.0.0/16,全球直连,no-resolve
   - IP-CIDR,185.10.104.0/22,全球直连,no-resolve
   - IP-CIDR,202.46.48.0/20,全球直连,no-resolve
