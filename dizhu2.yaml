@@ -105,7 +105,7 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204
   provider2-8:
     type: http
-    url: "https://sub.mxlweb.xyz/free"
+    url: "https://mxlsub.me/free"
     interval: 3600
     path: ./provider2-8.yaml
     health-check:
