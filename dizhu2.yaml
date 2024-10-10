@@ -111,14 +111,13 @@ proxy-providers:
     health-check:
       enable: true
       interval: 600
-      url: http://www.gstatic.com/generate_204    
-
+      url: http://www.gstatic.com/generate_204
 proxy-groups:
   - name: 节点选择
     type: select
     proxies:
       - 自动选择
-      - 负载均衡 
+      - 负载均衡
       - 故障转移
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
@@ -128,14 +127,13 @@ proxy-groups:
       - 🇰🇷 韩国节点
       - 🇵🇱 波兰节点
       - 🇪🇺 欧洲节点
-      - 手动切换
       - DIRECT
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Apple_Fitness+.png
   - name: "SpeedTest"
     type: select
     proxies:
       - 自动选择
-      - 负载均衡 
+      - 负载均衡
       - 👨🏻‍💻 AI专线
       - 故障转移
       - 🇭🇰 香港节点
@@ -157,7 +155,7 @@ proxy-groups:
     proxies:
       - 节点选择
       - 自动选择
-      - 负载均衡 
+      - 负载均衡
       - 🇸🇬 狮城节点
       - 🇹🇼 台湾节点
       - 🇯🇵 日本节点
@@ -165,15 +163,28 @@ proxy-groups:
       - 🇰🇷 韩国节点
       - 🇵🇱 波兰节点
       - 🇪🇺 欧洲节点
-      - 手动切换
       - DIRECT
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/TikTok_1.png
-  - name: 电报消息
+  - name: 马斯克的废话
+    proxies:
+      - 节点选择
+      - 自动选择
+      - 负载均衡
+      - 🇭🇰 香港节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇹🇼 台湾节点
+      - 🇸🇬 狮城节点
+      - 🇰🇷 韩国节点
+      - 🇪🇺 欧洲节点
+    type: select
+    icon: https://github.com/shindgewongxj/WHATSINStash/raw/main/icon/x.png
+  - name: 电报吹水
     type: select
     proxies:
       - 节点选择
       - 自动选择
-      - 负载均衡 
+      - 负载均衡
       - 🇸🇬 狮城节点
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
@@ -182,14 +193,13 @@ proxy-groups:
       - 🇰🇷 韩国节点
       - 🇵🇱 波兰节点
       - 🇪🇺 欧洲节点
-      - 手动切换
       - DIRECT
     icon: https://raw.githubusercontent.com/Orz-3/mini/master/Color/Telegram.png
   - name: OpenAi
     type: select
     proxies:
       - 👨🏻‍💻 AI专线
-      - 负载均衡 
+      - 负载均衡
       - 🇸🇬 狮城节点
       - 🇹🇼 台湾节点
       - 🇯🇵 日本节点
@@ -197,7 +207,6 @@ proxy-groups:
       - 🇰🇷 韩国节点
       - 🇵🇱 波兰节点
       - 🇪🇺 欧洲节点
-      - 手动切换
       - DIRECT
     icon: https://github.com/shindgewongxj/WHATSINStash/raw/main/icon/openai.png
   - name: 油管视频
@@ -205,7 +214,7 @@ proxy-groups:
     proxies:
       - 节点选择
       - 自动选择
-      - 负载均衡 
+      - 负载均衡
       - 🇸🇬 狮城节点
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
@@ -214,7 +223,6 @@ proxy-groups:
       - 🇰🇷 韩国节点
       - 🇵🇱 波兰节点
       - 🇪🇺 欧洲节点
-      - 手动切换
       - DIRECT
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/YouTube.png
   - name: 奈飞视频
@@ -222,7 +230,7 @@ proxy-groups:
     proxies:
       - 节点选择
       - 自动选择
-      - 负载均衡 
+      - 负载均衡
       - 🇸🇬 狮城节点
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
@@ -231,7 +239,6 @@ proxy-groups:
       - 🇰🇷 韩国节点
       - 🇵🇱 波兰节点
       - 🇪🇺 欧洲节点
-      - 手动切换
       - DIRECT
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Netflix.png
   - name: 巴哈姆特
@@ -239,7 +246,6 @@ proxy-groups:
     proxies:
       - 🇹🇼 台湾节点
       - 节点选择
-      - 手动切换
       - DIRECT
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Bahamut.png
   - name: 哔哩哔哩
@@ -254,7 +260,7 @@ proxy-groups:
     proxies:
       - 节点选择
       - 自动选择
-      - 负载均衡 
+      - 负载均衡
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
       - 🇸🇬 狮城节点
@@ -263,7 +269,6 @@ proxy-groups:
       - 🇰🇷 韩国节点
       - 🇵🇱 波兰节点
       - 🇪🇺 欧洲节点
-      - 手动切换
       - DIRECT
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Google_Search.png
   - name: 国内媒体
@@ -274,14 +279,13 @@ proxy-groups:
       - 🇹🇼 台湾节点
       - 🇸🇬 狮城节点
       - 🇯🇵 日本节点
-      - 手动切换
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/China.png
   - name: 谷歌FCM
     type: select
     proxies:
       - DIRECT
       - 节点选择
-      - 负载均衡 
+      - 负载均衡
       - 🇺🇲 美国节点
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
@@ -290,14 +294,13 @@ proxy-groups:
       - 🇰🇷 韩国节点
       - 🇵🇱 波兰节点
       - 🇪🇺 欧洲节点
-      - 手动切换
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/StreamingCN.png
   - name: 微软Bing
     type: select
     proxies:
       - 节点选择
       - 👨🏻‍💻 AI专线
-      - 负载均衡 
+      - 负载均衡
       - 🇺🇲 美国节点
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
@@ -306,14 +309,13 @@ proxy-groups:
       - 🇰🇷 韩国节点
       - 🇵🇱 波兰节点
       - 🇪🇺 欧洲节点
-      - 手动切换
       - DIRECT
     icon: https://github.com/shindgewongxj/WHATSINStash/raw/main/icon/bing.png
   - name: 微软云盘
     type: select
     proxies:
       - 节点选择
-      - 负载均衡 
+      - 负载均衡
       - 🇺🇲 美国节点
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
@@ -322,14 +324,13 @@ proxy-groups:
       - 🇰🇷 韩国节点
       - 🇵🇱 波兰节点
       - 🇪🇺 欧洲节点
-      - 手动切换
       - DIRECT
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/OneDrive.png
   - name: 微软服务
     type: select
     proxies:
       - 节点选择
-      - 负载均衡 
+      - 负载均衡
       - 🇺🇲 美国节点
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
@@ -338,14 +339,13 @@ proxy-groups:
       - 🇰🇷 韩国节点
       - 🇵🇱 波兰节点
       - 🇪🇺 欧洲节点
-      - 手动切换
       - DIRECT
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Microsoft.png
   - name: 苹果服务
     type: select
     proxies:
       - 节点选择
-      - 负载均衡 
+      - 负载均衡
       - 🇺🇲 美国节点
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
@@ -354,14 +354,13 @@ proxy-groups:
       - 🇰🇷 韩国节点
       - 🇵🇱 波兰节点
       - 🇪🇺 欧洲节点
-      - 手动切换
       - DIRECT
     icon: https://github.com/shindgewongxj/WHATSINStash/raw/main/icon/apple.png
   - name: 游戏平台
     type: select
     proxies:
       - 节点选择
-      - 负载均衡 
+      - 负载均衡
       - 🇺🇲 美国节点
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
@@ -370,7 +369,6 @@ proxy-groups:
       - 🇰🇷 韩国节点
       - 🇵🇱 波兰节点
       - 🇪🇺 欧洲节点
-      - 手动切换
       - DIRECT
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Game.png
   - name: 网易音乐
@@ -405,7 +403,7 @@ proxy-groups:
     proxies:
       - 节点选择
       - 自动选择
-      - 负载均衡 
+      - 负载均衡
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
       - 🇸🇬 狮城节点
@@ -414,10 +412,9 @@ proxy-groups:
       - 🇰🇷 韩国节点
       - 🇵🇱 波兰节点
       - 🇪🇺 欧洲节点
-      - 手动切换
       - DIRECT
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Unlock.png
-  - name: 负载均衡 
+  - name: 负载均衡
     type: load-balance
     strategy: consistent-hashing
     url: http://www.gstatic.com/generate_204
@@ -480,20 +477,6 @@ proxy-groups:
     interval: 300
     tolerance: 50
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Cellular.png
-  - name: 手动切换
-    type: select
-    use:
-      - provider2-1
-      - provider2-2
-      - provider2-3
-      - provider2-4
-      - provider2-5
-      - provider2-6
-      - provider2-7
-      - provider2-8
-    interval: 300
-    tolerance: 50
-    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Clubhouse.png
   - name: 🇭🇰 香港节点
     type: url-test
     use:
@@ -2517,18 +2500,18 @@ rules:
   - IP-CIDR,192.35.50.0/24,苹果服务,no-resolve
   - IP-CIDR,198.183.17.0/24,苹果服务,no-resolve
   - IP-CIDR,205.120.175.0/24,苹果服务,no-resolve
-  - DOMAIN-SUFFIX,t.me,电报消息
-  - DOMAIN-SUFFIX,tdesktop.com,电报消息
-  - DOMAIN-SUFFIX,telegra.ph,电报消息
-  - DOMAIN-SUFFIX,telegram.me,电报消息
-  - DOMAIN-SUFFIX,telegram.org,电报消息
-  - DOMAIN-SUFFIX,telesco.pe,电报消息
-  - IP-CIDR,91.108.0.0/16,电报消息,no-resolve
-  - IP-CIDR,109.239.140.0/24,电报消息,no-resolve
-  - IP-CIDR,149.154.160.0/20,电报消息,no-resolve
-  - IP-CIDR6,2001:67c:4e8::/48,电报消息,no-resolve
-  - IP-CIDR6,2001:b28:f23d::/48,电报消息,no-resolve
-  - IP-CIDR6,2001:b28:f23f::/48,电报消息,no-resolve
+  - DOMAIN-SUFFIX,t.me,电报吹水
+  - DOMAIN-SUFFIX,tdesktop.com,电报吹水
+  - DOMAIN-SUFFIX,telegra.ph,电报吹水
+  - DOMAIN-SUFFIX,telegram.me,电报吹水
+  - DOMAIN-SUFFIX,telegram.org,电报吹水
+  - DOMAIN-SUFFIX,telesco.pe,电报吹水
+  - IP-CIDR,91.108.0.0/16,电报吹水,no-resolve
+  - IP-CIDR,109.239.140.0/24,电报吹水,no-resolve
+  - IP-CIDR,149.154.160.0/20,电报吹水,no-resolve
+  - IP-CIDR6,2001:67c:4e8::/48,电报吹水,no-resolve
+  - IP-CIDR6,2001:b28:f23d::/48,电报吹水,no-resolve
+  - IP-CIDR6,2001:b28:f23f::/48,电报吹水,no-resolve
   - DOMAIN-KEYWORD,openai,OpenAi
   - DOMAIN,gemini.google.com,OpenAi
   - DOMAIN-SUFFIX,auth0.com,OpenAi
@@ -3165,7 +3148,7 @@ rules:
   - DOMAIN-KEYWORD,sci-hub,节点选择
   - DOMAIN-KEYWORD,spotify,节点选择
   - DOMAIN-KEYWORD,telegram,节点选择
-  - DOMAIN-KEYWORD,twitter,节点选择
+  - DOMAIN-KEYWORD,twitter,马斯克的废话
   - DOMAIN-KEYWORD,whatsapp,节点选择
   - DOMAIN-KEYWORD,youtube,节点选择
   - DOMAIN-SUFFIX,gfwlist.start,节点选择
@@ -3337,7 +3320,7 @@ rules:
   - DOMAIN-SUFFIX,adelaidebbs.com,节点选择
   - DOMAIN-SUFFIX,admob.com,节点选择
   - DOMAIN-SUFFIX,adpl.org.hk,节点选择
-  - DOMAIN-SUFFIX,ads-twitter.com,节点选择
+  - DOMAIN-SUFFIX,ads-twitter.com,马斯克的废话
   - DOMAIN-SUFFIX,adsense.com,节点选择
   - DOMAIN-SUFFIX,adult-sex-games.com,节点选择
   - DOMAIN-SUFFIX,adultfriendfinder.com,节点选择
@@ -3662,7 +3645,7 @@ rules:
   - DOMAIN-SUFFIX,bemywife.cc,节点选择
   - DOMAIN-SUFFIX,beric.me,节点选择
   - DOMAIN-SUFFIX,berlinerbericht.de,节点选择
-  - DOMAIN-SUFFIX,berlintwitterwall.com,节点选择
+  - DOMAIN-SUFFIX,berlintwitterwall.com,马斯克的废话
   - DOMAIN-SUFFIX,berm.co.nz,节点选择
   - DOMAIN-SUFFIX,bestforchina.org,节点选择
   - DOMAIN-SUFFIX,bestgore.com,节点选择
@@ -4814,7 +4797,7 @@ rules:
   - DOMAIN-SUFFIX,fillthesquare.org,节点选择
   - DOMAIN-SUFFIX,filmingfortibet.org,节点选择
   - DOMAIN-SUFFIX,filthdump.com,节点选择
-  - DOMAIN-SUFFIX,financetwitter.com,节点选择
+  - DOMAIN-SUFFIX,financetwitter.com,马斯克的废话
   - DOMAIN-SUFFIX,finchvpn.com,节点选择
   - DOMAIN-SUFFIX,findmespot.com,节点选择
   - DOMAIN-SUFFIX,findyoutube.com,节点选择
@@ -7628,7 +7611,7 @@ rules:
   - DOMAIN-SUFFIX,sijihuisuo.club,节点选择
   - DOMAIN-SUFFIX,sijihuisuo.com,节点选择
   - DOMAIN-SUFFIX,silkbook.com,节点选择
-  - DOMAIN-SUFFIX,simbolostwitter.com,节点选择
+  - DOMAIN-SUFFIX,simbolostwitter.com,马斯克的废话
   - DOMAIN-SUFFIX,simplecd.org,节点选择
   - DOMAIN-SUFFIX,simpleproductivityblog.com,节点选择
   - DOMAIN-SUFFIX,sina.com.hk,节点选择
@@ -8297,7 +8280,7 @@ rules:
   - DOMAIN-SUFFIX,turansam.org,节点选择
   - DOMAIN-SUFFIX,turbobit.net,节点选择
   - DOMAIN-SUFFIX,turbohide.com,节点选择
-  - DOMAIN-SUFFIX,turbotwitter.com,节点选择
+  - DOMAIN-SUFFIX,turbotwitter.com,马斯克的废话
   - DOMAIN-SUFFIX,turkistantimes.com,节点选择
   - DOMAIN-SUFFIX,turntable.fm,节点选择
   - DOMAIN-SUFFIX,tushycash.com,节点选择
@@ -8386,16 +8369,16 @@ rules:
   - DOMAIN-SUFFIX,twitpic.com,节点选择
   - DOMAIN-SUFFIX,twitstat.com,节点选择
   - DOMAIN-SUFFIX,twittbot.net,节点选择
-  - DOMAIN-SUFFIX,twitter.com,节点选择
-  - DOMAIN-SUFFIX,twitter.jp,节点选择
-  - DOMAIN-SUFFIX,twitter4j.org,节点选择
-  - DOMAIN-SUFFIX,twittercounter.com,节点选择
-  - DOMAIN-SUFFIX,twitterfeed.com,节点选择
-  - DOMAIN-SUFFIX,twittergadget.com,节点选择
-  - DOMAIN-SUFFIX,twitterkr.com,节点选择
-  - DOMAIN-SUFFIX,twittermail.com,节点选择
-  - DOMAIN-SUFFIX,twitterrific.com,节点选择
-  - DOMAIN-SUFFIX,twittertim.es,节点选择
+  - DOMAIN-SUFFIX,twitter.com,马斯克的废话
+  - DOMAIN-SUFFIX,twitter.jp,马斯克的废话
+  - DOMAIN-SUFFIX,twitter4j.org,马斯克的废话
+  - DOMAIN-SUFFIX,twittercounter.com,马斯克的废话
+  - DOMAIN-SUFFIX,twitterfeed.com,马斯克的废话
+  - DOMAIN-SUFFIX,twittergadget.com,马斯克的废话
+  - DOMAIN-SUFFIX,twitterkr.com,马斯克的废话
+  - DOMAIN-SUFFIX,twittermail.com,马斯克的废话
+  - DOMAIN-SUFFIX,twitterrific.com,马斯克的废话
+  - DOMAIN-SUFFIX,twittertim.es,马斯克的废话
   - DOMAIN-SUFFIX,twitthat.com,节点选择
   - DOMAIN-SUFFIX,twitturk.com,节点选择
   - DOMAIN-SUFFIX,twitturly.com,节点选择
