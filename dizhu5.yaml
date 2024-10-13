@@ -42,7 +42,6 @@ tcp-concurrent: true
 proxy-providers:
   provider5-1:
     type: http
-    url: "
     url: "https://mxlsub.me/aggregatorfull"
     interval: 3600
     path: ./provider5-1.yaml
