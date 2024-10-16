@@ -87,7 +87,7 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204
   provider2-6:
     type: http
-    url: "https://moistr.freenods.sbs/mianfeicf$0"
+    url: "https://happy.1949.buzz/vless"
     interval: 3600
     path: ./provider2-6.yaml
     health-check:
