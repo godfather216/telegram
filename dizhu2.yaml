@@ -283,7 +283,6 @@ proxy-groups:
   - name: 谷歌FCM
     type: select
     proxies:
-      - DIRECT
       - 节点选择
       - 负载均衡
       - 🇺🇲 美国节点
