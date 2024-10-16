@@ -60,7 +60,7 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204
   provider3-3:
     type: http
-    url: "https://moist.freenods.sbs/Trojan"
+    url: "https://moist.996.buzz/vless"
     interval: 3600
     path: ./provider3-3.yaml
     health-check:
