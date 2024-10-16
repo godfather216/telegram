@@ -128,7 +128,6 @@ proxy-groups:
       - 🇰🇷 韩国节点
       - 🇵🇱 波兰节点
       - 🇪🇺 欧洲节点
-      - DIRECT
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/TikTok_1.png
   - name: 马斯克的废话
     proxies:
@@ -158,7 +157,6 @@ proxy-groups:
       - 🇰🇷 韩国节点
       - 🇵🇱 波兰节点
       - 🇪🇺 欧洲节点
-      - DIRECT
     icon: https://raw.githubusercontent.com/Orz-3/mini/master/Color/Telegram.png
   - name: OpenAi
     type: select
@@ -172,7 +170,6 @@ proxy-groups:
       - 🇰🇷 韩国节点
       - 🇵🇱 波兰节点
       - 🇪🇺 欧洲节点
-      - DIRECT
     icon: https://github.com/shindgewongxj/WHATSINStash/raw/main/icon/openai.png
   - name: 油管视频
     type: select
@@ -188,7 +185,6 @@ proxy-groups:
       - 🇰🇷 韩国节点
       - 🇵🇱 波兰节点
       - 🇪🇺 欧洲节点
-      - DIRECT
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/YouTube.png
   - name: 奈飞视频
     type: select
@@ -204,7 +200,6 @@ proxy-groups:
       - 🇰🇷 韩国节点
       - 🇵🇱 波兰节点
       - 🇪🇺 欧洲节点
-      - DIRECT
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Netflix.png
   - name: 巴哈姆特
     type: select
@@ -234,7 +229,6 @@ proxy-groups:
       - 🇰🇷 韩国节点
       - 🇵🇱 波兰节点
       - 🇪🇺 欧洲节点
-      - DIRECT
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Google_Search.png
   - name: 国内媒体
     type: select
@@ -248,7 +242,6 @@ proxy-groups:
   - name: 谷歌FCM
     type: select
     proxies:
-      - DIRECT
       - 节点选择
       - 负载均衡
       - 🇺🇲 美国节点
@@ -274,7 +267,6 @@ proxy-groups:
       - 🇰🇷 韩国节点
       - 🇵🇱 波兰节点
       - 🇪🇺 欧洲节点
-      - DIRECT
     icon: https://github.com/shindgewongxj/WHATSINStash/raw/main/icon/bing.png
   - name: 微软云盘
     type: select
