@@ -65,7 +65,6 @@ proxy-groups:
       - 🇰🇷 韩国节点
       - 🇵🇱 波兰节点
       - 🇪🇺 欧洲节点
-      - 手动切换
       - DIRECT
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Apple_Fitness+.png
   - name: "SpeedTest"
