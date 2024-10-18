@@ -1,0 +1,3388 @@
+{
+  "log": {
+    "level": "info",
+    "timestamp": true
+  },
+  "experimental": {
+    "clash_api": {
+      "external_controller": "127.0.0.1:9090",
+      "external_ui": "ui",
+      "secret": "",
+      "external_ui_download_url": "https://mirror.ghproxy.com/https://github.com/MetaCubeX/Yacd-meta/archive/gh-pages.zip",
+      "external_ui_download_detour": "direct",
+      "default_mode": "rule"
+    },
+    "cache_file": {
+      "enabled": true,
+      "store_fakeip": false
+    }
+  },
+  "dns": {
+    "servers": [
+      {
+        "tag": "proxyDns",
+        "address": "tls://8.8.8.8",
+        "detour": "Proxy"
+      },
+      {
+        "tag": "localDns",
+        "address": "https://223.5.5.5/dns-query",
+        "detour": "direct"
+      },
+      {
+        "tag": "block",
+        "address": "rcode://success"
+      }
+    ],
+    "rules": [
+      {
+        "rule_set": "geosite-category-ads-all",
+        "server": "block"
+      },
+      {
+        "outbound": "any",
+        "server": "localDns",
+        "disable_cache": true
+      },
+      {
+        "rule_set": "geosite-cn",
+        "server": "localDns"
+      },
+      {
+        "clash_mode": "direct",
+        "server": "localDns"
+      },
+      {
+        "clash_mode": "global",
+        "server": "proxyDns"
+      },
+      {
+        "rule_set": "geosite-geolocation-!cn",
+        "server": "proxyDns"
+      }
+    ],
+    "final": "localDns",
+    "strategy": "ipv4_only"
+  },
+  "inbounds": [
+    {
+      "type": "tun",
+      "inet4_address": "172.19.0.1/30",
+      "mtu": 9000,
+      "auto_route": true,
+      "strict_route": true,
+      "sniff": true,
+      "endpoint_independent_nat": false,
+      "stack": "system",
+      "platform": {
+        "http_proxy": {
+          "enabled": true,
+          "server": "127.0.0.1",
+          "server_port": 2080
+        }
+      }
+    },
+    {
+      "type": "mixed",
+      "listen": "127.0.0.1",
+      "listen_port": 2080,
+      "sniff": true,
+      "users": []
+    }
+  ],
+  "outbounds": [
+    {
+      "tag": "Proxy",
+      "type": "selector",
+      "outbounds": [
+        "auto",
+        "direct",
+        "永久免费不要被骗",
+        "欢乐时光-移动 01",
+        "欢乐时光-移动 02",
+        "欢乐时光-移动 03",
+        "欢乐时光-联通 01",
+        "欢乐时光-联通 02",
+        "欢乐时光-联通 03",
+        "欢乐时光-电信 01",
+        "欢乐时光-电信 02",
+        "欢乐时光-电信 03",
+        "欢乐时光-IPV6 01",
+        "欢乐时光-IPV6 02",
+        "欢乐时光-IPV6 03",
+        "🇭🇰 欢乐时光-香港 01",
+        "🇭🇰 欢乐时光-香港 02",
+        "🇭🇰 欢乐时光-香港 03",
+        "🇭🇰 欢乐时光-香港 04",
+        "🇭🇰 欢乐时光-香港 05",
+        "🇰🇷 欢乐时光-韩国 01",
+        "🇰🇷 欢乐时光-韩国 02",
+        "🇰🇷 欢乐时光-韩国 03",
+        "🇰🇷 欢乐时光-韩国 04",
+        "🇰🇷 欢乐时光-韩国 05",
+        "🇹🇼 🇨🇳 欢乐时光-台湾 01",
+        "🇹🇼 🇨🇳 欢乐时光-台湾 02",
+        "🇹🇼 🇨🇳 欢乐时光-台湾 03",
+        "🇹🇼 🇨🇳 欢乐时光-台湾 04",
+        "🇹🇼 🇨🇳 欢乐时光-台湾 05",
+        "🇹🇼 🇨🇳 欢乐时光-台湾 06",
+        "🇹🇼 🇨🇳 欢乐时光-台湾 07",
+        "🇹🇼 🇨🇳 欢乐时光-台湾 08",
+        "🇯🇵 欢乐时光-日本 01",
+        "🇯🇵 欢乐时光-日本 02",
+        "🇯🇵 欢乐时光-日本 03",
+        "🇯🇵 欢乐时光-日本 04",
+        "🇯🇵 欢乐时光-日本 05",
+        "🇸🇬 欢乐时光-新加坡 01",
+        "🇸🇬 欢乐时光-新加坡 02",
+        "🇸🇬 欢乐时光-新加坡 03",
+        "🇸🇬 欢乐时光-新加坡 04",
+        "🇸🇬 欢乐时光-新加坡 05",
+        "🇺🇸 欢乐时光-美国 01",
+        "🇺🇸 欢乐时光-美国 02",
+        "🇺🇸 欢乐时光-美国 03",
+        "🇺🇸 欢乐时光-美国 04",
+        "🇺🇸 欢乐时光-美国 05",
+        "🇬🇧 欢乐时光-英国 01",
+        "🇬🇧 欢乐时光-英国 02",
+        "🇬🇧 欢乐时光-英国 03",
+        "🇬🇧 欢乐时光-英国 04",
+        "🇬🇧 欢乐时光-英国 05",
+        "🇫🇷 欢乐时光-法国 01",
+        "🇫🇷 欢乐时光-法国 02",
+        "🇫🇷 欢乐时光-法国 03",
+        "🇫🇷 欢乐时光-法国 04",
+        "🇫🇷 欢乐时光-法国 05",
+        "🇳🇱 欢乐时光-荷兰 01",
+        "🇳🇱 欢乐时光-荷兰 02",
+        "🇳🇱 欢乐时光-荷兰 03",
+        "🇳🇱 欢乐时光-荷兰 04",
+        "🇳🇱 欢乐时光-荷兰 05",
+        "🇩🇪 欢乐时光-德国 01",
+        "🇩🇪 欢乐时光-德国 02",
+        "🇩🇪 欢乐时光-德国 03",
+        "🇩🇪 欢乐时光-德国 04",
+        "🇩🇪 欢乐时光-德国 05",
+        "🇳🇴 欢乐时光-挪威 01",
+        "🇳🇴 欢乐时光-挪威 02",
+        "🇳🇴 欢乐时光-挪威 03",
+        "🇳🇴 欢乐时光-挪威 04",
+        "🇳🇴 欢乐时光-挪威 05",
+        "🇫🇮 欢乐时光-芬兰 01",
+        "🇫🇮 欢乐时光-芬兰 02",
+        "🇫🇮 欢乐时光-芬兰 03",
+        "🇫🇮 欢乐时光-芬兰 04",
+        "🇫🇮 欢乐时光-芬兰 05",
+        "🇸🇪 欢乐时光-瑞典 01",
+        "🇸🇪 欢乐时光-瑞典 02",
+        "🇸🇪 欢乐时光-瑞典 03",
+        "🇸🇪 欢乐时光-瑞典 04",
+        "🇸🇪 欢乐时光-瑞典 05",
+        "🇱🇹 欢乐时光-立陶宛 01",
+        "🇱🇹 欢乐时光-立陶宛 02",
+        "🇱🇹 欢乐时光-立陶宛 03",
+        "🇵🇱 欢乐时光-波兰 01",
+        "🇵🇱 欢乐时光-波兰 02",
+        "🇵🇱 欢乐时光-波兰 03",
+        "🇵🇱 欢乐时光-波兰 04",
+        "🇵🇱 欢乐时光-波兰 05",
+        "🇷🇺 欢乐时光-俄罗斯 01",
+        "🇷🇺 欢乐时光-俄罗斯 02",
+        "🇷🇺 欢乐时光-俄罗斯 03"
+      ]
+    },
+    {
+      "tag": "OpenAI",
+      "type": "selector",
+      "outbounds": [
+        "TaiWan",
+        "Singapore",
+        "Japan",
+        "America",
+        "Others"
+      ],
+      "default": "America"
+    },
+    {
+      "tag": "Google",
+      "type": "selector",
+      "outbounds": [
+        "HongKong",
+        "TaiWan",
+        "Singapore",
+        "Japan",
+        "America",
+        "Others"
+      ]
+    },
+    {
+      "tag": "Telegram",
+      "type": "selector",
+      "outbounds": [
+        "HongKong",
+        "TaiWan",
+        "Singapore",
+        "Japan",
+        "America",
+        "Others"
+      ]
+    },
+    {
+      "tag": "Twitter",
+      "type": "selector",
+      "outbounds": [
+        "HongKong",
+        "TaiWan",
+        "Singapore",
+        "Japan",
+        "America",
+        "Others"
+      ]
+    },
+    {
+      "tag": "Facebook",
+      "type": "selector",
+      "outbounds": [
+        "HongKong",
+        "TaiWan",
+        "Singapore",
+        "Japan",
+        "America",
+        "Others"
+      ]
+    },
+    {
+      "tag": "BiliBili",
+      "type": "selector",
+      "outbounds": [
+        "direct",
+        "HongKong",
+        "TaiWan"
+      ]
+    },
+    {
+      "tag": "Bahamut",
+      "type": "selector",
+      "outbounds": [
+        "TaiWan",
+        "Proxy"
+      ]
+    },
+    {
+      "tag": "Spotify",
+      "type": "selector",
+      "outbounds": [
+        "HongKong",
+        "TaiWan",
+        "Singapore",
+        "Japan",
+        "America",
+        "Others"
+      ],
+      "default": "America"
+    },
+    {
+      "tag": "TikTok",
+      "type": "selector",
+      "outbounds": [
+        "HongKong",
+        "TaiWan",
+        "Singapore",
+        "Japan",
+        "America"
+      ],
+      "default": "Japan"
+    },
+    {
+      "tag": "Netflix",
+      "type": "selector",
+      "outbounds": [
+        "HongKong",
+        "TaiWan",
+        "Singapore",
+        "Japan",
+        "America",
+        "Others"
+      ]
+    },
+    {
+      "tag": "Disney+",
+      "type": "selector",
+      "outbounds": [
+        "HongKong",
+        "TaiWan",
+        "Singapore",
+        "Japan",
+        "America",
+        "Others"
+      ]
+    },
+    {
+      "tag": "Apple",
+      "type": "selector",
+      "outbounds": [
+        "direct",
+        "HongKong",
+        "TaiWan",
+        "Singapore",
+        "Japan",
+        "America",
+        "Others"
+      ]
+    },
+    {
+      "tag": "Microsoft",
+      "type": "selector",
+      "outbounds": [
+        "direct",
+        "HongKong",
+        "TaiWan",
+        "Singapore",
+        "Japan",
+        "America",
+        "Others"
+      ]
+    },
+    {
+      "tag": "Games",
+      "type": "selector",
+      "outbounds": [
+        "direct",
+        "HongKong",
+        "TaiWan",
+        "Singapore",
+        "Japan",
+        "America",
+        "Others"
+      ]
+    },
+    {
+      "tag": "Streaming",
+      "type": "selector",
+      "outbounds": [
+        "HongKong",
+        "TaiWan",
+        "Singapore",
+        "Japan",
+        "America",
+        "Others"
+      ]
+    },
+    {
+      "tag": "Global",
+      "type": "selector",
+      "outbounds": [
+        "HongKong",
+        "TaiWan",
+        "Singapore",
+        "Japan",
+        "America",
+        "Others",
+        "direct"
+      ]
+    },
+    {
+      "tag": "China",
+      "type": "selector",
+      "outbounds": [
+        "direct",
+        "Proxy"
+      ]
+    },
+    {
+      "tag": "AdBlock",
+      "type": "selector",
+      "outbounds": [
+        "block",
+        "direct"
+      ]
+    },
+    {
+      "tag": "HongKong",
+      "type": "selector",
+      "outbounds": [
+        "🇭🇰 欢乐时光-香港 01",
+        "🇭🇰 欢乐时光-香港 02",
+        "🇭🇰 欢乐时光-香港 03",
+        "🇭🇰 欢乐时光-香港 04",
+        "🇭🇰 欢乐时光-香港 05"
+      ]
+    },
+    {
+      "tag": "TaiWan",
+      "type": "selector",
+      "outbounds": [
+        "🇹🇼 🇨🇳 欢乐时光-台湾 01",
+        "🇹🇼 🇨🇳 欢乐时光-台湾 02",
+        "🇹🇼 🇨🇳 欢乐时光-台湾 03",
+        "🇹🇼 🇨🇳 欢乐时光-台湾 04",
+        "🇹🇼 🇨🇳 欢乐时光-台湾 05",
+        "🇹🇼 🇨🇳 欢乐时光-台湾 06",
+        "🇹🇼 🇨🇳 欢乐时光-台湾 07",
+        "🇹🇼 🇨🇳 欢乐时光-台湾 08"
+      ]
+    },
+    {
+      "tag": "Singapore",
+      "type": "selector",
+      "outbounds": [
+        "🇸🇬 欢乐时光-新加坡 01",
+        "🇸🇬 欢乐时光-新加坡 02",
+        "🇸🇬 欢乐时光-新加坡 03",
+        "🇸🇬 欢乐时光-新加坡 04",
+        "🇸🇬 欢乐时光-新加坡 05"
+      ]
+    },
+    {
+      "tag": "Japan",
+      "type": "selector",
+      "outbounds": [
+        "🇯🇵 欢乐时光-日本 01",
+        "🇯🇵 欢乐时光-日本 02",
+        "🇯🇵 欢乐时光-日本 03",
+        "🇯🇵 欢乐时光-日本 04",
+        "🇯🇵 欢乐时光-日本 05"
+      ]
+    },
+    {
+      "tag": "America",
+      "type": "selector",
+      "outbounds": [
+        "🇺🇸 欢乐时光-美国 01",
+        "🇺🇸 欢乐时光-美国 02",
+        "🇺🇸 欢乐时光-美国 03",
+        "🇺🇸 欢乐时光-美国 04",
+        "🇺🇸 欢乐时光-美国 05"
+      ]
+    },
+    {
+      "tag": "Others",
+      "type": "selector",
+      "outbounds": [
+        "永久免费不要被骗",
+        "欢乐时光-移动 01",
+        "欢乐时光-移动 02",
+        "欢乐时光-移动 03",
+        "欢乐时光-联通 01",
+        "欢乐时光-联通 02",
+        "欢乐时光-联通 03",
+        "欢乐时光-电信 01",
+        "欢乐时光-电信 02",
+        "欢乐时光-电信 03",
+        "欢乐时光-IPV6 01",
+        "欢乐时光-IPV6 02",
+        "欢乐时光-IPV6 03",
+        "🇰🇷 欢乐时光-韩国 01",
+        "🇰🇷 欢乐时光-韩国 02",
+        "🇰🇷 欢乐时光-韩国 03",
+        "🇰🇷 欢乐时光-韩国 04",
+        "🇰🇷 欢乐时光-韩国 05",
+        "🇬🇧 欢乐时光-英国 01",
+        "🇬🇧 欢乐时光-英国 02",
+        "🇬🇧 欢乐时光-英国 03",
+        "🇬🇧 欢乐时光-英国 04",
+        "🇬🇧 欢乐时光-英国 05",
+        "🇫🇷 欢乐时光-法国 01",
+        "🇫🇷 欢乐时光-法国 02",
+        "🇫🇷 欢乐时光-法国 03",
+        "🇫🇷 欢乐时光-法国 04",
+        "🇫🇷 欢乐时光-法国 05",
+        "🇳🇱 欢乐时光-荷兰 01",
+        "🇳🇱 欢乐时光-荷兰 02",
+        "🇳🇱 欢乐时光-荷兰 03",
+        "🇳🇱 欢乐时光-荷兰 04",
+        "🇳🇱 欢乐时光-荷兰 05",
+        "🇩🇪 欢乐时光-德国 01",
+        "🇩🇪 欢乐时光-德国 02",
+        "🇩🇪 欢乐时光-德国 03",
+        "🇩🇪 欢乐时光-德国 04",
+        "🇩🇪 欢乐时光-德国 05",
+        "🇳🇴 欢乐时光-挪威 01",
+        "🇳🇴 欢乐时光-挪威 02",
+        "🇳🇴 欢乐时光-挪威 03",
+        "🇳🇴 欢乐时光-挪威 04",
+        "🇳🇴 欢乐时光-挪威 05",
+        "🇫🇮 欢乐时光-芬兰 01",
+        "🇫🇮 欢乐时光-芬兰 02",
+        "🇫🇮 欢乐时光-芬兰 03",
+        "🇫🇮 欢乐时光-芬兰 04",
+        "🇫🇮 欢乐时光-芬兰 05",
+        "🇸🇪 欢乐时光-瑞典 01",
+        "🇸🇪 欢乐时光-瑞典 02",
+        "🇸🇪 欢乐时光-瑞典 03",
+        "🇸🇪 欢乐时光-瑞典 04",
+        "🇸🇪 欢乐时光-瑞典 05",
+        "🇱🇹 欢乐时光-立陶宛 01",
+        "🇱🇹 欢乐时光-立陶宛 02",
+        "🇱🇹 欢乐时光-立陶宛 03",
+        "🇵🇱 欢乐时光-波兰 01",
+        "🇵🇱 欢乐时光-波兰 02",
+        "🇵🇱 欢乐时光-波兰 03",
+        "🇵🇱 欢乐时光-波兰 04",
+        "🇵🇱 欢乐时光-波兰 05",
+        "🇷🇺 欢乐时光-俄罗斯 01",
+        "🇷🇺 欢乐时光-俄罗斯 02",
+        "🇷🇺 欢乐时光-俄罗斯 03"
+      ]
+    },
+    {
+      "tag": "auto",
+      "type": "urltest",
+      "outbounds": [
+        "永久免费不要被骗",
+        "欢乐时光-移动 01",
+        "欢乐时光-移动 02",
+        "欢乐时光-移动 03",
+        "欢乐时光-联通 01",
+        "欢乐时光-联通 02",
+        "欢乐时光-联通 03",
+        "欢乐时光-电信 01",
+        "欢乐时光-电信 02",
+        "欢乐时光-电信 03",
+        "欢乐时光-IPV6 01",
+        "欢乐时光-IPV6 02",
+        "欢乐时光-IPV6 03",
+        "🇭🇰 欢乐时光-香港 01",
+        "🇭🇰 欢乐时光-香港 02",
+        "🇭🇰 欢乐时光-香港 03",
+        "🇭🇰 欢乐时光-香港 04",
+        "🇭🇰 欢乐时光-香港 05",
+        "🇰🇷 欢乐时光-韩国 01",
+        "🇰🇷 欢乐时光-韩国 02",
+        "🇰🇷 欢乐时光-韩国 03",
+        "🇰🇷 欢乐时光-韩国 04",
+        "🇰🇷 欢乐时光-韩国 05",
+        "🇹🇼 🇨🇳 欢乐时光-台湾 01",
+        "🇹🇼 🇨🇳 欢乐时光-台湾 02",
+        "🇹🇼 🇨🇳 欢乐时光-台湾 03",
+        "🇹🇼 🇨🇳 欢乐时光-台湾 04",
+        "🇹🇼 🇨🇳 欢乐时光-台湾 05",
+        "🇹🇼 🇨🇳 欢乐时光-台湾 06",
+        "🇹🇼 🇨🇳 欢乐时光-台湾 07",
+        "🇹🇼 🇨🇳 欢乐时光-台湾 08",
+        "🇯🇵 欢乐时光-日本 01",
+        "🇯🇵 欢乐时光-日本 02",
+        "🇯🇵 欢乐时光-日本 03",
+        "🇯🇵 欢乐时光-日本 04",
+        "🇯🇵 欢乐时光-日本 05",
+        "🇸🇬 欢乐时光-新加坡 01",
+        "🇸🇬 欢乐时光-新加坡 02",
+        "🇸🇬 欢乐时光-新加坡 03",
+        "🇸🇬 欢乐时光-新加坡 04",
+        "🇸🇬 欢乐时光-新加坡 05",
+        "🇺🇸 欢乐时光-美国 01",
+        "🇺🇸 欢乐时光-美国 02",
+        "🇺🇸 欢乐时光-美国 03",
+        "🇺🇸 欢乐时光-美国 04",
+        "🇺🇸 欢乐时光-美国 05",
+        "🇬🇧 欢乐时光-英国 01",
+        "🇬🇧 欢乐时光-英国 02",
+        "🇬🇧 欢乐时光-英国 03",
+        "🇬🇧 欢乐时光-英国 04",
+        "🇬🇧 欢乐时光-英国 05",
+        "🇫🇷 欢乐时光-法国 01",
+        "🇫🇷 欢乐时光-法国 02",
+        "🇫🇷 欢乐时光-法国 03",
+        "🇫🇷 欢乐时光-法国 04",
+        "🇫🇷 欢乐时光-法国 05",
+        "🇳🇱 欢乐时光-荷兰 01",
+        "🇳🇱 欢乐时光-荷兰 02",
+        "🇳🇱 欢乐时光-荷兰 03",
+        "🇳🇱 欢乐时光-荷兰 04",
+        "🇳🇱 欢乐时光-荷兰 05",
+        "🇩🇪 欢乐时光-德国 01",
+        "🇩🇪 欢乐时光-德国 02",
+        "🇩🇪 欢乐时光-德国 03",
+        "🇩🇪 欢乐时光-德国 04",
+        "🇩🇪 欢乐时光-德国 05",
+        "🇳🇴 欢乐时光-挪威 01",
+        "🇳🇴 欢乐时光-挪威 02",
+        "🇳🇴 欢乐时光-挪威 03",
+        "🇳🇴 欢乐时光-挪威 04",
+        "🇳🇴 欢乐时光-挪威 05",
+        "🇫🇮 欢乐时光-芬兰 01",
+        "🇫🇮 欢乐时光-芬兰 02",
+        "🇫🇮 欢乐时光-芬兰 03",
+        "🇫🇮 欢乐时光-芬兰 04",
+        "🇫🇮 欢乐时光-芬兰 05",
+        "🇸🇪 欢乐时光-瑞典 01",
+        "🇸🇪 欢乐时光-瑞典 02",
+        "🇸🇪 欢乐时光-瑞典 03",
+        "🇸🇪 欢乐时光-瑞典 04",
+        "🇸🇪 欢乐时光-瑞典 05",
+        "🇱🇹 欢乐时光-立陶宛 01",
+        "🇱🇹 欢乐时光-立陶宛 02",
+        "🇱🇹 欢乐时光-立陶宛 03",
+        "🇵🇱 欢乐时光-波兰 01",
+        "🇵🇱 欢乐时光-波兰 02",
+        "🇵🇱 欢乐时光-波兰 03",
+        "🇵🇱 欢乐时光-波兰 04",
+        "🇵🇱 欢乐时光-波兰 05",
+        "🇷🇺 欢乐时光-俄罗斯 01",
+        "🇷🇺 欢乐时光-俄罗斯 02",
+        "🇷🇺 欢乐时光-俄罗斯 03"
+      ],
+      "url": "http://www.gstatic.com/generate_204",
+      "interval": "10m",
+      "tolerance": 50
+    },
+    {
+      "type": "direct",
+      "tag": "direct"
+    },
+    {
+      "type": "dns",
+      "tag": "dns-out"
+    },
+    {
+      "type": "block",
+      "tag": "block"
+    },
+    {
+      "tag": "永久免费不要被骗",
+      "type": "vless",
+      "server": "162.159.138.178",
+      "server_port": 2096,
+      "uuid": "20fda433-1864-433b-b3dd-8f119fe4cafd",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "happy.mianfeicf.lol",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "happy.mianfeicf.lol"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "欢乐时光-移动 01",
+      "type": "vless",
+      "server": "162.159.138.178",
+      "server_port": 8443,
+      "uuid": "20fda433-1864-433b-b3dd-8f119fe4cafd",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "happy.mianfeicf.lol",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "happy.mianfeicf.lol"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "欢乐时光-移动 02",
+      "type": "vless",
+      "server": "162.159.142.252",
+      "server_port": 2096,
+      "uuid": "20fda433-1864-433b-b3dd-8f119fe4cafd",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "happy.mianfeicf.lol",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "happy.mianfeicf.lol"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "欢乐时光-移动 03",
+      "type": "vless",
+      "server": "162.159.141.161",
+      "server_port": 2053,
+      "uuid": "20fda433-1864-433b-b3dd-8f119fe4cafd",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "happy.mianfeicf.lol",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "happy.mianfeicf.lol"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "欢乐时光-联通 01",
+      "type": "vless",
+      "server": "104.20.30.149",
+      "server_port": 8443,
+      "uuid": "20fda433-1864-433b-b3dd-8f119fe4cafd",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "happy.mianfeicf.lol",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "happy.mianfeicf.lol"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "欢乐时光-联通 02",
+      "type": "vless",
+      "server": "172.67.74.9",
+      "server_port": 2087,
+      "uuid": "20fda433-1864-433b-b3dd-8f119fe4cafd",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "happy.mianfeicf.lol",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "happy.mianfeicf.lol"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "欢乐时光-联通 03",
+      "type": "vless",
+      "server": "104.20.30.149",
+      "server_port": 2087,
+      "uuid": "20fda433-1864-433b-b3dd-8f119fe4cafd",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "happy.mianfeicf.lol",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "happy.mianfeicf.lol"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "欢乐时光-电信 01",
+      "type": "vless",
+      "server": "104.19.57.183",
+      "server_port": 2096,
+      "uuid": "20fda433-1864-433b-b3dd-8f119fe4cafd",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "happy.mianfeicf.lol",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "happy.mianfeicf.lol"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "欢乐时光-电信 02",
+      "type": "vless",
+      "server": "104.19.103.190",
+      "server_port": 2096,
+      "uuid": "20fda433-1864-433b-b3dd-8f119fe4cafd",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "happy.mianfeicf.lol",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "happy.mianfeicf.lol"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "欢乐时光-电信 03",
+      "type": "vless",
+      "server": "104.19.107.190",
+      "server_port": 2096,
+      "uuid": "20fda433-1864-433b-b3dd-8f119fe4cafd",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "happy.mianfeicf.lol",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "happy.mianfeicf.lol"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "欢乐时光-IPV6 01",
+      "type": "vless",
+      "server": "2606:4700:3036:ef:92f:be51:8695:9fc5",
+      "server_port": 2096,
+      "uuid": "20fda433-1864-433b-b3dd-8f119fe4cafd",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "happy.mianfeicf.lol",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "happy.mianfeicf.lol"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "欢乐时光-IPV6 02",
+      "type": "vless",
+      "server": "2606:4700:3036:0:a36a:4aa4:75d9:9f75",
+      "server_port": 2053,
+      "uuid": "20fda433-1864-433b-b3dd-8f119fe4cafd",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "happy.mianfeicf.lol",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "happy.mianfeicf.lol"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "欢乐时光-IPV6 03",
+      "type": "vless",
+      "server": "2606:4700:3036:ef:db9e:eecc:caef:9d4a",
+      "server_port": 2087,
+      "uuid": "20fda433-1864-433b-b3dd-8f119fe4cafd",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "happy.mianfeicf.lol",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "happy.mianfeicf.lol"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 欢乐时光-香港 01",
+      "type": "vless",
+      "server": "141.11.79.31",
+      "server_port": 8080,
+      "uuid": "20fda433-1864-433b-b3dd-8f119fe4cafd",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "happy.mianfeicf.lol",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "happy.mianfeicf.lol"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 欢乐时光-香港 02",
+      "type": "vless",
+      "server": "23.224.149.67",
+      "server_port": 9443,
+      "uuid": "20fda433-1864-433b-b3dd-8f119fe4cafd",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "happy.mianfeicf.lol",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "happy.mianfeicf.lol"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 欢乐时光-香港 03",
+      "type": "vless",
+      "server": "23.224.149.69",
+      "server_port": 9443,
+      "uuid": "20fda433-1864-433b-b3dd-8f119fe4cafd",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "happy.mianfeicf.lol",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "happy.mianfeicf.lol"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 欢乐时光-香港 04",
+      "type": "vless",
+      "server": "206.237.6.57",
+      "server_port": 443,
+      "uuid": "20fda433-1864-433b-b3dd-8f119fe4cafd",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "happy.mianfeicf.lol",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "happy.mianfeicf.lol"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 欢乐时光-香港 05",
+      "type": "vless",
+      "server": "89.213.219.196",
+      "server_port": 8080,
+      "uuid": "20fda433-1864-433b-b3dd-8f119fe4cafd",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "happy.mianfeicf.lol",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "happy.mianfeicf.lol"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇰🇷 欢乐时光-韩国 01",
+      "type": "vless",
+      "server": "132.145.94.80",
+      "server_port": 443,
+      "uuid": "20fda433-1864-433b-b3dd-8f119fe4cafd",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "happy.mianfeicf.lol",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "happy.mianfeicf.lol"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇰🇷 欢乐时光-韩国 02",
+      "type": "vless",
+      "server": "132.226.20.13",
+      "server_port": 587,
+      "uuid": "20fda433-1864-433b-b3dd-8f119fe4cafd",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "happy.mianfeicf.lol",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "happy.mianfeicf.lol"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇰🇷 欢乐时光-韩国 03",
+      "type": "vless",
+      "server": "150.230.252.47",
+      "server_port": 50051,
+      "uuid": "20fda433-1864-433b-b3dd-8f119fe4cafd",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "happy.mianfeicf.lol",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "happy.mianfeicf.lol"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇰🇷 欢乐时光-韩国 04",
+      "type": "vless",
+      "server": "150.230.252.47",
+      "server_port": 50051,
+      "uuid": "20fda433-1864-433b-b3dd-8f119fe4cafd",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "happy.mianfeicf.lol",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "happy.mianfeicf.lol"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇰🇷 欢乐时光-韩国 05",
+      "type": "vless",
+      "server": "152.69.234.137",
+      "server_port": 12199,
+      "uuid": "20fda433-1864-433b-b3dd-8f119fe4cafd",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "happy.mianfeicf.lol",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "happy.mianfeicf.lol"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇹🇼 🇨🇳 欢乐时光-台湾 01",
+      "type": "vless",
+      "server": "210.61.97.241",
+      "server_port": 81,
+      "uuid": "20fda433-1864-433b-b3dd-8f119fe4cafd",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "happy.mianfeicf.lol",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "happy.mianfeicf.lol"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇹🇼 🇨🇳 欢乐时光-台湾 02",
+      "type": "vless",
+      "server": "141.11.87.111",
+      "server_port": 8080,
+      "uuid": "20fda433-1864-433b-b3dd-8f119fe4cafd",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "happy.mianfeicf.lol",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "happy.mianfeicf.lol"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇹🇼 🇨🇳 欢乐时光-台湾 03",
+      "type": "vless",
+      "server": "103.137.63.205",
+      "server_port": 31564,
+      "uuid": "20fda433-1864-433b-b3dd-8f119fe4cafd",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "happy.mianfeicf.lol",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "happy.mianfeicf.lol"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇹🇼 🇨🇳 欢乐时光-台湾 04",
+      "type": "vless",
+      "server": "122.116.105.15",
+      "server_port": 10443,
+      "uuid": "20fda433-1864-433b-b3dd-8f119fe4cafd",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "happy.mianfeicf.lol",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "happy.mianfeicf.lol"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇹🇼 🇨🇳 欢乐时光-台湾 05",
+      "type": "vless",
+      "server": "122.116.86.104",
+      "server_port": 81,
+      "uuid": "20fda433-1864-433b-b3dd-8f119fe4cafd",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "happy.mianfeicf.lol",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "happy.mianfeicf.lol"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇹🇼 🇨🇳 欢乐时光-台湾 06",
+      "type": "vless",
+      "server": "220.135.202.250",
+      "server_port": 81,
+      "uuid": "20fda433-1864-433b-b3dd-8f119fe4cafd",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "happy.mianfeicf.lol",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "happy.mianfeicf.lol"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇹🇼 🇨🇳 欢乐时光-台湾 07",
+      "type": "vless",
+      "server": "150.117.110.36",
+      "server_port": 24988,
+      "uuid": "20fda433-1864-433b-b3dd-8f119fe4cafd",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "happy.mianfeicf.lol",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "happy.mianfeicf.lol"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇹🇼 🇨🇳 欢乐时光-台湾 08",
+      "type": "vless",
+      "server": "60.249.114.181",
+      "server_port": 10244,
+      "uuid": "20fda433-1864-433b-b3dd-8f119fe4cafd",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "happy.mianfeicf.lol",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "happy.mianfeicf.lol"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇯🇵 欢乐时光-日本 01",
+      "type": "vless",
+      "server": "152.70.101.24",
+      "server_port": 16507,
+      "uuid": "20fda433-1864-433b-b3dd-8f119fe4cafd",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "happy.mianfeicf.lol",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "happy.mianfeicf.lol"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇯🇵 欢乐时光-日本 02",
+      "type": "vless",
+      "server": "138.2.21.240",
+      "server_port": 12345,
+      "uuid": "20fda433-1864-433b-b3dd-8f119fe4cafd",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "happy.mianfeicf.lol",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "happy.mianfeicf.lol"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇯🇵 欢乐时光-日本 03",
+      "type": "vless",
+      "server": "103.20.199.101",
+      "server_port": 33004,
+      "uuid": "20fda433-1864-433b-b3dd-8f119fe4cafd",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "happy.mianfeicf.lol",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "happy.mianfeicf.lol"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇯🇵 欢乐时光-日本 04",
+      "type": "vless",
+      "server": "141.147.190.128",
+      "server_port": 443,
+      "uuid": "20fda433-1864-433b-b3dd-8f119fe4cafd",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "happy.mianfeicf.lol",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "happy.mianfeicf.lol"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇯🇵 欢乐时光-日本 05",
+      "type": "vless",
+      "server": "52.193.22.156",
+      "server_port": 50996,
+      "uuid": "20fda433-1864-433b-b3dd-8f119fe4cafd",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "happy.mianfeicf.lol",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "happy.mianfeicf.lol"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇸🇬 欢乐时光-新加坡 01",
+      "type": "vless",
+      "server": "51.79.250.33",
+      "server_port": 2053,
+      "uuid": "20fda433-1864-433b-b3dd-8f119fe4cafd",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "happy.mianfeicf.lol",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "happy.mianfeicf.lol"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇸🇬 欢乐时光-新加坡 02",
+      "type": "vless",
+      "server": "15.235.162.49",
+      "server_port": 443,
+      "uuid": "20fda433-1864-433b-b3dd-8f119fe4cafd",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "happy.mianfeicf.lol",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "happy.mianfeicf.lol"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇸🇬 欢乐时光-新加坡 03",
+      "type": "vless",
+      "server": "143.42.66.91",
+      "server_port": 443,
+      "uuid": "20fda433-1864-433b-b3dd-8f119fe4cafd",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "happy.mianfeicf.lol",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "happy.mianfeicf.lol"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇸🇬 欢乐时光-新加坡 04",
+      "type": "vless",
+      "server": "89.34.227.166",
+      "server_port": 443,
+      "uuid": "20fda433-1864-433b-b3dd-8f119fe4cafd",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "happy.mianfeicf.lol",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "happy.mianfeicf.lol"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇸🇬 欢乐时光-新加坡 05",
+      "type": "vless",
+      "server": "15.235.162.49",
+      "server_port": 443,
+      "uuid": "20fda433-1864-433b-b3dd-8f119fe4cafd",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "happy.mianfeicf.lol",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "happy.mianfeicf.lol"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇺🇸 欢乐时光-美国 01",
+      "type": "vless",
+      "server": "154.12.95.78",
+      "server_port": 10080,
+      "uuid": "20fda433-1864-433b-b3dd-8f119fe4cafd",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "happy.mianfeicf.lol",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "happy.mianfeicf.lol"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇺🇸 欢乐时光-美国 02",
+      "type": "vless",
+      "server": "38.49.59.43",
+      "server_port": 443,
+      "uuid": "20fda433-1864-433b-b3dd-8f119fe4cafd",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "happy.mianfeicf.lol",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "happy.mianfeicf.lol"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇺🇸 欢乐时光-美国 03",
+      "type": "vless",
+      "server": "149.248.7.208",
+      "server_port": 443,
+      "uuid": "20fda433-1864-433b-b3dd-8f119fe4cafd",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "happy.mianfeicf.lol",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "happy.mianfeicf.lol"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇺🇸 欢乐时光-美国 04",
+      "type": "vless",
+      "server": "154.29.150.2",
+      "server_port": 8080,
+      "uuid": "20fda433-1864-433b-b3dd-8f119fe4cafd",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "happy.mianfeicf.lol",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "happy.mianfeicf.lol"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇺🇸 欢乐时光-美国 05",
+      "type": "vless",
+      "server": "45.59.126.122",
+      "server_port": 993,
+      "uuid": "20fda433-1864-433b-b3dd-8f119fe4cafd",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "happy.mianfeicf.lol",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "happy.mianfeicf.lol"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇬🇧 欢乐时光-英国 01",
+      "type": "vless",
+      "server": "79.99.41.107",
+      "server_port": 8444,
+      "uuid": "20fda433-1864-433b-b3dd-8f119fe4cafd",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "happy.mianfeicf.lol",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "happy.mianfeicf.lol"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇬🇧 欢乐时光-英国 02",
+      "type": "vless",
+      "server": "82.165.220.6",
+      "server_port": 8443,
+      "uuid": "20fda433-1864-433b-b3dd-8f119fe4cafd",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "happy.mianfeicf.lol",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "happy.mianfeicf.lol"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇬🇧 欢乐时光-英国 03",
+      "type": "vless",
+      "server": "213.165.84.57",
+      "server_port": 443,
+      "uuid": "20fda433-1864-433b-b3dd-8f119fe4cafd",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "happy.mianfeicf.lol",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "happy.mianfeicf.lol"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇬🇧 欢乐时光-英国 04",
+      "type": "vless",
+      "server": "198.244.244.170",
+      "server_port": 8443,
+      "uuid": "20fda433-1864-433b-b3dd-8f119fe4cafd",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "happy.mianfeicf.lol",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "happy.mianfeicf.lol"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇬🇧 欢乐时光-英国 05",
+      "type": "vless",
+      "server": "51.195.169.100",
+      "server_port": 8443,
+      "uuid": "20fda433-1864-433b-b3dd-8f119fe4cafd",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "happy.mianfeicf.lol",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "happy.mianfeicf.lol"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇫🇷 欢乐时光-法国 01",
+      "type": "vless",
+      "server": "149.202.30.5",
+      "server_port": 8443,
+      "uuid": "20fda433-1864-433b-b3dd-8f119fe4cafd",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "happy.mianfeicf.lol",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "happy.mianfeicf.lol"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇫🇷 欢乐时光-法国 02",
+      "type": "vless",
+      "server": "37.59.66.215",
+      "server_port": 8443,
+      "uuid": "20fda433-1864-433b-b3dd-8f119fe4cafd",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "happy.mianfeicf.lol",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "happy.mianfeicf.lol"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇫🇷 欢乐时光-法国 03",
+      "type": "vless",
+      "server": "176.31.83.160",
+      "server_port": 2053,
+      "uuid": "20fda433-1864-433b-b3dd-8f119fe4cafd",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "happy.mianfeicf.lol",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "happy.mianfeicf.lol"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇫🇷 欢乐时光-法国 04",
+      "type": "vless",
+      "server": "13.37.224.156",
+      "server_port": 8443,
+      "uuid": "20fda433-1864-433b-b3dd-8f119fe4cafd",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "happy.mianfeicf.lol",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "happy.mianfeicf.lol"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇫🇷 欢乐时光-法国 05",
+      "type": "vless",
+      "server": "15.237.137.128",
+      "server_port": 8443,
+      "uuid": "20fda433-1864-433b-b3dd-8f119fe4cafd",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "happy.mianfeicf.lol",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "happy.mianfeicf.lol"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇳🇱 欢乐时光-荷兰 01",
+      "type": "vless",
+      "server": "45.87.2.60",
+      "server_port": 2053,
+      "uuid": "20fda433-1864-433b-b3dd-8f119fe4cafd",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "happy.mianfeicf.lol",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "happy.mianfeicf.lol"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇳🇱 欢乐时光-荷兰 02",
+      "type": "vless",
+      "server": "185.204.109.190",
+      "server_port": 8443,
+      "uuid": "20fda433-1864-433b-b3dd-8f119fe4cafd",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "happy.mianfeicf.lol",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "happy.mianfeicf.lol"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇳🇱 欢乐时光-荷兰 03",
+      "type": "vless",
+      "server": "89.105.198.246",
+      "server_port": 2053,
+      "uuid": "20fda433-1864-433b-b3dd-8f119fe4cafd",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "happy.mianfeicf.lol",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "happy.mianfeicf.lol"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇳🇱 欢乐时光-荷兰 04",
+      "type": "vless",
+      "server": "80.89.229.119",
+      "server_port": 2053,
+      "uuid": "20fda433-1864-433b-b3dd-8f119fe4cafd",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "happy.mianfeicf.lol",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "happy.mianfeicf.lol"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇳🇱 欢乐时光-荷兰 05",
+      "type": "vless",
+      "server": "80.89.239.115",
+      "server_port": 2053,
+      "uuid": "20fda433-1864-433b-b3dd-8f119fe4cafd",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "happy.mianfeicf.lol",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "happy.mianfeicf.lol"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇩🇪 欢乐时光-德国 01",
+      "type": "vless",
+      "server": "78.47.52.88",
+      "server_port": 2096,
+      "uuid": "20fda433-1864-433b-b3dd-8f119fe4cafd",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "happy.mianfeicf.lol",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "happy.mianfeicf.lol"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇩🇪 欢乐时光-德国 02",
+      "type": "vless",
+      "server": "188.166.162.201",
+      "server_port": 443,
+      "uuid": "20fda433-1864-433b-b3dd-8f119fe4cafd",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "happy.mianfeicf.lol",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "happy.mianfeicf.lol"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇩🇪 欢乐时光-德国 03",
+      "type": "vless",
+      "server": "49.13.215.89",
+      "server_port": 8443,
+      "uuid": "20fda433-1864-433b-b3dd-8f119fe4cafd",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "happy.mianfeicf.lol",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "happy.mianfeicf.lol"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇩🇪 欢乐时光-德国 04",
+      "type": "vless",
+      "server": "78.47.15.140",
+      "server_port": 8443,
+      "uuid": "20fda433-1864-433b-b3dd-8f119fe4cafd",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "happy.mianfeicf.lol",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "happy.mianfeicf.lol"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇩🇪 欢乐时光-德国 05",
+      "type": "vless",
+      "server": "91.107.128.128",
+      "server_port": 8443,
+      "uuid": "20fda433-1864-433b-b3dd-8f119fe4cafd",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "happy.mianfeicf.lol",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "happy.mianfeicf.lol"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇳🇴 欢乐时光-挪威 01",
+      "type": "vless",
+      "server": "5.101.181.149",
+      "server_port": 443,
+      "uuid": "20fda433-1864-433b-b3dd-8f119fe4cafd",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "happy.mianfeicf.lol",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "happy.mianfeicf.lol"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇳🇴 欢乐时光-挪威 02",
+      "type": "vless",
+      "server": "46.32.184.247",
+      "server_port": 443,
+      "uuid": "20fda433-1864-433b-b3dd-8f119fe4cafd",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "happy.mianfeicf.lol",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "happy.mianfeicf.lol"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇳🇴 欢乐时光-挪威 03",
+      "type": "vless",
+      "server": "198.105.125.194",
+      "server_port": 443,
+      "uuid": "20fda433-1864-433b-b3dd-8f119fe4cafd",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "happy.mianfeicf.lol",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "happy.mianfeicf.lol"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇳🇴 欢乐时光-挪威 04",
+      "type": "vless",
+      "server": "46.36.223.141",
+      "server_port": 443,
+      "uuid": "20fda433-1864-433b-b3dd-8f119fe4cafd",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "happy.mianfeicf.lol",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "happy.mianfeicf.lol"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇳🇴 欢乐时光-挪威 05",
+      "type": "vless",
+      "server": "51.20.55.209",
+      "server_port": 8080,
+      "uuid": "20fda433-1864-433b-b3dd-8f119fe4cafd",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "happy.mianfeicf.lol",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "happy.mianfeicf.lol"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇫🇮 欢乐时光-芬兰 01",
+      "type": "vless",
+      "server": "185.233.82.227",
+      "server_port": 2053,
+      "uuid": "20fda433-1864-433b-b3dd-8f119fe4cafd",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "happy.mianfeicf.lol",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "happy.mianfeicf.lol"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇫🇮 欢乐时光-芬兰 02",
+      "type": "vless",
+      "server": "95.216.174.145",
+      "server_port": 8443,
+      "uuid": "20fda433-1864-433b-b3dd-8f119fe4cafd",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "happy.mianfeicf.lol",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "happy.mianfeicf.lol"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇫🇮 欢乐时光-芬兰 03",
+      "type": "vless",
+      "server": "45.138.73.200",
+      "server_port": 2053,
+      "uuid": "20fda433-1864-433b-b3dd-8f119fe4cafd",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "happy.mianfeicf.lol",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "happy.mianfeicf.lol"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇫🇮 欢乐时光-芬兰 04",
+      "type": "vless",
+      "server": "46.8.228.202",
+      "server_port": 8443,
+      "uuid": "20fda433-1864-433b-b3dd-8f119fe4cafd",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "happy.mianfeicf.lol",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "happy.mianfeicf.lol"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇫🇮 欢乐时光-芬兰 05",
+      "type": "vless",
+      "server": "85.209.0.40",
+      "server_port": 2053,
+      "uuid": "20fda433-1864-433b-b3dd-8f119fe4cafd",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "happy.mianfeicf.lol",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "happy.mianfeicf.lol"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇸🇪 欢乐时光-瑞典 01",
+      "type": "vless",
+      "server": "51.20.124.5",
+      "server_port": 443,
+      "uuid": "20fda433-1864-433b-b3dd-8f119fe4cafd",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "happy.mianfeicf.lol",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "happy.mianfeicf.lol"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇸🇪 欢乐时光-瑞典 02",
+      "type": "vless",
+      "server": "13.53.54.176",
+      "server_port": 8080,
+      "uuid": "20fda433-1864-433b-b3dd-8f119fe4cafd",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "happy.mianfeicf.lol",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "happy.mianfeicf.lol"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇸🇪 欢乐时光-瑞典 03",
+      "type": "vless",
+      "server": "185.233.83.225",
+      "server_port": 2053,
+      "uuid": "20fda433-1864-433b-b3dd-8f119fe4cafd",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "happy.mianfeicf.lol",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "happy.mianfeicf.lol"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇸🇪 欢乐时光-瑞典 04",
+      "type": "vless",
+      "server": "185.105.90.45",
+      "server_port": 2053,
+      "uuid": "20fda433-1864-433b-b3dd-8f119fe4cafd",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "happy.mianfeicf.lol",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "happy.mianfeicf.lol"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇸🇪 欢乐时光-瑞典 05",
+      "type": "vless",
+      "server": "194.87.252.20",
+      "server_port": 443,
+      "uuid": "20fda433-1864-433b-b3dd-8f119fe4cafd",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "happy.mianfeicf.lol",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "happy.mianfeicf.lol"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇱🇹 欢乐时光-立陶宛 01",
+      "type": "vless",
+      "server": "77.73.71.103",
+      "server_port": 443,
+      "uuid": "20fda433-1864-433b-b3dd-8f119fe4cafd",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "happy.mianfeicf.lol",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "happy.mianfeicf.lol"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇱🇹 欢乐时光-立陶宛 02",
+      "type": "vless",
+      "server": "46.32.184.33",
+      "server_port": 443,
+      "uuid": "20fda433-1864-433b-b3dd-8f119fe4cafd",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "happy.mianfeicf.lol",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "happy.mianfeicf.lol"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇱🇹 欢乐时光-立陶宛 03",
+      "type": "vless",
+      "server": "195.135.254.75",
+      "server_port": 443,
+      "uuid": "20fda433-1864-433b-b3dd-8f119fe4cafd",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "happy.mianfeicf.lol",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "happy.mianfeicf.lol"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇵🇱 欢乐时光-波兰 01",
+      "type": "vless",
+      "server": "158.255.6.22",
+      "server_port": 8443,
+      "uuid": "20fda433-1864-433b-b3dd-8f119fe4cafd",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "happy.mianfeicf.lol",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "happy.mianfeicf.lol"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇵🇱 欢乐时光-波兰 02",
+      "type": "vless",
+      "server": "46.32.186.234",
+      "server_port": 8443,
+      "uuid": "20fda433-1864-433b-b3dd-8f119fe4cafd",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "happy.mianfeicf.lol",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "happy.mianfeicf.lol"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇵🇱 欢乐时光-波兰 03",
+      "type": "vless",
+      "server": "216.173.70.80",
+      "server_port": 443,
+      "uuid": "20fda433-1864-433b-b3dd-8f119fe4cafd",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "happy.mianfeicf.lol",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "happy.mianfeicf.lol"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇵🇱 欢乐时光-波兰 04",
+      "type": "vless",
+      "server": "46.32.186.61",
+      "server_port": 8443,
+      "uuid": "20fda433-1864-433b-b3dd-8f119fe4cafd",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "happy.mianfeicf.lol",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "happy.mianfeicf.lol"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇵🇱 欢乐时光-波兰 05",
+      "type": "vless",
+      "server": "185.242.107.56",
+      "server_port": 8443,
+      "uuid": "20fda433-1864-433b-b3dd-8f119fe4cafd",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "happy.mianfeicf.lol",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "happy.mianfeicf.lol"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇷🇺 欢乐时光-俄罗斯 01",
+      "type": "vless",
+      "server": "95.182.120.34",
+      "server_port": 8443,
+      "uuid": "20fda433-1864-433b-b3dd-8f119fe4cafd",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "happy.mianfeicf.lol",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "happy.mianfeicf.lol"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇷🇺 欢乐时光-俄罗斯 02",
+      "type": "vless",
+      "server": "91.227.18.81",
+      "server_port": 2053,
+      "uuid": "20fda433-1864-433b-b3dd-8f119fe4cafd",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "happy.mianfeicf.lol",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "happy.mianfeicf.lol"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇷🇺 欢乐时光-俄罗斯 03",
+      "type": "vless",
+      "server": "213.159.208.88",
+      "server_port": 2053,
+      "uuid": "20fda433-1864-433b-b3dd-8f119fe4cafd",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "happy.mianfeicf.lol",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "happy.mianfeicf.lol"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    }
+  ],
+  "route": {
+    "auto_detect_interface": true,
+    "final": "Proxy",
+    "rules": [
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "port": 53
+          },
+          {
+            "protocol": "dns"
+          }
+        ],
+        "outbound": "dns-out"
+      },
+      {
+        "rule_set": "geosite-category-ads-all",
+        "outbound": "AdBlock"
+      },
+      {
+        "clash_mode": "direct",
+        "outbound": "direct"
+      },
+      {
+        "clash_mode": "global",
+        "outbound": "Proxy"
+      },
+      {
+        "domain": [
+          "clash.razord.top",
+          "yacd.metacubex.one",
+          "yacd.haishan.me",
+          "d.metacubex.one"
+        ],
+        "outbound": "direct"
+      },
+      {
+        "ip_is_private": true,
+        "outbound": "direct"
+      },
+      {
+        "rule_set": "geosite-openai",
+        "outbound": "OpenAI"
+      },
+      {
+        "rule_set": [
+          "geosite-youtube",
+          "geoip-google",
+          "geosite-google",
+          "geosite-github"
+        ],
+        "outbound": "Google"
+      },
+      {
+        "rule_set": [
+          "geoip-telegram",
+          "geosite-telegram"
+        ],
+        "outbound": "Telegram"
+      },
+      {
+        "rule_set": [
+          "geoip-twitter",
+          "geosite-twitter"
+        ],
+        "outbound": "Twitter"
+      },
+      {
+        "rule_set": [
+          "geoip-facebook",
+          "geosite-facebook"
+        ],
+        "outbound": "Facebook"
+      },
+      {
+        "rule_set": "geosite-bilibili",
+        "outbound": "BiliBili"
+      },
+      {
+        "rule_set": "geosite-bahamut",
+        "outbound": "Bahamut"
+      },
+      {
+        "rule_set": "geosite-spotify",
+        "outbound": "Spotify"
+      },
+      {
+        "rule_set": "geosite-tiktok",
+        "outbound": "TikTok"
+      },
+      {
+        "rule_set": [
+          "geoip-netflix",
+          "geosite-netflix"
+        ],
+        "outbound": "Netflix"
+      },
+      {
+        "rule_set": "geosite-disney",
+        "outbound": "Disney+"
+      },
+      {
+        "rule_set": [
+          "geoip-apple",
+          "geosite-apple",
+          "geosite-amazon"
+        ],
+        "outbound": "Apple"
+      },
+      {
+        "rule_set": "geosite-microsoft",
+        "outbound": "Microsoft"
+      },
+      {
+        "rule_set": [
+          "geosite-category-games",
+          "geosite-dmm"
+        ],
+        "outbound": "Games"
+      },
+      {
+        "rule_set": [
+          "geosite-hbo",
+          "geosite-primevideo"
+        ],
+        "outbound": "Streaming"
+      },
+      {
+        "rule_set": "geosite-geolocation-!cn",
+        "outbound": "Global"
+      },
+      {
+        "rule_set": [
+          "geoip-cn",
+          "geosite-cn"
+        ],
+        "outbound": "China"
+      }
+    ],
+    "rule_set": [
+      {
+        "tag": "geosite-category-ads-all",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/category-ads-all.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "geosite-openai",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/Toperlock/sing-box-geosite/main/rule/OpenAI.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "geosite-youtube",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/youtube.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "geoip-google",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/google.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "geosite-google",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/google.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "geosite-github",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/github.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "geoip-telegram",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/telegram.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "geosite-telegram",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/telegram.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "geoip-twitter",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/twitter.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "geosite-twitter",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/twitter.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "geoip-facebook",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/facebook.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "geosite-facebook",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/facebook.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "geosite-bilibili",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/bilibili.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "geosite-bahamut",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/bahamut.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "geosite-spotify",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/spotify.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "geosite-tiktok",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/tiktok.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "geoip-netflix",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/netflix.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "geosite-netflix",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/netflix.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "geosite-disney",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/disney.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "geoip-apple",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo-lite/geoip/apple.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "geosite-apple",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/apple.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "geosite-amazon",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/amazon.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "geosite-microsoft",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/microsoft.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "geosite-category-games",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/category-games.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "geosite-dmm",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/dmm.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "geosite-hbo",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/hbo.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "geosite-primevideo",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/primevideo.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "geosite-geolocation-!cn",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/geolocation-!cn.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "geoip-cn",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/cn.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "geosite-cn",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/cn.srs",
+        "download_detour": "direct"
+      }
+    ]
+  }
+}
