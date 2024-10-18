@@ -383,7 +383,7 @@ proxy-groups:
       - provider3-2
       - provider3-3
       - provider3-4
-    filter: "^(?!.*(距离|www|套餐|剩余|反代|节点|网址|官网|加入|永久)).*$"
+    filter: "^(?!.*(距离|www|套餐|关注|反代|节点|网址|官网|加入|永久)).*$"
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Available.png
   - name: 👨🏻‍💻 AI专线
     type: load-balance
@@ -408,7 +408,7 @@ proxy-groups:
       - provider3-2
       - provider3-3
       - provider3-4
-    filter: "^(?!.*(距离|www|套餐|剩余|反代|节点|网址|官网|加入|永久)).*$"
+    filter: "^(?!.*(距离|www|套餐|关注|反代|节点|网址|官网|加入|永久)).*$"
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hijacking.png
   - name: 自动选择
     type: url-test
@@ -420,7 +420,7 @@ proxy-groups:
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
-    filter: "^(?!.*(距离|www|套餐|剩余|反代|节点|网址|官网|加入|永久)).*$"
+    filter: "^(?!.*(距离|www|套餐|关注|反代|节点|网址|官网|加入|永久)).*$"
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Cellular.png
   - name: 🇭🇰 香港节点
     type: url-test
