@@ -128,6 +128,8 @@ proxy-groups:
       - 🇵🇱 波兰节点
       - 🇪🇺 欧洲节点
       - DIRECT
+    interval: 300
+    tolerance: 50
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Apple_Fitness+.png
   - name: "SpeedTest"
     type: select
@@ -421,6 +423,7 @@ proxy-groups:
       - provider2-6
       - provider2-7
       - provider2-8
+    filter: "^(?!.*(距离|www|套餐|剩余|反代|节点|网址|官网|加入|永久)).*$"
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Available.png
   - name: 👨🏻‍💻 AI专线
     type: load-balance
@@ -453,6 +456,7 @@ proxy-groups:
       - provider2-6
       - provider2-7
       - provider2-8
+    filter: "^(?!.*(距离|www|套餐|剩余|反代|节点|网址|官网|加入|永久)).*$"
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hijacking.png
   - name: 自动选择
     type: url-test
@@ -468,6 +472,7 @@ proxy-groups:
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
+    filter: "^(?!.*(距离|www|套餐|剩余|反代|节点|网址|官网|加入|永久)).*$"
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Cellular.png
   - name: 🇭🇰 香港节点
     type: url-test
@@ -481,8 +486,8 @@ proxy-groups:
       - provider2-7
       - provider2-8
     url: http://www.gstatic.com/generate_204
-    interval: 120
-    tolerance: 30
+    interval: 300
+    tolerance: 50
     filter: "(?i)港|HK|Hong"
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png
   - name: 🇯🇵 日本节点
@@ -497,8 +502,8 @@ proxy-groups:
       - provider2-7
       - provider2-8
     url: http://www.gstatic.com/generate_204
-    interval: 120
-    tolerance: 30
+    interval: 300
+    tolerance: 50
     filter: "(?i)日本|川日|东京|大阪|泉日|埼玉|沪日|深日|JP|Japan"
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Japan.png
   - name: 🇺🇲 美国节点
@@ -513,8 +518,8 @@ proxy-groups:
       - provider2-7
       - provider2-8
     url: http://www.gstatic.com/generate_204
-    interval: 120
-    tolerance: 30
+    interval: 300
+    tolerance: 50
     filter: "(?i)美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|CA|United States"
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_States.png
   - name: 🇹🇼 台湾节点
@@ -529,8 +534,8 @@ proxy-groups:
       - provider2-7
       - provider2-8
     url: http://www.gstatic.com/generate_204
-    interval: 120
-    tolerance: 30
+    interval: 300
+    tolerance: 50
     filter: "(?i)台|新北|彰化|TW|Taiwan"
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Taiwan.png
   - name: 🇸🇬 狮城节点
@@ -545,8 +550,8 @@ proxy-groups:
       - provider2-7
       - provider2-8
     url: http://www.gstatic.com/generate_204
-    interval: 120
-    tolerance: 30
+    interval: 300
+    tolerance: 50
     filter: "(?i)新加坡|坡|狮城|SG|Singapore"
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Singapore.png
   - name: 🇰🇷 韩国节点
@@ -561,8 +566,8 @@ proxy-groups:
       - provider2-7
       - provider2-8
     url: http://www.gstatic.com/generate_204
-    interval: 120
-    tolerance: 30
+    interval: 300
+    tolerance: 50
     filter: "(?i)KR|Korea|KOR|首尔|韩|韓"
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Korea.png
   - name: 🇵🇱 波兰节点
@@ -577,8 +582,8 @@ proxy-groups:
       - provider2-7
       - provider2-8
     url: http://www.gstatic.com/generate_204
-    interval: 120
-    tolerance: 30
+    interval: 300
+    tolerance: 50
     filter: “(?i)PL|🇵🇱|波兰|波兰节点|华沙|Warsaw|克拉科夫|Krakow|弗罗茨瓦夫|Wroclaw|格但斯克|Gdansk|波兹南|Poznan|卢布林|Lublin”
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Asia_Map.png
   - name: 🇪🇺 欧洲节点
@@ -593,8 +598,8 @@ proxy-groups:
       - provider2-7
       - provider2-8
     url: http://www.gstatic.com/generate_204
-    interval: 120
-    tolerance: 30
+    interval: 300
+    tolerance: 50
     filter: "(?i)德国|法国|英国|欧洲|荷兰|芬兰|EU|DE|FR|UK|NL|Germany|France|England"
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/European_Union.png
 rules:
