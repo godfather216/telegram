@@ -485,7 +485,7 @@ proxy-groups:
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
-    filter: "(?i)印度|IN|新德里|孟买|🇮🇳"
+    filter: "(?i)印度|新德里|孟买|🇮🇳|India"
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/India.png
   - name: 🇪🇺 欧洲节点
     type: url-test
