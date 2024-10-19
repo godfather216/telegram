@@ -42,7 +42,7 @@ tcp-concurrent: true
 proxy-providers:
   provider2-1:
     type: http
-    url: "http://allsub.king361.cf/"
+    url: "https://mxlsub.me/free"
     interval: 3600
     path: ./provider2-1.yaml
     health-check:
@@ -51,7 +51,7 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204
   provider2-2:
     type: http
-    url: "https://sovless.sosorg.nyc.mn/ZY115"
+    url: "https://vless.durl.nyc.mn/zrf"
     interval: 3600
     path: ./provider2-2.yaml
     health-check:
@@ -60,7 +60,7 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204
   provider2-3:
     type: http
-    url: "https://noTLS.fxxk.dedyn.io/sub?host=20240504.652649797.workers.dev&uuid=d342d11e-d424-4583-b36e-524ab1f0bbbb"
+    url: "https://sovless.sosorg.nyc.mn/ZY115"
     interval: 3600
     path: ./provider2-3.yaml
     health-check:
@@ -69,49 +69,14 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204
   provider2-4:
     type: http
-    url: "https://VLESS.fxxk.dedyn.io/auto"
+    url: "https://happy.1949.buzz/vless"
     interval: 3600
     path: ./provider2-4.yaml
     health-check:
       enable: true
       interval: 600
       url: http://www.gstatic.com/generate_204
-  provider2-5:
-    type: http
-    url: "https://3k.fxxk.dedyn.io/auto$0"
-    interval: 3600
-    path: ./provider2-5.yaml
-    health-check:
-      enable: true
-      interval: 600
-      url: http://www.gstatic.com/generate_204
-  provider2-6:
-    type: http
-    url: "https://happy.1949.buzz/vless"
-    interval: 3600
-    path: ./provider2-6.yaml
-    health-check:
-      enable: true
-      interval: 600
-      url: http://www.gstatic.com/generate_204
-  provider2-7:
-    type: http
-    url: "https://v1.mk/CANEykW"
-    interval: 3600
-    path: ./provider2-7.yaml
-    health-check:
-      enable: true
-      interval: 600
-      url: http://www.gstatic.com/generate_204
-  provider2-8:
-    type: http
-    url: "https://mxlsub.me/free"
-    interval: 3600
-    path: ./provider2-8.yaml
-    health-check:
-      enable: true
-      interval: 600
-      url: http://www.gstatic.com/generate_204
+
 proxy-groups:
   - name: 节点选择
     type: select
@@ -419,10 +384,6 @@ proxy-groups:
       - provider2-2
       - provider2-3
       - provider2-4
-      - provider2-5
-      - provider2-6
-      - provider2-7
-      - provider2-8
     filter: "^(?!.*(距离|www|套餐|关注|反代|节点|网址|官网|加入|永久)).*$"
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Available.png
   - name: 👨🏻‍💻 AI专线
@@ -436,10 +397,6 @@ proxy-groups:
       - provider2-2
       - provider2-3
       - provider2-4
-      - provider2-5
-      - provider2-6
-      - provider2-7
-      - provider2-8
     filter: “(?i)美国|🇺🇸|US|阿什本|新加坡|🇸🇬|SG|日本|东京|🇯🇵|JP|韩国|首尔|春川|🇰🇷|KR|德国|法兰克福|纽伦堡|🇩🇪|DE|法国|马德里|巴黎|🇫🇷|FR|法国|GB|英国|伦敦|🇬🇧|UK|巴西|圣保罗|🇧🇷|迪拜|芬兰|🇫🇮|FI|海得拉巴|孟买|吉达|PL|波兰|🇵🇱|AU|澳大利亚|🇦🇺|IN|印度|🇮🇳|MY|马来西亚|🇲🇾|CA|加拿大|🇨🇦|AE|阿联酋|🇦🇪|NL|荷兰|🇳🇱"
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Drill.png
   - name: 故障转移
@@ -452,10 +409,6 @@ proxy-groups:
       - provider2-2
       - provider2-3
       - provider2-4
-      - provider2-5
-      - provider2-6
-      - provider2-7
-      - provider2-8
     filter: "^(?!.*(距离|www|套餐|关注|反代|节点|网址|官网|加入|永久)).*$"
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hijacking.png
   - name: 自动选择
@@ -465,10 +418,6 @@ proxy-groups:
       - provider2-2
       - provider2-3
       - provider2-4
-      - provider2-5
-      - provider2-6
-      - provider2-7
-      - provider2-8
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
@@ -481,10 +430,6 @@ proxy-groups:
       - provider2-2
       - provider2-3
       - provider2-4
-      - provider2-5
-      - provider2-6
-      - provider2-7
-      - provider2-8
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
@@ -497,10 +442,6 @@ proxy-groups:
       - provider2-2
       - provider2-3
       - provider2-4
-      - provider2-5
-      - provider2-6
-      - provider2-7
-      - provider2-8
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
@@ -513,10 +454,6 @@ proxy-groups:
       - provider2-2
       - provider2-3
       - provider2-4
-      - provider2-5
-      - provider2-6
-      - provider2-7
-      - provider2-8
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
@@ -529,10 +466,6 @@ proxy-groups:
       - provider2-2
       - provider2-3
       - provider2-4
-      - provider2-5
-      - provider2-6
-      - provider2-7
-      - provider2-8
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
@@ -545,10 +478,6 @@ proxy-groups:
       - provider2-2
       - provider2-3
       - provider2-4
-      - provider2-5
-      - provider2-6
-      - provider2-7
-      - provider2-8
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
@@ -561,10 +490,6 @@ proxy-groups:
       - provider2-2
       - provider2-3
       - provider2-4
-      - provider2-5
-      - provider2-6
-      - provider2-7
-      - provider2-8
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
@@ -577,10 +502,6 @@ proxy-groups:
       - provider2-2
       - provider2-3
       - provider2-4
-      - provider2-5
-      - provider2-6
-      - provider2-7
-      - provider2-8
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
@@ -593,10 +514,6 @@ proxy-groups:
       - provider2-2
       - provider2-3
       - provider2-4
-      - provider2-5
-      - provider2-6
-      - provider2-7
-      - provider2-8
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
