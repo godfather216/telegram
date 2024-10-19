@@ -54,9 +54,9 @@ proxy-groups:
   - name: 节点选择
     type: select
     proxies:
-      - 自动选择
-      - 负载均衡 
-      - 故障转移
+      - ⚡️ 自动选择
+      - 🔮 负载均衡 
+      - 🔰 故障转移
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
       - 🇸🇬 狮城节点
@@ -72,10 +72,10 @@ proxy-groups:
   - name: "SpeedTest"
     type: select
     proxies:
-      - 自动选择
-      - 负载均衡 
+      - ⚡️ 自动选择
+      - 🔮 负载均衡 
+      - 🔰 故障转移
       - 👨🏻‍💻 AI专线
-      - 故障转移
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
       - 🇸🇬 狮城节点
@@ -93,9 +93,9 @@ proxy-groups:
   - name: Tiktok
     type: select
     proxies:
-      - 节点选择
-      - 自动选择
-      - 负载均衡 
+      - 🚀 节点选择
+      - ⚡️ 自动选择
+      - 🔮 负载均衡 
       - 🇸🇬 狮城节点
       - 🇹🇼 台湾节点
       - 🇯🇵 日本节点
@@ -107,9 +107,9 @@ proxy-groups:
   - name: 电报消息
     type: select
     proxies:
-      - 节点选择
-      - 自动选择
-      - 负载均衡 
+      - 🚀 节点选择
+      - ⚡️ 自动选择
+      - 🔮 负载均衡
       - 🇸🇬 狮城节点
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
@@ -122,8 +122,9 @@ proxy-groups:
   - name: OpenAi
     type: select
     proxies:
+      - 🚀 节点选择
+      - 🔮 负载均衡 
       - 👨🏻‍💻 AI专线
-      - 负载均衡 
       - 🇸🇬 狮城节点
       - 🇹🇼 台湾节点
       - 🇯🇵 日本节点
@@ -135,9 +136,9 @@ proxy-groups:
   - name: 油管视频
     type: select
     proxies:
-      - 节点选择
-      - 自动选择
-      - 负载均衡 
+      - 🚀 节点选择
+      - ⚡️ 自动选择
+      - 🔮 负载均衡
       - 🇸🇬 狮城节点
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
@@ -150,9 +151,9 @@ proxy-groups:
   - name: 奈飞视频
     type: select
     proxies:
-      - 节点选择
-      - 自动选择
-      - 负载均衡 
+      - 🚀 节点选择
+      - ⚡️ 自动选择
+      - 🔮 负载均衡
       - 🇸🇬 狮城节点
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
@@ -166,7 +167,7 @@ proxy-groups:
     type: select
     proxies:
       - 🇹🇼 台湾节点
-      - 节点选择
+      - 🚀 节点选择
       - DIRECT
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Bahamut.png
   - name: 哔哩哔哩
@@ -179,9 +180,9 @@ proxy-groups:
   - name: 国外媒体
     type: select
     proxies:
-      - 节点选择
-      - 自动选择
-      - 负载均衡 
+      - 🚀 节点选择
+      - ⚡️ 自动选择
+      - 🔮 负载均衡
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
       - 🇸🇬 狮城节点
@@ -203,8 +204,9 @@ proxy-groups:
   - name: 谷歌FCM
     type: select
     proxies:
-      - 节点选择
-      - 负载均衡 
+      - 🚀 节点选择
+      - ⚡️ 自动选择
+      - 🔮 负载均衡
       - 🇺🇲 美国节点
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
@@ -217,9 +219,10 @@ proxy-groups:
   - name: 微软Bing
     type: select
     proxies:
-      - 节点选择
+      - 🚀 节点选择
+      - ⚡️ 自动选择
+      - 🔮 负载均衡
       - 👨🏻‍💻 AI专线
-      - 负载均衡 
       - 🇺🇲 美国节点
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
@@ -232,8 +235,9 @@ proxy-groups:
   - name: 微软云盘
     type: select
     proxies:
-      - 节点选择
-      - 负载均衡 
+      - 🚀 节点选择
+      - ⚡️ 自动选择
+      - 🔮 负载均衡
       - 🇺🇲 美国节点
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
@@ -247,8 +251,9 @@ proxy-groups:
   - name: 微软服务
     type: select
     proxies:
-      - 节点选择
-      - 负载均衡 
+      - 🚀 节点选择
+      - ⚡️ 自动选择
+      - 🔮 负载均衡
       - 🇺🇲 美国节点
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
@@ -262,8 +267,9 @@ proxy-groups:
   - name: 苹果服务
     type: select
     proxies:
-      - 节点选择
-      - 负载均衡 
+      - 🚀 节点选择
+      - ⚡️ 自动选择
+      - 🔮 负载均衡
       - 🇺🇲 美国节点
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
@@ -277,8 +283,9 @@ proxy-groups:
   - name: 游戏平台
     type: select
     proxies:
-      - 节点选择
-      - 负载均衡 
+      - 🚀 节点选择
+      - ⚡️ 自动选择
+      - 🔮 负载均衡 
       - 🇺🇲 美国节点
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
@@ -293,22 +300,22 @@ proxy-groups:
     type: select
     proxies:
       - DIRECT
-      - 节点选择
-      - 自动选择
+      - 🚀 节点选择
+      - ⚡️ 自动选择
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Music_Enhance.png
   - name: 全球直连
     type: select
     proxies:
       - DIRECT
-      - 节点选择
-      - 自动选择
+      - 🚀 节点选择
+      - ⚡️ 自动选择
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Proxy.png
   - name: 广告拦截
     type: select
     proxies:
       - REJECT
       - DIRECT
-      - 节点选择
+      - 🚀 节点选择
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/AdBlack.png
   - name: 应用净化
     type: select
@@ -319,9 +326,9 @@ proxy-groups:
   - name: 漏网之鱼
     type: select
     proxies:
-      - 节点选择
-      - 自动选择
-      - 负载均衡 
+      - 🚀 节点选择
+      - ⚡️ 自动选择
+      - 🔮 负载均衡
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
       - 🇸🇬 狮城节点
@@ -332,7 +339,7 @@ proxy-groups:
       - 🇪🇺 欧洲节点
       - DIRECT
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Unlock.png
-  - name: 负载均衡 
+  - name: 🔮 负载均衡 
     type: load-balance
     strategy: consistent-hashing
     url: http://www.gstatic.com/generate_204
@@ -352,7 +359,7 @@ proxy-groups:
       - provider2-6
     filter: “(?i)美国|🇺🇸|US|阿什本|新加坡|🇸🇬|SG|日本|东京|🇯🇵|JP|韩国|首尔|春川|🇰🇷|KR|德国|法兰克福|纽伦堡|🇩🇪|DE|法国|马德里|巴黎|🇫🇷|FR|法国|GB|英国|伦敦|🇬🇧|UK|巴西|圣保罗|🇧🇷|迪拜|芬兰|🇫🇮|FI|海得拉巴|孟买|吉达|PL|波兰|🇵🇱|AU|澳大利亚|🇦🇺|IN|印度|🇮🇳|MY|马来西亚|🇲🇾|CA|加拿大|🇨🇦|AE|阿联酋|🇦🇪|NL|荷兰|🇳🇱"
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Drill.png
-  - name: 故障转移
+  - name: 🔰 故障转移
     type: fallback
     url: http://www.gstatic.com/generate_204
     interval: 300
@@ -361,7 +368,7 @@ proxy-groups:
       - provider2-6
     filter: "^(?!.*(距离|www|套餐|关注|反代|节点|网址|官网|加入|永久)).*$"
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hijacking.png
-  - name: 自动选择
+  - name: ⚡️ 自动选择
     type: url-test
     use:
       - provider2-6
