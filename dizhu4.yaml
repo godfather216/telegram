@@ -42,7 +42,7 @@ tcp-concurrent: true
 proxy-providers:
   provider4-1:
     type: http
-    url: "https://api.2c.lol/sub?target=clash&url=https%3A%2F%2Fgist.github.com%2Fgo4sharing%2F496b17222ac16e941a01e7ace625e761%2Fraw%2Ff2c1200e633360ad138de0798a1929a8f4eaf8b0%2Fgistfile1.txt&insert=false&emoji=true&list=false&tfo=false&scv=true&fdn=false&sort=false&new_name=true"
+    url: "https://mxlsub.me/newfull"
     interval: 3600
     path: ./provider4-1.yaml
     health-check:
@@ -60,23 +60,14 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204
   provider4-3:
     type: http
-    url: "https://vmess.fxxk.dedyn.io/auto"
+    url: "https://raw.githubusercontent.com/peasoft/NoMoreWalls/master/list.meta.yml"
     interval: 3600
     path: ./provider4-3.yaml
     health-check:
       enable: true
       interval: 600
       url: http://www.gstatic.com/generate_204
-  provider4-4:
-    type: http
-    url: https://ghproxy.net/https://raw.githubusercontent.com/anaer/Sub/main/clash.yaml
-    interval: 3600
-    path: ./provider4-4.yaml
-    health-check:
-      enable: true
-      interval: 600
-      url: http://www.gstatic.com/generate_204
-      
+  
 proxy-groups:
   - name: 节点选择
     type: select
@@ -383,8 +374,7 @@ proxy-groups:
       - provider4-1
       - provider4-2
       - provider4-3
-      - provider4-4
-    filter: "^(?!.*(距离|www|套餐|关注|反代|节点|网址|官网|加入|永久)).*$"
+    filter: "^(?!.*(距离|www|频道|套餐|关注|反代|节点|网址|官网|加入|永久)).*$"
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Available.png
   - name: 👨🏻‍💻 AI专线
     type: load-balance
@@ -396,7 +386,6 @@ proxy-groups:
       - provider4-1
       - provider4-2
       - provider4-3
-      - provider4-4
     filter: “(?i)美国|🇺🇸|US|阿什本|新加坡|🇸🇬|SG|日本|东京|🇯🇵|JP|韩国|首尔|春川|🇰🇷|KR|德国|法兰克福|纽伦堡|🇩🇪|DE|法国|马德里|巴黎|🇫🇷|FR|法国|GB|英国|伦敦|🇬🇧|UK|巴西|圣保罗|🇧🇷|迪拜|芬兰|🇫🇮|FI|海得拉巴|孟买|吉达|PL|波兰|🇵🇱|AU|澳大利亚|🇦🇺|IN|印度|🇮🇳|MY|马来西亚|🇲🇾|CA|加拿大|🇨🇦|AE|阿联酋|🇦🇪|NL|荷兰|🇳🇱"
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Drill.png
   - name: 故障转移
@@ -408,8 +397,7 @@ proxy-groups:
       - provider4-1
       - provider4-2
       - provider4-3
-      - provider4-4
-    filter: "^(?!.*(距离|www|套餐|关注|反代|节点|网址|官网|加入|永久)).*$"
+    filter: "^(?!.*(距离|www|频道|套餐|关注|反代|节点|网址|官网|加入|永久)).*$"
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hijacking.png
   - name: 自动选择
     type: url-test
@@ -417,11 +405,10 @@ proxy-groups:
       - provider4-1
       - provider4-2
       - provider4-3
-      - provider4-4
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
-    filter: "^(?!.*(距离|www|套餐|关注|反代|节点|网址|官网|加入|永久)).*$"
+    filter: "^(?!.*(距离|www|频道|套餐|关注|反代|节点|网址|官网|加入|永久)).*$"
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Cellular.png
   - name: 🇭🇰 香港节点
     type: url-test
@@ -429,7 +416,6 @@ proxy-groups:
       - provider4-1
       - provider4-2
       - provider4-3
-      - provider4-4
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
@@ -441,7 +427,6 @@ proxy-groups:
       - provider4-1
       - provider4-2
       - provider4-3
-      - provider4-4
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
@@ -453,7 +438,6 @@ proxy-groups:
       - provider4-1
       - provider4-2
       - provider4-3
-      - provider4-4
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
@@ -465,7 +449,6 @@ proxy-groups:
       - provider4-1
       - provider4-2
       - provider4-3
-      - provider4-4
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
@@ -477,7 +460,6 @@ proxy-groups:
       - provider4-1
       - provider4-2
       - provider4-3
-      - provider4-4
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
@@ -489,7 +471,6 @@ proxy-groups:
       - provider4-1
       - provider4-2
       - provider4-3
-      - provider4-4
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
@@ -501,7 +482,6 @@ proxy-groups:
       - provider4-1
       - provider4-2
       - provider4-3
-      - provider4-4
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
@@ -513,7 +493,6 @@ proxy-groups:
       - provider4-1
       - provider4-2
       - provider4-3
-      - provider4-4
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
