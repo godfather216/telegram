@@ -521,6 +521,8 @@ proxy-groups:
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/European_Union.png
 rules:
   # WebRTC 相关规则
+  - DOMAIN-SUFFIX,xn--ngstr-lra8j.com,节点选择
+  - DOMAIN-SUFFIX,services.googleapis.cn,节点选择
   - DOMAIN-SUFFIX,stun.l.google.com,REJECT
   - DOMAIN-SUFFIX,stun1.l.google.com,REJECT
   - DOMAIN-SUFFIX,stun2.l.google.com,REJECT
@@ -10155,7 +10157,6 @@ rules:
   - PROCESS-NAME,DownloadService.exe,全球直连
   - PROCESS-NAME,Weiyun.exe,全球直连
   - PROCESS-NAME,baidunetdisk.exe,全球直连
-  - GEOIP,CN,全球直连
   - DOMAIN,ic.adobe.io,应用净化
   - DOMAIN,cc-api-data.adobe.io,应用净化
   - DOMAIN,cc-api-data-stage.adobe.io,应用净化
@@ -10869,4 +10870,5 @@ rules:
   - DOMAIN,ywwlnskz2q.adobestats.io,应用净化
   - DOMAIN,a2104gz1mh.adobe.io,应用净化
   - DOMAIN,0ojupfm51u.adobe.io,应用净化
+  - GEOIP,CN,DIRECT,no-resolve
   - MATCH,漏网之鱼
