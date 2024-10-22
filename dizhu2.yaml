@@ -69,7 +69,7 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204
   provider2-4:
     type: http
-    url: "https://happy.1949.buzz/vless"
+    url: "https://owo.o00o.ooo/ooo"
     interval: 3600
     path: ./provider2-4.yaml
     health-check:
