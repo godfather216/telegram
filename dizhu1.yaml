@@ -42,7 +42,7 @@ tcp-concurrent: true
 proxy-providers:
   provider2-4:
     type: http
-    url: "https://owo.o00o.ooo/ooo"
+    url: "https://paste.myconan.net/511220-a3688c0a.txt"
     interval: 3600
     path: ./provider2-4.yaml
     health-check:
