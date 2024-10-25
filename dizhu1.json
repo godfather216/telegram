@@ -1,0 +1,5221 @@
+{
+  "log": {
+    "level": "info",
+    "timestamp": true
+  },
+  "experimental": {
+    "clash_api": {
+      "external_controller": "127.0.0.1:9090",
+      "external_ui": "ui",
+      "secret": "",
+      "external_ui_download_url": "https://mirror.ghproxy.com/https://github.com/MetaCubeX/Yacd-meta/archive/gh-pages.zip",
+      "external_ui_download_detour": "direct",
+      "default_mode": "rule"
+    },
+    "cache_file": {
+      "enabled": true,
+      "store_fakeip": false
+    }
+  },
+  "dns": {
+    "servers": [
+      {
+        "tag": "proxyDns",
+        "address": "tls://8.8.8.8",
+        "detour": "Proxy"
+      },
+      {
+        "tag": "localDns",
+        "address": "https://223.5.5.5/dns-query",
+        "detour": "direct"
+      },
+      {
+        "tag": "block",
+        "address": "rcode://success"
+      }
+    ],
+    "rules": [
+      {
+        "rule_set": "geosite-category-ads-all",
+        "server": "block"
+      },
+      {
+        "outbound": "any",
+        "server": "localDns",
+        "disable_cache": true
+      },
+      {
+        "rule_set": "geosite-cn",
+        "server": "localDns"
+      },
+      {
+        "clash_mode": "direct",
+        "server": "localDns"
+      },
+      {
+        "clash_mode": "global",
+        "server": "proxyDns"
+      },
+      {
+        "rule_set": "geosite-geolocation-!cn",
+        "server": "proxyDns"
+      }
+    ],
+    "final": "localDns",
+    "strategy": "ipv4_only"
+  },
+  "inbounds": [
+    {
+      "type": "tun",
+      "address": "172.19.0.1/30",
+      "mtu": 9000,
+      "auto_route": true,
+      "strict_route": true,
+      "sniff": true,
+      "endpoint_independent_nat": false,
+      "stack": "system",
+      "platform": {
+        "http_proxy": {
+          "enabled": true,
+          "server": "127.0.0.1",
+          "server_port": 2080
+        }
+      }
+    },
+    {
+      "type": "mixed",
+      "listen": "127.0.0.1",
+      "listen_port": 2080,
+      "sniff": true,
+      "users": []
+    }
+  ],
+  "outbounds": [
+    {
+      "tag": "Proxy",
+      "type": "selector",
+      "outbounds": [
+        "auto",
+        "direct",
+        "🇹🇼 🇨🇳 台湾",
+        "🇹🇼 🇨🇳 台湾 2",
+        "🇹🇼 🇨🇳 台湾 3",
+        "🇹🇼 🇨🇳 台湾 4",
+        "🇹🇼 🇨🇳 台湾 5",
+        "🇹🇼 🇨🇳 台湾 6",
+        "🇹🇼 🇨🇳 台湾 7",
+        "🇹🇼 🇨🇳 台湾 8",
+        "🇹🇼 🇨🇳 台湾 9",
+        "🇹🇼 🇨🇳 台湾 10",
+        "🇹🇼 🇨🇳 台湾 11",
+        "🇹🇼 🇨🇳 台湾 12",
+        "🇹🇼 🇨🇳 台湾 13",
+        "🇹🇼 🇨🇳 台湾 14",
+        "🇹🇼 🇨🇳 台湾 15",
+        "🇭🇰 香港",
+        "🇭🇰 香港 2",
+        "🇭🇰 香港 3",
+        "🇭🇰 香港 4",
+        "🇭🇰 香港 5",
+        "🇭🇰 香港 6",
+        "🇭🇰 香港 7",
+        "🇭🇰 香港 8",
+        "🇭🇰 香港 9",
+        "🇭🇰 香港 10",
+        "🇭🇰 香港 11",
+        "🇭🇰 香港 12",
+        "🇭🇰 香港 13",
+        "🇭🇰 香港 14",
+        "🇭🇰 香港 15",
+        "🇭🇰 香港 16",
+        "🇭🇰 香港 17",
+        "🇭🇰 香港 18",
+        "🇭🇰 香港 19",
+        "🇭🇰 香港 20",
+        "🇭🇰 香港 21",
+        "🇭🇰 香港 22",
+        "🇭🇰 香港 23",
+        "🇭🇰 香港 24",
+        "🇭🇰 香港 25",
+        "🇭🇰 香港 26",
+        "🇭🇰 香港 27",
+        "🇭🇰 香港 28",
+        "🇭🇰 香港 29",
+        "🇭🇰 香港 30",
+        "🇭🇰 香港 31",
+        "🇭🇰 香港 32",
+        "🇭🇰 香港 33",
+        "🇭🇰 香港 34",
+        "🇭🇰 香港 35",
+        "🇭🇰 香港 36",
+        "🇭🇰 香港 37",
+        "🇭🇰 香港 38",
+        "🇭🇰 香港 39",
+        "🇭🇰 香港 40",
+        "🇭🇰 香港 41",
+        "🇭🇰 香港 42",
+        "🇭🇰 香港 43",
+        "🇭🇰 香港 44",
+        "🇭🇰 香港 45",
+        "🇭🇰 香港 46",
+        "🇭🇰 香港 47",
+        "🇭🇰 香港 48",
+        "🇭🇰 香港 49",
+        "🇭🇰 香港 50",
+        "🇭🇰 香港 51",
+        "🇭🇰 香港 52",
+        "🇭🇰 香港 53",
+        "🇭🇰 香港 54",
+        "🇭🇰 香港 55",
+        "🇭🇰 香港 56",
+        "🇭🇰 香港 57",
+        "🇭🇰 香港 58",
+        "🇭🇰 香港 59",
+        "🇭🇰 香港 60",
+        "🇭🇰 香港 61",
+        "🇭🇰 香港 62",
+        "🇭🇰 香港 63",
+        "🇭🇰 香港 64",
+        "🇭🇰 香港 65",
+        "🇭🇰 香港 66",
+        "🇭🇰 香港 67",
+        "🇭🇰 香港 68",
+        "🇭🇰 香港 69",
+        "🇭🇰 香港 70",
+        "🇭🇰 香港 71",
+        "🇭🇰 香港 72",
+        "🇭🇰 香港 73",
+        "🇭🇰 香港 74",
+        "🇭🇰 香港 75",
+        "🇭🇰 香港 76",
+        "🇭🇰 香港 77",
+        "🇭🇰 香港 78",
+        "🇭🇰 香港 79",
+        "🇭🇰 香港 80",
+        "🇭🇰 香港 81",
+        "🇭🇰 香港 82",
+        "🇭🇰 香港 83",
+        "🇭🇰 香港 84",
+        "🇭🇰 香港 85",
+        "🇭🇰 香港 86",
+        "🇭🇰 香港 87",
+        "🇭🇰 香港 88",
+        "🇭🇰 香港 89",
+        "🇭🇰 香港 90",
+        "🇭🇰 香港 91",
+        "🇭🇰 香港 92",
+        "🇭🇰 香港 93",
+        "🇭🇰 香港 94",
+        "🇭🇰 香港 95",
+        "🇭🇰 香港 96",
+        "🇭🇰 香港 97",
+        "🇭🇰 香港 98",
+        "🇭🇰 香港 99",
+        "🇭🇰 香港 100",
+        "🇭🇰 香港 101",
+        "🇭🇰 香港 102",
+        "🇭🇰 香港 103",
+        "🇭🇰 香港 104",
+        "🇭🇰 香港 105",
+        "🇭🇰 香港 106",
+        "🇭🇰 香港 107",
+        "🇭🇰 香港 108",
+        "🇭🇰 香港 109",
+        "🇭🇰 香港 110",
+        "🇭🇰 香港 111",
+        "🇭🇰 香港 112",
+        "🇭🇰 香港 113",
+        "🇭🇰 香港 114",
+        "🇭🇰 香港 115",
+        "🇭🇰 香港 116",
+        "🇭🇰 香港 117",
+        "🇭🇰 香港 118",
+        "🇭🇰 香港 119",
+        "🇭🇰 香港 120",
+        "🇭🇰 香港 121",
+        "🇭🇰 香港 122",
+        "🇭🇰 香港 123",
+        "🇭🇰 香港 124",
+        "🇭🇰 香港 125",
+        "🇭🇰 香港 126",
+        "🇭🇰 香港 127",
+        "🇭🇰 香港 128",
+        "🇭🇰 香港 129",
+        "🇭🇰 香港 130",
+        "🇭🇰 香港 131",
+        "🇭🇰 香港 132",
+        "🇭🇰 香港 133",
+        "🇭🇰 香港 134",
+        "🇭🇰 香港 135",
+        "🇭🇰 香港 136",
+        "🇭🇰 香港 137",
+        "🇭🇰 香港 138",
+        "🇭🇰 香港 139",
+        "🇭🇰 香港 140",
+        "🇭🇰 香港 141",
+        "🇭🇰 香港 142",
+        "🇭🇰 香港 143",
+        "🇭🇰 香港 144",
+        "🇭🇰 香港 145",
+        "🇭🇰 香港 146",
+        "🇭🇰 香港 147",
+        "🇭🇰 香港 148",
+        "🇭🇰 香港 149",
+        "🇭🇰 香港 150",
+        "🇭🇰 香港 151",
+        "🇭🇰 香港 152",
+        "🇭🇰 香港 153",
+        "🇭🇰 香港 154",
+        "🇭🇰 香港 155",
+        "🇭🇰 香港 156",
+        "🇭🇰 香港 157",
+        "🇭🇰 香港 158",
+        "🇭🇰 香港 159",
+        "🇭🇰 香港 160",
+        "🇭🇰 香港 161",
+        "🇭🇰 香港 162",
+        "🇯🇵 日本",
+        "🇰🇷 韩国",
+        "🇸🇬 新加坡",
+        "🇸🇬 新加坡 2",
+        "🇸🇬 新加坡 3"
+      ]
+    },
+    {
+      "tag": "OpenAI",
+      "type": "selector",
+      "outbounds": [
+        "TaiWan",
+        "Singapore",
+        "Japan",
+        "America",
+        "Others"
+      ],
+      "default": "America"
+    },
+    {
+      "tag": "Google",
+      "type": "selector",
+      "outbounds": [
+        "HongKong",
+        "TaiWan",
+        "Singapore",
+        "Japan",
+        "America",
+        "Others"
+      ]
+    },
+    {
+      "tag": "Telegram",
+      "type": "selector",
+      "outbounds": [
+        "HongKong",
+        "TaiWan",
+        "Singapore",
+        "Japan",
+        "America",
+        "Others"
+      ]
+    },
+    {
+      "tag": "Twitter",
+      "type": "selector",
+      "outbounds": [
+        "HongKong",
+        "TaiWan",
+        "Singapore",
+        "Japan",
+        "America",
+        "Others"
+      ]
+    },
+    {
+      "tag": "Facebook",
+      "type": "selector",
+      "outbounds": [
+        "HongKong",
+        "TaiWan",
+        "Singapore",
+        "Japan",
+        "America",
+        "Others"
+      ]
+    },
+    {
+      "tag": "BiliBili",
+      "type": "selector",
+      "outbounds": [
+        "direct",
+        "HongKong",
+        "TaiWan"
+      ]
+    },
+    {
+      "tag": "Bahamut",
+      "type": "selector",
+      "outbounds": [
+        "TaiWan",
+        "Proxy"
+      ]
+    },
+    {
+      "tag": "Spotify",
+      "type": "selector",
+      "outbounds": [
+        "HongKong",
+        "TaiWan",
+        "Singapore",
+        "Japan",
+        "America",
+        "Others"
+      ],
+      "default": "America"
+    },
+    {
+      "tag": "TikTok",
+      "type": "selector",
+      "outbounds": [
+        "HongKong",
+        "TaiWan",
+        "Singapore",
+        "Japan",
+        "America"
+      ],
+      "default": "Japan"
+    },
+    {
+      "tag": "Netflix",
+      "type": "selector",
+      "outbounds": [
+        "HongKong",
+        "TaiWan",
+        "Singapore",
+        "Japan",
+        "America",
+        "Others"
+      ]
+    },
+    {
+      "tag": "Disney+",
+      "type": "selector",
+      "outbounds": [
+        "HongKong",
+        "TaiWan",
+        "Singapore",
+        "Japan",
+        "America",
+        "Others"
+      ]
+    },
+    {
+      "tag": "Apple",
+      "type": "selector",
+      "outbounds": [
+        "direct",
+        "HongKong",
+        "TaiWan",
+        "Singapore",
+        "Japan",
+        "America",
+        "Others"
+      ]
+    },
+    {
+      "tag": "Microsoft",
+      "type": "selector",
+      "outbounds": [
+        "direct",
+        "HongKong",
+        "TaiWan",
+        "Singapore",
+        "Japan",
+        "America",
+        "Others"
+      ]
+    },
+    {
+      "tag": "Games",
+      "type": "selector",
+      "outbounds": [
+        "direct",
+        "HongKong",
+        "TaiWan",
+        "Singapore",
+        "Japan",
+        "America",
+        "Others"
+      ]
+    },
+    {
+      "tag": "Streaming",
+      "type": "selector",
+      "outbounds": [
+        "HongKong",
+        "TaiWan",
+        "Singapore",
+        "Japan",
+        "America",
+        "Others"
+      ]
+    },
+    {
+      "tag": "Global",
+      "type": "selector",
+      "outbounds": [
+        "HongKong",
+        "TaiWan",
+        "Singapore",
+        "Japan",
+        "America",
+        "Others",
+        "direct"
+      ]
+    },
+    {
+      "tag": "China",
+      "type": "selector",
+      "outbounds": [
+        "direct",
+        "Proxy"
+      ]
+    },
+    {
+      "tag": "AdBlock",
+      "type": "selector",
+      "outbounds": [
+        "block",
+        "direct"
+      ]
+    },
+    {
+      "tag": "HongKong",
+      "type": "selector",
+      "outbounds": [
+        "🇭🇰 香港",
+        "🇭🇰 香港 2",
+        "🇭🇰 香港 3",
+        "🇭🇰 香港 4",
+        "🇭🇰 香港 5",
+        "🇭🇰 香港 6",
+        "🇭🇰 香港 7",
+        "🇭🇰 香港 8",
+        "🇭🇰 香港 9",
+        "🇭🇰 香港 10",
+        "🇭🇰 香港 11",
+        "🇭🇰 香港 12",
+        "🇭🇰 香港 13",
+        "🇭🇰 香港 14",
+        "🇭🇰 香港 15",
+        "🇭🇰 香港 16",
+        "🇭🇰 香港 17",
+        "🇭🇰 香港 18",
+        "🇭🇰 香港 19",
+        "🇭🇰 香港 20",
+        "🇭🇰 香港 21",
+        "🇭🇰 香港 22",
+        "🇭🇰 香港 23",
+        "🇭🇰 香港 24",
+        "🇭🇰 香港 25",
+        "🇭🇰 香港 26",
+        "🇭🇰 香港 27",
+        "🇭🇰 香港 28",
+        "🇭🇰 香港 29",
+        "🇭🇰 香港 30",
+        "🇭🇰 香港 31",
+        "🇭🇰 香港 32",
+        "🇭🇰 香港 33",
+        "🇭🇰 香港 34",
+        "🇭🇰 香港 35",
+        "🇭🇰 香港 36",
+        "🇭🇰 香港 37",
+        "🇭🇰 香港 38",
+        "🇭🇰 香港 39",
+        "🇭🇰 香港 40",
+        "🇭🇰 香港 41",
+        "🇭🇰 香港 42",
+        "🇭🇰 香港 43",
+        "🇭🇰 香港 44",
+        "🇭🇰 香港 45",
+        "🇭🇰 香港 46",
+        "🇭🇰 香港 47",
+        "🇭🇰 香港 48",
+        "🇭🇰 香港 49",
+        "🇭🇰 香港 50",
+        "🇭🇰 香港 51",
+        "🇭🇰 香港 52",
+        "🇭🇰 香港 53",
+        "🇭🇰 香港 54",
+        "🇭🇰 香港 55",
+        "🇭🇰 香港 56",
+        "🇭🇰 香港 57",
+        "🇭🇰 香港 58",
+        "🇭🇰 香港 59",
+        "🇭🇰 香港 60",
+        "🇭🇰 香港 61",
+        "🇭🇰 香港 62",
+        "🇭🇰 香港 63",
+        "🇭🇰 香港 64",
+        "🇭🇰 香港 65",
+        "🇭🇰 香港 66",
+        "🇭🇰 香港 67",
+        "🇭🇰 香港 68",
+        "🇭🇰 香港 69",
+        "🇭🇰 香港 70",
+        "🇭🇰 香港 71",
+        "🇭🇰 香港 72",
+        "🇭🇰 香港 73",
+        "🇭🇰 香港 74",
+        "🇭🇰 香港 75",
+        "🇭🇰 香港 76",
+        "🇭🇰 香港 77",
+        "🇭🇰 香港 78",
+        "🇭🇰 香港 79",
+        "🇭🇰 香港 80",
+        "🇭🇰 香港 81",
+        "🇭🇰 香港 82",
+        "🇭🇰 香港 83",
+        "🇭🇰 香港 84",
+        "🇭🇰 香港 85",
+        "🇭🇰 香港 86",
+        "🇭🇰 香港 87",
+        "🇭🇰 香港 88",
+        "🇭🇰 香港 89",
+        "🇭🇰 香港 90",
+        "🇭🇰 香港 91",
+        "🇭🇰 香港 92",
+        "🇭🇰 香港 93",
+        "🇭🇰 香港 94",
+        "🇭🇰 香港 95",
+        "🇭🇰 香港 96",
+        "🇭🇰 香港 97",
+        "🇭🇰 香港 98",
+        "🇭🇰 香港 99",
+        "🇭🇰 香港 100",
+        "🇭🇰 香港 101",
+        "🇭🇰 香港 102",
+        "🇭🇰 香港 103",
+        "🇭🇰 香港 104",
+        "🇭🇰 香港 105",
+        "🇭🇰 香港 106",
+        "🇭🇰 香港 107",
+        "🇭🇰 香港 108",
+        "🇭🇰 香港 109",
+        "🇭🇰 香港 110",
+        "🇭🇰 香港 111",
+        "🇭🇰 香港 112",
+        "🇭🇰 香港 113",
+        "🇭🇰 香港 114",
+        "🇭🇰 香港 115",
+        "🇭🇰 香港 116",
+        "🇭🇰 香港 117",
+        "🇭🇰 香港 118",
+        "🇭🇰 香港 119",
+        "🇭🇰 香港 120",
+        "🇭🇰 香港 121",
+        "🇭🇰 香港 122",
+        "🇭🇰 香港 123",
+        "🇭🇰 香港 124",
+        "🇭🇰 香港 125",
+        "🇭🇰 香港 126",
+        "🇭🇰 香港 127",
+        "🇭🇰 香港 128",
+        "🇭🇰 香港 129",
+        "🇭🇰 香港 130",
+        "🇭🇰 香港 131",
+        "🇭🇰 香港 132",
+        "🇭🇰 香港 133",
+        "🇭🇰 香港 134",
+        "🇭🇰 香港 135",
+        "🇭🇰 香港 136",
+        "🇭🇰 香港 137",
+        "🇭🇰 香港 138",
+        "🇭🇰 香港 139",
+        "🇭🇰 香港 140",
+        "🇭🇰 香港 141",
+        "🇭🇰 香港 142",
+        "🇭🇰 香港 143",
+        "🇭🇰 香港 144",
+        "🇭🇰 香港 145",
+        "🇭🇰 香港 146",
+        "🇭🇰 香港 147",
+        "🇭🇰 香港 148",
+        "🇭🇰 香港 149",
+        "🇭🇰 香港 150",
+        "🇭🇰 香港 151",
+        "🇭🇰 香港 152",
+        "🇭🇰 香港 153",
+        "🇭🇰 香港 154",
+        "🇭🇰 香港 155",
+        "🇭🇰 香港 156",
+        "🇭🇰 香港 157",
+        "🇭🇰 香港 158",
+        "🇭🇰 香港 159",
+        "🇭🇰 香港 160",
+        "🇭🇰 香港 161",
+        "🇭🇰 香港 162"
+      ]
+    },
+    {
+      "tag": "TaiWan",
+      "type": "selector",
+      "outbounds": [
+        "🇹🇼 🇨🇳 台湾",
+        "🇹🇼 🇨🇳 台湾 2",
+        "🇹🇼 🇨🇳 台湾 3",
+        "🇹🇼 🇨🇳 台湾 4",
+        "🇹🇼 🇨🇳 台湾 5",
+        "🇹🇼 🇨🇳 台湾 6",
+        "🇹🇼 🇨🇳 台湾 7",
+        "🇹🇼 🇨🇳 台湾 8",
+        "🇹🇼 🇨🇳 台湾 9",
+        "🇹🇼 🇨🇳 台湾 10",
+        "🇹🇼 🇨🇳 台湾 11",
+        "🇹🇼 🇨🇳 台湾 12",
+        "🇹🇼 🇨🇳 台湾 13",
+        "🇹🇼 🇨🇳 台湾 14",
+        "🇹🇼 🇨🇳 台湾 15"
+      ]
+    },
+    {
+      "tag": "Singapore",
+      "type": "selector",
+      "outbounds": [
+        "🇸🇬 新加坡",
+        "🇸🇬 新加坡 2",
+        "🇸🇬 新加坡 3"
+      ]
+    },
+    {
+      "tag": "Japan",
+      "type": "selector",
+      "outbounds": [
+        "🇯🇵 日本"
+      ]
+    },
+    {
+      "tag": "America",
+      "type": "selector",
+      "outbounds": [
+        "Proxy"
+      ]
+    },
+    {
+      "tag": "Others",
+      "type": "selector",
+      "outbounds": [
+        "🇰🇷 韩国"
+      ]
+    },
+    {
+      "tag": "auto",
+      "type": "urltest",
+      "outbounds": [
+        "🇹🇼 🇨🇳 台湾",
+        "🇹🇼 🇨🇳 台湾 2",
+        "🇹🇼 🇨🇳 台湾 3",
+        "🇹🇼 🇨🇳 台湾 4",
+        "🇹🇼 🇨🇳 台湾 5",
+        "🇹🇼 🇨🇳 台湾 6",
+        "🇹🇼 🇨🇳 台湾 7",
+        "🇹🇼 🇨🇳 台湾 8",
+        "🇹🇼 🇨🇳 台湾 9",
+        "🇹🇼 🇨🇳 台湾 10",
+        "🇹🇼 🇨🇳 台湾 11",
+        "🇹🇼 🇨🇳 台湾 12",
+        "🇹🇼 🇨🇳 台湾 13",
+        "🇹🇼 🇨🇳 台湾 14",
+        "🇹🇼 🇨🇳 台湾 15",
+        "🇭🇰 香港",
+        "🇭🇰 香港 2",
+        "🇭🇰 香港 3",
+        "🇭🇰 香港 4",
+        "🇭🇰 香港 5",
+        "🇭🇰 香港 6",
+        "🇭🇰 香港 7",
+        "🇭🇰 香港 8",
+        "🇭🇰 香港 9",
+        "🇭🇰 香港 10",
+        "🇭🇰 香港 11",
+        "🇭🇰 香港 12",
+        "🇭🇰 香港 13",
+        "🇭🇰 香港 14",
+        "🇭🇰 香港 15",
+        "🇭🇰 香港 16",
+        "🇭🇰 香港 17",
+        "🇭🇰 香港 18",
+        "🇭🇰 香港 19",
+        "🇭🇰 香港 20",
+        "🇭🇰 香港 21",
+        "🇭🇰 香港 22",
+        "🇭🇰 香港 23",
+        "🇭🇰 香港 24",
+        "🇭🇰 香港 25",
+        "🇭🇰 香港 26",
+        "🇭🇰 香港 27",
+        "🇭🇰 香港 28",
+        "🇭🇰 香港 29",
+        "🇭🇰 香港 30",
+        "🇭🇰 香港 31",
+        "🇭🇰 香港 32",
+        "🇭🇰 香港 33",
+        "🇭🇰 香港 34",
+        "🇭🇰 香港 35",
+        "🇭🇰 香港 36",
+        "🇭🇰 香港 37",
+        "🇭🇰 香港 38",
+        "🇭🇰 香港 39",
+        "🇭🇰 香港 40",
+        "🇭🇰 香港 41",
+        "🇭🇰 香港 42",
+        "🇭🇰 香港 43",
+        "🇭🇰 香港 44",
+        "🇭🇰 香港 45",
+        "🇭🇰 香港 46",
+        "🇭🇰 香港 47",
+        "🇭🇰 香港 48",
+        "🇭🇰 香港 49",
+        "🇭🇰 香港 50",
+        "🇭🇰 香港 51",
+        "🇭🇰 香港 52",
+        "🇭🇰 香港 53",
+        "🇭🇰 香港 54",
+        "🇭🇰 香港 55",
+        "🇭🇰 香港 56",
+        "🇭🇰 香港 57",
+        "🇭🇰 香港 58",
+        "🇭🇰 香港 59",
+        "🇭🇰 香港 60",
+        "🇭🇰 香港 61",
+        "🇭🇰 香港 62",
+        "🇭🇰 香港 63",
+        "🇭🇰 香港 64",
+        "🇭🇰 香港 65",
+        "🇭🇰 香港 66",
+        "🇭🇰 香港 67",
+        "🇭🇰 香港 68",
+        "🇭🇰 香港 69",
+        "🇭🇰 香港 70",
+        "🇭🇰 香港 71",
+        "🇭🇰 香港 72",
+        "🇭🇰 香港 73",
+        "🇭🇰 香港 74",
+        "🇭🇰 香港 75",
+        "🇭🇰 香港 76",
+        "🇭🇰 香港 77",
+        "🇭🇰 香港 78",
+        "🇭🇰 香港 79",
+        "🇭🇰 香港 80",
+        "🇭🇰 香港 81",
+        "🇭🇰 香港 82",
+        "🇭🇰 香港 83",
+        "🇭🇰 香港 84",
+        "🇭🇰 香港 85",
+        "🇭🇰 香港 86",
+        "🇭🇰 香港 87",
+        "🇭🇰 香港 88",
+        "🇭🇰 香港 89",
+        "🇭🇰 香港 90",
+        "🇭🇰 香港 91",
+        "🇭🇰 香港 92",
+        "🇭🇰 香港 93",
+        "🇭🇰 香港 94",
+        "🇭🇰 香港 95",
+        "🇭🇰 香港 96",
+        "🇭🇰 香港 97",
+        "🇭🇰 香港 98",
+        "🇭🇰 香港 99",
+        "🇭🇰 香港 100",
+        "🇭🇰 香港 101",
+        "🇭🇰 香港 102",
+        "🇭🇰 香港 103",
+        "🇭🇰 香港 104",
+        "🇭🇰 香港 105",
+        "🇭🇰 香港 106",
+        "🇭🇰 香港 107",
+        "🇭🇰 香港 108",
+        "🇭🇰 香港 109",
+        "🇭🇰 香港 110",
+        "🇭🇰 香港 111",
+        "🇭🇰 香港 112",
+        "🇭🇰 香港 113",
+        "🇭🇰 香港 114",
+        "🇭🇰 香港 115",
+        "🇭🇰 香港 116",
+        "🇭🇰 香港 117",
+        "🇭🇰 香港 118",
+        "🇭🇰 香港 119",
+        "🇭🇰 香港 120",
+        "🇭🇰 香港 121",
+        "🇭🇰 香港 122",
+        "🇭🇰 香港 123",
+        "🇭🇰 香港 124",
+        "🇭🇰 香港 125",
+        "🇭🇰 香港 126",
+        "🇭🇰 香港 127",
+        "🇭🇰 香港 128",
+        "🇭🇰 香港 129",
+        "🇭🇰 香港 130",
+        "🇭🇰 香港 131",
+        "🇭🇰 香港 132",
+        "🇭🇰 香港 133",
+        "🇭🇰 香港 134",
+        "🇭🇰 香港 135",
+        "🇭🇰 香港 136",
+        "🇭🇰 香港 137",
+        "🇭🇰 香港 138",
+        "🇭🇰 香港 139",
+        "🇭🇰 香港 140",
+        "🇭🇰 香港 141",
+        "🇭🇰 香港 142",
+        "🇭🇰 香港 143",
+        "🇭🇰 香港 144",
+        "🇭🇰 香港 145",
+        "🇭🇰 香港 146",
+        "🇭🇰 香港 147",
+        "🇭🇰 香港 148",
+        "🇭🇰 香港 149",
+        "🇭🇰 香港 150",
+        "🇭🇰 香港 151",
+        "🇭🇰 香港 152",
+        "🇭🇰 香港 153",
+        "🇭🇰 香港 154",
+        "🇭🇰 香港 155",
+        "🇭🇰 香港 156",
+        "🇭🇰 香港 157",
+        "🇭🇰 香港 158",
+        "🇭🇰 香港 159",
+        "🇭🇰 香港 160",
+        "🇭🇰 香港 161",
+        "🇭🇰 香港 162",
+        "🇯🇵 日本",
+        "🇰🇷 韩国",
+        "🇸🇬 新加坡",
+        "🇸🇬 新加坡 2",
+        "🇸🇬 新加坡 3"
+      ],
+      "url": "http://www.gstatic.com/generate_204",
+      "interval": "10m",
+      "tolerance": 50
+    },
+    {
+      "type": "direct",
+      "tag": "direct"
+    },
+    {
+      "type": "dns",
+      "tag": "dns-out"
+    },
+    {
+      "type": "block",
+      "tag": "block"
+    },
+    {
+      "tag": "🇹🇼 🇨🇳 台湾",
+      "type": "vless",
+      "server": "220.134.107.199",
+      "server_port": 12106,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇹🇼 🇨🇳 台湾 2",
+      "type": "vless",
+      "server": "122.116.105.15",
+      "server_port": 10443,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇹🇼 🇨🇳 台湾 3",
+      "type": "vless",
+      "server": "36.229.216.92",
+      "server_port": 12529,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇹🇼 🇨🇳 台湾 4",
+      "type": "vless",
+      "server": "220.134.210.14",
+      "server_port": 12161,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇹🇼 🇨🇳 台湾 5",
+      "type": "vless",
+      "server": "123.204.135.223",
+      "server_port": 12190,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇹🇼 🇨🇳 台湾 6",
+      "type": "vless",
+      "server": "1.160.2.16",
+      "server_port": 12553,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇹🇼 🇨🇳 台湾 7",
+      "type": "vless",
+      "server": "210.209.180.213",
+      "server_port": 12110,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇹🇼 🇨🇳 台湾 8",
+      "type": "vless",
+      "server": "112.104.149.30",
+      "server_port": 12140,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇹🇼 🇨🇳 台湾 9",
+      "type": "vless",
+      "server": "61.227.208.132",
+      "server_port": 20000,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇹🇼 🇨🇳 台湾 10",
+      "type": "vless",
+      "server": "112.120.127.195",
+      "server_port": 7,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇹🇼 🇨🇳 台湾 11",
+      "type": "vless",
+      "server": "220.134.107.199",
+      "server_port": 12444,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇹🇼 🇨🇳 台湾 12",
+      "type": "vless",
+      "server": "220.135.202.250",
+      "server_port": 81,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇹🇼 🇨🇳 台湾 13",
+      "type": "vless",
+      "server": "36.236.5.3",
+      "server_port": 12315,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇹🇼 🇨🇳 台湾 14",
+      "type": "vless",
+      "server": "118.161.151.123",
+      "server_port": 20332,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇹🇼 🇨🇳 台湾 15",
+      "type": "vless",
+      "server": "122.116.86.104",
+      "server_port": 81,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港",
+      "type": "vless",
+      "server": "149.104.35.212",
+      "server_port": 3128,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 2",
+      "type": "vless",
+      "server": "149.104.35.200",
+      "server_port": 3128,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 3",
+      "type": "vless",
+      "server": "149.104.35.244",
+      "server_port": 3128,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 4",
+      "type": "vless",
+      "server": "149.104.35.249",
+      "server_port": 3128,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 5",
+      "type": "vless",
+      "server": "156.243.19.247",
+      "server_port": 3128,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 6",
+      "type": "vless",
+      "server": "149.104.35.254",
+      "server_port": 3128,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 7",
+      "type": "vless",
+      "server": "149.104.35.228",
+      "server_port": 3128,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 8",
+      "type": "vless",
+      "server": "149.104.35.246",
+      "server_port": 3128,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 9",
+      "type": "vless",
+      "server": "149.104.35.250",
+      "server_port": 3128,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 10",
+      "type": "vless",
+      "server": "149.104.35.240",
+      "server_port": 3128,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 11",
+      "type": "vless",
+      "server": "149.104.35.46",
+      "server_port": 3128,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 12",
+      "type": "vless",
+      "server": "149.104.35.198",
+      "server_port": 3128,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 13",
+      "type": "vless",
+      "server": "149.104.35.36",
+      "server_port": 3128,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 14",
+      "type": "vless",
+      "server": "20.255.52.179",
+      "server_port": 587,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 15",
+      "type": "vless",
+      "server": "149.104.35.247",
+      "server_port": 3128,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 16",
+      "type": "vless",
+      "server": "149.104.35.210",
+      "server_port": 3128,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 17",
+      "type": "vless",
+      "server": "156.243.19.238",
+      "server_port": 3128,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 18",
+      "type": "vless",
+      "server": "149.104.35.196",
+      "server_port": 3128,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 19",
+      "type": "vless",
+      "server": "156.243.19.242",
+      "server_port": 3128,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 20",
+      "type": "vless",
+      "server": "223.122.68.205",
+      "server_port": 12384,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 21",
+      "type": "vless",
+      "server": "220.246.53.107",
+      "server_port": 12512,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 22",
+      "type": "vless",
+      "server": "149.104.35.43",
+      "server_port": 3128,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 23",
+      "type": "vless",
+      "server": "149.104.35.237",
+      "server_port": 3128,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 24",
+      "type": "vless",
+      "server": "149.104.35.209",
+      "server_port": 3128,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 25",
+      "type": "vless",
+      "server": "149.104.35.238",
+      "server_port": 3128,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 26",
+      "type": "vless",
+      "server": "149.104.35.242",
+      "server_port": 3128,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 27",
+      "type": "vless",
+      "server": "149.104.35.224",
+      "server_port": 3128,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 28",
+      "type": "vless",
+      "server": "149.104.35.203",
+      "server_port": 3128,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 29",
+      "type": "vless",
+      "server": "156.243.19.245",
+      "server_port": 3128,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 30",
+      "type": "vless",
+      "server": "202.81.237.150",
+      "server_port": 9999,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 31",
+      "type": "vless",
+      "server": "149.104.35.206",
+      "server_port": 3128,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 32",
+      "type": "vless",
+      "server": "149.104.35.207",
+      "server_port": 3128,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 33",
+      "type": "vless",
+      "server": "149.104.35.236",
+      "server_port": 3128,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 34",
+      "type": "vless",
+      "server": "149.104.35.213",
+      "server_port": 3128,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 35",
+      "type": "vless",
+      "server": "156.243.19.233",
+      "server_port": 3128,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 36",
+      "type": "vless",
+      "server": "149.104.34.250",
+      "server_port": 3128,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 37",
+      "type": "vless",
+      "server": "156.243.19.252",
+      "server_port": 3128,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 38",
+      "type": "vless",
+      "server": "156.243.19.243",
+      "server_port": 3128,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 39",
+      "type": "vless",
+      "server": "149.104.35.216",
+      "server_port": 3128,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 40",
+      "type": "vless",
+      "server": "156.243.19.254",
+      "server_port": 3128,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 41",
+      "type": "vless",
+      "server": "149.104.35.251",
+      "server_port": 3128,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 42",
+      "type": "vless",
+      "server": "149.104.35.243",
+      "server_port": 3128,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 43",
+      "type": "vless",
+      "server": "149.104.35.41",
+      "server_port": 3128,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 44",
+      "type": "vless",
+      "server": "156.243.19.244",
+      "server_port": 3128,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 45",
+      "type": "vless",
+      "server": "149.104.35.208",
+      "server_port": 3128,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 46",
+      "type": "vless",
+      "server": "18.162.156.23",
+      "server_port": 12355,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 47",
+      "type": "vless",
+      "server": "156.243.19.251",
+      "server_port": 3128,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 48",
+      "type": "vless",
+      "server": "149.104.35.234",
+      "server_port": 3128,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 49",
+      "type": "vless",
+      "server": "156.243.19.226",
+      "server_port": 3128,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 50",
+      "type": "vless",
+      "server": "43.198.104.113",
+      "server_port": 2055,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 51",
+      "type": "vless",
+      "server": "42.98.73.202",
+      "server_port": 10010,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 52",
+      "type": "vless",
+      "server": "43.247.134.181",
+      "server_port": 1000,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 53",
+      "type": "vless",
+      "server": "156.243.19.239",
+      "server_port": 3128,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 54",
+      "type": "vless",
+      "server": "149.104.35.205",
+      "server_port": 3128,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 55",
+      "type": "vless",
+      "server": "149.104.35.211",
+      "server_port": 3128,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 56",
+      "type": "vless",
+      "server": "156.243.19.231",
+      "server_port": 3128,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 57",
+      "type": "vless",
+      "server": "149.104.35.44",
+      "server_port": 3128,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 58",
+      "type": "vless",
+      "server": "149.104.34.252",
+      "server_port": 3128,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 59",
+      "type": "vless",
+      "server": "156.243.19.236",
+      "server_port": 3128,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 60",
+      "type": "vless",
+      "server": "149.104.35.40",
+      "server_port": 3128,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 61",
+      "type": "vless",
+      "server": "149.104.35.195",
+      "server_port": 3128,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 62",
+      "type": "vless",
+      "server": "149.104.35.204",
+      "server_port": 3128,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 63",
+      "type": "vless",
+      "server": "156.243.19.250",
+      "server_port": 3128,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 64",
+      "type": "vless",
+      "server": "47.76.154.53",
+      "server_port": 587,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 65",
+      "type": "vless",
+      "server": "156.243.19.230",
+      "server_port": 3128,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 66",
+      "type": "vless",
+      "server": "149.104.35.220",
+      "server_port": 3128,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 67",
+      "type": "vless",
+      "server": "220.246.53.107",
+      "server_port": 12587,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 68",
+      "type": "vless",
+      "server": "156.243.19.234",
+      "server_port": 3128,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 69",
+      "type": "vless",
+      "server": "47.238.184.148",
+      "server_port": 587,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 70",
+      "type": "vless",
+      "server": "47.238.175.234",
+      "server_port": 587,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 71",
+      "type": "vless",
+      "server": "149.104.35.230",
+      "server_port": 3128,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 72",
+      "type": "vless",
+      "server": "47.76.58.86",
+      "server_port": 587,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 73",
+      "type": "vless",
+      "server": "149.104.35.231",
+      "server_port": 3128,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 74",
+      "type": "vless",
+      "server": "149.104.35.35",
+      "server_port": 3128,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 75",
+      "type": "vless",
+      "server": "149.104.35.222",
+      "server_port": 3128,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 76",
+      "type": "vless",
+      "server": "149.104.35.221",
+      "server_port": 3128,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 77",
+      "type": "vless",
+      "server": "112.120.158.205",
+      "server_port": 15082,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 78",
+      "type": "vless",
+      "server": "156.243.19.232",
+      "server_port": 3128,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 79",
+      "type": "vless",
+      "server": "149.104.35.245",
+      "server_port": 3128,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 80",
+      "type": "vless",
+      "server": "149.104.35.233",
+      "server_port": 3128,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 81",
+      "type": "vless",
+      "server": "149.104.35.202",
+      "server_port": 3128,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 82",
+      "type": "vless",
+      "server": "18.166.149.73",
+      "server_port": 18443,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 83",
+      "type": "vless",
+      "server": "120.226.59.142",
+      "server_port": 29999,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 84",
+      "type": "vless",
+      "server": "149.104.35.201",
+      "server_port": 3128,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 85",
+      "type": "vless",
+      "server": "149.104.35.223",
+      "server_port": 3128,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 86",
+      "type": "vless",
+      "server": "149.104.35.229",
+      "server_port": 3128,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 87",
+      "type": "vless",
+      "server": "218.102.249.182",
+      "server_port": 5443,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 88",
+      "type": "vless",
+      "server": "43.198.207.3",
+      "server_port": 2055,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 89",
+      "type": "vless",
+      "server": "156.243.19.235",
+      "server_port": 3128,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 90",
+      "type": "vless",
+      "server": "156.243.19.246",
+      "server_port": 3128,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 91",
+      "type": "vless",
+      "server": "149.104.34.254",
+      "server_port": 3128,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 92",
+      "type": "vless",
+      "server": "149.104.35.194",
+      "server_port": 3128,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 93",
+      "type": "vless",
+      "server": "43.199.119.4",
+      "server_port": 10443,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 94",
+      "type": "vless",
+      "server": "103.247.29.42",
+      "server_port": 10081,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 95",
+      "type": "vless",
+      "server": "149.104.35.235",
+      "server_port": 3128,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 96",
+      "type": "vless",
+      "server": "47.76.106.176",
+      "server_port": 587,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 97",
+      "type": "vless",
+      "server": "149.104.35.225",
+      "server_port": 3128,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 98",
+      "type": "vless",
+      "server": "47.76.82.101",
+      "server_port": 587,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 99",
+      "type": "vless",
+      "server": "18.162.54.0",
+      "server_port": 18443,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 100",
+      "type": "vless",
+      "server": "47.76.77.127",
+      "server_port": 587,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 101",
+      "type": "vless",
+      "server": "149.104.35.218",
+      "server_port": 3128,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 102",
+      "type": "vless",
+      "server": "154.18.161.172",
+      "server_port": 18443,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 103",
+      "type": "vless",
+      "server": "8.210.209.132",
+      "server_port": 587,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 104",
+      "type": "vless",
+      "server": "149.104.35.241",
+      "server_port": 3128,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 105",
+      "type": "vless",
+      "server": "149.104.35.252",
+      "server_port": 3128,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 106",
+      "type": "vless",
+      "server": "112.119.95.226",
+      "server_port": 9000,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 107",
+      "type": "vless",
+      "server": "156.243.19.241",
+      "server_port": 3128,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 108",
+      "type": "vless",
+      "server": "156.243.19.228",
+      "server_port": 3128,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 109",
+      "type": "vless",
+      "server": "149.104.35.239",
+      "server_port": 3128,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 110",
+      "type": "vless",
+      "server": "156.243.19.248",
+      "server_port": 3128,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 111",
+      "type": "vless",
+      "server": "149.104.35.215",
+      "server_port": 3128,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 112",
+      "type": "vless",
+      "server": "149.104.35.227",
+      "server_port": 3128,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 113",
+      "type": "vless",
+      "server": "149.104.35.226",
+      "server_port": 3128,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 114",
+      "type": "vless",
+      "server": "156.243.19.253",
+      "server_port": 3128,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 115",
+      "type": "vless",
+      "server": "18.162.246.4",
+      "server_port": 18443,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 116",
+      "type": "vless",
+      "server": "107.150.119.240",
+      "server_port": 587,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 117",
+      "type": "vless",
+      "server": "8.217.48.134",
+      "server_port": 587,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 118",
+      "type": "vless",
+      "server": "47.238.135.59",
+      "server_port": 587,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 119",
+      "type": "vless",
+      "server": "47.238.174.191",
+      "server_port": 587,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 120",
+      "type": "vless",
+      "server": "156.243.19.227",
+      "server_port": 3128,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 121",
+      "type": "vless",
+      "server": "120.232.218.36",
+      "server_port": 12330,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 122",
+      "type": "vless",
+      "server": "156.243.19.240",
+      "server_port": 3128,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 123",
+      "type": "vless",
+      "server": "223.122.88.214",
+      "server_port": 37020,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 124",
+      "type": "vless",
+      "server": "156.243.19.229",
+      "server_port": 3128,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 125",
+      "type": "vless",
+      "server": "149.104.35.248",
+      "server_port": 3128,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 126",
+      "type": "vless",
+      "server": "149.104.35.37",
+      "server_port": 3128,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 127",
+      "type": "vless",
+      "server": "120.232.218.32",
+      "server_port": 12330,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 128",
+      "type": "vless",
+      "server": "149.104.35.253",
+      "server_port": 3128,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 129",
+      "type": "vless",
+      "server": "47.76.63.232",
+      "server_port": 587,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 130",
+      "type": "vless",
+      "server": "175.46.253.65",
+      "server_port": 18443,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 131",
+      "type": "vless",
+      "server": "8.218.142.77",
+      "server_port": 587,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 132",
+      "type": "vless",
+      "server": "103.235.18.163",
+      "server_port": 12317,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 133",
+      "type": "vless",
+      "server": "47.238.194.230",
+      "server_port": 587,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 134",
+      "type": "vless",
+      "server": "120.232.218.33",
+      "server_port": 12330,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 135",
+      "type": "vless",
+      "server": "156.243.19.249",
+      "server_port": 3128,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 136",
+      "type": "vless",
+      "server": "8.210.76.17",
+      "server_port": 587,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 137",
+      "type": "vless",
+      "server": "112.120.127.195",
+      "server_port": 81,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 138",
+      "type": "vless",
+      "server": "45.207.214.190",
+      "server_port": 1024,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 139",
+      "type": "vless",
+      "server": "149.104.35.214",
+      "server_port": 3128,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 140",
+      "type": "vless",
+      "server": "190.92.233.69",
+      "server_port": 7443,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 141",
+      "type": "vless",
+      "server": "120.233.70.193",
+      "server_port": 14265,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 142",
+      "type": "vless",
+      "server": "103.51.144.6",
+      "server_port": 587,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 143",
+      "type": "vless",
+      "server": "219.76.176.105",
+      "server_port": 12203,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 144",
+      "type": "vless",
+      "server": "222.166.34.43",
+      "server_port": 11300,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 145",
+      "type": "vless",
+      "server": "183.232.159.52",
+      "server_port": 7000,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 146",
+      "type": "vless",
+      "server": "1.64.135.97",
+      "server_port": 37215,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 147",
+      "type": "vless",
+      "server": "42.98.153.136",
+      "server_port": 12490,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 148",
+      "type": "vless",
+      "server": "152.32.168.5",
+      "server_port": 8081,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 149",
+      "type": "vless",
+      "server": "8.217.234.220",
+      "server_port": 587,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 150",
+      "type": "vless",
+      "server": "125.59.4.73",
+      "server_port": 12266,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 151",
+      "type": "vless",
+      "server": "1.64.135.97",
+      "server_port": 12210,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 152",
+      "type": "vless",
+      "server": "222.166.34.43",
+      "server_port": 12137,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 153",
+      "type": "vless",
+      "server": "8.210.173.151",
+      "server_port": 80,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 154",
+      "type": "vless",
+      "server": "8.218.148.106",
+      "server_port": 80,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 155",
+      "type": "vless",
+      "server": "112.26.33.57",
+      "server_port": 63002,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 156",
+      "type": "vless",
+      "server": "103.192.179.224",
+      "server_port": 17780,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 157",
+      "type": "vless",
+      "server": "112.26.33.57",
+      "server_port": 63092,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 158",
+      "type": "vless",
+      "server": "8.218.210.207",
+      "server_port": 9443,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 159",
+      "type": "vless",
+      "server": "8.217.126.153",
+      "server_port": 9001,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 160",
+      "type": "vless",
+      "server": "47.242.157.25",
+      "server_port": 9001,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 161",
+      "type": "vless",
+      "server": "8.218.183.25",
+      "server_port": 9001,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇭🇰 香港 162",
+      "type": "vless",
+      "server": "1.64.135.97",
+      "server_port": 18200,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇯🇵 日本",
+      "type": "vless",
+      "server": "18.162.233.136",
+      "server_port": 12512,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇰🇷 韩国",
+      "type": "vless",
+      "server": "52.141.25.42",
+      "server_port": 443,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇸🇬 新加坡",
+      "type": "vless",
+      "server": "47.238.52.210",
+      "server_port": 60000,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇸🇬 新加坡 2",
+      "type": "vless",
+      "server": "120.232.240.42",
+      "server_port": 12507,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    },
+    {
+      "tag": "🇸🇬 新加坡 3",
+      "type": "vless",
+      "server": "103.180.193.56",
+      "server_port": 443,
+      "uuid": "35ee82c6-621e-4d07-b9ad-7783c2614806",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "TG.CMLiussss.ooguy.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "TG.CMLiussss.ooguy.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2560
+      }
+    }
+  ],
+  "route": {
+    "auto_detect_interface": true,
+    "final": "Proxy",
+    "rules": [
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "port": 53
+          },
+          {
+            "protocol": "dns"
+          }
+        ],
+        "outbound": "dns-out"
+      },
+      {
+        "rule_set": "geosite-category-ads-all",
+        "outbound": "AdBlock"
+      },
+      {
+        "clash_mode": "direct",
+        "outbound": "direct"
+      },
+      {
+        "clash_mode": "global",
+        "outbound": "Proxy"
+      },
+      {
+        "domain": [
+          "clash.razord.top",
+          "yacd.metacubex.one",
+          "yacd.haishan.me",
+          "d.metacubex.one"
+        ],
+        "outbound": "direct"
+      },
+      {
+        "ip_is_private": true,
+        "outbound": "direct"
+      },
+      {
+        "rule_set": "geosite-openai",
+        "outbound": "OpenAI"
+      },
+      {
+        "rule_set": [
+          "geosite-youtube",
+          "geoip-google",
+          "geosite-google",
+          "geosite-github"
+        ],
+        "outbound": "Google"
+      },
+      {
+        "rule_set": [
+          "geoip-telegram",
+          "geosite-telegram"
+        ],
+        "outbound": "Telegram"
+      },
+      {
+        "rule_set": [
+          "geoip-twitter",
+          "geosite-twitter"
+        ],
+        "outbound": "Twitter"
+      },
+      {
+        "rule_set": [
+          "geoip-facebook",
+          "geosite-facebook"
+        ],
+        "outbound": "Facebook"
+      },
+      {
+        "rule_set": "geosite-bilibili",
+        "outbound": "BiliBili"
+      },
+      {
+        "rule_set": "geosite-bahamut",
+        "outbound": "Bahamut"
+      },
+      {
+        "rule_set": "geosite-spotify",
+        "outbound": "Spotify"
+      },
+      {
+        "rule_set": "geosite-tiktok",
+        "outbound": "TikTok"
+      },
+      {
+        "rule_set": [
+          "geoip-netflix",
+          "geosite-netflix"
+        ],
+        "outbound": "Netflix"
+      },
+      {
+        "rule_set": "geosite-disney",
+        "outbound": "Disney+"
+      },
+      {
+        "rule_set": [
+          "geoip-apple",
+          "geosite-apple",
+          "geosite-amazon"
+        ],
+        "outbound": "Apple"
+      },
+      {
+        "rule_set": "geosite-microsoft",
+        "outbound": "Microsoft"
+      },
+      {
+        "rule_set": [
+          "geosite-category-games",
+          "geosite-dmm"
+        ],
+        "outbound": "Games"
+      },
+      {
+        "rule_set": [
+          "geosite-hbo",
+          "geosite-primevideo"
+        ],
+        "outbound": "Streaming"
+      },
+      {
+        "rule_set": "geosite-geolocation-!cn",
+        "outbound": "Global"
+      },
+      {
+        "rule_set": [
+          "geoip-cn",
+          "geosite-cn"
+        ],
+        "outbound": "China"
+      }
+    ],
+    "rule_set": [
+      {
+        "tag": "geosite-category-ads-all",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/category-ads-all.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "geosite-openai",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/Toperlock/sing-box-geosite/main/rule/OpenAI.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "geosite-youtube",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/youtube.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "geoip-google",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/google.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "geosite-google",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/google.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "geosite-github",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/github.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "geoip-telegram",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/telegram.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "geosite-telegram",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/telegram.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "geoip-twitter",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/twitter.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "geosite-twitter",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/twitter.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "geoip-facebook",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/facebook.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "geosite-facebook",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/facebook.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "geosite-bilibili",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/bilibili.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "geosite-bahamut",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/bahamut.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "geosite-spotify",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/spotify.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "geosite-tiktok",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/tiktok.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "geoip-netflix",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/netflix.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "geosite-netflix",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/netflix.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "geosite-disney",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/disney.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "geoip-apple",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo-lite/geoip/apple.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "geosite-apple",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/apple.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "geosite-amazon",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/amazon.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "geosite-microsoft",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/microsoft.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "geosite-category-games",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/category-games.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "geosite-dmm",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/dmm.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "geosite-hbo",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/hbo.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "geosite-primevideo",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/primevideo.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "geosite-geolocation-!cn",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/geolocation-!cn.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "geoip-cn",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/cn.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "geosite-cn",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/cn.srs",
+        "download_detour": "direct"
+      }
+    ]
+  }
+}
