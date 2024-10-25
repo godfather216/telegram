@@ -381,10 +381,7 @@ proxy-groups:
     tolerance: 50
     use:
       - provider2-1
-      - provider2-2
-      - provider2-3
-      - provider2-4
-    filter: "^(?!.*(距离|www|频道|套餐|关注|反代|节点|网址|官网|加入|永久)).*$"
+    filter: "(?i)港|🇭🇰|HK|Hong"
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Available.png
   - name: 👨🏻‍💻 AI专线
     type: load-balance
