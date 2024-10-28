@@ -43,7 +43,7 @@ tcp-concurrent: true
 proxy-providers:
   provider3-1:
     type: http
-    url: "https://sotrojan.sosorg.nyc.mn/ZY888"
+    url: "https://gotrojan.sosorg.nyc.mn/TDCQ"
     interval: 3600
     path: ./provider3-1.yaml
     health-check:
@@ -55,15 +55,6 @@ proxy-providers:
     url: "https://ovo.o00o.ooo/ooo"
     interval: 3600
     path: ./provider3-2.yaml
-    health-check:
-      enable: true
-      interval: 600
-      url: http://www.gstatic.com/generate_204
-  provider3-3:
-    type: http
-    url: "https://paste.myconan.net/511220-a3688c0a.txt"
-    interval: 3600
-    path: ./provider3-3.yaml
     health-check:
       enable: true
       interval: 600
