@@ -42,7 +42,7 @@ tcp-concurrent: true
 proxy-providers:
   provider1-1:
     type: http
-    url: "https://paste.myconan.net/512481-7f6aa7c6.txt"
+    url: "https://mxlsub.me/free"
     interval: 3600
     path: ./provider1-1.yaml
     health-check:
