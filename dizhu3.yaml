@@ -363,7 +363,8 @@ proxy-groups:
     interval: 300
     tolerance: 50
     use:
-      - provider3-3
+      - provider3-1
+      - provider3-2
     filter: "(?i)港|🇭🇰|HK|Hong"
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Available.png
   - name: 👨🏻‍💻 AI专线
