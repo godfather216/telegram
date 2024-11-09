@@ -3,7 +3,7 @@ socks-port: 7891
 allow-lan: true
 mode: Rule
 log-level: info
-external-controller: :9090
+external-controller: '127.0.0.1:9090'
 dns:
   enable: true
   ipv6: false
@@ -39,7 +39,6 @@ profile:
   store-selected: true
   store-fake-ip: true
 tcp-concurrent: true
-
 proxy-providers:
   provider3-1:
     type: http
@@ -59,7 +58,7 @@ proxy-providers:
       enable: true
       interval: 600
       url: http://www.gstatic.com/generate_204
- 
+      
 proxy-groups:
   - name: 节点选择
     type: select
@@ -143,6 +142,20 @@ proxy-groups:
       - 🇵🇱 波兰节点
       - 🇪🇺 欧洲节点
     icon: https://raw.githubusercontent.com/Orz-3/mini/master/Color/Telegram.png
+  - name: Spotify
+    type: select
+    proxies:
+      - 节点选择
+      - 自动选择
+      - 🇸🇬 狮城节点
+      - 🇭🇰 香港节点
+      - 🇹🇼 台湾节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇰🇷 韩国节点
+      - 🇵🇱 波兰节点
+      - 🇪🇺 欧洲节点
+    icon: https://github.com/shindgewongxj/WHATSINStash/raw/main/icon/spotify.png
   - name: OpenAi
     type: select
     proxies:
@@ -365,7 +378,6 @@ proxy-groups:
     use:
       - provider3-1
       - provider3-2
-    filter: "(?i)港|🇭🇰|HK|Hong"
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Available.png
   - name: 👨🏻‍💻 AI专线
     type: load-balance
@@ -376,7 +388,6 @@ proxy-groups:
     use:
       - provider3-1
       - provider3-2
-      - provider3-3
     filter: “(?i)美国|🇺🇸|US|阿什本|新加坡|🇸🇬|SG|日本|东京|🇯🇵|JP|韩国|首尔|春川|🇰🇷|KR|德国|法兰克福|纽伦堡|🇩🇪|DE|法国|马德里|巴黎|🇫🇷|FR|法国|GB|英国|伦敦|🇬🇧|UK|巴西|圣保罗|🇧🇷|迪拜|芬兰|🇫🇮|FI|海得拉巴|孟买|吉达|PL|波兰|🇵🇱|AU|澳大利亚|🇦🇺|IN|印度|🇮🇳|MY|马来西亚|🇲🇾|CA|加拿大|🇨🇦|AE|阿联酋|🇦🇪|NL|荷兰|🇳🇱"
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Drill.png
   - name: 故障转移
@@ -387,7 +398,6 @@ proxy-groups:
     use:
       - provider3-1
       - provider3-2
-      - provider3-3
     filter: "^(?!.*(距离|www|频道|套餐|关注|反代|节点|网址|官网|加入|永久)).*$"
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hijacking.png
   - name: 自动选择
@@ -395,7 +405,6 @@ proxy-groups:
     use:
       - provider3-1
       - provider3-2
-      - provider3-3
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
@@ -406,7 +415,6 @@ proxy-groups:
     use:
       - provider3-1
       - provider3-2
-      - provider3-3
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 30
@@ -417,7 +425,6 @@ proxy-groups:
     use:
       - provider3-1
       - provider3-2
-      - provider3-3
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
@@ -428,7 +435,6 @@ proxy-groups:
     use:
       - provider3-1
       - provider3-2
-      - provider3-3
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
@@ -439,7 +445,6 @@ proxy-groups:
     use:
       - provider3-1
       - provider3-2
-      - provider3-3
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
@@ -450,7 +455,6 @@ proxy-groups:
     use:
       - provider3-1
       - provider3-2
-      - provider3-3
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
@@ -461,7 +465,6 @@ proxy-groups:
     use:
       - provider3-1
       - provider3-2
-      - provider3-3
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
@@ -472,7 +475,6 @@ proxy-groups:
     use:
       - provider3-1
       - provider3-2
-      - provider3-3
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
@@ -483,13 +485,11 @@ proxy-groups:
     use:
       - provider3-1
       - provider3-2
-      - provider3-3
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
     filter: "(?i)德国|柏林|🇩🇪|DE|芬兰|赫尔辛基|🇫🇮|FI|法国|巴黎|🇫🇷|FR|英国|伦敦|🇬🇧|UK|立陶宛|维尔纽斯|🇱🇹|LT|荷兰|阿姆斯特丹|🇳🇱|NL|挪威|奥斯陆|🇳🇴|NO|俄罗斯|莫斯科|🇷🇺|RU|瑞典|斯德哥尔摩|🇸🇪|SE|土耳其|伊斯坦布尔|🇹🇷|TR|澳大利亚|悉尼|🇦🇺|AU|爱尔兰|都柏林|🇮🇪|IE|意大利|罗马|🇮🇹|IT|加拿大|多伦多|🇨🇦|CA"
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/European_Union.png
-    
 rules:
   # WebRTC 相关规则
   - DOMAIN-SUFFIX,xn--ngstr-lra8j.com,节点选择
@@ -2399,6 +2399,19 @@ rules:
   - IP-CIDR6,2001:67c:4e8::/48,电报吹水,no-resolve
   - IP-CIDR6,2001:b28:f23d::/48,电报吹水,no-resolve
   - IP-CIDR6,2001:b28:f23f::/48,电报吹水,no-resolve
+  # Spotify 音乐服务
+  - DOMAIN-SUFFIX,spotify.com,Spotify
+  - DOMAIN-SUFFIX,spoti.fi,Spotify
+  - DOMAIN-SUFFIX,scdn.co,Spotify
+  - DOMAIN-SUFFIX,spotify.net,Spotify
+  - DOMAIN-SUFFIX,spotifycdn.com,Spotify
+  - DOMAIN-SUFFIX,spotifycdn.net,Spotify
+  - DOMAIN-SUFFIX,spotifycharts.com,Spotify
+  - DOMAIN-SUFFIX,spotifycodes.com,Spotify
+  - DOMAIN-SUFFIX,spotifyjobs.com,Spotify
+  - DOMAIN-SUFFIX,spotifynewsroom.com,Spotify
+  - DOMAIN-SUFFIX,audio-ak-spotify-com.akamaized.net,Spotify
+  - DOMAIN-KEYWORD,spotify,Spotify
   - DOMAIN-KEYWORD,openai,OpenAi
   - DOMAIN,gemini.google.com,OpenAi
   - DOMAIN-SUFFIX,auth0.com,OpenAi
@@ -2925,14 +2938,7 @@ rules:
   - DOMAIN-SUFFIX,p-cdn.us,国外媒体
   - DOMAIN-SUFFIX,sndcdn.com,国外媒体
   - DOMAIN-SUFFIX,soundcloud.com,国外媒体
-  - DOMAIN-KEYWORD,-spotify-,国外媒体
-  - DOMAIN-KEYWORD,spotify.com,国外媒体
   - DOMAIN-SUFFIX,pscdn.co,国外媒体
-  - DOMAIN-SUFFIX,scdn.co,国外媒体
-  - DOMAIN-SUFFIX,spoti.fi,国外媒体
-  - DOMAIN-SUFFIX,spotify.com,国外媒体
-  - DOMAIN-SUFFIX,spotifycdn.com,国外媒体
-  - DOMAIN-SUFFIX,spotifycdn.net,国外媒体
   - DOMAIN-SUFFIX,tidal-cms.s3.amazonaws.com,国外媒体
   - DOMAIN-SUFFIX,tidal.com,国外媒体
   - DOMAIN-SUFFIX,tidalhifi.com,国外媒体
@@ -3033,7 +3039,6 @@ rules:
   - DOMAIN-KEYWORD,instagram,节点选择
   - DOMAIN-KEYWORD,porn,节点选择
   - DOMAIN-KEYWORD,sci-hub,节点选择
-  - DOMAIN-KEYWORD,spotify,节点选择
   - DOMAIN-KEYWORD,telegram,节点选择
   - DOMAIN-KEYWORD,twitter,马斯克的废话
   - DOMAIN-KEYWORD,whatsapp,节点选择
@@ -7644,7 +7649,6 @@ rules:
   - DOMAIN-SUFFIX,spideroak.com,节点选择
   - DOMAIN-SUFFIX,spike.com,节点选择
   - DOMAIN-SUFFIX,spotflux.com,节点选择
-  - DOMAIN-SUFFIX,spotify.com,节点选择
   - DOMAIN-SUFFIX,spreadshirt.es,节点选择
   - DOMAIN-SUFFIX,spring4u.info,节点选择
   - DOMAIN-SUFFIX,springboardplatform.com,节点选择
