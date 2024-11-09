@@ -3,7 +3,7 @@ socks-port: 7891
 allow-lan: true
 mode: Rule
 log-level: info
-external-controller: :9090
+external-controller: '127.0.0.1:9090'
 dns:
   enable: true
   ipv6: false
@@ -67,7 +67,7 @@ proxy-providers:
       enable: true
       interval: 600
       url: http://www.gstatic.com/generate_204
-  
+ 
 proxy-groups:
   - name: 节点选择
     type: select
@@ -81,7 +81,7 @@ proxy-groups:
       - 🇯🇵 日本节点
       - 🇺🇲 美国节点
       - 🇰🇷 韩国节点
-      - 🇮🇳 印度节点
+      - 🇵🇱 波兰节点
       - 🇪🇺 欧洲节点
       - DIRECT
     interval: 300
@@ -100,7 +100,7 @@ proxy-groups:
       - 🇯🇵 日本节点
       - 🇺🇲 美国节点
       - 🇰🇷 韩国节点
-      - 🇮🇳 印度节点
+      - 🇵🇱 波兰节点
       - 🇪🇺 欧洲节点
       - DIRECT
     url: "http://www.gstatic.com/generate_204"
@@ -119,7 +119,7 @@ proxy-groups:
       - 🇯🇵 日本节点
       - 🇺🇲 美国节点
       - 🇰🇷 韩国节点
-      - 🇮🇳 印度节点
+      - 🇵🇱 波兰节点
       - 🇪🇺 欧洲节点
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/TikTok_1.png
   - name: 马斯克的废话
@@ -148,9 +148,23 @@ proxy-groups:
       - 🇯🇵 日本节点
       - 🇺🇲 美国节点
       - 🇰🇷 韩国节点
-      - 🇮🇳 印度节点
+      - 🇵🇱 波兰节点
       - 🇪🇺 欧洲节点
     icon: https://raw.githubusercontent.com/Orz-3/mini/master/Color/Telegram.png
+  - name: Spotify
+    type: select
+    proxies:
+      - 节点选择
+      - 自动选择
+      - 🇸🇬 狮城节点
+      - 🇭🇰 香港节点
+      - 🇹🇼 台湾节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇰🇷 韩国节点
+      - 🇵🇱 波兰节点
+      - 🇪🇺 欧洲节点
+    icon: https://github.com/shindgewongxj/WHATSINStash/raw/main/icon/spotify.png
   - name: OpenAi
     type: select
     proxies:
@@ -161,7 +175,7 @@ proxy-groups:
       - 🇯🇵 日本节点
       - 🇺🇲 美国节点
       - 🇰🇷 韩国节点
-      - 🇮🇳 印度节点
+      - 🇵🇱 波兰节点
       - 🇪🇺 欧洲节点
     icon: https://github.com/shindgewongxj/WHATSINStash/raw/main/icon/openai.png
   - name: 油管视频
@@ -176,7 +190,7 @@ proxy-groups:
       - 🇯🇵 日本节点
       - 🇺🇲 美国节点
       - 🇰🇷 韩国节点
-      - 🇮🇳 印度节点
+      - 🇵🇱 波兰节点
       - 🇪🇺 欧洲节点
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/YouTube.png
   - name: 奈飞视频
@@ -191,7 +205,7 @@ proxy-groups:
       - 🇯🇵 日本节点
       - 🇺🇲 美国节点
       - 🇰🇷 韩国节点
-      - 🇮🇳 印度节点
+      - 🇵🇱 波兰节点
       - 🇪🇺 欧洲节点
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Netflix.png
   - name: 巴哈姆特
@@ -220,7 +234,7 @@ proxy-groups:
       - 🇯🇵 日本节点
       - 🇺🇲 美国节点
       - 🇰🇷 韩国节点
-      - 🇮🇳 印度节点
+      - 🇵🇱 波兰节点
       - 🇪🇺 欧洲节点
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Google_Search.png
   - name: 国内媒体
@@ -243,7 +257,7 @@ proxy-groups:
       - 🇸🇬 狮城节点
       - 🇯🇵 日本节点
       - 🇰🇷 韩国节点
-      - 🇮🇳 印度节点
+      - 🇵🇱 波兰节点
       - 🇪🇺 欧洲节点
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/StreamingCN.png
   - name: 微软Bing
@@ -258,7 +272,7 @@ proxy-groups:
       - 🇸🇬 狮城节点
       - 🇯🇵 日本节点
       - 🇰🇷 韩国节点
-      - 🇮🇳 印度节点
+      - 🇵🇱 波兰节点
       - 🇪🇺 欧洲节点
     icon: https://github.com/shindgewongxj/WHATSINStash/raw/main/icon/bing.png
   - name: 微软云盘
@@ -272,7 +286,7 @@ proxy-groups:
       - 🇸🇬 狮城节点
       - 🇯🇵 日本节点
       - 🇰🇷 韩国节点
-      - 🇮🇳 印度节点
+      - 🇵🇱 波兰节点
       - 🇪🇺 欧洲节点
       - DIRECT
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/OneDrive.png
@@ -287,7 +301,7 @@ proxy-groups:
       - 🇸🇬 狮城节点
       - 🇯🇵 日本节点
       - 🇰🇷 韩国节点
-      - 🇮🇳 印度节点
+      - 🇵🇱 波兰节点
       - 🇪🇺 欧洲节点
       - DIRECT
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Microsoft.png
@@ -302,7 +316,7 @@ proxy-groups:
       - 🇸🇬 狮城节点
       - 🇯🇵 日本节点
       - 🇰🇷 韩国节点
-      - 🇮🇳 印度节点
+      - 🇵🇱 波兰节点
       - 🇪🇺 欧洲节点
       - DIRECT
     icon: https://github.com/shindgewongxj/WHATSINStash/raw/main/icon/apple.png
@@ -317,7 +331,7 @@ proxy-groups:
       - 🇸🇬 狮城节点
       - 🇯🇵 日本节点
       - 🇰🇷 韩国节点
-      - 🇮🇳 印度节点
+      - 🇵🇱 波兰节点
       - 🇪🇺 欧洲节点
       - DIRECT
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Game.png
@@ -360,7 +374,7 @@ proxy-groups:
       - 🇯🇵 日本节点
       - 🇺🇲 美国节点
       - 🇰🇷 韩国节点
-      - 🇮🇳 印度节点
+      - 🇵🇱 波兰节点
       - 🇪🇺 欧洲节点
       - DIRECT
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Unlock.png
@@ -416,7 +430,7 @@ proxy-groups:
       - provider4-3
     url: http://www.gstatic.com/generate_204
     interval: 300
-    tolerance: 50
+    tolerance: 30
     filter: "(?i)港|🇭🇰|HK|Hong"
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png
   - name: 🇯🇵 日本节点
@@ -474,7 +488,7 @@ proxy-groups:
     tolerance: 50
     filter: "(?i)KR|🇰🇷|Korea|KOR|首尔|韩|韓"
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Korea.png
-  - name: 🇮🇳 印度节点
+  - name: 🇵🇱 波兰节点
     type: url-test
     use:
       - provider4-1
@@ -483,8 +497,8 @@ proxy-groups:
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
-    filter: "(?i)印度|新德里|孟买|🇮🇳|India"
-    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/India.png
+    filter: “(?i)PL|🇵🇱|波兰|波兰节点|华沙|Warsaw|克拉科夫|Krakow|弗罗茨瓦夫|Wroclaw|格但斯克|Gdansk|波兹南|Poznan|卢布林|Lublin”
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Asia_Map.png
   - name: 🇪🇺 欧洲节点
     type: url-test
     use:
@@ -2405,6 +2419,19 @@ rules:
   - IP-CIDR6,2001:67c:4e8::/48,电报吹水,no-resolve
   - IP-CIDR6,2001:b28:f23d::/48,电报吹水,no-resolve
   - IP-CIDR6,2001:b28:f23f::/48,电报吹水,no-resolve
+  # Spotify 音乐服务
+  - DOMAIN-SUFFIX,spotify.com,Spotify
+  - DOMAIN-SUFFIX,spoti.fi,Spotify
+  - DOMAIN-SUFFIX,scdn.co,Spotify
+  - DOMAIN-SUFFIX,spotify.net,Spotify
+  - DOMAIN-SUFFIX,spotifycdn.com,Spotify
+  - DOMAIN-SUFFIX,spotifycdn.net,Spotify
+  - DOMAIN-SUFFIX,spotifycharts.com,Spotify
+  - DOMAIN-SUFFIX,spotifycodes.com,Spotify
+  - DOMAIN-SUFFIX,spotifyjobs.com,Spotify
+  - DOMAIN-SUFFIX,spotifynewsroom.com,Spotify
+  - DOMAIN-SUFFIX,audio-ak-spotify-com.akamaized.net,Spotify
+  - DOMAIN-KEYWORD,spotify,Spotify
   - DOMAIN-KEYWORD,openai,OpenAi
   - DOMAIN,gemini.google.com,OpenAi
   - DOMAIN-SUFFIX,auth0.com,OpenAi
@@ -2931,14 +2958,7 @@ rules:
   - DOMAIN-SUFFIX,p-cdn.us,国外媒体
   - DOMAIN-SUFFIX,sndcdn.com,国外媒体
   - DOMAIN-SUFFIX,soundcloud.com,国外媒体
-  - DOMAIN-KEYWORD,-spotify-,国外媒体
-  - DOMAIN-KEYWORD,spotify.com,国外媒体
   - DOMAIN-SUFFIX,pscdn.co,国外媒体
-  - DOMAIN-SUFFIX,scdn.co,国外媒体
-  - DOMAIN-SUFFIX,spoti.fi,国外媒体
-  - DOMAIN-SUFFIX,spotify.com,国外媒体
-  - DOMAIN-SUFFIX,spotifycdn.com,国外媒体
-  - DOMAIN-SUFFIX,spotifycdn.net,国外媒体
   - DOMAIN-SUFFIX,tidal-cms.s3.amazonaws.com,国外媒体
   - DOMAIN-SUFFIX,tidal.com,国外媒体
   - DOMAIN-SUFFIX,tidalhifi.com,国外媒体
@@ -3039,7 +3059,6 @@ rules:
   - DOMAIN-KEYWORD,instagram,节点选择
   - DOMAIN-KEYWORD,porn,节点选择
   - DOMAIN-KEYWORD,sci-hub,节点选择
-  - DOMAIN-KEYWORD,spotify,节点选择
   - DOMAIN-KEYWORD,telegram,节点选择
   - DOMAIN-KEYWORD,twitter,马斯克的废话
   - DOMAIN-KEYWORD,whatsapp,节点选择
@@ -7650,7 +7669,6 @@ rules:
   - DOMAIN-SUFFIX,spideroak.com,节点选择
   - DOMAIN-SUFFIX,spike.com,节点选择
   - DOMAIN-SUFFIX,spotflux.com,节点选择
-  - DOMAIN-SUFFIX,spotify.com,节点选择
   - DOMAIN-SUFFIX,spreadshirt.es,节点选择
   - DOMAIN-SUFFIX,spring4u.info,节点选择
   - DOMAIN-SUFFIX,springboardplatform.com,节点选择
