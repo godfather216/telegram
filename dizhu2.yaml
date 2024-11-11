@@ -60,7 +60,7 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204
   provider2-3:
     type: http
-    url: "https://sosovless.sosorg.nyc.mn/TDCQ"
+    url: "https://msvless.sosorg.nyc.mn/MS666"
     interval: 3600
     path: ./provider2-3.yaml
     health-check:
