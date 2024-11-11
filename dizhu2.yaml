@@ -408,7 +408,7 @@ proxy-groups:
       - provider2-2
       - provider2-3
       - provider2-4
-    filter: "^(?!.*(距离|www|频道|套餐|周|香港|🇭🇰|订阅|HK|请|关注|反代|节点|网址|官网|加入|永久)).*$"
+    filter: "^(?!.*(距离|www|频道|套餐|周|香港|🇭🇰|HK|订阅|关注|反代|节点|网址|官网|加入|永久)).*$"
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Drill.png
   - name: 故障转移
     type: fallback
@@ -420,7 +420,7 @@ proxy-groups:
       - provider2-2
       - provider2-3
       - provider2-4
-    filter: "^(?!.*(距离|www|频道|套餐|周|订阅|请|关注|反代|节点|网址|官网|加入|永久)).*$"
+    filter: "^(?!.*(距离|www|频道|套餐|周|订阅|关注|反代|节点|网址|官网|加入|永久)).*$"
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hijacking.png
   - name: 自动选择
     type: url-test
@@ -432,7 +432,7 @@ proxy-groups:
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
-    filter: "^(?!.*(距离|www|频道|套餐|周|订阅|请|关注|反代|节点|网址|官网|加入|永久)).*$"
+    filter: "^(?!.*(距离|www|频道|套餐|周|订阅|关注|反代|节点|网址|官网|加入|永久)).*$"
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Cellular.png
   - name: 🇭🇰 香港节点
     type: url-test
