@@ -378,7 +378,7 @@ proxy-groups:
     tolerance: 50
     use:
       - provider1-1
-    filter: “(?i)美国|🇺🇸|US|阿什本|新加坡|🇸🇬|SG|日本|东京|🇯🇵|JP|韩国|首尔|春川|🇰🇷|KR|德国|法兰克福|纽伦堡|🇩🇪|DE|法国|马德里|巴黎|🇫🇷|FR|法国|GB|英国|伦敦|🇬🇧|UK|巴西|圣保罗|🇧🇷|迪拜|芬兰|🇫🇮|FI|海得拉巴|孟买|吉达|PL|波兰|🇵🇱|AU|澳大利亚|🇦🇺|IN|印度|🇮🇳|MY|马来西亚|🇲🇾|CA|加拿大|🇨🇦|AE|阿联酋|🇦🇪|NL|荷兰|🇳🇱"
+    filter: "^(?!.*(距离|www|频道|套餐|周|香港|🇭🇰|HK|请|关注|反代|节点|网址|官网|加入|永久)).*$"
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Drill.png
   - name: 故障转移
     type: fallback
@@ -387,7 +387,7 @@ proxy-groups:
     tolerance: 50
     use:
      - provider1-1
-    filter: "^(?!.*(距离|www|频道|套餐|关注|反代|节点|网址|官网|加入|永久)).*$"
+    filter: "^(?!.*(距离|www|频道|套餐|周|香港|🇭🇰|HK|请|关注|反代|节点|网址|官网|加入|永久)).*$"
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hijacking.png
   - name: 自动选择
     type: url-test
@@ -396,7 +396,7 @@ proxy-groups:
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
-    filter: "^(?!.*(距离|www|频道|套餐|关注|反代|节点|网址|官网|加入|永久)).*$"
+    filter: "^(?!.*(距离|www|频道|套餐|周|香港|🇭🇰|HK|请|关注|反代|节点|网址|官网|加入|永久)).*$"
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Cellular.png
   - name: 🇭🇰 香港节点
     type: url-test
