@@ -42,7 +42,7 @@ tcp-concurrent: true
 proxy-providers:
   provider3-1:
     type: http
-    url: "https://sosovless.comorg.filegear-sg.me/TDCQ"
+    url: "https://mstrojan.sosorg.nyc.mn/MS666"
     interval: 3600
     path: ./provider3-1.yaml
     health-check:
