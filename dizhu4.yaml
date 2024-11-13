@@ -73,8 +73,6 @@ proxy-groups:
     type: select
     proxies:
       - 自动选择
-      - 负载均衡
-      - 故障转移
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
       - 🇸🇬 狮城节点
@@ -82,58 +80,50 @@ proxy-groups:
       - 🇺🇲 美国节点
       - 🇰🇷 韩国节点
       - 🇵🇱 波兰节点
-      - 🇪🇺 欧洲节点
+      - 👻 其他节点
       - DIRECT
     interval: 300
     tolerance: 50
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Apple_Fitness+.png
-  - name: "SpeedTest"
-    type: select
+  - name: 自动选择
+    type: url-test
     proxies:
-      - 自动选择
-      - 负载均衡
-      - 👨🏻‍💻 AI专线
-      - 故障转移
       - 🇭🇰 香港节点
+      - 🇺🇲 美国节点
       - 🇹🇼 台湾节点
       - 🇸🇬 狮城节点
       - 🇯🇵 日本节点
-      - 🇺🇲 美国节点
       - 🇰🇷 韩国节点
       - 🇵🇱 波兰节点
-      - 🇪🇺 欧洲节点
-      - DIRECT
-    url: "http://www.gstatic.com/generate_204"
+      - 👻 其他节点
+    url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
-    lazy: true
-    icon: https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Speedtest.png
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Cellular.png
   - name: Tiktok
     type: select
     proxies:
       - 节点选择
       - 自动选择
-      - 负载均衡
       - 🇸🇬 狮城节点
       - 🇹🇼 台湾节点
       - 🇯🇵 日本节点
       - 🇺🇲 美国节点
       - 🇰🇷 韩国节点
       - 🇵🇱 波兰节点
-      - 🇪🇺 欧洲节点
+      - 👻 其他节点
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/TikTok_1.png
   - name: 马斯克的废话
     proxies:
       - 节点选择
       - 自动选择
-      - 负载均衡
       - 🇭🇰 香港节点
       - 🇯🇵 日本节点
       - 🇺🇲 美国节点
       - 🇹🇼 台湾节点
       - 🇸🇬 狮城节点
       - 🇰🇷 韩国节点
-      - 🇪🇺 欧洲节点
+      - 👻 其他节点
     type: select
     icon: https://github.com/shindgewongxj/WHATSINStash/raw/main/icon/x.png
   - name: 电报吹水
@@ -141,7 +131,6 @@ proxy-groups:
     proxies:
       - 节点选择
       - 自动选择
-      - 负载均衡
       - 🇸🇬 狮城节点
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
@@ -149,7 +138,7 @@ proxy-groups:
       - 🇺🇲 美国节点
       - 🇰🇷 韩国节点
       - 🇵🇱 波兰节点
-      - 🇪🇺 欧洲节点
+      - 👻 其他节点
     icon: https://raw.githubusercontent.com/Orz-3/mini/master/Color/Telegram.png
   - name: Spotify
     type: select
@@ -163,27 +152,24 @@ proxy-groups:
       - 🇺🇲 美国节点
       - 🇰🇷 韩国节点
       - 🇵🇱 波兰节点
-      - 🇪🇺 欧洲节点
+      - 👻 其他节点
     icon: https://github.com/shindgewongxj/WHATSINStash/raw/main/icon/spotify.png
   - name: OpenAi
     type: select
     proxies:
-      - 👨🏻‍💻 AI专线
-      - 负载均衡
       - 🇸🇬 狮城节点
       - 🇹🇼 台湾节点
       - 🇯🇵 日本节点
       - 🇺🇲 美国节点
       - 🇰🇷 韩国节点
       - 🇵🇱 波兰节点
-      - 🇪🇺 欧洲节点
+      - 👻 其他节点
     icon: https://github.com/shindgewongxj/WHATSINStash/raw/main/icon/openai.png
   - name: 油管视频
     type: select
     proxies:
       - 节点选择
       - 自动选择
-      - 负载均衡
       - 🇸🇬 狮城节点
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
@@ -191,14 +177,13 @@ proxy-groups:
       - 🇺🇲 美国节点
       - 🇰🇷 韩国节点
       - 🇵🇱 波兰节点
-      - 🇪🇺 欧洲节点
+      - 👻 其他节点
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/YouTube.png
   - name: 奈飞视频
     type: select
     proxies:
       - 节点选择
       - 自动选择
-      - 负载均衡
       - 🇸🇬 狮城节点
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
@@ -206,7 +191,7 @@ proxy-groups:
       - 🇺🇲 美国节点
       - 🇰🇷 韩国节点
       - 🇵🇱 波兰节点
-      - 🇪🇺 欧洲节点
+      - 👻 其他节点
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Netflix.png
   - name: 巴哈姆特
     type: select
@@ -227,7 +212,6 @@ proxy-groups:
     proxies:
       - 节点选择
       - 自动选择
-      - 负载均衡
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
       - 🇸🇬 狮城节点
@@ -235,7 +219,7 @@ proxy-groups:
       - 🇺🇲 美国节点
       - 🇰🇷 韩国节点
       - 🇵🇱 波兰节点
-      - 🇪🇺 欧洲节点
+      - 👻 其他节点
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Google_Search.png
   - name: 国内媒体
     type: select
@@ -250,7 +234,6 @@ proxy-groups:
     type: select
     proxies:
       - 节点选择
-      - 负载均衡
       - 🇺🇲 美国节点
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
@@ -258,14 +241,12 @@ proxy-groups:
       - 🇯🇵 日本节点
       - 🇰🇷 韩国节点
       - 🇵🇱 波兰节点
-      - 🇪🇺 欧洲节点
+      - 👻 其他节点
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/StreamingCN.png
   - name: 微软Bing
     type: select
     proxies:
       - 节点选择
-      - 👨🏻‍💻 AI专线
-      - 负载均衡
       - 🇺🇲 美国节点
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
@@ -273,13 +254,12 @@ proxy-groups:
       - 🇯🇵 日本节点
       - 🇰🇷 韩国节点
       - 🇵🇱 波兰节点
-      - 🇪🇺 欧洲节点
+      - 👻 其他节点
     icon: https://github.com/shindgewongxj/WHATSINStash/raw/main/icon/bing.png
   - name: 微软云盘
     type: select
     proxies:
       - 节点选择
-      - 负载均衡
       - 🇺🇲 美国节点
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
@@ -287,14 +267,13 @@ proxy-groups:
       - 🇯🇵 日本节点
       - 🇰🇷 韩国节点
       - 🇵🇱 波兰节点
-      - 🇪🇺 欧洲节点
+      - 👻 其他节点
       - DIRECT
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/OneDrive.png
   - name: 微软服务
     type: select
     proxies:
       - 节点选择
-      - 负载均衡
       - 🇺🇲 美国节点
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
@@ -302,14 +281,13 @@ proxy-groups:
       - 🇯🇵 日本节点
       - 🇰🇷 韩国节点
       - 🇵🇱 波兰节点
-      - 🇪🇺 欧洲节点
+      - 👻 其他节点
       - DIRECT
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Microsoft.png
   - name: 苹果服务
     type: select
     proxies:
       - 节点选择
-      - 负载均衡
       - 🇺🇲 美国节点
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
@@ -317,22 +295,13 @@ proxy-groups:
       - 🇯🇵 日本节点
       - 🇰🇷 韩国节点
       - 🇵🇱 波兰节点
-      - 🇪🇺 欧洲节点
+      - 👻 其他节点
       - DIRECT
     icon: https://github.com/shindgewongxj/WHATSINStash/raw/main/icon/apple.png
   - name: 游戏平台
     type: select
     proxies:
       - 节点选择
-      - 负载均衡
-      - 🇺🇲 美国节点
-      - 🇭🇰 香港节点
-      - 🇹🇼 台湾节点
-      - 🇸🇬 狮城节点
-      - 🇯🇵 日本节点
-      - 🇰🇷 韩国节点
-      - 🇵🇱 波兰节点
-      - 🇪🇺 欧洲节点
       - DIRECT
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Game.png
   - name: 网易音乐
@@ -367,7 +336,6 @@ proxy-groups:
     proxies:
       - 节点选择
       - 自动选择
-      - 负载均衡
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
       - 🇸🇬 狮城节点
@@ -375,66 +343,24 @@ proxy-groups:
       - 🇺🇲 美国节点
       - 🇰🇷 韩国节点
       - 🇵🇱 波兰节点
-      - 🇪🇺 欧洲节点
+      - 👻 其他节点
       - DIRECT
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Unlock.png
-  - name: 负载均衡
-    type: load-balance
-    strategy: consistent-hashing
-    url: http://www.gstatic.com/generate_204
-    interval: 300
-    tolerance: 50
-    use:
-      - provider4-1
-    filter: "(?i)港|🇭🇰|HK|Hong"
-    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Available.png
-  - name: 👨🏻‍💻 AI专线
-    type: load-balance
-    strategy: consistent-hashing
-    url: http://www.gstatic.com/generate_204
-    interval: 300
-    tolerance: 50
-    use:
-      - provider4-1
-      - provider4-2
-      - provider4-3
-    filter: "^(?!.*(距离|www|频道|套餐|周|香港|🇭🇰|HK|订阅|请|关注|反代|节点|网址|官网|加入|永久)).*$"
-    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Drill.png
-  - name: 故障转移
-    type: fallback
-    url: http://www.gstatic.com/generate_204
-    interval: 300
-    tolerance: 50
-    use:
-      - provider4-1
-      - provider4-2
-      - provider4-3
-    filter: "^(?!.*(距离|www|频道|套餐|周|订阅|请|关注|反代|节点|网址|官网|加入|永久)).*$"
-    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hijacking.png
-  - name: 自动选择
-    type: url-test
-    use:
-      - provider4-1
-      - provider4-2
-      - provider4-3
-    url: http://www.gstatic.com/generate_204
-    interval: 300
-    tolerance: 50
-    filter: "^(?!.*(距离|www|频道|套餐|周|订阅|请|关注|反代|节点|网址|官网|加入|永久)).*$"
-    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Cellular.png
   - name: 🇭🇰 香港节点
-    type: url-test
+    type: load-balance
+    strategy: consistent-hashing
     use:
       - provider4-1
       - provider4-2
       - provider4-3
     url: http://www.gstatic.com/generate_204
-    interval: 300
-    tolerance: 30
+    interval: 60
+    tolerance: 150
     filter: "(?i)港|🇭🇰|HK|Hong"
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png
   - name: 🇯🇵 日本节点
-    type: url-test
+    type: load-balance
+    strategy: consistent-hashing
     use:
       - provider4-1
       - provider4-2
@@ -445,18 +371,20 @@ proxy-groups:
     filter: "(?i)日本|🇯🇵|川日|东京|大阪|泉日|埼玉|沪日|深日|JP|Japan"
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Japan.png
   - name: 🇺🇲 美国节点
-    type: url-test
+    type: load-balance
+    strategy: consistent-hashing
     use:
       - provider4-1
       - provider4-2
       - provider4-3
     url: http://www.gstatic.com/generate_204
     interval: 300
-    tolerance: 50
+    tolerance: 150
     filter: "(?i)美|🇺🇸|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|CA|United States"
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_States.png
   - name: 🇹🇼 台湾节点
-    type: url-test
+    type: load-balance
+    strategy: consistent-hashing
     use:
       - provider4-1
       - provider4-2
@@ -467,7 +395,8 @@ proxy-groups:
     filter: "(?i)台|新北|彰化|TW|Taiwan"
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Taiwan.png
   - name: 🇸🇬 狮城节点
-    type: url-test
+    type: load-balance
+    strategy: consistent-hashing
     use:
       - provider4-1
       - provider4-2
@@ -478,8 +407,9 @@ proxy-groups:
     filter: "(?i)新加坡|🇸🇬|坡|狮城|SG|Singapore"
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Singapore.png
   - name: 🇰🇷 韩国节点
-    type: url-test
-    use:
+    type: load-balance
+    strategy: consistent-hashing
+   use:
       - provider4-1
       - provider4-2
       - provider4-3
@@ -489,7 +419,8 @@ proxy-groups:
     filter: "(?i)KR|🇰🇷|Korea|KOR|首尔|韩|韓"
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Korea.png
   - name: 🇵🇱 波兰节点
-    type: url-test
+    type: load-balance
+    strategy: consistent-hashing
     use:
       - provider4-1
       - provider4-2
@@ -499,8 +430,9 @@ proxy-groups:
     tolerance: 50
     filter: “(?i)PL|🇵🇱|波兰|波兰节点|华沙|Warsaw|克拉科夫|Krakow|弗罗茨瓦夫|Wroclaw|格但斯克|Gdansk|波兹南|Poznan|卢布林|Lublin”
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Asia_Map.png
-  - name: 🇪🇺 欧洲节点
-    type: url-test
+  - name: 👻 其他节点
+    type: load-balance
+    strategy: consistent-hashing
     use:
       - provider4-1
       - provider4-2
@@ -508,8 +440,8 @@ proxy-groups:
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
-    filter: "(?i)德国|柏林|🇩🇪|DE|芬兰|赫尔辛基|🇫🇮|FI|法国|巴黎|🇫🇷|FR|英国|伦敦|🇬🇧|UK|立陶宛|维尔纽斯|🇱🇹|LT|荷兰|阿姆斯特丹|🇳🇱|NL|挪威|奥斯陆|🇳🇴|NO|俄罗斯|莫斯科|🇷🇺|RU|瑞典|斯德哥尔摩|🇸🇪|SE|土耳其|伊斯坦布尔|🇹🇷|TR|澳大利亚|悉尼|🇦🇺|AU|爱尔兰|都柏林|🇮🇪|IE|意大利|罗马|🇮🇹|IT|加拿大|多伦多|🇨🇦|CA"
-    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/European_Union.png
+    filter: "^(?!.*(香港|HK|美国|US|日本|JP|狮城|新加坡|SG|韩国|KR|台湾|TW|波兰|PL|距离|www|频道|套餐|周|订阅|关注|反代|节点|网址|官网|加入|永久)).*$"
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Luffy.png
 rules:
   # WebRTC 相关规则
   - DOMAIN-SUFFIX,xn--ngstr-lra8j.com,节点选择
@@ -531,8 +463,6 @@ rules:
   - DOMAIN-SUFFIX,ipleak.net,节点选择
   - DOMAIN-SUFFIX,browserleaks.com,节点选择
   - DOMAIN-SUFFIX,dnsleak.com,节点选择
-  # SpeedTest
-  - GEOSITE,speedtest,SpeedTest
   - DOMAIN-SUFFIX,acl4.ssr,全球直连
   - DOMAIN-SUFFIX,ip6-localhost,全球直连
   - DOMAIN-SUFFIX,ip6-loopback,全球直连
@@ -2441,15 +2371,13 @@ rules:
   - DOMAIN-SUFFIX,events.statsigapi.net,OpenAi
   - DOMAIN-SUFFIX,featuregates.org,OpenAi
   - DOMAIN-SUFFIX,identrust.com,OpenAi
-  - DOMAIN-SUFFIX,intercom.io,OpenAi
-  - DOMAIN-SUFFIX,intercomcdn.com,OpenAi
   - DOMAIN-SUFFIX,oaistatic.com,OpenAi
   - DOMAIN-SUFFIX,oaiusercontent.com,OpenAi
   - DOMAIN-SUFFIX,openai.com,OpenAi
   - DOMAIN-SUFFIX,openaiapi-site.azureedge.net,OpenAi
-  - DOMAIN-SUFFIX,sentry.io,OpenAi
   - DOMAIN-SUFFIX,stripe.com,OpenAi
   - DOMAIN-KEYWORD,openai,OpenAi
+  - DOMAIN-KEYWORD,claude,OpenAi
   - DOMAIN-SUFFIX,AI.com,OpenAi
   - DOMAIN-SUFFIX,cdn.auth0.com,OpenAi
   - DOMAIN-SUFFIX,openaiapi-site.azureedge.net,OpenAi
@@ -2460,12 +2388,23 @@ rules:
   - DOMAIN,ai.google.dev,OpenAi
   - DOMAIN,gemini.google.com,OpenAi
   - DOMAIN-SUFFIX,googleapis.com,OpenAi
-  - DOMAIN-SUFFIX,sentry.io,OpenAi
-  - DOMAIN-SUFFIX,intercom.io,OpenAi
   - DOMAIN-SUFFIX,featuregates.org,OpenAi
   - DOMAIN-SUFFIX,statsigapi.net,OpenAi
+# Claude API & Web Services
+  - DOMAIN-SUFFIX,anthropic.com,OpenAi
   - DOMAIN-SUFFIX,claude.ai,OpenAi
-  - DOMAIN-SUFFIX,Anthropic.com,OpenAi
+  - DOMAIN,api.anthropic.com,OpenAi
+  - DOMAIN,docs.anthropic.com,OpenAi
+  - DOMAIN,chat.anthropic.com,OpenAi
+  - DOMAIN,console.anthropic.com,OpenAi
+  - DOMAIN,support.anthropic.com,OpenAi
+  # WebSocket connections
+  - DOMAIN-SUFFIX,ws.claude.ai,OpenAi
+  # Related Services
+  - DOMAIN-SUFFIX,intercom.io,OpenAi
+  - DOMAIN-SUFFIX,intercomcdn.com,OpenAi
+  - DOMAIN-SUFFIX,segment.io,OpenAi
+  - DOMAIN-SUFFIX,sentry.io,OpenAi
   - DOMAIN-SUFFIX,opera-api.com,OpenAi
   - DOMAIN-SUFFIX,aistudio.google.com,OpenAi
   - DOMAIN-SUFFIX,ciciai.com,OpenAi
