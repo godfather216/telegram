@@ -77,6 +77,7 @@ proxy-providers:
       interval: 600
       url: http://www.gstatic.com/generate_204
 
+ 
 proxy-groups:
   - name: 节点选择
     type: select
@@ -410,7 +411,7 @@ proxy-groups:
   - name: 🇸🇬 狮城节点
     type: load-balance
     strategy: consistent-hashing
-    uuse:
+    use:
       - provider2-1
       - provider2-2
       - provider2-3
@@ -423,7 +424,7 @@ proxy-groups:
   - name: 🇰🇷 韩国节点
     type: load-balance
     strategy: consistent-hashing
-    use:
+   use:
       - provider2-1
       - provider2-2
       - provider2-3
