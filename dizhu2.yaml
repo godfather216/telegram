@@ -88,7 +88,6 @@ proxy-groups:
       - 🇯🇵 日本节点
       - 🇺🇲 美国节点
       - 🇰🇷 韩国节点
-      - 🇵🇱 波兰节点
       - 👻 其他节点
       - DIRECT
     interval: 300
@@ -103,7 +102,6 @@ proxy-groups:
       - 🇸🇬 狮城节点
       - 🇯🇵 日本节点
       - 🇰🇷 韩国节点
-      - 🇵🇱 波兰节点
       - 👻 其他节点
     url: http://www.gstatic.com/generate_204
     interval: 300
@@ -119,7 +117,6 @@ proxy-groups:
       - 🇯🇵 日本节点
       - 🇺🇲 美国节点
       - 🇰🇷 韩国节点
-      - 🇵🇱 波兰节点
       - 👻 其他节点
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/TikTok_1.png
   - name: 马斯克的废话
@@ -146,7 +143,6 @@ proxy-groups:
       - 🇯🇵 日本节点
       - 🇺🇲 美国节点
       - 🇰🇷 韩国节点
-      - 🇵🇱 波兰节点
       - 👻 其他节点
     icon: https://raw.githubusercontent.com/Orz-3/mini/master/Color/Telegram.png
   - name: Spotify
@@ -160,7 +156,6 @@ proxy-groups:
       - 🇯🇵 日本节点
       - 🇺🇲 美国节点
       - 🇰🇷 韩国节点
-      - 🇵🇱 波兰节点
       - 👻 其他节点
     icon: https://github.com/shindgewongxj/WHATSINStash/raw/main/icon/spotify.png
   - name: OpenAi
@@ -171,7 +166,6 @@ proxy-groups:
       - 🇯🇵 日本节点
       - 🇺🇲 美国节点
       - 🇰🇷 韩国节点
-      - 🇵🇱 波兰节点
       - 👻 其他节点
     icon: https://github.com/shindgewongxj/WHATSINStash/raw/main/icon/openai.png
   - name: 油管视频
@@ -185,7 +179,6 @@ proxy-groups:
       - 🇯🇵 日本节点
       - 🇺🇲 美国节点
       - 🇰🇷 韩国节点
-      - 🇵🇱 波兰节点
       - 👻 其他节点
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/YouTube.png
   - name: 奈飞视频
@@ -199,7 +192,6 @@ proxy-groups:
       - 🇯🇵 日本节点
       - 🇺🇲 美国节点
       - 🇰🇷 韩国节点
-      - 🇵🇱 波兰节点
       - 👻 其他节点
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Netflix.png
   - name: 巴哈姆特
@@ -227,7 +219,6 @@ proxy-groups:
       - 🇯🇵 日本节点
       - 🇺🇲 美国节点
       - 🇰🇷 韩国节点
-      - 🇵🇱 波兰节点
       - 👻 其他节点
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Google_Search.png
   - name: 国内媒体
@@ -249,7 +240,6 @@ proxy-groups:
       - 🇸🇬 狮城节点
       - 🇯🇵 日本节点
       - 🇰🇷 韩国节点
-      - 🇵🇱 波兰节点
       - 👻 其他节点
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/StreamingCN.png
   - name: 微软Bing
@@ -262,7 +252,6 @@ proxy-groups:
       - 🇸🇬 狮城节点
       - 🇯🇵 日本节点
       - 🇰🇷 韩国节点
-      - 🇵🇱 波兰节点
       - 👻 其他节点
     icon: https://github.com/shindgewongxj/WHATSINStash/raw/main/icon/bing.png
   - name: 微软云盘
@@ -275,7 +264,6 @@ proxy-groups:
       - 🇸🇬 狮城节点
       - 🇯🇵 日本节点
       - 🇰🇷 韩国节点
-      - 🇵🇱 波兰节点
       - 👻 其他节点
       - DIRECT
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/OneDrive.png
@@ -289,7 +277,6 @@ proxy-groups:
       - 🇸🇬 狮城节点
       - 🇯🇵 日本节点
       - 🇰🇷 韩国节点
-      - 🇵🇱 波兰节点
       - 👻 其他节点
       - DIRECT
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Microsoft.png
@@ -303,7 +290,6 @@ proxy-groups:
       - 🇸🇬 狮城节点
       - 🇯🇵 日本节点
       - 🇰🇷 韩国节点
-      - 🇵🇱 波兰节点
       - 👻 其他节点
       - DIRECT
     icon: https://github.com/shindgewongxj/WHATSINStash/raw/main/icon/apple.png
@@ -351,7 +337,6 @@ proxy-groups:
       - 🇯🇵 日本节点
       - 🇺🇲 美国节点
       - 🇰🇷 韩国节点
-      - 🇵🇱 波兰节点
       - 👻 其他节点
       - DIRECT
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Unlock.png
@@ -433,19 +418,6 @@ proxy-groups:
     tolerance: 50
     filter: "(?i)KR|🇰🇷|Korea|KOR|首尔|韩|韓"
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Korea.png
-  - name: 🇵🇱 波兰节点
-    type: load-balance
-    strategy: consistent-hashing
-    use:
-      - provider2-1
-      - provider2-2
-      - provider2-3
-      - provider2-4
-    url: http://www.gstatic.com/generate_204
-    interval: 300
-    tolerance: 50
-    filter: “(?i)PL|🇵🇱|波兰|波兰节点|华沙|Warsaw|克拉科夫|Krakow|弗罗茨瓦夫|Wroclaw|格但斯克|Gdansk|波兹南|Poznan|卢布林|Lublin”
-    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Asia_Map.png
   - name: 👻 其他节点
     type: load-balance
     strategy: consistent-hashing
@@ -457,7 +429,7 @@ proxy-groups:
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
-    filter: "^(?!.*(香港|HK|美国|US|日本|JP|狮城|新加坡|SG|韩国|KR|台湾|TW|波兰|PL|距离|www|频道|套餐|周|订阅|关注|反代|节点|网址|官网|加入|永久)).*$"
+    filter: "^(?!.*(香港|HK|美国|US|日本|JP|狮城|新加坡|SG|韩国|KR|台湾|TW|距离|www|频道|套餐|周|订阅|关注|反代|节点|网址|官网|加入|永久)).*$"
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Luffy.png
 rules:
   # WebRTC 相关规则
