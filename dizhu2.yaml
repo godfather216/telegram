@@ -158,7 +158,7 @@ proxy-groups:
       - 🇰🇷 韩国节点
       - 👻 其他节点
     icon: https://github.com/shindgewongxj/WHATSINStash/raw/main/icon/spotify.png
-  - name: OpenAi
+  - name: OpenAI
     type: select
     proxies:
       - 🇸🇬 狮城节点
@@ -2351,53 +2351,53 @@ rules:
   - DOMAIN-SUFFIX,spotifynewsroom.com,Spotify
   - DOMAIN-SUFFIX,audio-ak-spotify-com.akamaized.net,Spotify
   - DOMAIN-KEYWORD,spotify,Spotify
-  - DOMAIN-KEYWORD,openai,OpenAi
-  - DOMAIN,gemini.google.com,OpenAi
-  - DOMAIN-SUFFIX,auth0.com,OpenAi
-  - DOMAIN-SUFFIX,challenges.cloudflare.com,OpenAi
-  - DOMAIN-SUFFIX,chatgpt.com,OpenAi
-  - DOMAIN-SUFFIX,client-api.arkoselabs.com,OpenAi
-  - DOMAIN-SUFFIX,events.statsigapi.net,OpenAi
-  - DOMAIN-SUFFIX,featuregates.org,OpenAi
-  - DOMAIN-SUFFIX,identrust.com,OpenAi
-  - DOMAIN-SUFFIX,oaistatic.com,OpenAi
-  - DOMAIN-SUFFIX,oaiusercontent.com,OpenAi
-  - DOMAIN-SUFFIX,openai.com,OpenAi
-  - DOMAIN-SUFFIX,openaiapi-site.azureedge.net,OpenAi
-  - DOMAIN-SUFFIX,stripe.com,OpenAi
-  - DOMAIN-KEYWORD,openai,OpenAi
-  - DOMAIN-KEYWORD,claude,OpenAi
-  - DOMAIN-SUFFIX,AI.com,OpenAi
-  - DOMAIN-SUFFIX,cdn.auth0.com,OpenAi
-  - DOMAIN-SUFFIX,openaiapi-site.azureedge.net,OpenAi
-  - DOMAIN-SUFFIX,opendns.com,OpenAi
-  - DOMAIN-SUFFIX,bing.com,OpenAi
-  - DOMAIN-SUFFIX,civitai.com,OpenAi
-  - DOMAIN,bard.google.com,OpenAi
-  - DOMAIN,ai.google.dev,OpenAi
-  - DOMAIN,gemini.google.com,OpenAi
-  - DOMAIN-SUFFIX,googleapis.com,OpenAi
-  - DOMAIN-SUFFIX,featuregates.org,OpenAi
-  - DOMAIN-SUFFIX,statsigapi.net,OpenAi
+  - DOMAIN-KEYWORD,openai,OpenAI
+  - DOMAIN,gemini.google.com,OpenAI
+  - DOMAIN-SUFFIX,auth0.com,OpenAI
+  - DOMAIN-SUFFIX,challenges.cloudflare.com,OpenAI
+  - DOMAIN-SUFFIX,chatgpt.com,OpenAI
+  - DOMAIN-SUFFIX,client-api.arkoselabs.com,OpenAI
+  - DOMAIN-SUFFIX,events.statsigapi.net,OpenAI
+  - DOMAIN-SUFFIX,featuregates.org,OpenAI
+  - DOMAIN-SUFFIX,identrust.com,OpenAI
+  - DOMAIN-SUFFIX,oaistatic.com,OpenAI
+  - DOMAIN-SUFFIX,oaiusercontent.com,OpenAI
+  - DOMAIN-SUFFIX,openai.com,OpenAI
+  - DOMAIN-SUFFIX,openaiapi-site.azureedge.net,OpenAI
+  - DOMAIN-SUFFIX,stripe.com,OpenAI
+  - DOMAIN-KEYWORD,openai,OpenAI
+  - DOMAIN-KEYWORD,claude,OpenAI
+  - DOMAIN-SUFFIX,AI.com,OpenAI
+  - DOMAIN-SUFFIX,cdn.auth0.com,OpenAI
+  - DOMAIN-SUFFIX,openaiapi-site.azureedge.net,OpenAI
+  - DOMAIN-SUFFIX,opendns.com,OpenAI
+  - DOMAIN-SUFFIX,bing.com,OpenAI
+  - DOMAIN-SUFFIX,civitai.com,OpenAI
+  - DOMAIN,bard.google.com,OpenAI
+  - DOMAIN,ai.google.dev,OpenAI
+  - DOMAIN,gemini.google.com,OpenAI
+  - DOMAIN-SUFFIX,googleapis.com,OpenAI
+  - DOMAIN-SUFFIX,featuregates.org,OpenAI
+  - DOMAIN-SUFFIX,statsigapi.net,OpenAI
 # Claude API & Web Services
-  - DOMAIN-SUFFIX,anthropic.com,OpenAi
-  - DOMAIN-SUFFIX,claude.ai,OpenAi
-  - DOMAIN,api.anthropic.com,OpenAi
-  - DOMAIN,docs.anthropic.com,OpenAi
-  - DOMAIN,chat.anthropic.com,OpenAi
-  - DOMAIN,console.anthropic.com,OpenAi
-  - DOMAIN,support.anthropic.com,OpenAi
+  - DOMAIN-SUFFIX,anthropic.com,OpenAI
+  - DOMAIN-SUFFIX,claude.ai,OpenAI
+  - DOMAIN,api.anthropic.com,OpenAI
+  - DOMAIN,docs.anthropic.com,OpenAI
+  - DOMAIN,chat.anthropic.com,OpenAI
+  - DOMAIN,console.anthropic.com,OpenAI
+  - DOMAIN,support.anthropic.com,OpenAI
   # WebSocket connections
-  - DOMAIN-SUFFIX,ws.claude.ai,OpenAi
+  - DOMAIN-SUFFIX,ws.claude.ai,OpenAI
   # Related Services
-  - DOMAIN-SUFFIX,intercom.io,OpenAi
-  - DOMAIN-SUFFIX,intercomcdn.com,OpenAi
-  - DOMAIN-SUFFIX,segment.io,OpenAi
-  - DOMAIN-SUFFIX,sentry.io,OpenAi
-  - DOMAIN-SUFFIX,opera-api.com,OpenAi
-  - DOMAIN-SUFFIX,aistudio.google.com,OpenAi
-  - DOMAIN-SUFFIX,ciciai.com,OpenAi
-  - DOMAIN-KEYWORD,chatgpt,OpenAi
+  - DOMAIN-SUFFIX,intercom.io,OpenAI
+  - DOMAIN-SUFFIX,intercomcdn.com,OpenAI
+  - DOMAIN-SUFFIX,segment.io,OpenAI
+  - DOMAIN-SUFFIX,sentry.io,OpenAI
+  - DOMAIN-SUFFIX,opera-api.com,OpenAI
+  - DOMAIN-SUFFIX,aistudio.google.com,OpenAI
+  - DOMAIN-SUFFIX,ciciai.com,OpenAI
+  - DOMAIN-KEYWORD,chatgpt,OpenAI
   - DOMAIN-SUFFIX,163yun.com,网易音乐
   - DOMAIN-SUFFIX,api.iplay.163.com,网易音乐
   - DOMAIN-SUFFIX,hz.netease.com,网易音乐
