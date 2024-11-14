@@ -167,7 +167,7 @@ proxy-groups:
       - 🇺🇲 美国节点
       - 🇰🇷 韩国节点
       - 👻 其他节点
-    icon: https://github.com/shindgewongxj/WHATSINStash/raw/main/icon/openai.png
+    icon: https://github.com/shindgewongxj/WHATSINStash/raw/main/icon/anthropic.png
   - name: 油管视频
     type: select
     proxies:
@@ -229,7 +229,7 @@ proxy-groups:
       - 🇹🇼 台湾节点
       - 🇸🇬 狮城节点
       - 🇯🇵 日本节点
-    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/China.png
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/QQ.png
   - name: 谷歌FCM
     type: select
     proxies:
@@ -430,7 +430,7 @@ proxy-groups:
     interval: 300
     tolerance: 50
     filter: "^(?!.*(香港|HK|美国|US|日本|JP|狮城|新加坡|SG|韩国|KR|台湾|TW|距离|www|频道|套餐|周|订阅|关注|反代|节点|网址|官网|加入|永久)).*$"
-    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Luffy.png
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Pirate_Nation.png
 rules:
   # WebRTC 相关规则
   - DOMAIN-SUFFIX,xn--ngstr-lra8j.com,节点选择
