@@ -42,7 +42,7 @@ tcp-concurrent: true
 proxy-providers:
   provider1-1:
     type: http
-    url: "https://mxlsub.me/free"
+    url: ""
     interval: 3600
     path: ./provider1-1.yaml
     health-check:
