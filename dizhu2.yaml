@@ -430,7 +430,7 @@ proxy-groups:
     interval: 300
     tolerance: 50
     filter: "^(?!.*(香港|HK|美国|US|日本|JP|狮城|新加坡|SG|韩国|KR|台湾|TW|距离|www|频道|套餐|周|订阅|关注|反代|节点|网址|官网|加入|永久)).*$"
-    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Pirate_Nation.png
+    icon: https://raw.githubusercontent.com/Orz-3/mini/master/Color/Kuai.png
 rules:
   # WebRTC 相关规则
   - DOMAIN-SUFFIX,xn--ngstr-lra8j.com,节点选择
