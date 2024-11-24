@@ -42,7 +42,8 @@ tcp-concurrent: true
 proxy-providers:
   provider2-1:
     type: http
-    url: "https://t.me/MxlShareChat/866"
+    url: "https://crncc6it4w.zodacchub.com/link/3QDsQMx3I0lWuD10?clash=1
+"
     interval: 3600
     path: ./provider2-1.yaml
     health-check:
