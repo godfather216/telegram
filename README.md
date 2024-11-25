@@ -1,6 +1,6 @@
 # Hi there! 👋 欢迎来到我的 GitHub! 🚀  
 
-我是 **[frank]**，一个喜欢折腾代码、发现新可能的开发者。✨  
+我是 **[Your Name]**，一个喜欢折腾代码、发现新可能的开发者。✨  
 这里是我的代码世界，虽然不是最完美的，但我觉得它超棒！🎉  
 
 ---
@@ -29,5 +29,5 @@
 
 ---
 
-![](https://media.giphy.com/media/l0HlQ7LRalDRmwr9G/giphy.gif)  
+![](https://media.giphy.com/media/3o7aD4xjKSVd0WLbPq/giphy.gif)  
 *"Coding is like magic – you just need to learn the right spells!"* ✨  
