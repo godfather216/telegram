@@ -29,5 +29,5 @@
 
 ---
 
-![[Coding on an early Apple computer](REPLACE_WITH_YOUR_GIF_URL](https://media.giphy.com/media/a3CFnRQ6z2M1y/giphy.gif?cid=790b7611l29hv8mr7yjp12u0c4eoxihw4nu1osj6vfdqlddy&ep=v1_gifs_search&rid=giphy.gif&ct=g))  
+![]([REPLACE_WITH_YOUR_GIF_URL](https://media.giphy.com/media/a3CFnRQ6z2M1y/giphy.gif?cid=790b7611l29hv8mr7yjp12u0c4eoxihw4nu1osj6vfdqlddy&ep=v1_gifs_search&rid=giphy.gif&ct=g))  
 *"Coding is like magic – you just need to learn the right spells!"* ✨  
