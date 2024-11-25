@@ -42,8 +42,7 @@ tcp-concurrent: true
 proxy-providers:
   provider2-1:
     type: http
-    url: "https://crncc6it4w.zodacchub.com/link/3QDsQMx3I0lWuD10?clash=1
-"
+    url: "https://crncc6it4w.zodacchub.com/link/3QDsQMx3I0lWuD10?clash=1"
     interval: 3600
     path: ./provider2-1.yaml
     health-check:
@@ -52,8 +51,7 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204
   provider2-2:
     type: http
-    url: "https://wzedug.nicecloud.win:8443/api/v1/client/96ccc15ce31aca1b97d4f3da2d5ba985?flag=clashmeta
-"
+    url: "https://wzedug.nicecloud.win:8443/api/v1/client/96ccc15ce31aca1b97d4f3da2d5ba985?flag=clashmeta"
     interval: 3600
     path: ./provider2-2.yaml
     health-check:
@@ -62,8 +60,7 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204
   provider2-3:
     type: http
-    url: "https://nnm.subscription.331820.xyz/nannanmiao?token=fcf09a0a6a875819ef7528d76f4f6477&flag=meta
-"
+    url: "https://nnm.subscription.331820.xyz/nannanmiao?token=fcf09a0a6a875819ef7528d76f4f6477&flag=meta"
     interval: 3600
     path: ./provider2-3.yaml
     health-check:
@@ -72,7 +69,7 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204
   provider2-4:
     type: http
-    url: "http://em7.buzz/v3/subscr?id=377bf036b6b24867bf3adbeb24a90326"
+    url: "https://xsus.wiki/api/v1/client/subscribe?token=92329c62757bc989cf97df57a28ae9bf"
     interval: 3600
     path: ./provider2-4.yaml
     health-check:
@@ -432,7 +429,7 @@ proxy-groups:
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
-    filter: "^(?!.*(香港|HK|美国|US|日本|JP|狮城|新加坡|SG|韩国|KR|台湾|TW)).*$"
+    filter: "^(?!.*(香港|HK|美国|US|日本|JP|狮城|新加坡|SG|韩国|KR|台湾|TW|距离|www|频道|套餐|周|订阅|关注|反代|节点|网址|官网|加入|永久)).*$"
     icon: https://raw.githubusercontent.com/Orz-3/mini/master/Color/Kuai.png
 rules:
   # WebRTC 相关规则
