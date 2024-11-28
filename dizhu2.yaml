@@ -51,7 +51,7 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204
   provider2-2:
     type: http
-    url: "https://vless.durl.nyc.mn/zrf"
+    url: "https://zrf.durl.nyc.mn/b79a076e-d676-4a58-9c0e-f25113921741"
     interval: 3600
     path: ./provider2-2.yaml
     health-check:
