@@ -362,7 +362,7 @@ proxy-groups:
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 150
-    filter: "(?i)美|🇺🇸|US|United States"
+    filter: "(?i)美|美国|🇺🇸|US"
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_States.png
   - name: 🇹🇼 台湾节点
     type: url-test
@@ -373,7 +373,7 @@ proxy-groups:
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
-    filter: "(?i)台|新北|TW|Taiwan"
+    filter: "(?i)台|台湾|新北|TW"
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Taiwan.png
   - name: 🇸🇬 狮城节点
     type: url-test
