@@ -1,4 +1,4 @@
-port: 7890
+好port: 7890
 socks-port: 7891
 allow-lan: true
 mode: Rule
@@ -60,7 +60,7 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204
   provider2-3:
     type: http
-    url: "https://mcvless.sosorg.nyc.mn/MS666"
+    url: "https://soso.sosorg.nyc.mn/SOSO"
     interval: 3600
     path: ./provider2-3.yaml
     health-check:
