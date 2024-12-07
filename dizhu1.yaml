@@ -42,7 +42,7 @@ tcp-concurrent: true
 proxy-providers:
   provider1-1:
     type: http
-    url: "https://81ee97f3.edgetunnel-7ls.pages.dev/3d7cc99d-d847-415f-9daf-d592f432c764"
+    url: "http://sub.store/download/%E5%9C%B0%E4%B8%BB%E5%AE%B6%E7%94%B5%E6%8A%A5%40dizhujiacl?target=Stash"
     interval: 3600
     path: ./provider1-1.yaml
     health-check:
