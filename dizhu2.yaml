@@ -428,7 +428,7 @@ proxy-groups:
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
-    filter: "^(?!.*(香港|HK|美国|US|日本|JP|狮城|新加坡|SG|韩国|KR|台湾|TW|距离|www|频道|套餐|周|订阅|关注|反代|节点|网址|官网|加入|永久)).*$"
+    filter: "^(?!.*(香港|HK|美国|US|日本|JP|狮城|新加坡|SG|韩国|KR|台湾|TW|距离|www|频道|套餐|周|订阅|关注|反代|节点|网址|官网|加入|永久|Channel|Website)).*$"
     icon: https://raw.githubusercontent.com/Orz-3/mini/master/Color/Kuai.png
 rules:
   # WebRTC 相关规则
