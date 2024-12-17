@@ -42,7 +42,7 @@ tcp-concurrent: true
 proxy-providers:
   provider3-1:
     type: http
-    url: "https://sotrojan.sosorg.nyc.mn/SOSO"
+    url: "https://edptrojan.comorg.filegear-sg.me/SOSO"
     interval: 3600
     path: ./provider3-1.yaml
     health-check:
