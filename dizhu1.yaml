@@ -42,7 +42,7 @@ tcp-concurrent: true
 proxy-providers:
   provider1-1:
     type: http
-    url: "https://go.789.cloudns.org/b9011be4-b7d5-428e-a4cc-be5cc8768ba4"
+    url: "https://81ee97f3.edgetunnel-7ls.pages.dev/3d7cc99d-d847-415f-9daf-d592f432c764"
     interval: 3600
     path: ./provider1-1.yaml
     health-check:
