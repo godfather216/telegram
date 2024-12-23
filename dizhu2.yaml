@@ -42,7 +42,7 @@ tcp-concurrent: true
 proxy-providers:
   provider2-1:
     type: http
-    url: "https://mxlsub.me/free"
+    url: " https://81ee97f3.edgetunnel-7ls.pages.dev/3d7cc99d-d847-415f-9daf-d592f432c764"
     interval: 3600
     path: ./provider2-1.yaml
     health-check:
@@ -51,7 +51,7 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204
   provider2-2:
     type: http
-    url: "http://sub.store/download/%E5%9C%B0%E4%B8%BB%E5%AE%B6%E7%94%B5%E6%8A%A5%40dizhujiacl?target=ClashMeta"
+    url: "https://mxlsub.me/free"
     interval: 3600
     path: ./provider2-2.yaml
     health-check:
