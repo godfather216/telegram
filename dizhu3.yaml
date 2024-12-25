@@ -42,7 +42,7 @@ tcp-concurrent: true
 proxy-providers:
   provider3-1:
     type: http
-    url: "https://edptrojan.comorg.filegear-sg.me/SOSO"
+    url: ""
     interval: 3600
     path: ./provider3-1.yaml
     health-check:
@@ -51,7 +51,7 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204
   provider3-2:
     type: http
-    url: "https://oxo.o00o.ooo/ooo"
+    url: "https://fs.v2rayse.com/share/20241226/s2yyqvllaw.yaml"
     interval: 3600
     path: ./provider3-2.yaml
     health-check:
