@@ -51,7 +51,7 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204
   provider3-2:
     type: http
-    url: ""
+    url: "https://fs.v2rayse.com/share/20241227/0so6bjz7ac.yaml"
     interval: 3600
     path: ./provider3-2.yaml
     health-check:
