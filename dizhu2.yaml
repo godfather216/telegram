@@ -42,7 +42,7 @@ tcp-concurrent: true
 proxy-providers:
   provider2-1:
     type: http
-    url: " https://fs.v2rayse.com/share/20241226/0xz70z800p.yaml"
+    url: "https://fs.v2rayse.com/share/20241226/0xz70z800p.yaml"
     interval: 3600
     path: ./provider2-1.yaml
     health-check:
