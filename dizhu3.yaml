@@ -51,7 +51,7 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204
   provider3-2:
     type: http
-    url: "https://soso.sosorg.nyc.mn/SOSO"
+    url: ""
     interval: 3600
     path: ./provider3-2.yaml
     health-check:
