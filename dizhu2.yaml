@@ -42,7 +42,7 @@ tcp-concurrent: true
 proxy-providers:
   provider2-1:
     type: http
-    url: "https://fs.v2rayse.com/share/20241227/rifrdn4vrm.yaml"
+    url: " https://fs.v2rayse.com/share/20241226/0xz70z800p.yaml"
     interval: 3600
     path: ./provider2-1.yaml
     health-check:
@@ -60,7 +60,7 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204
   provider2-3:
     type: http
-    url: ""
+    url: "https://fs.v2rayse.com/share/20241227/rifrdn4vrm.yaml"
     interval: 3600
     path: ./provider2-3.yaml
     health-check:
