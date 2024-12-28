@@ -40,7 +40,7 @@ proxy-providers:
     type: http
     url: "https://mxlsub.me/newfull"
     interval: 3600
-    path: ./proxy_providers/provider2.yaml
+    path: ./proxy_providers/provider1.yaml
     health-check:
       enable: true
       interval: 600
@@ -49,7 +49,7 @@ proxy-providers:
     type: http
     url: "https://api.2c.lol/sub?target=clash&url=https%3A%2F%2Fraw.githubusercontent.com%2Fgo4sharing%2Fsub%2Fmain%2Fsub.yaml&insert=false"
     interval: 3600
-    path: ./proxy_providers/provider3.yaml
+    path: ./proxy_providers/provider2.yaml
     health-check:
       enable: true
       interval: 600
@@ -58,7 +58,7 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/peasoft/NoMoreWalls/master/list.meta.yml"
     interval: 3600
-    path: ./proxy_providers/provider4.yaml
+    path: ./proxy_providers/provider3.yaml
     health-check:
       enable: true
       interval: 600
