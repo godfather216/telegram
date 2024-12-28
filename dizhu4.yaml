@@ -38,7 +38,7 @@ dns:
 proxy-providers:
   provider1:
     type: http
-    url: "https://mxlsub.me/newfull"
+    url: "https://mxlsub.me/free"
     interval: 3600
     path: ./proxy_providers/provider1.yaml
     health-check:
