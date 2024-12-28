@@ -38,7 +38,7 @@ dns:
 proxy-providers:
   provider1:
     type: http
-    url: "https://fs.v2rayse.com/share/20241227/rifrdn4vrm.yaml"
+    url: "https://fs.v2rayse.com/share/20241226/0xz70z800p.yaml"
     interval: 3600
     path: ./proxy_providers/provider1.yaml
     health-check:
