@@ -1,363 +1,404 @@
 {
+  "log": {
+    "level": "info",
+    "timestamp": true
+  },
+  "dns": {
+    "servers": [
+      {
+        "tag": "alidns",
+        "address": "https://dns.alidns.com/dns-query",
+        "detour": "direct"
+      },
+      {
+        "tag": "doh-pub",
+        "address": "https://doh.pub/dns-query",
+        "detour": "direct"
+      },
+      {
+        "tag": "google",
+        "address": "https://dns.google/dns-query",
+        "detour": "proxy"
+      },
+      {
+        "tag": "cloudflare",
+        "address": "https://cloudflare-dns.com/dns-query",
+        "detour": "proxy"
+      },
+      {
+        "tag": "alidns-udp",
+        "address": "223.5.5.5",
+        "detour": "direct"
+      },
+      {
+        "tag": "dnspod-udp",
+        "address": "119.29.29.29",
+        "detour": "direct"
+      }
+    ],
+    "rules": [
+      {
+        "domain": [
+          "*.lan",
+          "localhost.ptlogin2.qq.com",
+          "dns.msftncsi.com",
+          "*.srv.nintendo.net",
+          "*.stun.playstation.net",
+          "xbox.*.microsoft.com",
+          "*.xboxlive.com",
+          "stun.*",
+          "global.turn.twilio.com",
+          "global.stun.twilio.com",
+          "*.msftncsi.com",
+          "*.msftconnecttest.com",
+          "*.battlenet.com.cn",
+          "*.battlenet.com",
+          "*.blzstatic.cn",
+          "*.battle.net"
+        ],
+        "server": "alidns-udp"
+      }
+    ],
+    "strategy": "ipv4_only",
+    "independent_cache": true
+  },
   "inbounds": [
     {
-      "tag": "http-in",
-      "listen": "0.0.0.0",
-      "port": 7890,
-      "protocol": "http",
-      "settings": {
-        "auth": "noauth"
-      }
+      "type": "mixed",
+      "tag": "mixed-in",
+      "listen": "::",
+      "listen_port": 7890,
+      "sniff": true
     }
   ],
-  "outbounds": [
-    {
-      "tag": "🚀 节点选择",
-      "protocol": "select",
-      "settings": {
-        "proxies": [
-          "🇭🇰 香港节点",
-          "🇯🇵 日本节点",
-          "🇺🇸 美国节点",
-          "🇹🇼 台湾节点",
-          "🇸🇬 狮城节点",
-          "🇰🇷 韩国节点",
-          "🌍 其他节点"
-        ]
-      }
-    },
-    {
-      "tag": "🇭🇰 香港节点",
-      "protocol": "load-balance",
-      "settings": {
-        "use": ["provider1", "provider2", "provider3"],
-        "strategy": "consistent-hashing",
-        "url": "http://www.gstatic.com/generate_204",
-        "interval": 300,
-        "tolerance": 50,
-        "filter": "(?i)港|hk|🇭🇰|hongkong|hong kong"
-      }
-    },
-    {
-      "tag": "🇯🇵 日本节点",
-      "protocol": "load-balance",
-      "settings": {
-        "use": ["provider1", "provider2", "provider3"],
-        "strategy": "consistent-hashing",
-        "url": "http://www.gstatic.com/generate_204",
-        "interval": 300,
-        "tolerance": 50,
-        "filter": "(?i)日本|jp|🇯🇵|japan"
-      }
-    },
-    {
-      "tag": "🇺🇸 美国节点",
-      "protocol": "load-balance",
-      "settings": {
-        "use": ["provider1", "provider2", "provider3"],
-        "strategy": "consistent-hashing",
-        "url": "http://www.gstatic.com/generate_204",
-        "interval": 300,
-        "tolerance": 50,
-        "filter": "(?i)美|us|🇺🇸|united states|america"
-      }
-    },
-    {
-      "tag": "🇹🇼 台湾节点",
-      "protocol": "load-balance",
-      "settings": {
-        "use": ["provider1", "provider2", "provider3"],
-        "strategy": "consistent-hashing",
-        "url": "http://www.gstatic.com/generate_204",
-        "interval": 300,
-        "tolerance": 50,
-        "filter": "(?i)台|tw|taiwan"
-      }
-    },
-    {
-      "tag": "🇸🇬 狮城节点",
-      "protocol": "load-balance",
-      "settings": {
-        "use": ["provider1", "provider2", "provider3"],
-        "strategy": "consistent-hashing",
-        "url": "http://www.gstatic.com/generate_204",
-        "interval": 300,
-        "tolerance": 50,
-        "filter": "(?i)新|狮城|🇸🇬|sg|singapore"
-      }
-    },
-    {
-      "tag": "🇰🇷 韩国节点",
-      "protocol": "load-balance",
-      "settings": {
-        "use": ["provider1", "provider2", "provider3"],
-        "strategy": "consistent-hashing",
-        "url": "http://www.gstatic.com/generate_204",
-        "interval": 300,
-        "tolerance": 50,
-        "filter": "(?i)韩|kr|🇰🇷|korea"
-      }
-    },
-    {
-      "tag": "🌍 其他节点",
-      "protocol": "load-balance",
-      "settings": {
-        "use": ["provider1", "provider2", "provider3"],
-        "strategy": "consistent-hashing",
-        "url": "http://www.gstatic.com/generate_204",
-        "interval": 300,
-        "tolerance": 50,
-        "filter": "^(?!.*(港|hk|hongkong|hong kong|日本|jp|japan|美|us|united states|america|台|tw|taiwan|新|狮城|sg|singapore|韩|kr|korea)).*$"
-      }
-    }
-  ],
-  "dns": {
-    "enable": true,
-    "ipv6": false,
-    "listen": "0.0.0.0:53",
-    "enhanced-mode": "fake-ip",
-    "nameserver": [
-      "https://dns.alidns.com/dns-query",
-      "https://doh.pub/dns-query"
-    ],
-    "fallback": [
-      "https://dns.google/dns-query",
-      "https://cloudflare-dns.com/dns-query"
-    ],
-    "default-nameserver": [
-      "223.5.5.5",
-      "119.29.29.29"
-    ],
-    "fake-ip-filter": [
-      "*.lan",
-      "localhost.ptlogin2.qq.com",
-      "dns.msftncsi.com",
-      "*.srv.nintendo.net",
-      "*.stun.playstation.net",
-      "xbox.*.microsoft.com",
-      "*.xboxlive.com",
-      "stun.*",
-      "global.turn.twilio.com",
-      "global.stun.twilio.com",
-      "*.msftncsi.com",
-      "*.msftconnecttest.com",
-      "*.battlenet.com.cn",
-      "*.battlenet.com",
-      "*.blzstatic.cn",
-      "*.battle.net"
-    ]
-  },
-  "proxy-providers": {
+  "outbound_providers": {
     "provider1": {
       "type": "http",
       "url": "https://fs.v2rayse.com/share/20241228/xfw66tfh3h.json",
-      "interval": 3600,
-      "path": "./proxy_providers/provider2.yaml",
-      "health-check": {
+      "download_detour": "direct",
+      "path": "./provider1.json",
+      "interval": "3600s",
+      "health_check": {
         "enable": true,
-        "interval": 600,
-        "url": "http://www.gstatic.com/generate_204"
+        "url": "http://www.gstatic.com/generate_204",
+        "interval": "600s"
       }
     },
     "provider2": {
       "type": "http",
       "url": "",
-      "interval": 3600,
-      "path": "./proxy_providers/provider3.yaml",
-      "health-check": {
+      "download_detour": "direct",
+      "path": "./provider2.json",
+      "interval": "3600s",
+      "health_check": {
         "enable": true,
-        "interval": 600,
-        "url": "http://www.gstatic.com/generate_204"
+        "url": "http://www.gstatic.com/generate_204",
+        "interval": "600s"
       }
     },
     "provider3": {
       "type": "http",
       "url": "",
-      "interval": 3600,
-      "path": "./proxy_providers/provider4.yaml",
-      "health-check": {
+      "download_detour": "direct",
+      "path": "./provider3.json",
+      "interval": "3600s",
+      "health_check": {
         "enable": true,
-        "interval": 600,
-        "url": "http://www.gstatic.com/generate_204"
+        "url": "http://www.gstatic.com/generate_204",
+        "interval": "600s"
       }
     }
   },
-  "rule-providers": {
-    "reject": {
-      "type": "http",
-      "behavior": "domain",
-      "url": "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/reject.txt",
-      "path": "./ruleset/reject.yaml",
-      "interval": 86400
+  "outbounds": [
+    {
+      "tag": "🚀 节点选择",
+      "type": "selector",
+      "outbounds": [
+        "♻️ 自动选择",
+        "🇭🇰 香港节点",
+        "🇯🇵 日本节点",
+        "🇺🇸 美国节点",
+        "🇹🇼 台湾节点",
+        "🇸🇬 狮城节点",
+        "🇰🇷 韩国节点",
+        "🌍 其他节点",
+        "direct"
+      ]
     },
-    "icloud": {
-      "type": "http",
-      "behavior": "domain",
-      "url": "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/icloud.txt",
-      "path": "./ruleset/icloud.yaml",
-      "interval": 86400
+    {
+      "tag": "♻️ 自动选择",
+      "type": "urltest",
+      "outbounds": [
+        "🇭🇰 香港节点",
+        "🇯🇵 日本节点",
+        "🇺🇸 美国节点",
+        "🇹🇼 台湾节点",
+        "🇸🇬 狮城节点",
+        "🇰🇷 韩国节点",
+        "🌍 其他节点"
+      ],
+      "url": "http://www.gstatic.com/generate_204",
+      "interval": "300s",
+      "tolerance": 50
     },
-    "apple": {
-      "type": "http",
-      "behavior": "domain",
-      "url": "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/apple.txt",
-      "path": "./ruleset/apple.yaml",
-      "interval": 86400
+    {
+      "tag": "📱 TikTok",
+      "type": "selector",
+      "outbounds": [
+        "🚀 节点选择",
+        "🇯🇵 日本节点",
+        "🇺🇸 美国节点",
+        "🇹🇼 台湾节点",
+        "🇸🇬 狮城节点",
+        "🇰🇷 韩国节点"
+      ]
     },
-    "google": {
-      "type": "http",
-      "behavior": "domain",
-      "url": "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/google.txt",
-      "path": "./ruleset/google.yaml",
-      "interval": 86400
+    {
+      "tag": "🎵 Spotify",
+      "type": "selector",
+      "outbounds": [
+        "🚀 节点选择",
+        "🇭🇰 香港节点",
+        "🇯🇵 日本节点",
+        "🇺🇸 美国节点",
+        "🇹🇼 台湾节点",
+        "🇸🇬 狮城节点",
+        "🇰🇷 韩国节点"
+      ]
     },
-    "proxy": {
-      "type": "http",
-      "behavior": "domain",
-      "url": "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt",
-      "path": "./ruleset/proxy.yaml",
-      "interval": 86400
+    {
+      "tag": "🤖 OpenAI",
+      "type": "selector",
+      "outbounds": [
+        "🚀 节点选择",
+        "🇯🇵 日本节点",
+        "🇺🇸 美国节点",
+        "🇹🇼 台湾节点",
+        "🇸🇬 狮城节点",
+        "🇰🇷 韩国节点"
+      ]
     },
-    "direct": {
-      "type": "http",
-      "behavior": "domain",
-      "url": "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt",
-      "path": "./ruleset/direct.yaml",
-      "interval": 86400
+    {
+      "tag": "📺 YouTube",
+      "type": "selector",
+      "outbounds": [
+        "🚀 节点选择",
+        "♻️ 自动选择",
+        "🇭🇰 香港节点",
+        "🇯🇵 日本节点",
+        "🇺🇸 美国节点",
+        "🇹🇼 台湾节点",
+        "🇸🇬 狮城节点",
+        "🇰🇷 韩国节点"
+      ]
     },
-    "private": {
-      "type": "http",
-      "behavior": "domain",
-      "url": "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/private.txt",
-      "path": "./ruleset/private.yaml",
-      "interval": 86400
+    {
+      "tag": "🐟 漏网之鱼",
+      "type": "selector",
+      "outbounds": [
+        "🚀 节点选择",
+        "direct"
+      ]
     },
-    "gfw": {
-      "type": "http",
-      "behavior": "domain",
-      "url": "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/gfw.txt",
-      "path": "./ruleset/gfw.yaml",
-      "interval": 86400
+    {
+      "tag": "🇭🇰 香港节点",
+      "type": "urltest",
+      "url": "http://www.gstatic.com/generate_204",
+      "interval": "300s",
+      "tolerance": 50,
+      "providers": [
+        "provider1",
+        "provider2",
+        "provider3"
+      ],
+      "filter": "(?i)港|hk|🇭🇰|hongkong|hong kong"
     },
-    "greatfire": {
-      "type": "http",
-      "behavior": "domain",
-      "url": "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/greatfire.txt",
-      "path": "./ruleset/greatfire.yaml",
-      "interval": 86400
+    {
+      "tag": "🇯🇵 日本节点",
+      "type": "urltest",
+      "url": "http://www.gstatic.com/generate_204",
+      "interval": "300s",
+      "tolerance": 50,
+      "providers": [
+        "provider1",
+        "provider2",
+        "provider3"
+      ],
+      "filter": "(?i)日本|jp|🇯🇵|japan"
     },
-    "tld-not-cn": {
-      "type": "http",
-      "behavior": "domain",
-      "url": "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/tld-not-cn.txt",
-      "path": "./ruleset/tld-not-cn.yaml",
-      "interval": 86400
+    {
+      "tag": "🇺🇸 美国节点",
+      "type": "urltest",
+      "url": "http://www.gstatic.com/generate_204",
+      "interval": "300s",
+      "tolerance": 50,
+      "providers": [
+        "provider1",
+        "provider2",
+        "provider3"
+      ],
+      "filter": "(?i)美|us|🇺🇸|united states|america"
     },
-    "telegramcidr": {
-      "type": "http",
-      "behavior": "ipcidr",
-      "url": "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/telegramcidr.txt",
-      "path": "./ruleset/telegramcidr.yaml",
-      "interval": 86400
+    {
+      "tag": "🇹🇼 台湾节点",
+      "type": "urltest",
+      "url": "http://www.gstatic.com/generate_204",
+      "interval": "300s",
+      "tolerance": 50,
+      "providers": [
+        "provider1",
+        "provider2",
+        "provider3"
+      ],
+      "filter": "(?i)台|tw|taiwan"
     },
-    "cncidr": {
-      "type": "http",
-      "behavior": "ipcidr",
-      "url": "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/cncidr.txt",
-      "path": "./ruleset/cncidr.yaml",
-      "interval": 86400
+    {
+      "tag": "🇸🇬 狮城节点",
+      "type": "urltest",
+      "url": "http://www.gstatic.com/generate_204",
+      "interval": "300s",
+      "tolerance": 50,
+      "providers": [
+        "provider1",
+        "provider2",
+        "provider3"
+      ],
+      "filter": "(?i)新|狮城|🇸🇬|sg|singapore"
     },
-    "lancidr": {
-      "type": "http",
-      "behavior": "ipcidr",
-      "url": "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/lancidr.txt",
-      "path": "./ruleset/lancidr.yaml",
-      "interval": 86400
+    {
+      "tag": "🇰🇷 韩国节点",
+      "type": "urltest",
+      "url": "http://www.gstatic.com/generate_204",
+      "interval": "300s",
+      "tolerance": 50,
+      "providers": [
+        "provider1",
+        "provider2",
+        "provider3"
+      ],
+      "filter": "(?i)韩|kr|🇰🇷|korea"
+    },
+    {
+      "tag": "🌍 其他节点",
+      "type": "urltest",
+      "url": "http://www.gstatic.com/generate_204",
+      "interval": "300s",
+      "tolerance": 50,
+      "providers": [
+        "provider1",
+        "provider2",
+        "provider3"
+      ],
+      "filter": "^(?!.*(港|hk|hongkong|hong kong|日本|jp|japan|美|us|united states|america|台|tw|taiwan|新|狮城|sg|singapore|韩|kr|korea)).*$"
+    },
+    {
+      "tag": "direct",
+      "type": "direct"
+    },
+    {
+      "tag": "block",
+      "type": "block"
+    },
+    {
+      "tag": "dns-out",
+      "type": "dns"
     }
-  },
-  "rules": [
-    {
-      "type": "field",
-      "domain": [
-        "xn--ngstr-lra8j.com",
-        "services.googleapis.cn"
-      ],
-      "outboundTag": "🚀 节点选择"
-    },
-    {
-      "type": "field",
-      "ip": [
-        "8.8.8.8/32",
-        "8.8.4.4/32",
-        "1.1.1.1/32",
-        "1.0.0.1/32",
-        "9.9.9.9/32",
-        "149.112.112.112/32",
-        "208.67.222.222/32",
-        "208.67.220.220/32"
-      ],
-      "outboundTag": "🚀 节点选择",
-      "noResolve": true
-    },
-    {
-      "type": "field",
-      "domainSuffix": [
-        "spotify.com",
-        "twitter.com",
-        "t.co",
-        "tiktok.com",
-        "tiktokv.com",
-        "telegram.org",
-        "youtube.com",
-        "openai.com",
-        "anthropic.com"
-      ],
-      "outboundTag": "🚀 节点选择"
-    },
-    {
-      "type": "field",
-      "domainKeyword": [
-        "youtube",
-        "ytimg",
-        "claude",
-        "chatgpt",
-        "tiktok",
-        "tiktokv",
-        "t.co",
-        "icloud",
-        "apple"
-      ],
-      "outboundTag": "🚀 节点选择"
-    },
-    {
-      "type": "field",
-      "ruleSet": [
-        "reject",
-        "private",
-        "direct",
-        "lancidr",
-        "cncidr",
-        "telegramcidr",
-        "proxy",
-        "gfw",
-        "greatfire",
-        "icloud",
-        "apple",
-        "google",
-        "tld-not-cn"
-      ],
-      "outboundTag": "🚀 节点选择"
-    },
-    {
-      "type": "field",
-      "geoip": "CN",
-      "outboundTag": "DIRECT",
-      "noResolve": true
-    },
-    {
-      "type": "field",
-      "match": "🐟 漏网之鱼",
-      "outboundTag": "🚀 节点选择"
-    }
-  ]
+  ],
+  "route": {
+    "rules": [
+      {
+        "protocol": "dns",
+        "outbound": "dns-out"
+      },
+      {
+        "domain_suffix": [
+          "xn--ngstr-lra8j.com",
+          "services.googleapis.cn"
+        ],
+        "outbound": "🚀 节点选择"
+      },
+      {
+        "ip_cidr": [
+          "8.8.8.8/32",
+          "8.8.4.4/32",
+          "1.1.1.1/32",
+          "1.0.0.1/32",
+          "9.9.9.9/32",
+          "149.112.112.112/32",
+          "208.67.222.222/32",
+          "208.67.220.220/32"
+        ],
+        "outbound": "🚀 节点选择"
+      },
+      {
+        "domain_suffix": [
+          "spotify.com"
+        ],
+        "outbound": "🎵 Spotify"
+      },
+      {
+        "domain_suffix": [
+          "twitter.com",
+          "t.co"
+        ],
+        "domain_keyword": [
+          "t.co"
+        ],
+        "outbound": "🚀 节点选择"
+      },
+      {
+        "domain_suffix": [
+          "tiktok.com",
+          "tiktokv.com"
+        ],
+        "domain_keyword": [
+          "tiktok",
+          "tiktokv"
+        ],
+        "outbound": "📱 TikTok"
+      },
+      {
+        "domain_suffix": [
+          "telegram.org"
+        ],
+        "outbound": "🚀 节点选择"
+      },
+      {
+        "domain_suffix": [
+          "youtube.com"
+        ],
+        "domain_keyword": [
+          "youtube",
+          "ytimg"
+        ],
+        "outbound": "📺 YouTube"
+      },
+      {
+        "domain_suffix": [
+          "openai.com",
+          "anthropic.com"
+        ],
+        "domain_keyword": [
+          "claude",
+          "chatgpt"
+        ],
+        "outbound": "🤖 OpenAI"
+      },
+      {
+        "domain_keyword": [
+          "icloud",
+          "apple"
+        ],
+        "outbound": "direct"
+      },
+      {
+        "geoip": {
+          "code": "cn"
+        },
+        "outbound": "direct"
+      }
+    ],
+    "final": "🐟 漏网之鱼",
+    "auto_detect_interface": true
+  }
 }
