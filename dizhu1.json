@@ -1,404 +1,1500 @@
 {
   "log": {
+    "disabled": false,
     "level": "info",
     "timestamp": true
   },
   "dns": {
     "servers": [
       {
-        "tag": "alidns",
-        "address": "https://dns.alidns.com/dns-query",
+        "tag": "proxy_dns",
+        "address": "tls://8.8.8.8/dns-query",
+        "detour": "select"
+      },
+      {
+        "tag": "local_dns",
+        "address": "h3://223.5.5.5/dns-query",
         "detour": "direct"
       },
       {
-        "tag": "doh-pub",
-        "address": "https://doh.pub/dns-query",
-        "detour": "direct"
+        "tag": "reject",
+        "address": "rcode://refused"
       },
       {
-        "tag": "google",
-        "address": "https://dns.google/dns-query",
-        "detour": "proxy"
-      },
-      {
-        "tag": "cloudflare",
-        "address": "https://cloudflare-dns.com/dns-query",
-        "detour": "proxy"
-      },
-      {
-        "tag": "alidns-udp",
-        "address": "223.5.5.5",
-        "detour": "direct"
-      },
-      {
-        "tag": "dnspod-udp",
-        "address": "119.29.29.29",
-        "detour": "direct"
+        "tag": "fake_ip",
+        "address": "fakeip"
       }
     ],
     "rules": [
       {
-        "domain": [
-          "*.lan",
-          "localhost.ptlogin2.qq.com",
-          "dns.msftncsi.com",
-          "*.srv.nintendo.net",
-          "*.stun.playstation.net",
-          "xbox.*.microsoft.com",
-          "*.xboxlive.com",
-          "stun.*",
-          "global.turn.twilio.com",
-          "global.stun.twilio.com",
-          "*.msftncsi.com",
-          "*.msftconnecttest.com",
-          "*.battlenet.com.cn",
-          "*.battlenet.com",
-          "*.blzstatic.cn",
-          "*.battle.net"
+        "outbound": "any",
+        "server": "local_dns",
+        "disable_cache": true
+      },
+      {
+        "clash_mode": "Global",
+        "server": "proxy_dns"
+      },
+      {
+        "clash_mode": "Direct",
+        "server": "local_dns"
+      },
+      {
+        "rule_set": "geosite-cn",
+        "server": "local_dns"
+      },
+      {
+        "rule_set": "geosite-geolocation-!cn",
+        "server": "proxy_dns"
+      },
+      {
+        "rule_set": "geosite-geolocation-!cn",
+        "query_type": [
+          "A",
+          "AAAA"
         ],
-        "server": "alidns-udp"
+        "server": "fake_ip"
       }
     ],
-    "strategy": "ipv4_only",
-    "independent_cache": true
+    "final": "proxy_dns",
+    "independent_cache": true,
+    "fakeip": {
+      "enabled": true,
+      "inet4_range": "198.18.0.0/15",
+      "inet6_range": "fc00::/18"
+    }
+  },
+  "ntp": {
+    "detour": "direct",
+    "enabled": true,
+    "server": "time.apple.com",
+    "server_port": 123,
+    "interval": "30m"
   },
   "inbounds": [
     {
-      "type": "mixed",
-      "tag": "mixed-in",
-      "listen": "::",
-      "listen_port": 7890,
-      "sniff": true
+      "sniff": true,
+      "sniff_override_destination": true,
+      "domain_strategy": "prefer_ipv4",
+      "type": "tun",
+      "inet4_address": "172.16.0.1/30",
+      "inet6_address": "2001:0470:f9da:fdfa::1/64",
+      "mtu": 9000,
+      "auto_route": true,
+      "strict_route": true,
+      "endpoint_independent_nat": true
     }
   ],
-  "outbound_providers": {
-    "provider1": {
-      "type": "http",
-      "url": "https://fs.v2rayse.com/share/20241228/xfw66tfh3h.json",
-      "download_detour": "direct",
-      "path": "./provider1.json",
-      "interval": "3600s",
-      "health_check": {
-        "enable": true,
-        "url": "http://www.gstatic.com/generate_204",
-        "interval": "600s"
-      }
-    },
-    "provider2": {
-      "type": "http",
-      "url": "",
-      "download_detour": "direct",
-      "path": "./provider2.json",
-      "interval": "3600s",
-      "health_check": {
-        "enable": true,
-        "url": "http://www.gstatic.com/generate_204",
-        "interval": "600s"
-      }
-    },
-    "provider3": {
-      "type": "http",
-      "url": "",
-      "download_detour": "direct",
-      "path": "./provider3.json",
-      "interval": "3600s",
-      "health_check": {
-        "enable": true,
-        "url": "http://www.gstatic.com/generate_204",
-        "interval": "600s"
-      }
-    }
-  },
   "outbounds": [
     {
-      "tag": "🚀 节点选择",
       "type": "selector",
+      "tag": "select",
       "outbounds": [
-        "♻️ 自动选择",
-        "🇭🇰 香港节点",
-        "🇯🇵 日本节点",
-        "🇺🇸 美国节点",
-        "🇹🇼 台湾节点",
-        "🇸🇬 狮城节点",
-        "🇰🇷 韩国节点",
-        "🌍 其他节点",
-        "direct"
-      ]
+        "url-test",
+        "US+Aryaka+Networks_1",
+        "US+Hostwinds+LLC_1",
+        "US+Hostwinds+LLC_2",
+        "US+Hostwinds+LLC_3",
+        "US+Hostwinds+LLC_4",
+        "US+Stark+Industries+Solutions_1",
+        "US+Hostwinds+LLC_5",
+        "US+Hostwinds+LLC_6",
+        "US+Hostwinds+LLC_7",
+        "US+Hostwinds+LLC_8",
+        "US+Hostwinds+LLC_9",
+        "US+Stark+Industries+Solutions_2",
+        "US+Serverio+technologijos+MB",
+        "US+Hostwinds+LLC_10",
+        "US+Hostwinds+LLC_11",
+        "US+Hostwinds+LLC_12",
+        "US+Zenlayer_1",
+        "US+Aryaka+Networks_2",
+        "US+Zenlayer_2",
+        "US+Hurricane+Electric+IPv6+tunnel+broker_1",
+        "US+Hetzner+Online_1",
+        "US+xTom+Japan+Co",
+        "US+Hurricane+Electric+IPv6+tunnel+broker_2",
+        "US+Hurricane+Electric+IPv6+tunnel+broker_3",
+        "US+Hetzner+Online_2",
+        "US+Securityservices",
+        "US+Cnservers+LLC",
+        "US+Oracle+Cloud_1",
+        "US+ColoCrossing_1",
+        "US+Eonix+Corporation",
+        "US+ColoCrossing_2",
+        "US+Hostwinds+LLC_13",
+        "US+Hostwinds+LLC_14",
+        "US+Hostwinds+LLC_15",
+        "US+Stark+Industries+Solutions_3",
+        "US+Hostwinds+LLC_16",
+        "US+Hostwinds+LLC_17",
+        "US+Hostwinds+LLC_18",
+        "US+Aryaka+Networks_3",
+        "US+Hostwinds+LLC_19",
+        "US+Stark+Industries+Solutions_4",
+        "US+Stark+Industries+Solutions_5",
+        "US+Hostwinds+LLC_20",
+        "US+Hostwinds+LLC_21",
+        "US+Hostwinds+LLC_22",
+        "US+Hostwinds+LLC_23",
+        "US+RouteLabel+VOF",
+        "US+Hostwinds+LLC_24",
+        "US+Hostwinds+LLC_25",
+        "US+Hostwinds+LLC_26",
+        "US+Hostwinds+LLC_27",
+        "US+Hostwinds+LLC_28",
+        "US+Hostwinds+LLC_29",
+        "US+Oracle+Cloud_2",
+        "US+Aryaka+Networks_4",
+        "US+Aryaka+Networks_5",
+        "US+Aryaka+Networks_6",
+        "US+Aryaka+Networks_7",
+        "US+Hetzner+Online_3",
+        "US+Pars+Parva+System_1",
+        "US+Pars+Parva+System_2",
+        "US+OVHcloud_1",
+        "US+OVHcloud_2",
+        "US+Hetzner+Online_4",
+        "US+OVHcloud_3",
+        "US+OVHcloud_4",
+        "US+OVHcloud_5",
+        "US+OVHcloud_6",
+        "US+Aryaka+Networks_8",
+        "US+Stark+Industries+Solutions_6",
+        "US+Hurricane+Electric+IPv6+tunnel+broker_4",
+        "US+Hurricane+Electric+IPv6+tunnel+broker_5",
+        "US+Hurricane+Electric+IPv6+tunnel+broker_6",
+        "US+Stark+Industries+Solutions_7",
+        "US+Aryaka+Networks_9",
+        "US+1&1+Internet+AG",
+        "US+Stark+Industries+Solutions_8",
+        "US+Aryaka+Networks_10",
+        "US+Tempest-hosting",
+        "US+Stark+Industries+Solutions_9",
+        "US+Stark+Industries+Solutions_10",
+        "US+Stark+Industries+Solutions_11",
+        "US+Stark+Industries+Solutions_12",
+        "US+Stark+Industries+Solutions_13",
+        "US+Stark+Industries+Solutions_14",
+        "US+Vultr",
+        "US+Netlab-sdn_1",
+        "US+Oracle+Cloud_3",
+        "US+ColoCrossing_3",
+        "US+Google+Cloud",
+        "US+Netlab-sdn_2",
+        "US+Multacom+Corporation_1",
+        "US+Multacom+Corporation_2",
+        "US+PQ+HOSTING+SRL",
+        "US+ColoCrossing_4",
+        "US+Oracle+Cloud_4",
+        "US+Baxet+Group+Inc",
+        "US+Zhejiang+Aiyun+Network+Technology+Co",
+        "US+IT7+Networks+Inc",
+        "US+Netlab-sdn_3"
+      ],
+      "default": "url-test"
     },
     {
-      "tag": "♻️ 自动选择",
       "type": "urltest",
+      "tag": "url-test",
       "outbounds": [
-        "🇭🇰 香港节点",
-        "🇯🇵 日本节点",
-        "🇺🇸 美国节点",
-        "🇹🇼 台湾节点",
-        "🇸🇬 狮城节点",
-        "🇰🇷 韩国节点",
-        "🌍 其他节点"
+        "US+Aryaka+Networks_1",
+        "US+Hostwinds+LLC_1",
+        "US+Hostwinds+LLC_2",
+        "US+Hostwinds+LLC_3",
+        "US+Hostwinds+LLC_4",
+        "US+Stark+Industries+Solutions_1",
+        "US+Hostwinds+LLC_5",
+        "US+Hostwinds+LLC_6",
+        "US+Hostwinds+LLC_7",
+        "US+Hostwinds+LLC_8",
+        "US+Hostwinds+LLC_9",
+        "US+Stark+Industries+Solutions_2",
+        "US+Serverio+technologijos+MB",
+        "US+Hostwinds+LLC_10",
+        "US+Hostwinds+LLC_11",
+        "US+Hostwinds+LLC_12",
+        "US+Zenlayer_1",
+        "US+Aryaka+Networks_2",
+        "US+Zenlayer_2",
+        "US+Hurricane+Electric+IPv6+tunnel+broker_1",
+        "US+Hetzner+Online_1",
+        "US+xTom+Japan+Co",
+        "US+Hurricane+Electric+IPv6+tunnel+broker_2",
+        "US+Hurricane+Electric+IPv6+tunnel+broker_3",
+        "US+Hetzner+Online_2",
+        "US+Securityservices",
+        "US+Cnservers+LLC",
+        "US+Oracle+Cloud_1",
+        "US+ColoCrossing_1",
+        "US+Eonix+Corporation",
+        "US+ColoCrossing_2",
+        "US+Hostwinds+LLC_13",
+        "US+Hostwinds+LLC_14",
+        "US+Hostwinds+LLC_15",
+        "US+Stark+Industries+Solutions_3",
+        "US+Hostwinds+LLC_16",
+        "US+Hostwinds+LLC_17",
+        "US+Hostwinds+LLC_18",
+        "US+Aryaka+Networks_3",
+        "US+Hostwinds+LLC_19",
+        "US+Stark+Industries+Solutions_4",
+        "US+Stark+Industries+Solutions_5",
+        "US+Hostwinds+LLC_20",
+        "US+Hostwinds+LLC_21",
+        "US+Hostwinds+LLC_22",
+        "US+Hostwinds+LLC_23",
+        "US+RouteLabel+VOF",
+        "US+Hostwinds+LLC_24",
+        "US+Hostwinds+LLC_25",
+        "US+Hostwinds+LLC_26",
+        "US+Hostwinds+LLC_27",
+        "US+Hostwinds+LLC_28",
+        "US+Hostwinds+LLC_29",
+        "US+Oracle+Cloud_2",
+        "US+Aryaka+Networks_4",
+        "US+Aryaka+Networks_5",
+        "US+Aryaka+Networks_6",
+        "US+Aryaka+Networks_7",
+        "US+Hetzner+Online_3",
+        "US+Pars+Parva+System_1",
+        "US+Pars+Parva+System_2",
+        "US+OVHcloud_1",
+        "US+OVHcloud_2",
+        "US+Hetzner+Online_4",
+        "US+OVHcloud_3",
+        "US+OVHcloud_4",
+        "US+OVHcloud_5",
+        "US+OVHcloud_6",
+        "US+Aryaka+Networks_8",
+        "US+Stark+Industries+Solutions_6",
+        "US+Hurricane+Electric+IPv6+tunnel+broker_4",
+        "US+Hurricane+Electric+IPv6+tunnel+broker_5",
+        "US+Hurricane+Electric+IPv6+tunnel+broker_6",
+        "US+Stark+Industries+Solutions_7",
+        "US+Aryaka+Networks_9",
+        "US+1&1+Internet+AG",
+        "US+Stark+Industries+Solutions_8",
+        "US+Aryaka+Networks_10",
+        "US+Tempest-hosting",
+        "US+Stark+Industries+Solutions_9",
+        "US+Stark+Industries+Solutions_10",
+        "US+Stark+Industries+Solutions_11",
+        "US+Stark+Industries+Solutions_12",
+        "US+Stark+Industries+Solutions_13",
+        "US+Stark+Industries+Solutions_14",
+        "US+Vultr",
+        "US+Netlab-sdn_1",
+        "US+Oracle+Cloud_3",
+        "US+ColoCrossing_3",
+        "US+Google+Cloud",
+        "US+Netlab-sdn_2",
+        "US+Multacom+Corporation_1",
+        "US+Multacom+Corporation_2",
+        "US+PQ+HOSTING+SRL",
+        "US+ColoCrossing_4",
+        "US+Oracle+Cloud_4",
+        "US+Baxet+Group+Inc",
+        "US+Zhejiang+Aiyun+Network+Technology+Co",
+        "US+IT7+Networks+Inc",
+        "US+Netlab-sdn_3"
       ],
-      "url": "http://www.gstatic.com/generate_204",
-      "interval": "300s",
+      "url": "https://www.gstatic.com/generate_204",
+      "interval": "3m",
       "tolerance": 50
     },
     {
-      "tag": "📱 TikTok",
-      "type": "selector",
-      "outbounds": [
-        "🚀 节点选择",
-        "🇯🇵 日本节点",
-        "🇺🇸 美国节点",
-        "🇹🇼 台湾节点",
-        "🇸🇬 狮城节点",
-        "🇰🇷 韩国节点"
-      ]
+      "type": "shadowsocks",
+      "tag": "US+Aryaka+Networks_1",
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "method": "none",
+      "password": "5d2ebd2a-9cb9-4d1b-af55-8617d3e81f39",
+      "multiplex": {
+        "enabled": true
+      }
     },
     {
-      "tag": "🎵 Spotify",
-      "type": "selector",
-      "outbounds": [
-        "🚀 节点选择",
-        "🇭🇰 香港节点",
-        "🇯🇵 日本节点",
-        "🇺🇸 美国节点",
-        "🇹🇼 台湾节点",
-        "🇸🇬 狮城节点",
-        "🇰🇷 韩国节点"
-      ]
+      "type": "shadowsocks",
+      "tag": "US+Hostwinds+LLC_1",
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "method": "none",
+      "password": "5d2ebd2a-9cb9-4d1b-af55-8617d3e81f39",
+      "multiplex": {
+        "enabled": true
+      }
     },
     {
-      "tag": "🤖 OpenAI",
-      "type": "selector",
-      "outbounds": [
-        "🚀 节点选择",
-        "🇯🇵 日本节点",
-        "🇺🇸 美国节点",
-        "🇹🇼 台湾节点",
-        "🇸🇬 狮城节点",
-        "🇰🇷 韩国节点"
-      ]
+      "type": "shadowsocks",
+      "tag": "US+Hostwinds+LLC_2",
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "method": "none",
+      "password": "5d2ebd2a-9cb9-4d1b-af55-8617d3e81f39",
+      "multiplex": {
+        "enabled": true
+      }
     },
     {
-      "tag": "📺 YouTube",
-      "type": "selector",
-      "outbounds": [
-        "🚀 节点选择",
-        "♻️ 自动选择",
-        "🇭🇰 香港节点",
-        "🇯🇵 日本节点",
-        "🇺🇸 美国节点",
-        "🇹🇼 台湾节点",
-        "🇸🇬 狮城节点",
-        "🇰🇷 韩国节点"
-      ]
+      "type": "shadowsocks",
+      "tag": "US+Hostwinds+LLC_3",
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "method": "none",
+      "password": "5d2ebd2a-9cb9-4d1b-af55-8617d3e81f39",
+      "multiplex": {
+        "enabled": true
+      }
     },
     {
-      "tag": "🐟 漏网之鱼",
-      "type": "selector",
-      "outbounds": [
-        "🚀 节点选择",
-        "direct"
-      ]
+      "type": "shadowsocks",
+      "tag": "US+Hostwinds+LLC_4",
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "method": "none",
+      "password": "5d2ebd2a-9cb9-4d1b-af55-8617d3e81f39",
+      "multiplex": {
+        "enabled": true
+      }
     },
     {
-      "tag": "🇭🇰 香港节点",
-      "type": "urltest",
-      "url": "http://www.gstatic.com/generate_204",
-      "interval": "300s",
-      "tolerance": 50,
-      "providers": [
-        "provider1",
-        "provider2",
-        "provider3"
-      ],
-      "filter": "(?i)港|hk|🇭🇰|hongkong|hong kong"
+      "type": "shadowsocks",
+      "tag": "US+Stark+Industries+Solutions_1",
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "method": "none",
+      "password": "5d2ebd2a-9cb9-4d1b-af55-8617d3e81f39",
+      "multiplex": {
+        "enabled": true
+      }
     },
     {
-      "tag": "🇯🇵 日本节点",
-      "type": "urltest",
-      "url": "http://www.gstatic.com/generate_204",
-      "interval": "300s",
-      "tolerance": 50,
-      "providers": [
-        "provider1",
-        "provider2",
-        "provider3"
-      ],
-      "filter": "(?i)日本|jp|🇯🇵|japan"
+      "type": "shadowsocks",
+      "tag": "US+Hostwinds+LLC_5",
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "method": "none",
+      "password": "5d2ebd2a-9cb9-4d1b-af55-8617d3e81f39",
+      "multiplex": {
+        "enabled": true
+      }
     },
     {
-      "tag": "🇺🇸 美国节点",
-      "type": "urltest",
-      "url": "http://www.gstatic.com/generate_204",
-      "interval": "300s",
-      "tolerance": 50,
-      "providers": [
-        "provider1",
-        "provider2",
-        "provider3"
-      ],
-      "filter": "(?i)美|us|🇺🇸|united states|america"
+      "type": "shadowsocks",
+      "tag": "US+Hostwinds+LLC_6",
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "method": "none",
+      "password": "5d2ebd2a-9cb9-4d1b-af55-8617d3e81f39",
+      "multiplex": {
+        "enabled": true
+      }
     },
     {
-      "tag": "🇹🇼 台湾节点",
-      "type": "urltest",
-      "url": "http://www.gstatic.com/generate_204",
-      "interval": "300s",
-      "tolerance": 50,
-      "providers": [
-        "provider1",
-        "provider2",
-        "provider3"
-      ],
-      "filter": "(?i)台|tw|taiwan"
+      "type": "shadowsocks",
+      "tag": "US+Hostwinds+LLC_7",
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "method": "none",
+      "password": "5d2ebd2a-9cb9-4d1b-af55-8617d3e81f39",
+      "multiplex": {
+        "enabled": true
+      }
     },
     {
-      "tag": "🇸🇬 狮城节点",
-      "type": "urltest",
-      "url": "http://www.gstatic.com/generate_204",
-      "interval": "300s",
-      "tolerance": 50,
-      "providers": [
-        "provider1",
-        "provider2",
-        "provider3"
-      ],
-      "filter": "(?i)新|狮城|🇸🇬|sg|singapore"
+      "type": "shadowsocks",
+      "tag": "US+Hostwinds+LLC_8",
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "method": "none",
+      "password": "5d2ebd2a-9cb9-4d1b-af55-8617d3e81f39",
+      "multiplex": {
+        "enabled": true
+      }
     },
     {
-      "tag": "🇰🇷 韩国节点",
-      "type": "urltest",
-      "url": "http://www.gstatic.com/generate_204",
-      "interval": "300s",
-      "tolerance": 50,
-      "providers": [
-        "provider1",
-        "provider2",
-        "provider3"
-      ],
-      "filter": "(?i)韩|kr|🇰🇷|korea"
+      "type": "shadowsocks",
+      "tag": "US+Hostwinds+LLC_9",
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "method": "none",
+      "password": "5d2ebd2a-9cb9-4d1b-af55-8617d3e81f39",
+      "multiplex": {
+        "enabled": true
+      }
     },
     {
-      "tag": "🌍 其他节点",
-      "type": "urltest",
-      "url": "http://www.gstatic.com/generate_204",
-      "interval": "300s",
-      "tolerance": 50,
-      "providers": [
-        "provider1",
-        "provider2",
-        "provider3"
-      ],
-      "filter": "^(?!.*(港|hk|hongkong|hong kong|日本|jp|japan|美|us|united states|america|台|tw|taiwan|新|狮城|sg|singapore|韩|kr|korea)).*$"
+      "type": "shadowsocks",
+      "tag": "US+Stark+Industries+Solutions_2",
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "method": "none",
+      "password": "5d2ebd2a-9cb9-4d1b-af55-8617d3e81f39",
+      "multiplex": {
+        "enabled": true
+      }
     },
     {
-      "tag": "direct",
-      "type": "direct"
+      "type": "shadowsocks",
+      "tag": "US+Serverio+technologijos+MB",
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "method": "none",
+      "password": "5d2ebd2a-9cb9-4d1b-af55-8617d3e81f39",
+      "multiplex": {
+        "enabled": true
+      }
     },
     {
-      "tag": "block",
-      "type": "block"
+      "type": "shadowsocks",
+      "tag": "US+Hostwinds+LLC_10",
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "method": "none",
+      "password": "5d2ebd2a-9cb9-4d1b-af55-8617d3e81f39",
+      "multiplex": {
+        "enabled": true
+      }
     },
     {
-      "tag": "dns-out",
-      "type": "dns"
+      "type": "shadowsocks",
+      "tag": "US+Hostwinds+LLC_11",
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "method": "none",
+      "password": "5d2ebd2a-9cb9-4d1b-af55-8617d3e81f39",
+      "multiplex": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "US+Hostwinds+LLC_12",
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "method": "none",
+      "password": "5d2ebd2a-9cb9-4d1b-af55-8617d3e81f39",
+      "multiplex": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "US+Zenlayer_1",
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "method": "none",
+      "password": "5d2ebd2a-9cb9-4d1b-af55-8617d3e81f39",
+      "multiplex": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "US+Aryaka+Networks_2",
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "method": "none",
+      "password": "5d2ebd2a-9cb9-4d1b-af55-8617d3e81f39",
+      "multiplex": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "US+Zenlayer_2",
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "method": "none",
+      "password": "5d2ebd2a-9cb9-4d1b-af55-8617d3e81f39",
+      "multiplex": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "US+Hurricane+Electric+IPv6+tunnel+broker_1",
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "method": "none",
+      "password": "5d2ebd2a-9cb9-4d1b-af55-8617d3e81f39",
+      "multiplex": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "US+Hetzner+Online_1",
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "method": "none",
+      "password": "5d2ebd2a-9cb9-4d1b-af55-8617d3e81f39",
+      "multiplex": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "US+xTom+Japan+Co",
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "method": "none",
+      "password": "5d2ebd2a-9cb9-4d1b-af55-8617d3e81f39",
+      "multiplex": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "US+Hurricane+Electric+IPv6+tunnel+broker_2",
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "method": "none",
+      "password": "5d2ebd2a-9cb9-4d1b-af55-8617d3e81f39",
+      "multiplex": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "US+Hurricane+Electric+IPv6+tunnel+broker_3",
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "method": "none",
+      "password": "5d2ebd2a-9cb9-4d1b-af55-8617d3e81f39",
+      "multiplex": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "US+Hetzner+Online_2",
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "method": "none",
+      "password": "5d2ebd2a-9cb9-4d1b-af55-8617d3e81f39",
+      "multiplex": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "US+Securityservices",
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "method": "none",
+      "password": "5d2ebd2a-9cb9-4d1b-af55-8617d3e81f39",
+      "multiplex": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "US+Cnservers+LLC",
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "method": "none",
+      "password": "5d2ebd2a-9cb9-4d1b-af55-8617d3e81f39",
+      "multiplex": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "US+Oracle+Cloud_1",
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "method": "none",
+      "password": "5d2ebd2a-9cb9-4d1b-af55-8617d3e81f39",
+      "multiplex": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "US+ColoCrossing_1",
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "method": "none",
+      "password": "5d2ebd2a-9cb9-4d1b-af55-8617d3e81f39",
+      "multiplex": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "US+Eonix+Corporation",
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "method": "none",
+      "password": "5d2ebd2a-9cb9-4d1b-af55-8617d3e81f39",
+      "multiplex": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "US+ColoCrossing_2",
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "method": "none",
+      "password": "5d2ebd2a-9cb9-4d1b-af55-8617d3e81f39",
+      "multiplex": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "US+Hostwinds+LLC_13",
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "method": "none",
+      "password": "5d2ebd2a-9cb9-4d1b-af55-8617d3e81f39",
+      "multiplex": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "US+Hostwinds+LLC_14",
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "method": "none",
+      "password": "5d2ebd2a-9cb9-4d1b-af55-8617d3e81f39",
+      "multiplex": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "US+Hostwinds+LLC_15",
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "method": "none",
+      "password": "5d2ebd2a-9cb9-4d1b-af55-8617d3e81f39",
+      "multiplex": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "US+Stark+Industries+Solutions_3",
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "method": "none",
+      "password": "5d2ebd2a-9cb9-4d1b-af55-8617d3e81f39",
+      "multiplex": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "US+Hostwinds+LLC_16",
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "method": "none",
+      "password": "5d2ebd2a-9cb9-4d1b-af55-8617d3e81f39",
+      "multiplex": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "US+Hostwinds+LLC_17",
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "method": "none",
+      "password": "5d2ebd2a-9cb9-4d1b-af55-8617d3e81f39",
+      "multiplex": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "US+Hostwinds+LLC_18",
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "method": "none",
+      "password": "5d2ebd2a-9cb9-4d1b-af55-8617d3e81f39",
+      "multiplex": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "US+Aryaka+Networks_3",
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "method": "none",
+      "password": "5d2ebd2a-9cb9-4d1b-af55-8617d3e81f39",
+      "multiplex": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "US+Hostwinds+LLC_19",
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "method": "none",
+      "password": "5d2ebd2a-9cb9-4d1b-af55-8617d3e81f39",
+      "multiplex": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "US+Stark+Industries+Solutions_4",
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "method": "none",
+      "password": "5d2ebd2a-9cb9-4d1b-af55-8617d3e81f39",
+      "multiplex": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "US+Stark+Industries+Solutions_5",
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "method": "none",
+      "password": "5d2ebd2a-9cb9-4d1b-af55-8617d3e81f39",
+      "multiplex": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "US+Hostwinds+LLC_20",
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "method": "none",
+      "password": "5d2ebd2a-9cb9-4d1b-af55-8617d3e81f39",
+      "multiplex": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "US+Hostwinds+LLC_21",
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "method": "none",
+      "password": "5d2ebd2a-9cb9-4d1b-af55-8617d3e81f39",
+      "multiplex": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "US+Hostwinds+LLC_22",
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "method": "none",
+      "password": "5d2ebd2a-9cb9-4d1b-af55-8617d3e81f39",
+      "multiplex": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "US+Hostwinds+LLC_23",
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "method": "none",
+      "password": "5d2ebd2a-9cb9-4d1b-af55-8617d3e81f39",
+      "multiplex": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "US+RouteLabel+VOF",
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "method": "none",
+      "password": "5d2ebd2a-9cb9-4d1b-af55-8617d3e81f39",
+      "multiplex": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "US+Hostwinds+LLC_24",
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "method": "none",
+      "password": "5d2ebd2a-9cb9-4d1b-af55-8617d3e81f39",
+      "multiplex": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "US+Hostwinds+LLC_25",
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "method": "none",
+      "password": "5d2ebd2a-9cb9-4d1b-af55-8617d3e81f39",
+      "multiplex": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "US+Hostwinds+LLC_26",
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "method": "none",
+      "password": "5d2ebd2a-9cb9-4d1b-af55-8617d3e81f39",
+      "multiplex": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "US+Hostwinds+LLC_27",
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "method": "none",
+      "password": "5d2ebd2a-9cb9-4d1b-af55-8617d3e81f39",
+      "multiplex": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "US+Hostwinds+LLC_28",
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "method": "none",
+      "password": "5d2ebd2a-9cb9-4d1b-af55-8617d3e81f39",
+      "multiplex": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "US+Hostwinds+LLC_29",
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "method": "none",
+      "password": "5d2ebd2a-9cb9-4d1b-af55-8617d3e81f39",
+      "multiplex": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "US+Oracle+Cloud_2",
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "method": "none",
+      "password": "5d2ebd2a-9cb9-4d1b-af55-8617d3e81f39",
+      "multiplex": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "US+Aryaka+Networks_4",
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "method": "none",
+      "password": "5d2ebd2a-9cb9-4d1b-af55-8617d3e81f39",
+      "multiplex": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "US+Aryaka+Networks_5",
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "method": "none",
+      "password": "5d2ebd2a-9cb9-4d1b-af55-8617d3e81f39",
+      "multiplex": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "US+Aryaka+Networks_6",
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "method": "none",
+      "password": "5d2ebd2a-9cb9-4d1b-af55-8617d3e81f39",
+      "multiplex": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "US+Aryaka+Networks_7",
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "method": "none",
+      "password": "5d2ebd2a-9cb9-4d1b-af55-8617d3e81f39",
+      "multiplex": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "US+Hetzner+Online_3",
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "method": "none",
+      "password": "5d2ebd2a-9cb9-4d1b-af55-8617d3e81f39",
+      "multiplex": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "US+Pars+Parva+System_1",
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "method": "none",
+      "password": "5d2ebd2a-9cb9-4d1b-af55-8617d3e81f39",
+      "multiplex": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "US+Pars+Parva+System_2",
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "method": "none",
+      "password": "5d2ebd2a-9cb9-4d1b-af55-8617d3e81f39",
+      "multiplex": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "US+OVHcloud_1",
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "method": "none",
+      "password": "5d2ebd2a-9cb9-4d1b-af55-8617d3e81f39",
+      "multiplex": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "US+OVHcloud_2",
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "method": "none",
+      "password": "5d2ebd2a-9cb9-4d1b-af55-8617d3e81f39",
+      "multiplex": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "US+Hetzner+Online_4",
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "method": "none",
+      "password": "5d2ebd2a-9cb9-4d1b-af55-8617d3e81f39",
+      "multiplex": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "US+OVHcloud_3",
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "method": "none",
+      "password": "5d2ebd2a-9cb9-4d1b-af55-8617d3e81f39",
+      "multiplex": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "US+OVHcloud_4",
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "method": "none",
+      "password": "5d2ebd2a-9cb9-4d1b-af55-8617d3e81f39",
+      "multiplex": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "US+OVHcloud_5",
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "method": "none",
+      "password": "5d2ebd2a-9cb9-4d1b-af55-8617d3e81f39",
+      "multiplex": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "US+OVHcloud_6",
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "method": "none",
+      "password": "5d2ebd2a-9cb9-4d1b-af55-8617d3e81f39",
+      "multiplex": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "US+Aryaka+Networks_8",
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "method": "none",
+      "password": "5d2ebd2a-9cb9-4d1b-af55-8617d3e81f39",
+      "multiplex": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "US+Stark+Industries+Solutions_6",
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "method": "none",
+      "password": "5d2ebd2a-9cb9-4d1b-af55-8617d3e81f39",
+      "multiplex": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "US+Hurricane+Electric+IPv6+tunnel+broker_4",
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "method": "none",
+      "password": "5d2ebd2a-9cb9-4d1b-af55-8617d3e81f39",
+      "multiplex": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "US+Hurricane+Electric+IPv6+tunnel+broker_5",
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "method": "none",
+      "password": "5d2ebd2a-9cb9-4d1b-af55-8617d3e81f39",
+      "multiplex": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "US+Hurricane+Electric+IPv6+tunnel+broker_6",
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "method": "none",
+      "password": "5d2ebd2a-9cb9-4d1b-af55-8617d3e81f39",
+      "multiplex": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "US+Stark+Industries+Solutions_7",
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "method": "none",
+      "password": "5d2ebd2a-9cb9-4d1b-af55-8617d3e81f39",
+      "multiplex": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "US+Aryaka+Networks_9",
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "method": "none",
+      "password": "5d2ebd2a-9cb9-4d1b-af55-8617d3e81f39",
+      "multiplex": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "US+1&1+Internet+AG",
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "method": "none",
+      "password": "5d2ebd2a-9cb9-4d1b-af55-8617d3e81f39",
+      "multiplex": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "US+Stark+Industries+Solutions_8",
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "method": "none",
+      "password": "5d2ebd2a-9cb9-4d1b-af55-8617d3e81f39",
+      "multiplex": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "US+Aryaka+Networks_10",
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "method": "none",
+      "password": "5d2ebd2a-9cb9-4d1b-af55-8617d3e81f39",
+      "multiplex": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "US+Tempest-hosting",
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "method": "none",
+      "password": "5d2ebd2a-9cb9-4d1b-af55-8617d3e81f39",
+      "multiplex": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "US+Stark+Industries+Solutions_9",
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "method": "none",
+      "password": "5d2ebd2a-9cb9-4d1b-af55-8617d3e81f39",
+      "multiplex": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "US+Stark+Industries+Solutions_10",
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "method": "none",
+      "password": "5d2ebd2a-9cb9-4d1b-af55-8617d3e81f39",
+      "multiplex": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "US+Stark+Industries+Solutions_11",
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "method": "none",
+      "password": "5d2ebd2a-9cb9-4d1b-af55-8617d3e81f39",
+      "multiplex": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "US+Stark+Industries+Solutions_12",
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "method": "none",
+      "password": "5d2ebd2a-9cb9-4d1b-af55-8617d3e81f39",
+      "multiplex": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "US+Stark+Industries+Solutions_13",
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "method": "none",
+      "password": "5d2ebd2a-9cb9-4d1b-af55-8617d3e81f39",
+      "multiplex": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "US+Stark+Industries+Solutions_14",
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "method": "none",
+      "password": "5d2ebd2a-9cb9-4d1b-af55-8617d3e81f39",
+      "multiplex": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "US+Vultr",
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "method": "none",
+      "password": "5d2ebd2a-9cb9-4d1b-af55-8617d3e81f39",
+      "multiplex": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "US+Netlab-sdn_1",
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "method": "none",
+      "password": "5d2ebd2a-9cb9-4d1b-af55-8617d3e81f39",
+      "multiplex": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "US+Oracle+Cloud_3",
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "method": "none",
+      "password": "5d2ebd2a-9cb9-4d1b-af55-8617d3e81f39",
+      "multiplex": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "US+ColoCrossing_3",
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "method": "none",
+      "password": "5d2ebd2a-9cb9-4d1b-af55-8617d3e81f39",
+      "multiplex": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "US+Google+Cloud",
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "method": "none",
+      "password": "5d2ebd2a-9cb9-4d1b-af55-8617d3e81f39",
+      "multiplex": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "US+Netlab-sdn_2",
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "method": "none",
+      "password": "5d2ebd2a-9cb9-4d1b-af55-8617d3e81f39",
+      "multiplex": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "US+Multacom+Corporation_1",
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "method": "none",
+      "password": "5d2ebd2a-9cb9-4d1b-af55-8617d3e81f39",
+      "multiplex": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "US+Multacom+Corporation_2",
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "method": "none",
+      "password": "5d2ebd2a-9cb9-4d1b-af55-8617d3e81f39",
+      "multiplex": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "US+PQ+HOSTING+SRL",
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "method": "none",
+      "password": "5d2ebd2a-9cb9-4d1b-af55-8617d3e81f39",
+      "multiplex": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "US+ColoCrossing_4",
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "method": "none",
+      "password": "5d2ebd2a-9cb9-4d1b-af55-8617d3e81f39",
+      "multiplex": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "US+Oracle+Cloud_4",
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "method": "none",
+      "password": "5d2ebd2a-9cb9-4d1b-af55-8617d3e81f39",
+      "multiplex": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "US+Baxet+Group+Inc",
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "method": "none",
+      "password": "5d2ebd2a-9cb9-4d1b-af55-8617d3e81f39",
+      "multiplex": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "US+Zhejiang+Aiyun+Network+Technology+Co",
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "method": "none",
+      "password": "5d2ebd2a-9cb9-4d1b-af55-8617d3e81f39",
+      "multiplex": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "US+IT7+Networks+Inc",
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "method": "none",
+      "password": "5d2ebd2a-9cb9-4d1b-af55-8617d3e81f39",
+      "multiplex": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "US+Netlab-sdn_3",
+      "server": "tp1.bmkg.xyz",
+      "server_port": 443,
+      "method": "none",
+      "password": "5d2ebd2a-9cb9-4d1b-af55-8617d3e81f39",
+      "multiplex": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "direct",
+      "tag": "direct"
+    },
+    {
+      "type": "block",
+      "tag": "reject"
+    },
+    {
+      "type": "dns",
+      "tag": "dns_out"
     }
   ],
   "route": {
     "rules": [
       {
+        "clash_mode": "Global",
+        "outbound": "select"
+      },
+      {
+        "clash_mode": "Direct",
+        "outbound": "direct"
+      },
+      {
         "protocol": "dns",
-        "outbound": "dns-out"
+        "outbound": "dns_out"
       },
       {
-        "domain_suffix": [
-          "xn--ngstr-lra8j.com",
-          "services.googleapis.cn"
-        ],
-        "outbound": "🚀 节点选择"
+        "rule_set": "geosite-category-ads-all",
+        "outbound": "reject"
       },
       {
-        "ip_cidr": [
-          "8.8.8.8/32",
-          "8.8.4.4/32",
-          "1.1.1.1/32",
-          "1.0.0.1/32",
-          "9.9.9.9/32",
-          "149.112.112.112/32",
-          "208.67.222.222/32",
-          "208.67.220.220/32"
-        ],
-        "outbound": "🚀 节点选择"
-      },
-      {
-        "domain_suffix": [
-          "spotify.com"
-        ],
-        "outbound": "🎵 Spotify"
-      },
-      {
-        "domain_suffix": [
-          "twitter.com",
-          "t.co"
-        ],
-        "domain_keyword": [
-          "t.co"
-        ],
-        "outbound": "🚀 节点选择"
-      },
-      {
-        "domain_suffix": [
-          "tiktok.com",
-          "tiktokv.com"
-        ],
-        "domain_keyword": [
-          "tiktok",
-          "tiktokv"
-        ],
-        "outbound": "📱 TikTok"
-      },
-      {
-        "domain_suffix": [
-          "telegram.org"
-        ],
-        "outbound": "🚀 节点选择"
-      },
-      {
-        "domain_suffix": [
-          "youtube.com"
-        ],
-        "domain_keyword": [
-          "youtube",
-          "ytimg"
-        ],
-        "outbound": "📺 YouTube"
-      },
-      {
-        "domain_suffix": [
-          "openai.com",
-          "anthropic.com"
-        ],
-        "domain_keyword": [
-          "claude",
-          "chatgpt"
-        ],
-        "outbound": "🤖 OpenAI"
-      },
-      {
-        "domain_keyword": [
-          "icloud",
-          "apple"
-        ],
+        "rule_set": "geoip-cn",
         "outbound": "direct"
       },
       {
-        "geoip": {
-          "code": "cn"
-        },
+        "rule_set": "geosite-cn",
         "outbound": "direct"
+      },
+      {
+        "ip_is_private": true,
+        "outbound": "direct"
+      },
+      {
+        "rule_set": "geosite-geolocation-!cn",
+        "outbound": "select"
       }
     ],
-    "final": "🐟 漏网之鱼",
+    "rule_set": [
+      {
+        "type": "remote",
+        "tag": "geoip-cn",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs",
+        "download_detour": "select",
+        "update_interval": "1d"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-cn",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-cn.srs",
+        "download_detour": "select",
+        "update_interval": "1d"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-geolocation-!cn",
+        "format": "binary",
+        "url": "https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/geolocation-!cn.srs",
+        "download_detour": "select",
+        "update_interval": "1d"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-category-ads-all",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-category-ads-all.srs",
+        "download_detour": "select",
+        "update_interval": "1d"
+      }
+    ],
+    "final": "select",
     "auto_detect_interface": true
+  },
+  "experimental": {
+    "cache_file": {
+      "enabled": true,
+      "path": "cache.db"
+    },
+    "clash_api": {
+      "external_controller": "127.0.0.1:9090"
+    }
   }
 }
