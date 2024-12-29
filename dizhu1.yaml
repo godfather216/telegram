@@ -169,7 +169,7 @@ proxy-groups:
     use:
       - provider1
       - provider2
-    filter: "(?i)台|tw|taiwan"
+    filter: "(?i)台|tw"
   - name: "🇸🇬 狮城节点"
     type: url-test
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Singapore.png
