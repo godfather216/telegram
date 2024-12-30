@@ -392,7 +392,7 @@ proxy-groups:
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
-    use:
+    proxies:
       - 节点选择
       - 负载均衡
       - 🇹🇼 台湾节点
