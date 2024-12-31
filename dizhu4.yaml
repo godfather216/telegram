@@ -60,7 +60,7 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204
   provider3:
     type: http
-    url: " https://raw.githubusercontent.com/peasoft/NoMoreWalls/master/list.meta.yml"
+    url: "https://raw.githubusercontent.com/peasoft/NoMoreWalls/master/list.meta.yml"
     interval: 3600
     path: ./proxy_providers/provider3.yaml
     health-check:
