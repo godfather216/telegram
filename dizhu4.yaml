@@ -60,90 +60,90 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204
   provider3:
     type: http
-    url: "https://raw.githubusercontent.com/peasoft/NoMoreWalls/master/list.meta.yml"
+    url: " https://raw.githubusercontent.com/peasoft/NoMoreWalls/master/list.meta.yml"
     interval: 3600
     path: ./proxy_providers/provider3.yaml
     health-check:
       enable: true
       interval: 600
-      url: http://www.gstatic.com/generate_204
+      url: http://www.gstatic.com/generate_204    
   
 proxy-groups:
-  - name: "🚀 节点选择"
+  - name: "节点选择"
     type: select
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Apple_Fitness+.png
     proxies:
-      - ♻️ 自动选择
-      - 🇭🇰 香港节点
-      - 🇯🇵 日本节点
-      - 🇺🇸 美国节点
-      - 🇹🇼 台湾节点
-      - 🇸🇬 狮城节点
-      - 🇰🇷 韩国节点
-      - 🌍 其他节点
+      - 自动选择
+      - 香港节点
+      - 日本节点
+      - 美国节点
+      - 台湾节点
+      - 狮城节点
+      - 韩国节点
+      - 其他节点
       - DIRECT
-  - name: "♻️ 自动选择"
+  - name: "自动选择"
     type: url-test
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Cellular.png
     strategy: consistent-hashing
     proxies:
-      - 🇭🇰 香港节点
-      - 🇯🇵 日本节点
-      - 🇺🇸 美国节点
-      - 🇹🇼 台湾节点
-      - 🇸🇬 狮城节点
-      - 🇰🇷 韩国节点
-      - 🌍 其他节点
-  - name: "📱 TikTok"
+      - 香港节点
+      - 日本节点
+      - 美国节点
+      - 台湾节点
+      - 狮城节点
+      - 韩国节点
+      - 其他节点
+  - name: "TikTok"
     type: select
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/TikTok_1.png
     proxies:
-      - 🚀 节点选择
-      - 🇯🇵 日本节点
-      - 🇺🇸 美国节点
-      - 🇹🇼 台湾节点
-      - 🇸🇬 狮城节点
-      - 🇰🇷 韩国节点
-  - name: "🎵 Spotify"
+      - 节点选择
+      - 日本节点
+      - 美国节点
+      - 台湾节点
+      - 狮城节点
+      - 韩国节点
+  - name: "Spotify"
     type: select
     icon: https://github.com/shindgewongxj/WHATSINStash/raw/main/icon/spotify.png
     proxies:
-      - 🚀 节点选择
-      - 🇭🇰 香港节点
-      - 🇯🇵 日本节点
-      - 🇺🇸 美国节点
-      - 🇹🇼 台湾节点
-      - 🇸🇬 狮城节点
-      - 🇰🇷 韩国节点
-  - name: "🤖 OpenAI"
+      - 节点选择
+      - 香港节点
+      - 日本节点
+      - 美国节点
+      - 台湾节点
+      - 狮城节点
+      - 韩国节点
+  - name: "OpenAI"
     type: select
     icon: https://github.com/shindgewongxj/WHATSINStash/raw/main/icon/anthropic.png
     proxies:
-      - 🚀 节点选择
-      - 🇯🇵 日本节点
-      - 🇺🇸 美国节点
-      - 🇹🇼 台湾节点
-      - 🇸🇬 狮城节点
-      - 🇰🇷 韩国节点
-  - name: "📺 YouTube"
+      - 节点选择
+      - 日本节点
+      - 美国节点
+      - 台湾节点
+      - 狮城节点
+      - 韩国节点
+  - name: "YouTube"
     type: select
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/YouTube.png
     proxies:
-      - 🚀 节点选择
-      - ♻️ 自动选择
-      - 🇭🇰 香港节点
-      - 🇯🇵 日本节点
-      - 🇺🇸 美国节点
-      - 🇹🇼 台湾节点
-      - 🇸🇬 狮城节点
-      - 🇰🇷 韩国节点
-  - name: "🐟 漏网之鱼"
+      - 节点选择
+      - 自动选择
+      - 香港节点
+      - 日本节点
+      - 美国节点
+      - 台湾节点
+      - 狮城节点
+      - 韩国节点
+  - name: "漏网之鱼"
     type: select
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Final.png
     proxies:
-      - 🚀 节点选择
+      - 节点选择
       - DIRECT
-  - name: "🇭🇰 香港节点"
+  - name: "香港节点"
     type: url-test
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png
     url: http://www.gstatic.com/generate_204
@@ -154,7 +154,7 @@ proxy-groups:
       - provider2
       - provider3
     filter: "(?i)港|hk|🇭🇰|hongkong|hong kong"
-  - name: "🇯🇵 日本节点"
+  - name: "日本节点"
     type: url-test
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Japan.png
     url: http://www.gstatic.com/generate_204
@@ -165,7 +165,7 @@ proxy-groups:
       - provider2
       - provider3
     filter: "(?i)日本|jp|🇯🇵|japan"
-  - name: "🇺🇸 美国节点"
+  - name: "美国节点"
     type: url-test
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_States.png
     url: http://www.gstatic.com/generate_204
@@ -176,7 +176,7 @@ proxy-groups:
       - provider2
       - provider3
     filter: "(?i)美|us|🇺🇸|united states|america"
-  - name: "🇹🇼 台湾节点"
+  - name: "台湾节点"
     type: url-test
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Taiwan.png
     url: http://www.gstatic.com/generate_204
@@ -186,8 +186,8 @@ proxy-groups:
       - provider1
       - provider2
       - provider3
-    filter: "(?i)台|tw|taiwan"
-  - name: "🇸🇬 狮城节点"
+    filter: "(?i)台|tw"
+  - name: "狮城节点"
     type: url-test
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Singapore.png
     url: http://www.gstatic.com/generate_204
@@ -198,7 +198,7 @@ proxy-groups:
       - provider2
       - provider3
     filter: "(?i)新|狮城|🇸🇬|sg|singapore"
-  - name: "🇰🇷 韩国节点"
+  - name: "韩国节点"
     type: url-test
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Korea.png
     url: http://www.gstatic.com/generate_204
@@ -209,7 +209,7 @@ proxy-groups:
       - provider2
       - provider3
     filter: "(?i)韩|kr|🇰🇷|korea"
-  - name: "🌍 其他节点"
+  - name: "其他节点"
     type: url-test
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/World_Map.png
     url: http://www.gstatic.com/generate_204
@@ -302,33 +302,33 @@ rule-providers:
     interval: 86400
 rules:
   # DNS 防泄漏
-  - DOMAIN-SUFFIX,xn--ngstr-lra8j.com,🚀 节点选择
-  - DOMAIN-SUFFIX,services.googleapis.cn,🚀 节点选择
-  - IP-CIDR,8.8.8.8/32,🚀 节点选择,no-resolve
-  - IP-CIDR,8.8.4.4/32,🚀 节点选择,no-resolve
-  - IP-CIDR,1.1.1.1/32,🚀 节点选择,no-resolve
-  - IP-CIDR,1.0.0.1/32,🚀 节点选择,no-resolve
-  - IP-CIDR,9.9.9.9/32,🚀 节点选择,no-resolve
-  - IP-CIDR,149.112.112.112/32,🚀 节点选择,no-resolve
-  - IP-CIDR,208.67.222.222/32,🚀 节点选择,no-resolve
-  - IP-CIDR,208.67.220.220/32,🚀 节点选择,no-resolve
+  - DOMAIN-SUFFIX,xn--ngstr-lra8j.com,节点选择
+  - DOMAIN-SUFFIX,services.googleapis.cn,节点选择
+  - IP-CIDR,8.8.8.8/32,节点选择,no-resolve
+  - IP-CIDR,8.8.4.4/32,节点选择,no-resolve
+  - IP-CIDR,1.1.1.1/32,节点选择,no-resolve
+  - IP-CIDR,1.0.0.1/32,节点选择,no-resolve
+  - IP-CIDR,9.9.9.9/32,节点选择,no-resolve
+  - IP-CIDR,149.112.112.112/32,节点选择,no-resolve
+  - IP-CIDR,208.67.222.222/32,节点选择,no-resolve
+  - IP-CIDR,208.67.220.220/32,节点选择,no-resolve
   # 常用域名
-  - DOMAIN-SUFFIX,spotify.com,🎵 Spotify
-  - DOMAIN-SUFFIX,twitter.com,🚀 节点选择
-  - DOMAIN-SUFFIX,t.co,🚀 节点选择
-  - DOMAIN-SUFFIX,tiktok.com,📱 TikTok
-  - DOMAIN-SUFFIX,tiktokv.com,📱 TikTok
-  - DOMAIN-SUFFIX,telegram.org,🚀 节点选择
-  - DOMAIN-SUFFIX,youtube.com,📺 YouTube
-  - DOMAIN-SUFFIX,openai.com,🤖 OpenAI
-  - DOMAIN-SUFFIX,anthropic.com,🤖 OpenAI
-  - DOMAIN-KEYWORD,youtube,📺 YouTube
-  - DOMAIN-KEYWORD,ytimg,📺 YouTube
-  - DOMAIN-KEYWORD,claude,🤖 OpenAI
-  - DOMAIN-KEYWORD,chatgpt,🤖 OpenAI
-  - DOMAIN-KEYWORD,tiktok,📱 TikTok
-  - DOMAIN-KEYWORD,tiktokv,📱 TikTok
-  - DOMAIN-KEYWORD,t.co,🚀 节点选择
+  - DOMAIN-SUFFIX,spotify.com,Spotify
+  - DOMAIN-SUFFIX,twitter.com,节点选择
+  - DOMAIN-SUFFIX,t.co,节点选择
+  - DOMAIN-SUFFIX,tiktok.com,TikTok
+  - DOMAIN-SUFFIX,tiktokv.com,TikTok
+  - DOMAIN-SUFFIX,telegram.org,节点选择
+  - DOMAIN-SUFFIX,youtube.com,YouTube
+  - DOMAIN-SUFFIX,openai.com,OpenAI
+  - DOMAIN-SUFFIX,anthropic.com,OpenAI
+  - DOMAIN-KEYWORD,youtube,YouTube
+  - DOMAIN-KEYWORD,ytimg,YouTube
+  - DOMAIN-KEYWORD,claude,OpenAI
+  - DOMAIN-KEYWORD,chatgpt,OpenAI
+  - DOMAIN-KEYWORD,tiktok,TikTok
+  - DOMAIN-KEYWORD,tiktokv,TikTok
+  - DOMAIN-KEYWORD,t.co,节点选择
   - DOMAIN-KEYWORD,icloud,DIRECT
   - DOMAIN-KEYWORD,apple,DIRECT
   # 远程规则集
@@ -337,14 +337,14 @@ rules:
   - RULE-SET,direct,DIRECT
   - RULE-SET,lancidr,DIRECT
   - RULE-SET,cncidr,DIRECT
-  - RULE-SET,telegramcidr,🚀 节点选择
-  - RULE-SET,proxy,🚀 节点选择
-  - RULE-SET,gfw,🚀 节点选择
-  - RULE-SET,greatfire,🚀 节点选择
+  - RULE-SET,telegramcidr,节点选择
+  - RULE-SET,proxy,节点选择
+  - RULE-SET,gfw,节点选择
+  - RULE-SET,greatfire,节点选择
   - RULE-SET,icloud,DIRECT
   - RULE-SET,apple,DIRECT
-  - RULE-SET,google,🚀 节点选择
-  - RULE-SET,tld-not-cn,🚀 节点选择
+  - RULE-SET,google,节点选择
+  - RULE-SET,tld-not-cn,节点选择
   # 兜底规则
   - GEOIP,CN,DIRECT,no-resolve
-  - MATCH,🐟 漏网之鱼
+  - MATCH,漏网之鱼
