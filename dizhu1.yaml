@@ -198,7 +198,7 @@ proxy-groups:
       - provider1
       - provider2
     filter: "(?i)韩|kr|🇰🇷|korea"
-  - name: "- 加入电报群@dizhujiacl"
+  - name: "加入电报群@dizhujiacl"
     type: url-test
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Telegram.png
     url: http://www.gstatic.com/generate_204
