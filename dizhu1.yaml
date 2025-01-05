@@ -71,7 +71,7 @@ proxy-groups:
       - 台湾节点
       - 狮城节点
       - 韩国节点
-      - 加入电报@dizhujiacl
+      - 加入电报群@dizhujiacl
       - DIRECT
   - name: "自动选择"
     type: url-test
@@ -84,7 +84,7 @@ proxy-groups:
       - 台湾节点
       - 狮城节点
       - 韩国节点
-      - 加入电报@dizhujiacl
+      - 加入电报群@dizhujiacl
   - name: "TikTok"
     type: select
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/TikTok_1.png
@@ -95,7 +95,7 @@ proxy-groups:
       - 台湾节点
       - 狮城节点
       - 韩国节点
-      - 加入电报@dizhujiacl
+      - 加入电报群@dizhujiacl
   - name: "Spotify"
     type: select
     icon: https://github.com/shindgewongxj/WHATSINStash/raw/main/icon/spotify.png
@@ -107,7 +107,7 @@ proxy-groups:
       - 台湾节点
       - 狮城节点
       - 韩国节点
-      - 加入电报@dizhujiacl
+      - 加入电报群@dizhujiacl
   - name: "OpenAI"
     type: select
     icon: https://github.com/shindgewongxj/WHATSINStash/raw/main/icon/anthropic.png
@@ -118,7 +118,7 @@ proxy-groups:
       - 台湾节点
       - 狮城节点
       - 韩国节点
-      - 加入电报@dizhujiacl
+      - 加入电报群@dizhujiacl
   - name: "YouTube"
     type: select
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/YouTube.png
@@ -131,7 +131,7 @@ proxy-groups:
       - 台湾节点
       - 狮城节点
       - 韩国节点
-      - 加入电报@dizhujiacl
+      - 加入电报群@dizhujiacl
   - name: "漏网之鱼"
     type: select
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Final.png
@@ -198,7 +198,7 @@ proxy-groups:
       - provider1
       - provider2
     filter: "(?i)韩|kr|🇰🇷|korea"
-  - name: "加入电报@dizhujiacl"
+  - name: "- 加入电报群@dizhujiacl"
     type: url-test
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Telegram.png
     url: http://www.gstatic.com/generate_204
