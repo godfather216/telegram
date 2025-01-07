@@ -42,7 +42,7 @@ tcp-concurrent: true
 proxy-providers:
   provider1:
     type: http
-    url: "https://fs.v2rayse.com/share/20241228/9b3nw5ydds.yaml"
+    url: "https://mxlsub.me/new"
     interval: 3600
     path: ./proxy_providers/provider1.yaml
     health-check:
