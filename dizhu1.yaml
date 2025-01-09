@@ -145,7 +145,7 @@ proxy-groups:
     interval: 300
     tolerance: 50
     use:
-      - provider2
+      - provider1
     filter: "^(?!.*(港|hk|hongkong|hong kong|日本|jp|japan|美|us|united states|america|台|tw|taiwan|新|狮城|sg|singapore|韩|kr|korea)).*$"    
   - name: "香港节点"
     type: url-test
