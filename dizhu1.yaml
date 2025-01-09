@@ -146,6 +146,7 @@ proxy-groups:
     tolerance: 50
     use:
       - provider1
+      - provider2
       
   - name: "香港节点"
     type: url-test
