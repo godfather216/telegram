@@ -42,7 +42,7 @@ tcp-concurrent: true
 proxy-providers:
   provider1:
     type: http
-    url: “https://kang.cepu.us.kg/vpn/clash?type=vless&bug=&tls=true&wildcard=false&limit=500&country=RANDOM”
+    url: “https://url.v1.mk/sub?target=clash&url=https%3A%2F%2Fsub.bmkg.xyz%2FSS%3Fsub1%3DRANDOM%26count%3D300%26wildcard%3D&insert=false&config=https%3A%2F%2Fraw.githubusercontent.com%2FACL4SSR%2FACL4SSR%2Fmaster%2FClash%2Fconfig%2FACL4SSR_Online_Full_NoAuto.ini&emoji=true&list=false&xudp=false&udp=false&tfo=false&expand=true&scv=false&fdn=false&new_name=true”
     interval: 3600
     path: ./proxy_providers/provider1.yaml
     health-check:
