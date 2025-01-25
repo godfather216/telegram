@@ -42,7 +42,7 @@ tcp-concurrent: true
 proxy-providers:
   provider1:
     type: http
-    url: "https://v1.mk/tsUeVqQ"
+    url: "https://v1.mk/DrDjVqr"
     interval: 3600
     path: ./proxy_providers/provider1.yaml
     health-check:
@@ -51,7 +51,7 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204
   provider2:
     type: http
-    url: "https://v1.mk/DV2RqjX"
+    url: ""
     interval: 3600
     path: ./proxy_providers/provider2.yaml
     health-check:
