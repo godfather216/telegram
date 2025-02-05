@@ -42,7 +42,7 @@ tcp-concurrent: true
 proxy-providers:
   provider1:
     type: http
-    url: "https://v1.mk/cu3kvPC"
+    url: "https://v1.mk/PYX32Nw"
     interval: 3600
     path: ./proxy_providers/provider1.yaml
     health-check:
@@ -51,7 +51,7 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204
   provider2:
     type: http
-    url: "https://url.v1.mk/sub?target=clash&url=https%3A%2F%2Fbegal.cepu.us.kg%2Fvpn%2Fclash%3Ftype%3Dtrojan%26bug%3D%26tls%3Dtrue%26wildcard%3Dfalse%26limit%3D100%26country%3DRANDOM&insert=false&config=https%3A%2F%2Fraw.githubusercontent.com%2FACL4SSR%2FACL4SSR%2Fmaster%2FClash%2Fconfig%2FACL4SSR_Online_Full_NoAuto.ini&emoji=true&list=false&xudp=false&udp=false&tfo=false&expand=true&scv=false&fdn=false&new_name=true"
+    url: ""
     interval: 3600
     path: ./proxy_providers/provider2.yaml
     health-check:
