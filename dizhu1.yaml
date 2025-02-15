@@ -42,7 +42,7 @@ tcp-concurrent: true
 proxy-providers:
   provider1:
     type: http
-    url: "https://v1.mk/ComTule"
+    url: "https://url.v1.mk/sub?target=clash&url=https%3A%2F%2Fturah.cepu.us.kg%2Fapi%2Fclash%3Ftype%3Dvless%26bug%3D%26tls%3Dtrue%26wildcard%3Dfalse%26limit%3D300%26country%3DRANDOM&insert=false&config=https%3A%2F%2Fraw.githubusercontent.com%2FACL4SSR%2FACL4SSR%2Fmaster%2FClash%2Fconfig%2FACL4SSR_Online_Full_NoAuto.ini&rename=%60SG%40%E6%96%B0%E5%8A%A0%E5%9D%A1*%E7%94%B5%E6%8A%A5%E6%90%9C%E7%B4%A2%E5%9C%B0%E4%B8%BB%E5%AE%B6%E5%AD%98%E7%B2%AE%20%60%60US%40%E7%BE%8E%E5%9B%BD*%E7%94%B5%E6%8A%A5%E6%90%9C%E7%B4%A2%E5%9C%B0%E4%B8%BB%E5%AE%B6%E5%AD%98%E7%B2%AE%60%60HK%40%E9%A6%99%E6%B8%AF*%E7%94%B5%E6%8A%A5%E6%90%9C%E7%B4%A2%E5%9C%B0%E4%B8%BB%E5%AE%B6%E5%AD%98%E7%B2%AE%60%60TW%40%E5%8F%B0%E6%B9%BE*%E7%94%B5%E6%8A%A5%E6%90%9C%E7%B4%A2%E5%9C%B0%E4%B8%BB%E5%AE%B6%E5%AD%98%E7%B2%AE%60%60JP%40%E6%97%A5%E6%9C%AC*%E7%94%B5%E6%8A%A5%E6%90%9C%E7%B4%A2%E5%9C%B0%E4%B8%BB%E5%AE%B6%E5%AD%98%E7%B2%AE%60%60KR%40%E6%97%A5%E6%9C%AC*%E7%94%B5%E6%8A%A5%E6%90%9C%E7%B4%A2%E5%9C%B0%E4%B8%BB%E5%AE%B6%E5%AD%98%E7%B2%AE%60&emoji=true&list=false&xudp=false&udp=false&tfo=false&expand=true&scv=false&fdn=false&new_name=true"
     interval: 3600
     path: ./proxy_providers/provider1.yaml
     health-check:
