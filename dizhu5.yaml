@@ -42,7 +42,7 @@ tcp-concurrent: true
 proxy-providers:
   provider5-1:
     type: http
-    url: "https://web.bmkg.xyz/api/clash?type=trojan&bug=&tls=true&wildcard=false&limit=5000&country=RANDOM"
+    url: "https://web.bmkg.xyz/api/clash?type=trojan&bug=&tls=true&wildcard=false&limit=1000&country=RANDOM"
     interval: 3600
     path: ./provider5-1.yaml
     health-check:
