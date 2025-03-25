@@ -42,7 +42,7 @@ tcp-concurrent: true
 proxy-providers:
   provider1:
     type: http
-    url: "http://sub.store/download/vless?target=Stash”
+    url: “http://sub.store/download/vless?target=Stash”
     interval: 3600
     path: ./proxy_providers/provider1.yaml
     health-check:
