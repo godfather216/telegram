@@ -42,7 +42,7 @@ tcp-concurrent: true
 proxy-providers:
   provider1:
     type: http
-    url: "http://127.0.0.1:38324/download/trojan"
+    url: "http://sub.store/download/trojan?target=Stash"
     interval: 3600
     path: ./proxy_providers/provider2.yaml
     health-check:
