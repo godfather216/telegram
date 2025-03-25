@@ -42,7 +42,7 @@ tcp-concurrent: true
 proxy-providers:
   provider1:
     type: http
-    url: "http://sub.store/download/ss1000?target=ClashMeta"
+    url: "http://sub.store/download/%E8%AE%A2%E9%98%851?target=Stash"
     interval: 3600
     path: ./proxy_providers/provider1.yaml
     health-check:
