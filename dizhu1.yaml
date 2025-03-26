@@ -40,7 +40,7 @@ profile:
   store-fake-ip: true
 tcp-concurrent: true
 proxy-providers:
-  provider1:
+  provider1-1:
     type: http
     url: "https://api.nexconvert.com/sub?target=clash&url=https%3A%2F%2Fweb.bmkg.xyz%2Fapi%2Fclash%3Ftype%3Dss%26bug%3D%26tls%3Dtrue%26wildcard%3Dfalse%26limit%3D1000%26country%3DRANDOM&insert=false&emoji=true&list=false&tfo=false&scv=true&fdn=false&expand=true&sort=false&new_name=true"
     interval: 3600
@@ -136,7 +136,7 @@ proxy-groups:
     interval: 300
     tolerance: 50
     use:
-      - provider1    
+      - provider1-1    
   - name: "香港节点"
     type: url-test
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png
@@ -144,7 +144,7 @@ proxy-groups:
     interval: 300
     tolerance: 50
     use:
-      - provider1
+      - provider1-1
     filter: "(?i)港|hk|🇭🇰|hongkong|hong kong"
   - name: "日本节点"
     type: url-test
@@ -153,7 +153,7 @@ proxy-groups:
     interval: 300
     tolerance: 50
     use:
-      - provider1
+      - provider1-1
     filter: "(?i)日本|jp|🇯🇵|japan"
   - name: "美国节点"
     type: url-test
@@ -162,7 +162,7 @@ proxy-groups:
     interval: 300
     tolerance: 50
     use:
-      - provider1
+      - provider1-1
     filter: "(?i)美|us|🇺🇸|united states|america"
   - name: "台湾节点"
     type: url-test
@@ -171,7 +171,7 @@ proxy-groups:
     interval: 300
     tolerance: 50
     use:
-      - provider1
+      - provider1-1
     filter: "(?i)台|tw"
   - name: "狮城节点"
     type: url-test
@@ -180,7 +180,7 @@ proxy-groups:
     interval: 300
     tolerance: 50
     use:
-      - provider1
+      - provider1-1
     filter: "(?i)新|狮城|🇸🇬|sg|singapore"
   - name: "韩国节点"
     type: url-test
@@ -189,7 +189,7 @@ proxy-groups:
     interval: 300
     tolerance: 50
     use:
-      - provider1
+      - provider1-1
     filter: "(?i)韩|kr|🇰🇷|korea"
 
 rule-providers:
