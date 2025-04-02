@@ -42,7 +42,7 @@ tcp-concurrent: true
 proxy-providers:
   provider3-1:
     type: http
-    url: "https://api.nexconvert.com/sub?target=clash&url=https%3A%2F%2Fprivasi.bmkg.xyz%2Fapi%2Fclash%3Ftype%3Dtrojan%26bug%3D%26tls%3Dtrue%26wildcard%3Dfalse%26limit%3D400%26country%3DRANDOM%7Chttps%3A%2F%2Fprivasi.bmkg.xyz%2Fapi%2Fclash%3Ftype%3Dtrojan%26bug%3D%26tls%3Dtrue%26wildcard%3Dfalse%26limit%3D100%26country%3DSG%7Chttps%3A%2F%2Fprivasi.bmkg.xyz%2Fapi%2Fclash%3Ftype%3Dtrojan%26bug%3D%26tls%3Dtrue%26wildcard%3Dfalse%26limit%3D100%26country%3DUS%7Chttps%3A%2F%2Fprivasi.bmkg.xyz%2Fapi%2Fclash%3Ftype%3Dtrojan%26bug%3D%26tls%3Dtrue%26wildcard%3Dfalse%26limit%3D100%26country%3DJP%7Chttps%3A%2F%2Fprivasi.bmkg.xyz%2Fapi%2Fclash%3Ftype%3Dtrojan%26bug%3D%26tls%3Dtrue%26wildcard%3Dfalse%26limit%3D100%26country%3DHK%7Chttps%3A%2F%2Fprivasi.bmkg.xyz%2Fapi%2Fclash%3Ftype%3Dtrojan%26bug%3D%26tls%3Dtrue%26wildcard%3Dfalse%26limit%3D100%26country%3DKR%7Chttps%3A%2F%2Fprivasi.bmkg.xyz%2Fapi%2Fclash%3Ftype%3Dtrojan%26bug%3D%26tls%3Dtrue%26wildcard%3Dfalse%26limit%3D100%26country%3DTW&insert=false&emoji=true&list=false&tfo=false&scv=true&fdn=false&expand=true&sort=false&new_name=true"
+    url: "https://v1.mk/OlYBDWE"
     interval: 3600
     path: ./proxy_providers/provider3-1.yaml
     health-check:
