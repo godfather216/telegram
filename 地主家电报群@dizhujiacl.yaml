@@ -42,7 +42,7 @@ tcp-concurrent: true
 proxy-providers:
   provider:
     type: http
-    url: "https://v1.mk/oaqRfLf"
+    url: "https://v1.mk/bksE60j"
     interval: 3600
     path: ./proxy_providers/provider.yaml
     health-check:
