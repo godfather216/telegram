@@ -40,20 +40,20 @@ profile:
   store-fake-ip: true
 tcp-concurrent: true
 proxy-providers:
-  provider1:
+  providerava:
     type: http
     url: "https://v1.mk/gOaHQuz"
     interval: 3600
-    path: ./proxy_providers/provider1.yaml
+    path: ./proxy_providers/providerava.yaml
     health-check:
       enable: true
       interval: 600
       url: http://www.gstatic.com/generate_204
-  provider2:
+  providerblog:
     type: http
     url: "https://v1.mk/A4PeFX7"
     interval: 3600
-    path: ./proxy_providers/provider2.yaml
+    path: ./proxy_providers/providerblog.yaml
     health-check:
       enable: true
       interval: 600
@@ -145,8 +145,8 @@ proxy-groups:
     interval: 300
     tolerance: 50
     use:
-      - provider1
-      - provider2
+      - providerava
+      - providerblog
   - name: "香港节点"
     type: load-balance
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png
@@ -155,8 +155,8 @@ proxy-groups:
     interval: 300
     tolerance: 50
     use:
-     - provider1
-     - provider2
+      - providerava
+      - providerblog
     filter: "(?i)港|hk|🇭🇰|hongkong|hong kong"
   - name: "日本节点"
     type: load-balance
@@ -166,8 +166,8 @@ proxy-groups:
     interval: 300
     tolerance: 50
     use:
-      - provider1
-      - provider2
+      - providerava
+      - providerblog
     filter: "(?i)日本|jp|🇯🇵|japan"
   - name: "美国节点"
     type: load-balance
@@ -177,8 +177,8 @@ proxy-groups:
     interval: 300
     tolerance: 50
     use:
-      - provider1
-      - provider2
+      - providerava
+      - providerblog
     filter: "(?i)美|us|🇺🇸|united states|america"
   - name: "台湾节点"
     type: load-balance
@@ -188,8 +188,8 @@ proxy-groups:
     interval: 300
     tolerance: 50
     use:
-      - provider1
-      - provider2
+      - providerava
+      - providerblog
     filter: "(?i)台|tw"
   - name: "狮城节点"
     type: load-balance
@@ -199,8 +199,8 @@ proxy-groups:
     interval: 300
     tolerance: 50
     use:
-      - provider1
-      - provider2
+      - providerava
+      - providerblog
     filter: "(?i)新|狮城|🇸🇬|sg|singapore"
   - name: "韩国节点"
     type: load-balance
@@ -210,8 +210,8 @@ proxy-groups:
     interval: 300
     tolerance: 50
     use:
-      - provider1
-      - provider2
+      - providerava
+      - providerblog
     filter: "(?i)韩|kr|🇰🇷|korea"
 
 rule-providers:
