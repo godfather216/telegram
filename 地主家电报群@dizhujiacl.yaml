@@ -40,11 +40,11 @@ profile:
   store-fake-ip: true
 tcp-concurrent: true
 proxy-providers:
-  providerava:
+  providermidrans:
     type: http
-    url: "https://v1.mk/gOaHQuz"
+    url: "https://v1.mk/FOIXPku"
     interval: 3600
-    path: ./proxy_providers/providerava.yaml
+    path: ./proxy_providers/providermidrans.yaml
     health-check:
       enable: true
       interval: 600
@@ -145,7 +145,7 @@ proxy-groups:
     interval: 300
     tolerance: 50
     use:
-      - providerava
+      - providermidrans
       - providerblog
   - name: "香港节点"
     type: load-balance
@@ -155,7 +155,7 @@ proxy-groups:
     interval: 300
     tolerance: 50
     use:
-      - providerava
+      - providermidrans
       - providerblog
     filter: "(?i)港|hk|🇭🇰|hongkong|hong kong"
   - name: "日本节点"
@@ -166,7 +166,7 @@ proxy-groups:
     interval: 300
     tolerance: 50
     use:
-      - providerava
+      - providermidrans
       - providerblog
     filter: "(?i)日本|jp|🇯🇵|japan"
   - name: "美国节点"
@@ -177,7 +177,7 @@ proxy-groups:
     interval: 300
     tolerance: 50
     use:
-      - providerava
+      - providermidrans
       - providerblog
     filter: "(?i)美|us|🇺🇸|united states|america"
   - name: "台湾节点"
@@ -188,7 +188,7 @@ proxy-groups:
     interval: 300
     tolerance: 50
     use:
-      - providerava
+      - providermidrans
       - providerblog
     filter: "(?i)台|tw"
   - name: "狮城节点"
@@ -199,7 +199,7 @@ proxy-groups:
     interval: 300
     tolerance: 50
     use:
-      - providerava
+      - providermidrans
       - providerblog
     filter: "(?i)新|狮城|🇸🇬|sg|singapore"
   - name: "韩国节点"
@@ -210,7 +210,7 @@ proxy-groups:
     interval: 300
     tolerance: 50
     use:
-      - providerava
+      - providermidrans
       - providerblog
     filter: "(?i)韩|kr|🇰🇷|korea"
 
