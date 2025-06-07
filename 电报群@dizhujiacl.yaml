@@ -40,25 +40,25 @@ profile:
   store-fake-ip: true
 tcp-concurrent: true
 proxy-providers:
-  provider1:
+  providermidrans:
     type: http
-    url: "https://v1.mk/A4PeFX7"
+    url: "https://v1.mk/82Prfa7"
     interval: 3600
-    path: ./proxy_providers/provider1.yaml
+    path: ./proxy_providers/providermidrans.yaml
     health-check:
       enable: true
       interval: 600
       url: http://www.gstatic.com/generate_204
-  provider2:
+  providerblog:
     type: http
-    url: "https://v1.mk/82Prfa7"
+    url: "https://v1.mk/OZEODEY"
     interval: 3600
-    path: ./proxy_providers/provider1.yaml
+    path: ./proxy_providers/providerblog.yaml
     health-check:
       enable: true
       interval: 600
-      url: http://www.gstatic.com/generate_204   
-  
+      url: http://www.gstatic.com/generate_204
+
 proxy-groups:
   - name: "节点选择"
     type: select
@@ -76,7 +76,6 @@ proxy-groups:
   - name: "自动选择"
     type: url-test
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Cellular.png
-    strategy: consistent-hashing
     proxies:
       - 香港节点
       - 日本节点
@@ -88,8 +87,11 @@ proxy-groups:
   - name: "TikTok"
     type: select
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/TikTok_1.png
-    proxies:
-      - TIKTOK
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    use:
+      - providermidrans
   - name: "Spotify"
     type: select
     icon: https://github.com/shindgewongxj/WHATSINStash/raw/main/icon/spotify.png
@@ -139,77 +141,75 @@ proxy-groups:
     interval: 300
     tolerance: 50
     use:
-      - provider1
-      - provider2
+      - providermidrans
+      - providerblog
   - name: "香港节点"
-    type: url-test
+    type: load-balance
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png
+    strategy: consistent-hashing
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
     use:
-      - provider1
-      - provider2   
+      - providermidrans
+      - providerblog
     filter: "(?i)港|hk|🇭🇰|hongkong|hong kong"
   - name: "日本节点"
-    type: url-test
+    type: load-balance
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Japan.png
+    strategy: consistent-hashing
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
     use:
-     - provider1
-     - provider2   
+      - providermidrans
+      - providerblog
     filter: "(?i)日本|jp|🇯🇵|japan"
   - name: "美国节点"
-    type: url-test
+    type: load-balance
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_States.png
+    strategy: consistent-hashing
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
     use:
-     - provider1
-     - provider2    
+      - providermidrans
+      - providerblog
     filter: "(?i)美|us|🇺🇸|united states|america"
   - name: "台湾节点"
-    type: url-test
+    type: load-balance
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Taiwan.png
+    strategy: consistent-hashing
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
     use:
-     - provider1
-     - provider2   
+      - providermidrans
+      - providerblog
     filter: "(?i)台|tw"
   - name: "狮城节点"
-    type: url-test
+    type: load-balance
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Singapore.png
+    strategy: consistent-hashing
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
     use:
-      - provider1
-      - provider2    
+      - providermidrans
+      - providerblog
     filter: "(?i)新|狮城|🇸🇬|sg|singapore"
   - name: "韩国节点"
-    type: url-test
+    type: load-balance
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Korea.png
+    strategy: consistent-hashing
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
     use:
-      - provider1
-      - provider2    
+      - providermidrans
+      - providerblog
     filter: "(?i)韩|kr|🇰🇷|korea"
-   - name: "TIKTOK"
-    type: url-test
-    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Korea.png
-    url: http://www.gstatic.com/generate_204
-    interval: 300
-    tolerance: 50
-    use:
-      - provider2
-  
+
 rule-providers:
   reject:
     type: http
