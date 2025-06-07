@@ -42,7 +42,7 @@ tcp-concurrent: true
 proxy-providers:
   providermidrans:
     type: http
-    url: "https://v1.mk/FOIXPku"
+    url: "https://v1.mk/82Prfa7"
     interval: 3600
     path: ./proxy_providers/providermidrans.yaml
     health-check:
@@ -51,7 +51,7 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204
   providerblog:
     type: http
-    url: "https://v1.mk/A4PeFX7"
+    url: "https://v1.mk/OZEODEY"
     interval: 3600
     path: ./proxy_providers/providerblog.yaml
     health-check:
@@ -87,14 +87,11 @@ proxy-groups:
   - name: "TikTok"
     type: select
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/TikTok_1.png
-    proxies:
-      - 节点选择
-      - 日本节点
-      - 美国节点
-      - 台湾节点
-      - 狮城节点
-      - 韩国节点
-      - 加入电报群@dizhujiacl
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    use:
+      - providermidrans
   - name: "Spotify"
     type: select
     icon: https://github.com/shindgewongxj/WHATSINStash/raw/main/icon/spotify.png
@@ -138,9 +135,8 @@ proxy-groups:
       - 节点选择
       - DIRECT
   - name: "加入电报群@dizhujiacl"
-    type: load-balance
+    type: url-test
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Telegram.png
-    strategy: consistent-hashing
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
