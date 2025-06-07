@@ -49,7 +49,7 @@ proxy-providers:
       enable: true
       interval: 600
       url: http://www.gstatic.com/generate_204
-   provider2:
+  provider2:
     type: http
     url: "https://v1.mk/82Prfa7"
     interval: 3600
