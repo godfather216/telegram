@@ -88,6 +88,7 @@ proxy-groups:
     type: select
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/TikTok_1.png
     proxies:
+      - 节点选择
       - 香港节点
       - 日本节点
       - 美国节点
