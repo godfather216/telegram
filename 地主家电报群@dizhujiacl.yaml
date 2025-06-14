@@ -51,7 +51,7 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204
   providerblog:
     type: http
-    url: "https://v1.mk/OZEODEY"
+    url: "https://raw.githubusercontent.com/mfuu/v2ray/master/clash.yaml"
     interval: 3600
     path: ./proxy_providers/providerblog.yaml
     health-check:
