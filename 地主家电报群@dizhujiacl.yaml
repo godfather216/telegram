@@ -51,7 +51,7 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204
   provider2:
     type: http
-    url: "https://raw.githubusercontent.com/mfuu/v2ray/master/clash.yaml"
+    url: ""
     interval: 3600
     path: ./proxy_providers/provider2.yaml
     health-check:
