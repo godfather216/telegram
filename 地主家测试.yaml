@@ -60,7 +60,7 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204
   provider3:
     type: http
-    url: "https://raw.githubusercontent.com/snakem982/proxypool/main/source/clash-meta.yaml"
+    url: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Bypass.png"
     interval: 3600
     path: ./proxy_providers/provider3.yaml
     health-check:
