@@ -98,6 +98,11 @@ proxy-groups:
       - 台湾节点
       - 狮城节点
       - 韩国节点
+      - provider1
+      - provider2
+      - provider3
+      - provider4
+      - provider5
       - 加入电报群@dizhujiacl
       - DIRECT
   - name: "自动选择"
@@ -113,7 +118,7 @@ proxy-groups:
       - 加入电报群@dizhujiacl
   - name: "provider1"
     type: url-test
-    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Telegram.png
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Proxy.png
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
@@ -121,7 +126,7 @@ proxy-groups:
       - provider1
   - name: "provider2"
     type: url-test
-    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Telegram.png
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Streaming.png
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
@@ -129,7 +134,7 @@ proxy-groups:
       - provider2
   - name: "provider3"
     type: url-test
-    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Telegram.png
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Infuse.pngTelegram.png
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
@@ -137,7 +142,7 @@ proxy-groups:
       - provider3
   - name: "provider4"
     type: url-test
-    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Telegram.png
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Auto.pngTelegram.png
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
@@ -145,7 +150,7 @@ proxy-groups:
       - provider4
   - name: "provider5"
     type: url-test
-    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Telegram.png
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Available.png
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
