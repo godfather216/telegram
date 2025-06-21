@@ -142,7 +142,7 @@ proxy-groups:
       - provider3
   - name: "provider4"
     type: url-test
-    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Auto.pngTelegram.png
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Available.png
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
