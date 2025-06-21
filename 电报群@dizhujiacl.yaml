@@ -40,20 +40,20 @@ profile:
   store-fake-ip: true
 tcp-concurrent: true
 proxy-providers:
-  providermidrans:
+  provider1:
     type: http
-    url: "https://v1.mk/82Prfa7"
+    url: "https://api.2c.lol/sub?target=clash&url=https%3A%2F%2Fraw.githubusercontent.com%2Fgo4sharing%2Fsub%2Fmain%2Fsub.yaml&insert=false"
     interval: 3600
-    path: ./proxy_providers/providermidrans.yaml
+    path: ./proxy_providers/provider1.yaml
     health-check:
       enable: true
       interval: 600
       url: http://www.gstatic.com/generate_204
-  providerblog:
+  provider2:
     type: http
-    url: "https://v1.mk/OZEODEY"
+    url: "https://TerLand0berver.github.io/autov2ray/sub.yaml"
     interval: 3600
-    path: ./proxy_providers/providerblog.yaml
+    path: ./proxy_providers/provider2.yaml
     health-check:
       enable: true
       interval: 600
@@ -87,11 +87,15 @@ proxy-groups:
   - name: "TikTok"
     type: select
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/TikTok_1.png
-    url: http://www.gstatic.com/generate_204
-    interval: 300
-    tolerance: 50
-    use:
-      - providermidrans
+    proxies:
+      - 节点选择
+      - 香港节点
+      - 日本节点
+      - 美国节点
+      - 台湾节点
+      - 狮城节点
+      - 韩国节点
+      - 加入电报群@dizhujiacl
   - name: "Spotify"
     type: select
     icon: https://github.com/shindgewongxj/WHATSINStash/raw/main/icon/spotify.png
@@ -141,8 +145,8 @@ proxy-groups:
     interval: 300
     tolerance: 50
     use:
-      - providermidrans
-      - providerblog
+      - provider1
+      - provider2
   - name: "香港节点"
     type: load-balance
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png
@@ -151,9 +155,9 @@ proxy-groups:
     interval: 300
     tolerance: 50
     use:
-      - providermidrans
-      - providerblog
-    filter: "(?i)港|hk|🇭🇰|hongkong|hong kong"
+      - provider1
+      - provider2
+    filter: "(?i)港|hk|🇭🇰|hongkong|hong kong|CN|🇨🇳|中国"
   - name: "日本节点"
     type: load-balance
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Japan.png
@@ -162,8 +166,8 @@ proxy-groups:
     interval: 300
     tolerance: 50
     use:
-      - providermidrans
-      - providerblog
+      - provider1
+      - provider2
     filter: "(?i)日本|jp|🇯🇵|japan"
   - name: "美国节点"
     type: load-balance
@@ -173,8 +177,8 @@ proxy-groups:
     interval: 300
     tolerance: 50
     use:
-      - providermidrans
-      - providerblog
+      - provider1
+      - provider2
     filter: "(?i)美|us|🇺🇸|united states|america"
   - name: "台湾节点"
     type: load-balance
@@ -184,8 +188,8 @@ proxy-groups:
     interval: 300
     tolerance: 50
     use:
-      - providermidrans
-      - providerblog
+      - provider1
+      - provider2
     filter: "(?i)台|tw"
   - name: "狮城节点"
     type: load-balance
@@ -195,8 +199,8 @@ proxy-groups:
     interval: 300
     tolerance: 50
     use:
-      - providermidrans
-      - providerblog
+      - provider1
+      - provider2
     filter: "(?i)新|狮城|🇸🇬|sg|singapore"
   - name: "韩国节点"
     type: load-balance
@@ -206,8 +210,8 @@ proxy-groups:
     interval: 300
     tolerance: 50
     use:
-      - providermidrans
-      - providerblog
+      - provider1
+      - provider2
     filter: "(?i)韩|kr|🇰🇷|korea"
 
 rule-providers:
