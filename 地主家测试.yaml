@@ -78,7 +78,7 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204
   provider5:
     type: http
-    url: "https://raw.githubusercontent.com/snakem982/proxypool/main/source/clash-meta.yaml"
+    url: ""
     interval: 3600
     path: ./proxy_providers/provider5.yaml
     health-check:
