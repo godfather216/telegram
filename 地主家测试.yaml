@@ -78,7 +78,7 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204
   provider5:
     type: http
-    url: ""
+    url: "http://sub.store/download/1-2"
     interval: 3600
     path: ./proxy_providers/provider5.yaml
     health-check:
