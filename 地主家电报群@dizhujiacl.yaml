@@ -42,7 +42,7 @@ tcp-concurrent: true
 proxy-providers:
   provider1-1:
     type: http
-    url: "https://api.2c.lol/sub?target=clash&url=https%3A%2F%2Fraw.githubusercontent.com%2Fgo4sharing%2Fsub%2Fmain%2Fsub.yaml&insert=false"
+    url: "https://v1.mk/ob9RZKj"
     interval: 3600
     path: ./proxy_providers/provider1-1.yaml
     health-check:
@@ -51,7 +51,7 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204
   provider1-2:
     type: http
-    url: "https://TerLand0berver.github.io/autov2ray/sub.yaml"
+    url: ""
     interval: 3600
     path: ./proxy_providers/provider1-2.yaml
     health-check:
