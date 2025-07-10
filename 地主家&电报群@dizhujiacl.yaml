@@ -40,11 +40,11 @@ profile:
   store-fake-ip: true
 tcp-concurrent: true
 proxy-providers:
-  provider
+  provider2
     type: http
     url: "https://raw.githubusercontent.com/godfather216/clash-yaml/refs/heads/main/2.txt"
     interval: 3600
-    path: ./proxy_providers/provider2-1.yaml
+    path: ./proxy_providers/provider2.yaml
     health-check:
       enable: true
       interval: 600
@@ -136,7 +136,7 @@ proxy-groups:
     interval: 300
     tolerance: 50
     use:
-      - provider
+      - provider2
   - name: "香港节点"
     type: url-test
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png
@@ -144,7 +144,7 @@ proxy-groups:
     interval: 300
     tolerance: 50
     use:
-      - provider
+      - provider2
     filter: "(?i)港|hk|🇭🇰|hongkong|hong kong"
   - name: "日本节点"
     type: url-test
@@ -153,7 +153,7 @@ proxy-groups:
     interval: 300
     tolerance: 50
     use:
-      - provider
+      - provider2
     filter: "(?i)日本|jp|🇯🇵|japan"
   - name: "美国节点"
     type: url-test
@@ -162,7 +162,7 @@ proxy-groups:
     interval: 300
     tolerance: 50
     use:
-      - provider
+      - provider2
     filter: "(?i)美|us|🇺🇸|united states|america"
   - name: "台湾节点"
     type: url-test
@@ -171,7 +171,7 @@ proxy-groups:
     interval: 300
     tolerance: 50
     use:
-      - provider
+      - provider2
     filter: "(?i)台|tw"
   - name: "狮城节点"
     type: url-test
@@ -180,7 +180,7 @@ proxy-groups:
     interval: 300
     tolerance: 50
     use:
-      - provider
+      - provider2
     filter: "(?i)新|狮城|🇸🇬|sg|singapore"
   - name: "韩国节点"
     type: url-test
@@ -189,7 +189,7 @@ proxy-groups:
     interval: 300
     tolerance: 50
     use:
-      - provider
+      - provider2
     filter: "(?i)韩|kr|🇰🇷|korea"
 
 rule-providers:
