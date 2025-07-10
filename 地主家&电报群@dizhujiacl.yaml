@@ -40,24 +40,15 @@ profile:
   store-fake-ip: true
 tcp-concurrent: true
 proxy-providers:
-  provider2-1:
+  provider
     type: http
-    url: "https://mxlsub.me/free"
+    url: "https://raw.githubusercontent.com/godfather216/clash-yaml/refs/heads/main/2.txt"
     interval: 3600
     path: ./proxy_providers/provider2-1.yaml
     health-check:
       enable: true
       interval: 600
       url: http://www.gstatic.com/generate_204
-  provider2-2:
-    type: http
-    url: "https://raw.githubusercontent.com/peasoft/NoMoreWalls/master/list.meta.yml"
-    interval: 3600
-    path: ./proxy_providers/provider2-2.yaml
-    health-check:
-      enable: true
-      interval: 600
-      url: http://www.gstatic.com/generate_204    
   
 proxy-groups:
   - name: "节点选择"
@@ -145,9 +136,7 @@ proxy-groups:
     interval: 300
     tolerance: 50
     use:
-      - provider2-1
-      - provider2-2
-    filter: "^(?!.*(港|hk|hongkong|hong kong|日本|jp|japan|美|us|united states|america|台|tw|taiwan|新|狮城|sg|singapore|韩|kr|korea)).*$"      
+      - provider
   - name: "香港节点"
     type: url-test
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png
@@ -155,8 +144,7 @@ proxy-groups:
     interval: 300
     tolerance: 50
     use:
-      - provider2-1
-      - provider2-2
+      - provider
     filter: "(?i)港|hk|🇭🇰|hongkong|hong kong"
   - name: "日本节点"
     type: url-test
@@ -165,8 +153,7 @@ proxy-groups:
     interval: 300
     tolerance: 50
     use:
-      - provider2-1
-      - provider2-2
+      - provider
     filter: "(?i)日本|jp|🇯🇵|japan"
   - name: "美国节点"
     type: url-test
@@ -175,8 +162,7 @@ proxy-groups:
     interval: 300
     tolerance: 50
     use:
-      - provider2-1
-      - provider2-2
+      - provider
     filter: "(?i)美|us|🇺🇸|united states|america"
   - name: "台湾节点"
     type: url-test
@@ -185,8 +171,7 @@ proxy-groups:
     interval: 300
     tolerance: 50
     use:
-      - provider2-1
-      - provider2-2
+      - provider
     filter: "(?i)台|tw"
   - name: "狮城节点"
     type: url-test
@@ -195,8 +180,7 @@ proxy-groups:
     interval: 300
     tolerance: 50
     use:
-      - provider2-1
-      - provider2-2
+      - provider
     filter: "(?i)新|狮城|🇸🇬|sg|singapore"
   - name: "韩国节点"
     type: url-test
@@ -205,8 +189,7 @@ proxy-groups:
     interval: 300
     tolerance: 50
     use:
-      - provider2-1
-      - provider2-2
+      - provider
     filter: "(?i)韩|kr|🇰🇷|korea"
 
 rule-providers:
