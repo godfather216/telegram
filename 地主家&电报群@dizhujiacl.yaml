@@ -40,7 +40,7 @@ profile:
   store-fake-ip: true
 tcp-concurrent: true
 proxy-providers:
-  provider2
+  provider2:
     type: http
     url: "https://raw.githubusercontent.com/godfather216/clash-yaml/refs/heads/main/2.txt"
     interval: 3600
@@ -49,7 +49,7 @@ proxy-providers:
       enable: true
       interval: 600
       url: http://www.gstatic.com/generate_204
-  
+
 proxy-groups:
   - name: "节点选择"
     type: select
@@ -67,7 +67,6 @@ proxy-groups:
   - name: "自动选择"
     type: url-test
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Cellular.png
-    strategy: consistent-hashing
     proxies:
       - 香港节点
       - 日本节点
@@ -81,6 +80,7 @@ proxy-groups:
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/TikTok_1.png
     proxies:
       - 节点选择
+      - 香港节点
       - 日本节点
       - 美国节点
       - 台湾节点
@@ -138,17 +138,19 @@ proxy-groups:
     use:
       - provider2
   - name: "香港节点"
-    type: url-test
+    type: load-balance
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png
+    strategy: consistent-hashing
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
     use:
       - provider2
-    filter: "(?i)港|hk|🇭🇰|hongkong|hong kong"
+    filter: "(?i)港|hk|🇭🇰|hongkong"
   - name: "日本节点"
-    type: url-test
+    type: load-balance
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Japan.png
+    strategy: consistent-hashing
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
@@ -156,8 +158,9 @@ proxy-groups:
       - provider2
     filter: "(?i)日本|jp|🇯🇵|japan"
   - name: "美国节点"
-    type: url-test
+    type: load-balance
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_States.png
+    strategy: consistent-hashing
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
@@ -165,8 +168,9 @@ proxy-groups:
       - provider2
     filter: "(?i)美|us|🇺🇸|united states|america"
   - name: "台湾节点"
-    type: url-test
+    type: load-balance
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Taiwan.png
+    strategy: consistent-hashing
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
@@ -174,8 +178,9 @@ proxy-groups:
       - provider2
     filter: "(?i)台|tw"
   - name: "狮城节点"
-    type: url-test
+    type: load-balance
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Singapore.png
+    strategy: consistent-hashing
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
@@ -183,8 +188,9 @@ proxy-groups:
       - provider2
     filter: "(?i)新|狮城|🇸🇬|sg|singapore"
   - name: "韩国节点"
-    type: url-test
+    type: load-balance
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Korea.png
+    strategy: consistent-hashing
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
