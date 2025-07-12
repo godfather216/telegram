@@ -49,15 +49,6 @@ proxy-providers:
       enable: true
       interval: 600
       url: http://www.gstatic.com/generate_204
-  provider1-2:
-    type: http
-    url: "https://raw.githubusercontent.com/anaer/Sub/refs/heads/main/proxies.yaml"
-    interval: 3600
-    path: ./proxy_providers/provider1-2.yaml
-    health-check:
-      enable: true
-      interval: 600
-      url: http://www.gstatic.com/generate_204
 
 proxy-groups:
   - name: "节点选择"
@@ -145,7 +136,6 @@ proxy-groups:
     tolerance: 50
     use:
       - provider1
-      - provider1-2
   - name: "香港节点"
     type: url-test
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png
@@ -154,7 +144,6 @@ proxy-groups:
     tolerance: 50
     use:
       - provider1
-      - provider1-2
     filter: "(?i)港|hk|🇭🇰|hongkong"
   - name: "日本节点"
     type: url-test
@@ -164,7 +153,6 @@ proxy-groups:
     tolerance: 50
     use:
       - provider1
-      - provider1-2
     filter: "(?i)日本|jp|🇯🇵|japan"
   - name: "美国节点"
     type: url-test
@@ -174,7 +162,6 @@ proxy-groups:
     tolerance: 50
     use:
       - provider1
-      - provider1-2
     filter: "(?i)美|us|🇺🇸|united states|america"
   - name: "台湾节点"
     type: url-test
@@ -184,7 +171,6 @@ proxy-groups:
     tolerance: 50
     use:
       - provider1
-      - provider1-2
     filter: "(?i)台|tw"
   - name: "狮城节点"
     type: url-test
@@ -194,7 +180,6 @@ proxy-groups:
     tolerance: 50
     use:
       - provider1
-      - provider1-2
     filter: "(?i)新|狮城|🇸🇬|sg|singapore"
   - name: "韩国节点"
     type: url-test
@@ -204,7 +189,6 @@ proxy-groups:
     tolerance: 50
     use:
       - provider1
-      - provider1-2
     filter: "(?i)韩|kr|🇰🇷|korea"
 
 rule-providers:
