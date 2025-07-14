@@ -42,7 +42,7 @@ tcp-concurrent: true
 proxy-providers:
   provider2:
     type: http
-    url: "https://raw.githubusercontent.com/godfather216/clash-yaml/refs/heads/main/all.yaml"
+    url: "https://raw.githubusercontent.com/godfather216/clash-yaml/refs/heads/main/cn.yaml"
     interval: 3600
     path: ./proxy_providers/provider2.yaml
     health-check:
