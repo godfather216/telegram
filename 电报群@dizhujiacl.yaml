@@ -56,6 +56,7 @@ proxy-groups:
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Apple_Fitness+.png
     proxies:
       - 自动选择
+      - 手动切换
       - 香港节点
       - 日本节点
       - 美国节点
@@ -75,11 +76,20 @@ proxy-groups:
       - 狮城节点
       - 韩国节点
       - 加入电报群@dizhujiacl
+  - name: "手动切换"
+    type: select
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Static.png
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    use:
+      - provider1
   - name: "TikTok"
     type: select
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/TikTok_1.png
     proxies:
       - 节点选择
+      - 手动切换
       - 日本节点
       - 美国节点
       - 台湾节点
@@ -91,6 +101,7 @@ proxy-groups:
     icon: https://github.com/shindgewongxj/WHATSINStash/raw/main/icon/spotify.png
     proxies:
       - 节点选择
+      - 手动切换
       - 香港节点
       - 日本节点
       - 美国节点
@@ -103,6 +114,7 @@ proxy-groups:
     icon: https://github.com/shindgewongxj/WHATSINStash/raw/main/icon/anthropic.png
     proxies:
       - 节点选择
+      - 手动切换
       - 日本节点
       - 美国节点
       - 台湾节点
@@ -115,6 +127,7 @@ proxy-groups:
     proxies:
       - 节点选择
       - 自动选择
+      - 手动切换
       - 香港节点
       - 日本节点
       - 美国节点
