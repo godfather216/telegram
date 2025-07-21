@@ -87,9 +87,8 @@ proxy-groups:
   - name: "TikTok"
     type: select
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/TikTok_1.png
-    proxies:
-      - 节点选择
-      - 手动切换
+    interval: 300
+    tolerance: 50
     use:
       - provider1
     filter: "(?i)TK"
