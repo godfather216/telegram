@@ -90,12 +90,9 @@ proxy-groups:
     proxies:
       - 节点选择
       - 手动切换
-      - 日本节点
-      - 美国节点
-      - 台湾节点
-      - 狮城节点
-      - 韩国节点
-      - 加入电报群@dizhujiacl
+    use:
+      - provider1
+    filter: (?i)TK
   - name: "Spotify"
     type: select
     icon: https://github.com/shindgewongxj/WHATSINStash/raw/main/icon/spotify.png
